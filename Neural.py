@@ -52,9 +52,9 @@ positive_list=list()#cur.fetchall()
 for row in cur.fetchall():
     positive_list.append(row[0])
 
-print 'n ',negative_list
-print 'p ',positive_list
-print 'd ', not_disamb_list
+#print 'n ',negative_list
+#print 'p ',positive_list
+#print 'd ', not_disamb_list
 
 db.close()
 
@@ -68,27 +68,17 @@ synsets_polar=dict()
 path='/home/aleksandradolega/'
 
 
-idLL='21L'
-Sa=list()
-Sa.append(idLL)
-idLLL=21L
-ii=21
-print (str(ii)+'L') in Sa
-print idLL==str(ii)+'L'
 
 print path
 base=BaseGraph()
 base.unpickle(path+'merged_graph.xml.gz')
+lu_graph=BaseGraph()
+lu_graph.unpickle(path+'OUTPUT_GRAPHS_lu.xml.gz')
 #print base._g.vertex_properties()
 base._g.list_properties()
+print 'paus'
+lu_graph._g.list_properties()
 
-idLL='21L'
-Sa=list()
-Sa.append(idLL)
-idLLL=21L
-ii=21
-print (str(ii)+'L') in Sa
-print idLL==str(ii)+'L'
 
 #c=0
 for n in base.all_nodes():
@@ -98,9 +88,7 @@ for n in base.all_nodes():
 
         if not list_of_polar.has_key(lu.lu_id):
             idL=lu.lu_id#str(lu.lu_id)+"L"
-            if (lu.lu_id==1090 ):
-               print 'LU: ',lu.lu_id, positive_list, (lu.lu_id in positive_list)
-               non = True
+
             #print 'idL: ',idL
             if idL in not_disamb_list:
                 local_polar.append(0)
@@ -126,7 +114,7 @@ for n in base.all_nodes():
         print n.synset.synset_id,'--> ',local_polar
 
 
-    if count<0.4*len(local_polar):
+    if count<0.1*len(local_polar):
         polarity=sum(local_polar)
         if  polarity < 0:
             polarity=-1
@@ -135,15 +123,67 @@ for n in base.all_nodes():
         synsets_polar[n]=polarity
 
 #print 'lop ',list_of_polar
-print 'sp ',len(synsets_polar)
+pos=list()
+neg=list()
+#print 'sp ',len(synsets_polar)
+
 for s in synsets_polar.keys():
+    if synsets_polar[s]==1:
+        pos.append(s)
+    elif synsets_polar[s]==-1:
+        neg.append(s)
+print 'NEGATIVE '
+for s in neg:
     print '============================='
     for ll in s.synset.lu_set:
         print ll.lemma
     print s.synset.synset_id, ' -> ',synsets_polar[s]
-
+    print '*****************************'
+print 'POSITIVE '
+for s in pos:
+    print '============================='
+    for ll in s.synset.lu_set:
+        print ll.lemma
+    print s.synset.synset_id, ' -> ',synsets_polar[s]
+print '*******************************'
 print len(synsets_polar)
+print 'NEG: ',len(neg)
+print 'POS: ',len(pos)
 
+lu_dict=dict()
+MIN=-1000000
+for node in lu_graph.all_nodes():
+    current=node
+    distance=0
+    visited=list()
+    queue=list()
+    queue_level=dict()
+    queue_level[current]=0
+    while current.lu.lu_id not in list_of_polar:
+        visited.append(current)
+        for item in current.all_edges():
+            if current==item.source():
+                target=item.target()
+                if target not in visited:
+                    queue.append(target)
+                    queue_level[target]=queue_level[current]+1
+            if current==item.target():
+                source=item.source()
+                if source not in visited:
+                    queue.append(source)
+                    queue_level[source] = queue_level[current] + 1
+        if len(queue)==0:
+            distance=MIN
+            print 'BREAK'
+            break
+        current=queue[0]
+        queue.remove(current)
+
+    if distance!=MIN:
+        distance=queue_level[current]
+    lu_dict[current.lu.lu_id]=distance
+
+print 'LU DIC : ',lu_dict
 
 for n in base.all_nodes():
     #c+=1
@@ -174,6 +214,8 @@ x=set()
 
 print x
 
+#def search_polarization_level(node):
+#    if node.lu_
 
 def load_dataset():
     url = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
