@@ -25,6 +25,7 @@ import MySQLdb
 from sklearn.neural_network import MLPClassifier
 
 
+
 db = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      user="root",         # your username
                      passwd="toor",  # your password
@@ -68,53 +69,109 @@ synsets_polar=dict()
 path='/home/aleksandradolega/'
 
 
+def print_pos_neg():
+    # print 'lop ',list_of_polar
+    pos = list()
+    neg = list()
+    # print 'sp ',len(synsets_polar)
+
+    for s in synsets_polar.keys():
+        if synsets_polar[s] == 1:
+            pos.append(s)
+        elif synsets_polar[s] == -1:
+            neg.append(s)
+    print 'NEGATIVE '
+    for s in neg:
+        print '============================='
+        for ll in s.synset.lu_set:
+            print ll.lemma
+        print s.synset.synset_id, ' -> ', synsets_polar[s]
+        print '*****************************'
+    print 'POSITIVE '
+    for s in pos:
+        print '============================='
+        for ll in s.synset.lu_set:
+            print ll.lemma
+        print s.synset.synset_id, ' -> ', synsets_polar[s]
+    print '*******************************'
+    print len(synsets_polar)
+    print 'NEG: ', len(neg)
+    print 'POS: ', len(pos)
+
 
 print path
 base=BaseGraph()
 base.unpickle(path+'merged_graph.xml.gz')
 lu_graph=BaseGraph()
 lu_graph.unpickle(path+'OUTPUT_GRAPHS_lu.xml.gz')
-#print base._g.vertex_properties()
-base._g.list_properties()
+
+#base._g.list_properties()
 print 'paus'
-lu_graph._g.list_properties()
+lu_synset_dic=dict()
+synsets=list()
+
+#lu_graph._g.list_properties()
 
 
 #c=0
-for n in base.all_nodes():
-    non=False
-    local_polar = list()
-    for lu in n.synset.lu_set:
+def create_lu_polar_list():
+    cc=0
+    for n in base.all_nodes():
+        non = False
+        local_polar = list()
+        #synsets.append(n.synset)
+        if n.synset.synset_id==7059834:
+            print 'THIS'
+            for lu in n.synset.lu_set:
+                print '> ',lu.lu_id
+        for lu in n.synset.lu_set:
 
-        if not list_of_polar.has_key(lu.lu_id):
-            idL=lu.lu_id#str(lu.lu_id)+"L"
+            #print '> ',lu.lu_id
+            if not lu_synset_dic.has_key(lu.lu_id):
+                lu_synset_dic[lu.lu_id]=n.synset#.lu_id]=n.synset
 
-            #print 'idL: ',idL
-            if idL in not_disamb_list:
-                local_polar.append(0)
-                continue
-            if idL in positive_list:
-                local_polar.append(1)
-                list_of_polar[lu.lu_id]=1
-                #print 'POS'
-            elif idL in negative_list:
-                local_polar.append(-1)
-                list_of_polar[lu.lu_id] = -1
-                #print 'NEG'
-            else:
-                local_polar.append(0)
-                list_of_polar[lu.lu_id] = 0
+            if not list_of_polar.has_key(lu.lu_id):
+                idL = lu.lu_id  # str(lu.lu_id)+"L"
+
+                # print 'idL: ',idL
+                if idL in not_disamb_list:
+                    local_polar.append(0)
+                    continue
+                if idL in positive_list:
+                    local_polar.append(1)
+                    list_of_polar[lu.lu_id] = 1
+                    # print 'POS'
+                elif idL in negative_list:
+                    local_polar.append(-1)
+                    list_of_polar[lu.lu_id] = -1
+                    # print 'NEG'
+                else:
+                    local_polar.append(0)
+                    # list_of_polar[lu.lu_id] = 0 #zakom. do testu rozpiecia
+
+        count = 0
+        negative = False
+        positive = False
+        for val in local_polar:
+            if val < 0:
+                negative = True
+            if val > 0:
+                positive = True
+            if val == 0:
+                count += 1
+        if non:
+            print n.synset.synset_id, '--> ', local_polar
 
 
-    count=0
-    for val in local_polar:
-        if val==0:
-            count+=1
-    if non:
-        print n.synset.synset_id,'--> ',local_polar
+    #if count<0.1*len(local_polar):
+     #   polarity=sum(local_polar)
+      #  if  polarity < 0:
+      #      polarity=-1
+      #  elif polarity > 0:
+      #      polarity=1
+      #  synsets_polar[n]=polarity
 
-
-    if count<0.1*len(local_polar):
+    if positive!=negative:
         polarity=sum(local_polar)
         if  polarity < 0:
             polarity=-1
@@ -122,68 +179,103 @@ for n in base.all_nodes():
             polarity=1
         synsets_polar[n]=polarity
 
-#print 'lop ',list_of_polar
-pos=list()
-neg=list()
-#print 'sp ',len(synsets_polar)
+#print_pos_neg()
+def find_nearest(node_counter,inner_synset_rel,MAX):
+    for node in lu_graph.all_nodes():
+        #print 'N ', node_counter
+        node_counter -= 1
+        if node_counter == 0:
+            #'COUNTER STOP'
+            break
 
-for s in synsets_polar.keys():
-    if synsets_polar[s]==1:
-        pos.append(s)
-    elif synsets_polar[s]==-1:
-        neg.append(s)
-print 'NEGATIVE '
-for s in neg:
-    print '============================='
-    for ll in s.synset.lu_set:
-        print ll.lemma
-    print s.synset.synset_id, ' -> ',synsets_polar[s]
-    print '*****************************'
-print 'POSITIVE '
-for s in pos:
-    print '============================='
-    for ll in s.synset.lu_set:
-        print ll.lemma
-    print s.synset.synset_id, ' -> ',synsets_polar[s]
-print '*******************************'
-print len(synsets_polar)
-print 'NEG: ',len(neg)
-print 'POS: ',len(pos)
+        current = node
+        distance = 0
+        visited = list()
+        queue = list()
+        queue_level = dict()
+        queue_level[current] = 0
+        while current.lu.lu_id not in list_of_polar:
+            if queue_level[current] >= MAX:
+                distance = 2 * MIN
+                #print 'BREAK - DEEP'
+                break
+            visited.append(current)
+            found = False
+            if inner_synset_rel:
+                synset=None
+                if lu_synset_dic.has_key(current.lu.lu_id):
+                    synset = lu_synset_dic[current.lu.lu_id]
+                    for synonym in synset.lu_set:
+                        if synonym.lu_id in list_of_polar:
+                            distance = queue_level[current] + 1
+                            found = True
+                            break
+                else:
+                    print 'WRONG KEY ', current.lu.lu_id
 
+                if found:
+                    #print 'SYNONYM'
+                    break
+
+            for item in current.all_edges():
+                # print item.source().lu.lu_id," (",item.source().lu.lemma,") --> ",item.target().lu.lu_id," (",item.target().lu.lemma,")",item.rel_id
+                if current == item.source():
+                    target = item.target()
+                    if target not in visited:
+                        queue.append(target)
+                        queue_level[target] = queue_level[current] + 1
+                if current == item.target():
+                    source = item.source()
+                    if source not in visited:
+                        queue.append(source)
+                        queue_level[source] = queue_level[current] + 1
+            if len(queue) == 0:
+                distance = MIN
+                #print 'BREAK'
+                break
+            current = queue[0]
+            queue.remove(current)
+            # if queue_level[current]>MAX:
+            #    print 'BREAK - DEEP'
+            #    break
+
+        if distance > MIN:
+            distance = queue_level[current]
+        lu_dict[node.lu.lu_id] = distance
+        #print 'LU DIC : ', len(lu_dict)
+
+    print 'LU DIC : ', len(lu_dict)
+    frequency_dic = dict()
+    for key in lu_dict.keys():
+        if frequency_dic.has_key(lu_dict[key]):
+            frequency_dic[lu_dict[key]] += 1
+        else:
+            frequency_dic[lu_dict[key]] = 1
+    print 'FREQ ', frequency_dic
+    print 'synonimy  ', inner_synset_rel
+
+create_lu_polar_list()
 lu_dict=dict()
 MIN=-1000000
-for node in lu_graph.all_nodes():
-    current=node
-    distance=0
-    visited=list()
-    queue=list()
-    queue_level=dict()
-    queue_level[current]=0
-    while current.lu.lu_id not in list_of_polar:
-        visited.append(current)
-        for item in current.all_edges():
-            if current==item.source():
-                target=item.target()
-                if target not in visited:
-                    queue.append(target)
-                    queue_level[target]=queue_level[current]+1
-            if current==item.target():
-                source=item.source()
-                if source not in visited:
-                    queue.append(source)
-                    queue_level[source] = queue_level[current] + 1
-        if len(queue)==0:
-            distance=MIN
-            print 'BREAK'
-            break
-        current=queue[0]
-        queue.remove(current)
+MAX=3
+MAXS=[5,5,3,3]
+INNER=[True,False,True,False]
+COUNTER=[100000,100000,500000,500000]
+node_counter=0
+inner_synset_rel=True
+node_counter=100000
+print 'LU S ',len(lu_synset_dic)
+find_nearest(node_counter,inner_synset_rel,MAX)
 
-    if distance!=MIN:
-        distance=queue_level[current]
-    lu_dict[current.lu.lu_id]=distance
 
-print 'LU DIC : ',lu_dict
+
+for i in range(0):
+    MAX=MAXS[i]
+    inner_synset_rel=INNER[i]
+    node_counter=COUNTER[i]
+    find_nearest(node_counter,inner_synset_rel,MAX)
+
+
 
 for n in base.all_nodes():
     #c+=1
@@ -216,6 +308,8 @@ print x
 
 #def search_polarization_level(node):
 #    if node.lu_
+
+
 
 def load_dataset():
     url = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
