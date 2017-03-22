@@ -24,6 +24,8 @@ from PLWNGraphBuilder import PLWNGraph
 import MySQLdb
 from sklearn.neural_network import MLPClassifier
 
+lu_synset_dic=dict()
+synsets=list()
 
 
 db = MySQLdb.connect(host="localhost",    # your host, usually localhost
@@ -53,10 +55,26 @@ positive_list=list()#cur.fetchall()
 for row in cur.fetchall():
     positive_list.append(row[0])
 
-#print 'n ',negative_list
-#print 'p ',positive_list
+print 'n ',len(negative_list)
+print 'p ',len(positive_list)
 #print 'd ', not_disamb_list
 
+
+cur.execute("SELECT LEX_ID, SYN_ID FROM unitandsynset")
+
+syns_map=dict()
+for row in cur.fetchall():
+    if syns_map.has_key(row[1]):
+        syns_map[row[1]].append(row[0])
+
+    else:
+        lex=list()
+        lex.append(row[0])
+        syns_map[row[1]]=lex
+
+    lu_synset_dic[row[0]] = syns_map[row[1]]
+
+print 'SYNS M ',len(syns_map),' , ',len(lu_synset_dic)
 db.close()
 
 
@@ -107,13 +125,18 @@ lu_graph.unpickle(path+'OUTPUT_GRAPHS_lu.xml.gz')
 
 #base._g.list_properties()
 print 'paus'
-lu_synset_dic=dict()
-synsets=list()
+
 
 #lu_graph._g.list_properties()
 
-
+polar_nodes=list()
 #c=0
+def create_map_lu_synset():
+    for lu in lu_graph:
+        xy=0
+  #  if not lu_synset_dic.has_key(lu.lu_id):
+  #      lu_synset_dic[lu.lu_id] = n.synset  # .lu_id]=n.synset
+
 def create_lu_polar_list():
     cc=0
     for n in base.all_nodes():
@@ -125,10 +148,10 @@ def create_lu_polar_list():
             for lu in n.synset.lu_set:
                 print '> ',lu.lu_id
         for lu in n.synset.lu_set:
-
+            cc+=1
             #print '> ',lu.lu_id
-            if not lu_synset_dic.has_key(lu.lu_id):
-                lu_synset_dic[lu.lu_id]=n.synset#.lu_id]=n.synset
+            #if not lu_synset_dic.has_key(lu.lu_id):
+            #    lu_synset_dic[lu.lu_id]=n.synset#.lu_id]=n.synset
 
             if not list_of_polar.has_key(lu.lu_id):
                 idL = lu.lu_id  # str(lu.lu_id)+"L"
@@ -162,7 +185,7 @@ def create_lu_polar_list():
         if non:
             print n.synset.synset_id, '--> ', local_polar
 
-
+    print 'CCC ',cc
     #if count<0.1*len(local_polar):
      #   polarity=sum(local_polar)
       #  if  polarity < 0:
@@ -205,13 +228,13 @@ def find_nearest(node_counter,inner_synset_rel,MAX):
                 synset=None
                 if lu_synset_dic.has_key(current.lu.lu_id):
                     synset = lu_synset_dic[current.lu.lu_id]
-                    for synonym in synset.lu_set:
-                        if synonym.lu_id in list_of_polar:
+                    for synonym in synset:
+                        if synonym in list_of_polar:
                             distance = queue_level[current] + 1
                             found = True
                             break
                 else:
-                    print 'WRONG KEY ', current.lu.lu_id
+                    print 'WRONG KEY ', current.lu.lu_id,' ',current.lu.lemma,' ',current.lu.variant
 
                 if found:
                     #print 'SYNONYM'
@@ -254,19 +277,70 @@ def find_nearest(node_counter,inner_synset_rel,MAX):
     print 'FREQ ', frequency_dic
     print 'synonimy  ', inner_synset_rel
 
+def find_nearest_simple(depth,synset_rel):
+    distances=dict()
+    polarized_nodes=list()
+    for node in lu_graph.all_nodes():
+        if node.lu.lu_id in list_of_polar:
+            polarized_nodes.append(node)
+            distances[node]=0
+    level=1
+    while (level!=depth):
+        new_polar_nodes=list()
+        for node in polarized_nodes:
+
+            if synset_rel:
+
+                if lu_synset_dic.has_key(node.lu.lu_id):
+                    synset = lu_synset_dic[node.lu.lu_id]
+                    for synonym in synset:#.lu_set:
+                        if synonym in list_of_polar:
+                            if not (node in distances and distances[node]==0):
+                                distances[node] = 1
+                            break
+
+
+            for edge in node.all_edges():
+                if node == edge.source():
+                    target = edge.target()
+                    if target not in distances:
+                        distances[target]=level
+                        new_polar_nodes.append(target)
+                if node == edge.target():
+                    source = edge.source()
+                    if source not in distances:
+                        distances[source] = level
+                        new_polar_nodes.append(source)
+
+        level+=1
+        polarized_nodes=new_polar_nodes
+    print 'DIC: ',distances
+    print 'DIC LEN: ', len(distances)
+    frequency_dic = dict()
+    for key in distances.keys():
+        if frequency_dic.has_key(distances[key]):
+            frequency_dic[distances[key]] += 1
+        else:
+            frequency_dic[distances[key]] = 1
+    print 'FREQ ', frequency_dic
+
+
+
+
+
 create_lu_polar_list()
 lu_dict=dict()
 MIN=-1000000
 MAX=3
-MAXS=[5,5,3,3]
-INNER=[True,False,True,False]
-COUNTER=[100000,100000,500000,500000]
+MAXS=[3,3]
+INNER=[True,False]#,True,False]
+COUNTER=[500000,500000]
 node_counter=0
 inner_synset_rel=True
 node_counter=100000
 print 'LU S ',len(lu_synset_dic)
-find_nearest(node_counter,inner_synset_rel,MAX)
-
+#find_nearest(node_counter,inner_synset_rel,MAX)
+find_nearest_simple(100,True)
 
 
 for i in range(0):
