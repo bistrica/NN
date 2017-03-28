@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="613d9eec-c761-417b-bd23-f68ce6c73745" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/graph_reader.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/summarizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Neural.py" afterPath="$PROJECT_DIR$/Neural.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/propagator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_reader.py" afterPath="$PROJECT_DIR$/graph_reader.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,7 +15,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/NN$Neural.coverage" NAME="Neural Coverage Results" MODIFIED="1490685786116" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/NN$example2.coverage" NAME="example2 Coverage Results" MODIFIED="1489135916283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NN$graph_reader.coverage" NAME="graph_reader Coverage Results" MODIFIED="1490687330456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NN$graph_reader.coverage" NAME="graph_reader Coverage Results" MODIFIED="1490690464878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -37,18 +35,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_reader.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph_reader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="-397">
+              <caret line="297" column="73" lean-forward="false" selection-start-line="297" selection-start-column="72" selection-end-line="297" selection-end-column="73" />
               <folding>
                 <element signature="e#1#40#0" expanded="true" />
-                <marker date="1490687330382" expanded="true" signature="1934:2225" ph="SELECT l.ID lexicalunit" />
-                <marker date="1490687330382" expanded="true" signature="2347:2486" ph="SELECT l.ID lexicalunit" />
-                <marker date="1490687330382" expanded="true" signature="2606:2745" ph="SELECT l.ID lexicalunit" />
-                <marker date="1490687330382" expanded="true" signature="2980:3020" ph="SELECT LEX_I... unitandsynset" />
+                <marker date="1490690464826" expanded="true" signature="1927:2218" ph="SELECT l.ID lexicalunit" />
+                <marker date="1490690464826" expanded="true" signature="2340:2479" ph="SELECT l.ID lexicalunit" />
+                <marker date="1490690464826" expanded="true" signature="2599:2738" ph="SELECT l.ID lexicalunit" />
+                <marker date="1490690464826" expanded="true" signature="2973:3013" ph="SELECT LEX_I... unitandsynset" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="propagator.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/propagator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/dist-packages/graph_tool/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="1363" column="0" lean-forward="false" selection-start-line="1363" selection-start-column="0" selection-end-line="1363" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,28 +84,8 @@
       <file leaf-file-name="basegraph.py" pinned="false" current-in-tab="false">
         <entry file="file:///usr/local/lib/python2.7/dist-packages/wosedon-0.1.0-py2.7.egg/wosedon/basegraph.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="204" column="12" lean-forward="false" selection-start-line="204" selection-start-column="6" selection-end-line="204" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connections.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python2.7/dist-packages/MySQLdb/connections.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cursors.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/python2.7/dist-packages/MySQLdb/cursors.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3078">
-              <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+            <state relative-caret-position="226">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,8 +146,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>40</find>
-      <find>synset is</find>
       <find>inner_synset_rel</find>
       <find>list_of_polar</find>
       <find>syno</find>
@@ -170,7 +166,6 @@
       <find>all_ed</find>
       <find>synsets_polar</find>
       <find>lu_nodes</find>
-      <find>pickle</find>
       <find>lu_synset_dic</find>
       <find>lu_dict</find>
       <find>lu_graph</find>
@@ -178,6 +173,9 @@
       <find>clf</find>
       <find>create_lu_polar_list</find>
       <find>merg</find>
+      <find>create_lu_syn_polar_list</find>
+      <find>pickle</find>
+      <find>4</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,6 +191,7 @@
         <option value="$PROJECT_DIR$/summarizer.py" />
         <option value="$PROJECT_DIR$/Neural.py" />
         <option value="$PROJECT_DIR$/graph_reader.py" />
+        <option value="$PROJECT_DIR$/propagator.py" />
       </list>
     </option>
   </component>
@@ -703,16 +702,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PLWNGraphBuilder-0.1.0-py2.7.egg/PLWNGraphBuilder/PLWNGraphBuilder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/PLWNGraphBuilder-0.1.0-py2.7.egg/PLWNGraphBuilder/vertices/synset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -974,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/graph_tool/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1283">
-          <caret line="1376" column="13" lean-forward="false" selection-start-line="1376" selection-start-column="13" selection-end-line="1376" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SynsetPolar.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1055,22 +1037,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/PLWNGraphBuilder-0.1.0-py2.7.egg/PLWNGraphBuilder/vertices/lexical_unit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/wosedon-0.1.0-py2.7.egg/wosedon/basegraph.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="204" column="12" lean-forward="false" selection-start-line="204" selection-start-column="6" selection-end-line="204" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/summarizer.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1188">
@@ -1089,17 +1055,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/graph_tool/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="1363" column="0" lean-forward="false" selection-start-line="1363" selection-start-column="0" selection-end-line="1363" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/wosedon-0.1.0-py2.7.egg/wosedon/basegraph.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/PLWNGraphBuilder-0.1.0-py2.7.egg/PLWNGraphBuilder/vertices/lexical_unit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/graph_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="-397">
+          <caret line="297" column="73" lean-forward="false" selection-start-line="297" selection-start-column="72" selection-end-line="297" selection-end-column="73" />
           <folding>
             <element signature="e#1#40#0" expanded="true" />
-            <marker date="1490687330382" expanded="true" signature="1934:2225" ph="SELECT l.ID lexicalunit" />
-            <marker date="1490687330382" expanded="true" signature="2347:2486" ph="SELECT l.ID lexicalunit" />
-            <marker date="1490687330382" expanded="true" signature="2606:2745" ph="SELECT l.ID lexicalunit" />
-            <marker date="1490687330382" expanded="true" signature="2980:3020" ph="SELECT LEX_I... unitandsynset" />
+            <marker date="1490690464826" expanded="true" signature="1927:2218" ph="SELECT l.ID lexicalunit" />
+            <marker date="1490690464826" expanded="true" signature="2340:2479" ph="SELECT l.ID lexicalunit" />
+            <marker date="1490690464826" expanded="true" signature="2599:2738" ph="SELECT l.ID lexicalunit" />
+            <marker date="1490690464826" expanded="true" signature="2973:3013" ph="SELECT LEX_I... unitandsynset" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

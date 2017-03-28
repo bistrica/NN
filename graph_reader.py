@@ -27,13 +27,14 @@ class GraphReader(object):
     base = BaseGraph()
 
     def __init__(self, lu_graph_path, merged_graph_path=None, host=None, user=None, passw=None, db_name=None):
+        self.lu_graph_path = lu_graph_path
         if host is not None:
             self.get_data_from_db(host, user, passw, db_name)
         if merged_graph_path is not None:
 
 
             self.merged_graph_path = merged_graph_path
-            self.lu_graph_path = lu_graph_path
+
             self.base = BaseGraph()
             self.base.unpickle(self.merged_graph_path)  # path + 'merged_graph.xml.gz') path = '/home/aleksandradolega/'
 
@@ -41,7 +42,7 @@ class GraphReader(object):
         self.lu_graph = BaseGraph()
         self.lu_graph.unpickle(self.lu_graph_path)  # path + 'OUTPUT_GRAPHS_lu.xml.gz')
         if merged_graph_path is None:
-            self.create_lu_syn_polar_list()
+            self.create_lu_polar_list()
 
     #def __init__(self, final_graph_path):
     #    self.lu_graph = BaseGraph()
@@ -143,31 +144,31 @@ class GraphReader(object):
             #  if not lu_synset_dic.has_key(lu.lu_id):
             #      lu_synset_dic[lu.lu_id] = n.synset  # .lu_id]=n.synset
 
-    def create_lu_polar_list(self, percent):
+    def create_lu_polar_list(self):
 
-        for lu in self.lu_graph:
-            if not self.list_of_polar.has_key(lu.lu_id):
-                idL = lu.lu_id  # str(lu.lu_id)+"L"
+        for n in self.lu_graph.all_nodes():
+            if not self.list_of_polar.has_key(n.lu.lu_id):
+                idL = n.lu.lu_id  # str(lu.lu_id)+"L"
 
 
                 if idL in self.not_disamb_list:
-                    self.list_of_polar[lu.lu_id] = 0
+                    self.list_of_polar[n.lu.lu_id] = 0
                     continue
                 elif idL in self.positive_list:
 
-                    self.list_of_polar[lu.lu_id] = 1
+                    self.list_of_polar[n.lu.lu_id] = 1
                     # print 'POS'
                 elif idL in self.negative_list:
 
-                    self.list_of_polar[lu.lu_id] = -1
+                    self.list_of_polar[n.lu.lu_id] = -1
                     # print 'NEG'
                 else:
-                    self.list_of_polar[lu.lu_id] = -2
+                    self.list_of_polar[n.lu.lu_id] = -2
                     # list_of_polar[lu.lu_id] = 0 #zakom. do testu rozpiecia
 
 
 
-    def create_lu_syn_polar_list(self, percent):
+    def create_lu_syn_polar_list(self, percent=0.5):
         cc = 0
 
 
@@ -332,11 +333,19 @@ class GraphReader(object):
     # print x
 
     # def search_polarization_level(node):
-    #    if node.lu_
-
+    #    if node.lu_\
 path = '/home/aleksandradolega/'
-merged_graph_path=path+'merged_graph.xml.gz'
-lu_graph_path=path+'OUTPUT_GRAPHS_lu.xml.gz'
-gg= GraphReader(lu_graph_path, merged_graph_path, 'localhost', 'root', 'toor', 'wordTEST')#host=None, user=None, passw=None, db_name=None)
-gg.read_graph()
-gg.save_graph(path+'withsyn')
+def create():
+
+    merged_graph_path=path+'merged_graph.xml.gz'
+    lu_graph_path=path+'OUTPUT_GRAPHS_lu.xml.gz'
+    gg= GraphReader(lu_graph_path, merged_graph_path, 'localhost', 'root', 'toor', 'wordTEST')#host=None, user=None, passw=None, db_name=None)
+    gg.read_graph()
+    gg.save_graph(path+'withsyn.xml')
+
+g2=GraphReader(path+'withsyn.xml')
+for n in g2.lu_graph.all_nodes():
+    print 'Node: ',n.lu.lemma
+    for e in n.all_edges():
+        print e.source().lu.lemma,' -> ', e.target().lu.lemma
+    print '***'
