@@ -4,7 +4,7 @@ from wosedon.basegraph import BaseGraph
 import MySQLdb
 from sklearn.neural_network import MLPClassifier
 from summarizer import Finder
-
+from propagator import Propagator
 
 class GraphReader(object):
     finder = Finder()
@@ -42,6 +42,7 @@ class GraphReader(object):
         self.lu_graph = BaseGraph()
         self.lu_graph.unpickle(self.lu_graph_path)  # path + 'OUTPUT_GRAPHS_lu.xml.gz')
         if merged_graph_path is None:
+            self.create_map_lu_node()
             self.create_lu_polar_list()
 
     #def __init__(self, final_graph_path):
@@ -162,8 +163,8 @@ class GraphReader(object):
 
                     self.list_of_polar[n.lu.lu_id] = -1
                     # print 'NEG'
-                else:
-                    self.list_of_polar[n.lu.lu_id] = -2
+                #else:
+                    #self.list_of_polar[n.lu.lu_id] = -2
                     # list_of_polar[lu.lu_id] = 0 #zakom. do testu rozpiecia
 
 
@@ -238,6 +239,7 @@ class GraphReader(object):
     def read_graph(self):
         self.create_lu_syn_polar_list()
         self.create_map_lu_node()
+
         self.append_synonymy_edges()
 
 
@@ -259,17 +261,29 @@ class GraphReader(object):
 
     def append_synonymy_edges(self):
         new_edges = list()
+        a=0
+        edges=set()
         for node in self.lu_graph.all_nodes():
             if self.lu_synset_dic.has_key(node.lu.lu_id):
                 synonyms = self.lu_synset_dic[node.lu.lu_id]
 
                 for synonym in synonyms:
-
+                    if synonym==node.lu.lu_id:
+                        continue
+                    #print 'syn ',synonym, len(self.lu_nodes)
                     if self.lu_nodes.has_key(synonym):
-                        for e in new_edges:
-                            if not ((e.target() == node and e.source() == self.lu_nodes[synonym]) or (
-                                            e.source() == node and e.target() == self.lu_nodes[synonym])):
-                                new_edges.append((node, self.lu_nodes[synonym]))
+                        #print 'key: ',synonym,' : ',self.lu_nodes[synonym]
+                        append=True
+                        #for e in new_edges:
+
+                            #if ((e[0] == node and e[1] == self.lu_nodes[synonym]) or (
+                            #                e[1] == node and e[0] == self.lu_nodes[synonym])):
+                            #    append=False
+                        a+=1
+                        if append:
+                            if (self.lu_nodes[synonym].lu.lu_id,node.lu.lu_id) not in edges and (node.lu.lu_id, self.lu_nodes[synonym].lu.lu_id) not in edges:
+                                edges.add((node.lu.lu_id, self.lu_nodes[synonym].lu.lu_id))
+                            #new_edges.append((node, self.lu_nodes[synonym]))
                                 # for e in lu_graph.all_edges():
                                 #    print 'e: ',e
                                 #    print e.target()
@@ -279,8 +293,13 @@ class GraphReader(object):
                                 # f=lu_graph.get_edge(node,lu_nodes[synonym])
                                 # print 'F ',f, f.target(), f.source(), f._edge
 
-        for edge in new_edges:
-            self.lu_graph.add_edge(edge[0], edge[1], [['rel_id', -8]], True)
+
+        #print edges
+        print ' xx ', len(edges)
+        for edge in edges:
+            #print 'edge ',edge
+            self.lu_graph.add_edge(self.lu_nodes[edge[0]], self.lu_nodes[edge[1]], [['rel_id', -8]], True)
+
 
 
             # lu_dict=dict()
@@ -341,11 +360,38 @@ def create():
     lu_graph_path=path+'OUTPUT_GRAPHS_lu.xml.gz'
     gg= GraphReader(lu_graph_path, merged_graph_path, 'localhost', 'root', 'toor', 'wordTEST')#host=None, user=None, passw=None, db_name=None)
     gg.read_graph()
-    gg.save_graph(path+'withsyn.xml')
+    l=0
+    ee=0
+    for e in gg.lu_graph.all_edges():
+        l+=1
+        if e.rel_id==-8:
+            ee+=1
+    print 'L1: ',l, "( ",ee,")"
 
-g2=GraphReader(path+'withsyn.xml')
-for n in g2.lu_graph.all_nodes():
-    print 'Node: ',n.lu.lemma
-    for e in n.all_edges():
-        print e.source().lu.lemma,' -> ', e.target().lu.lemma
-    print '***'
+    gg.save_graph(path+'withsyn3.xml')
+
+#create()
+
+print 'GR'
+g2=GraphReader(path+'withsyn3.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
+print 'PR'
+pr=Propagator(0,g2.list_of_polar)
+c=0
+#for n in g2.lu_nodes():
+for id in g2.list_of_polar:
+    n=g2.lu_nodes[id]
+    c+=1
+    #if c==20:
+    #    break
+    print 'EV',n
+    pr.evaluate_node_percent(n)
+l=0
+#for e in g2.lu_graph.all_edges():
+#    l+=1
+#print 'L ',l
+#for n in g2.lu_graph.all_nodes():
+
+#    for e in n.all_edges():
+#        if e.rel_id==-8:
+#            print 'N: ',n,' ',e.rel_id,' ',e.source().lu.lemma, e.source().lu.variant, ' -> ', e.target().lu.lemma,e.target().lu.variant
+#    print '***'
