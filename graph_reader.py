@@ -26,7 +26,8 @@ class GraphReader(object):
     lu_graph=BaseGraph
     base = BaseGraph()
 
-    def __init__(self, lu_graph_path, merged_graph_path=None, host=None, user=None, passw=None, db_name=None):
+    def __init__(self, lu_graph_path, merged_graph_path=None, host=None, user=None, passw=None, db_name=None, rel_to_add=[10,11,20,25]):
+        self.added_relations=rel_to_add
         self.lu_graph_path = lu_graph_path
         if host is not None:
             self.get_data_from_db(host, user, passw, db_name)
@@ -57,8 +58,9 @@ class GraphReader(object):
 
         cur = db.cursor()
 
-        cur.execute(
-            "SELECT l.ID from lexicalunit l join lexicalunit l2 on l.lemma=l2.lemma where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l2.comment like '%+ m' or l2.comment like '%+ s' or l2.comment like '%+ m %' or l2.comment like '%+ s %')")
+        cur.execute("SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
+
+            #"SELECT l.ID from lexicalunit l join lexicalunit l2 on l.lemma=l2.lemma where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l2.comment like '%+ m' or l2.comment like '%+ s' or l2.comment like '%+ m %' or l2.comment like '%+ s %')")
 
         for row in cur.fetchall():
             self.not_disamb_list.append(row[0])
@@ -234,13 +236,31 @@ class GraphReader(object):
             self.synsets_polar[n] = polarity
 
 
+    def append_synset_relations(self):
+        edges=list()
+        for synset_edge in self.base.all_edges():
+            if synset_edge.rel_id in self.added_relations:
+                source_lu_set=synset_edge.source().synset.lu_set
+                target_lu_set = synset_edge.target().synset.lu_set
+                for source_lu in source_lu_set:
+                    for target_lu in target_lu_set:
+                        if self.lu_nodes.has_key(source_lu.lu_id) and self.lu_nodes.has_key(target_lu.lu_id):
+                        #print ':;; ',source_lu.lu_id, source_lu.lemma,source_lu.variant
+                            edges.append((self.lu_nodes[source_lu.lu_id],self.lu_nodes[target_lu.lu_id],synset_edge.rel_id))
 
+        print ' xxsr ', len(edges)
+        for edge in edges:
+                # print 'edge ',edge
+            self.lu_graph.add_edge(edge[0], edge[1], [['rel_id', edge[2]]], True)
 
     def read_graph(self):
         self.create_lu_syn_polar_list()
         self.create_map_lu_node()
 
         self.append_synonymy_edges()
+        print 'APPENDING RELATIONS'
+        self.append_synset_relations()
+        print 'STOP APPENDING RELATIONS'
 
 
     def save_graph(self, path):
@@ -368,12 +388,12 @@ def create():
             ee+=1
     print 'L1: ',l, "( ",ee,")"
 
-    gg.save_graph(path+'withsyn3.xml')
+    gg.save_graph(path+'withsyn_5.xml')
 
-#create()
+create()
 
 print 'GR'
-g2=GraphReader(path+'withsyn3.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
+g2=GraphReader(path+'withsyn_5.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
 print 'PR'
 pr=Propagator(0,g2.list_of_polar)
 c=0

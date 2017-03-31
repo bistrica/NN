@@ -16,6 +16,7 @@ class Propagator(object):
     data_dic=None
     C=0
     CN=0
+    NONE=0
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 11-hiponimia,10-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
     def __init__(self, type, known_data_dic, rel_ids=[-8,10,11,12,62,104,141,169,244], weights=[10,2,1,-10,10,-10,10,10,10]):
@@ -31,6 +32,7 @@ class Propagator(object):
         x=0
 
     def evaluate_node_percent(self,node,percent=0.5):
+
         self.CN+=1
         self.rel_positive = dict()
         self.rel_negative = dict()
@@ -38,11 +40,13 @@ class Propagator(object):
         self.rel_amb = dict()
         count=0
         none=0
+        print '>>>> ',node, node.lu.lemma, node.lu.variant
         for e in node.all_edges():
+            #if e.source().lu.lu_id==108:
 
-            #print 'r: ',e.rel_id
             if e.rel_id in self.REL_IDS:
                 count+=1
+                print 'r: ', e.rel_id, e.source().lu.lemma, e.source().lu.variant, e.target().lu.lemma, e.target().lu.variant
                # print 'REL IDS',self.REL_IDS
                 polarity=0
                 scnd_node=None
@@ -114,8 +118,9 @@ class Propagator(object):
                     pos += -1 * neg
                     neg=0
 
-            print 'Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
-            self.data_dic[node.lu.lu_id]
+            print 'vec ',vector_p,' -  ',vector_n, ' - ',vector_a
+            print 'f Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
+                self.data_dic[node.lu.lu_id]
 
             if pos>neg and pos>amb:
                 res=1
@@ -127,7 +132,16 @@ class Propagator(object):
                 res=-2
             if res==self.data_dic[node.lu.lu_id]:
                 self.C+=1
-            print 'C/CN ',self.C,' ',self.CN
+            else:
+                if not (pos == 0 and neg == 0 and amb == 0):
+                    print 'bad Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
+                    self.data_dic[node.lu.lu_id]
+            print 'Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
+                self.data_dic[node.lu.lu_id]
+            if pos==0 and neg==0 and amb==0:
+                self.NONE+=1
+
+            print 'C/CN ',self.C,' ',self.CN, '(',self.NONE
             #if pos > neg and pos > amb
 
                 #if self.rel_none.has_key(rel):
