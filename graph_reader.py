@@ -429,7 +429,7 @@ def cmpValue(node1, node2):
 
 print 'GR'
 g2=GraphReader(path+'withsyn_5.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
-depth=10
+depth=3
 freq_map=create_neighbourhood(g2,depth)
 freq_set=list()
 print 'PR'
@@ -451,12 +451,26 @@ for i in range(len(freq_set)):
     for elem in freq_set[i]:
         pr.evaluate_node_percent(elem)
 
-target = open('/home/alldata.txt', 'w')
-target2 = open('/home/onlynew.txt', 'w')
+target = open(path+'alldata.txt', 'w')
+target2 = open(path+'onlynew.txt', 'w')
 for key in pr.data_dic.keys():
-    target.write(key+' '+g2.lu_nodes[key].lemma+', '+g2.lu_nodes[key].variant+', ',pr.data_dic[key])
+    target.write(str(key))
+    target.write(', ')
+    target.write(g2.lu_nodes[key].lemma)
+    target.write(', ')
+    target.write(g2.lu_nodes[key].variant)
+    target.write(', ')
+    target.write(pr.data_dic[key])
+    target.write('\n')
     if key not in g2.list_of_polar.keys():
-        target2.write(key + ' ' + g2.lu_nodes[key].lemma + ', ' + g2.lu_nodes[key].variant + ', ', pr.data_dic[key])
+        target2.write(key)
+        target2.write(', ')
+        target2.write(g2.lu_nodes[key].lemma)
+        target2.write(', ')
+        target2.write(g2.lu_nodes[key].variant)
+        target2.write(', ')
+        target2.write(pr.data_dic[key])
+        target2.write('\n')
 target.close()
 target2.close()
 
