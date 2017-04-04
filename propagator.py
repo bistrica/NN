@@ -19,7 +19,7 @@ class Propagator(object):
     NONE=0
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 11-hiponimia,10-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, rel_ids=[-8,10,11,12,62,104,141,169,244], weights=[10,2,1,-10,10,-10,10,10,10]):
+    def __init__(self, type, known_data_dic, rel_ids=[-8,10,11,12,62,104,141,169,244], weights=[15,2,2,-10,10,-4,10,10,10]):
         self.data_dic=known_data_dic
         for k in known_data_dic.keys():
             print k,' ',known_data_dic[k]
@@ -31,7 +31,7 @@ class Propagator(object):
     def simple_propagate(self):
         x=0
 
-    def evaluate_node_percent(self,node,percent=0.5):
+    def evaluate_node_percent(self,node,percent=0.1):
 
         self.CN+=1
         self.rel_positive = dict()
@@ -40,13 +40,13 @@ class Propagator(object):
         self.rel_amb = dict()
         count=0
         none=0
-        print '>>>> ',node, node.lu.lemma, node.lu.variant
+        #print '>>>> ',node, node.lu.lemma, node.lu.variant
         for e in node.all_edges():
             #if e.source().lu.lu_id==108:
 
             if e.rel_id in self.REL_IDS:
                 count+=1
-                print 'r: ', e.rel_id, e.source().lu.lemma, e.source().lu.variant, e.target().lu.lemma, e.target().lu.variant
+                #print 'r: ', e.rel_id, e.source().lu.lemma, e.source().lu.variant, e.target().lu.lemma, e.target().lu.variant
                # print 'REL IDS',self.REL_IDS
                 polarity=0
                 scnd_node=None
@@ -82,8 +82,8 @@ class Propagator(object):
         vector_n = list()
         vector_a = list()
         vec_tuples=list()
-
-        if none<=percent*count:
+        #print 'None: ',none, ' cou ',count
+        if count!=0 and none!=count:#percent*count:
             #if not(len(self.rel_positive)!=0 and len(self.rel_negative)!=0):
             for rel in self.REL_IDS:
                 if self.rel_positive.has_key(rel):
@@ -118,9 +118,11 @@ class Propagator(object):
                     pos += -1 * neg
                     neg=0
 
+
             print 'vec ',vector_p,' -  ',vector_n, ' - ',vector_a
-            print 'f Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
-                self.data_dic[node.lu.lu_id]
+            print 'f Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - '
+            if self.data_dic.has_key(node.lu.lu_id):
+                print '[',self.data_dic[node.lu.lu_id],']'
 
             if pos>neg and pos>amb:
                 res=1
@@ -128,16 +130,20 @@ class Propagator(object):
                 res=-1
             elif amb>pos and amb>neg:
                 res=0
+            elif pos==neg and pos>amb:
+                res=0
             else:
                 res=-2
-            if res==self.data_dic[node.lu.lu_id]:
-                self.C+=1
-            else:
-                if not (pos == 0 and neg == 0 and amb == 0):
-                    print 'bad Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
-                    self.data_dic[node.lu.lu_id]
-            print 'Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
-                self.data_dic[node.lu.lu_id]
+            if res!=-2:
+                self.data_dic[node.lu.lu_id]=res
+            #if res==self.data_dic[node.lu.lu_id]:
+            #    self.C+=1
+
+            #if not (pos == 0 and neg == 0 and amb == 0):
+            #    print 'bad Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - ', \
+            #        self.data_dic[node.lu.lu_id]
+            print 'Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - '#, \
+            #    self.data_dic[node.lu.lu_id]
             if pos==0 and neg==0 and amb==0:
                 self.NONE+=1
 

@@ -75,9 +75,10 @@ class Finder(object):
         print 'FREQ ', frequency_dic
         print 'synonimy  ', inner_synset_rel
 
-    def find_nearest_simple(self,lu_graph, list_of_polar, lu_synset_dic, depth,synset_rel):
+    def find_nearest_simple(self,lu_graph, list_of_polar, lu_synset_dic=None, depth=5, synset_rel=False):
         distances=dict()
         polarized_nodes=list()
+        print 'lis ',len(list_of_polar)
         for node in lu_graph.all_nodes():
             if node.lu.lu_id in list_of_polar:
                 polarized_nodes.append(node)
@@ -121,3 +122,4 @@ class Finder(object):
             else:
                 frequency_dic[distances[key]] = 1
         print 'FREQ ', frequency_dic
+        return distances

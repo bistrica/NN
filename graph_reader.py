@@ -13,6 +13,7 @@ class GraphReader(object):
     not_disamb_list = list()
     positive_list = list()  # cur.fetchall()
     negative_list = list()  # cur.fetchall()
+    amb_list = list()
     list_of_dicts = list()
     list_of_polar = dict()
     synsets_polar = dict()
@@ -76,6 +77,12 @@ class GraphReader(object):
 
         for row in cur.fetchall():
             self.positive_list.append(row[0])
+
+        cur.execute(
+            "SELECT l.ID from lexicalunit l where l.comment like '% amb %'")
+
+        for row in cur.fetchall():
+            self.amb_list.append(row[0])
 
         print 'n ', len(self.negative_list)
         print 'p ', len(self.positive_list)
@@ -155,7 +162,7 @@ class GraphReader(object):
 
 
                 if idL in self.not_disamb_list:
-                    self.list_of_polar[n.lu.lu_id] = 0
+                    #self.list_of_polar[n.lu.lu_id] = 0
                     continue
                 elif idL in self.positive_list:
 
@@ -165,6 +172,9 @@ class GraphReader(object):
 
                     self.list_of_polar[n.lu.lu_id] = -1
                     # print 'NEG'
+                elif idL in self.amb_list:
+
+                    self.list_of_polar[n.lu.lu_id] = 0
                 #else:
                     #self.list_of_polar[n.lu.lu_id] = -2
                     # list_of_polar[lu.lu_id] = 0 #zakom. do testu rozpiecia
@@ -374,6 +384,12 @@ class GraphReader(object):
     # def search_polarization_level(node):
     #    if node.lu_\
 path = '/home/aleksandradolega/'
+
+def create_neighbourhood(graph,depth):
+    finder=Finder()
+    freq_map=finder.find_nearest_simple(graph.lu_graph, graph.list_of_polar, depth=depth)
+    return freq_map
+
 def create():
 
     merged_graph_path=path+'merged_graph.xml.gz'
@@ -390,22 +406,71 @@ def create():
 
     gg.save_graph(path+'withsyn_5.xml')
 
-create()
+#create()
+
+def make_comparator(less_than):
+    def compare(x, y):
+        if less_than(x, y):
+            return -1
+        elif less_than(y, x):
+            return 1
+        else:
+            return 0
+    return compare
+
+def cmpValue(node1, node2):
+    n1=0
+    n2=0
+    for n in node1.all_edges():
+        n1+=1
+    for n in node2.all_edges():
+        n2+=1
+    return n1 > n2
 
 print 'GR'
 g2=GraphReader(path+'withsyn_5.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
+depth=10
+freq_map=create_neighbourhood(g2,depth)
+freq_set=list()
 print 'PR'
 pr=Propagator(0,g2.list_of_polar)
+for i in range(1,depth,1):
+    freq_set.append(list())
+for k in freq_map.keys():
+    freq_set[freq_map[k]-1].append(k)
+for i in range(len(freq_set)):
+    freq_set[i] = sorted(freq_set[i], cmp=make_comparator(cmpValue),reverse=True)
+#for l in sortedDict:
+#    print l
+#    x=0
+#    for f in l.all_edges():
+#        x+=1
+#    print '>',x
+#print 'ss ',sortedDict
+for i in range(len(freq_set)):
+    for elem in freq_set[i]:
+        pr.evaluate_node_percent(elem)
+
+target = open('/home/alldata.txt', 'w')
+target2 = open('/home/onlynew.txt', 'w')
+for key in pr.data_dic.keys():
+    target.write(key+' '+g2.lu_nodes[key].lemma+', '+g2.lu_nodes[key].variant+', ',pr.data_dic[key])
+    if key not in g2.list_of_polar.keys():
+        target2.write(key + ' ' + g2.lu_nodes[key].lemma + ', ' + g2.lu_nodes[key].variant + ', ', pr.data_dic[key])
+target.close()
+target2.close()
+
+
 c=0
 #for n in g2.lu_nodes():
-for id in g2.list_of_polar:
-    n=g2.lu_nodes[id]
-    c+=1
+#for id in g2.list_of_polar:
+#    n=g2.lu_nodes[id]
+#    c+=1
     #if c==20:
     #    break
-    print 'EV',n
-    pr.evaluate_node_percent(n)
-l=0
+#    print 'EV',n
+#    pr.evaluate_node_percent(n)
+#l=0
 #for e in g2.lu_graph.all_edges():
 #    l+=1
 #print 'L ',l
@@ -415,3 +480,5 @@ l=0
 #        if e.rel_id==-8:
 #            print 'N: ',n,' ',e.rel_id,' ',e.source().lu.lemma, e.source().lu.variant, ' -> ', e.target().lu.lemma,e.target().lu.variant
 #    print '***'
+
+#g2.save_graph(path+'withsyn_ADDED.xml')
