@@ -5,6 +5,8 @@ import MySQLdb
 from sklearn.neural_network import MLPClassifier
 from summarizer import Finder
 from propagator import Propagator
+from Neural import NeuralNet
+import numpy
 
 class GraphReader(object):
     finder = Finder()
@@ -429,17 +431,42 @@ def cmpValue(node1, node2):
 
 print 'GR'
 g2=GraphReader(path+'withsyn_5.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
-depth=3
-freq_map=create_neighbourhood(g2,depth)
-freq_set=list()
-print 'PR'
+depth=2
+
 pr=Propagator(0,g2.list_of_polar)
-for i in range(1,depth,1):
-    freq_set.append(list())
-for k in freq_map.keys():
-    freq_set[freq_map[k]-1].append(k)
-for i in range(len(freq_set)):
-    freq_set[i] = sorted(freq_set[i], cmp=make_comparator(cmpValue),reverse=True)
+
+X_train=list()
+Y_train=list()
+for pol in g2.list_of_polar.keys():
+    vec,label=pr.get_vector(g2.lu_nodes[pol])
+    vec=numpy.asarray(vec)
+    #vec=vec.reshape(-1, 1)
+    print 'VC ',vec.ndim
+    X_train.append(vec)
+    Y_train.append(label)
+
+per=0.9
+X=[X_train[:int(per*len(X_train))],X_train[int(per*len(X_train)):]]
+Y=[Y_train[:int(per*len(Y_train))],Y_train[int(per*len(Y_train)):]]
+neu=NeuralNet()
+neu.create_neural(X[0],Y[0],X[1],Y[1])
+
+counter=0
+while counter>0:
+    counter-=1
+    freq_map=create_neighbourhood(g2,depth)
+    print 'freq map ',freq_map
+    freq_set = list()
+    print 'PR'
+
+    for i in range(1,depth,1):
+        freq_set.append(list())
+    for k in freq_map.keys():
+        if freq_map[k]==0:
+            continue
+        freq_set[freq_map[k]-1].append(k)
+    for i in range(len(freq_set)):
+        freq_set[i] = sorted(freq_set[i], cmp=make_comparator(cmpValue),reverse=True)
 #for l in sortedDict:
 #    print l
 #    x=0
@@ -447,32 +474,41 @@ for i in range(len(freq_set)):
 #        x+=1
 #    print '>',x
 #print 'ss ',sortedDict
-for i in range(len(freq_set)):
-    for elem in freq_set[i]:
-        pr.evaluate_node_percent(elem)
+    for i in range(len(freq_set)):
+        for elem in freq_set[i]:
+            pr.evaluate_node_percent(elem)
 
-target = open(path+'alldata.txt', 'w')
-target2 = open(path+'onlynew.txt', 'w')
-for key in pr.data_dic.keys():
-    target.write(str(key))
-    target.write(', ')
-    target.write(g2.lu_nodes[key].lemma)
-    target.write(', ')
-    target.write(g2.lu_nodes[key].variant)
-    target.write(', ')
-    target.write(pr.data_dic[key])
-    target.write('\n')
-    if key not in g2.list_of_polar.keys():
-        target2.write(key)
-        target2.write(', ')
-        target2.write(g2.lu_nodes[key].lemma)
-        target2.write(', ')
-        target2.write(g2.lu_nodes[key].variant)
-        target2.write(', ')
-        target2.write(pr.data_dic[key])
-        target2.write('\n')
-target.close()
-target2.close()
+if False:
+    target = open(path+'alldata3.txt', 'w')
+    #target2 = open(path+'onlynew2.txt', 'w')
+    for key in pr.data_dic.keys():
+        target.write(str(key))
+        target.write(', ')
+        target.write(g2.lu_nodes[key].lu.lemma)
+        target.write(', ')
+        target.write(str(g2.lu_nodes[key].lu.variant))
+        target.write(', ')
+        target.write(str(pr.data_dic[key]))
+
+        #if freq_map.has_key(key):
+        #    target.write(', | ')
+        #    target.write(str(freq_map[key]))
+
+        target.write('\n')
+        #if key not in g2.list_of_polar.keys():
+        #    target2.write(key)
+        #    target2.write(', ')
+        #    target2.write(g2.lu_nodes[key].lu.lemma)
+        #    target2.write(', ')
+        #    target2.write(str(g2.lu_nodes[key].lu.variant))
+        #    target2.write(', ')
+        #    target2.write(str(pr.data_dic[key]))
+        #    if freq_map.has_key(key):
+        #        target2.write(', ')
+        #        target2.write(str(freq_map[key]))
+        #    target2.write('\n')
+    target.close()
+#target2.close()
 
 
 c=0

@@ -28,8 +28,11 @@ from summarizer import Finder
 
 
 class NeuralNet(object):
-
+    RELATIONS=18
     clf=None
+
+    #def __init__(self):
+
 
     def load_dataset(self):
         url = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
@@ -61,17 +64,22 @@ class NeuralNet(object):
         print 's -> ',len(X_train),' ',len(X_test)
         return X_train, y_train, X_val, y_val, X_test, y_test
 
-    def create_neural(self,attributes, labels, data):
+    def create_neural(self,attributes, labels, data, data_labels):
 
         self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
-                            hidden_layer_sizes=(5, 2), random_state=1)
+                            hidden_layer_sizes=(7, 2), random_state=1)#5,2
 
         self.clf.fit(attributes, labels)
-        result = self.clf.predict(data)
-        return result
+        ccc=0
+        for i in range(len(data)):
+            print self.clf.predict(data[i]), data_labels[i]
+            if self.clf.predict(data[i])==data_labels[i]:
+                ccc+=1
+        print 'res: ',ccc,'/',len(data)
+        #return result
         #print '>', clf.predict([[2., 2.], [-1., -2.]])
 
-    def create_conv(attributes, labels, data, results):
+    def create_conv(self,attributes, labels, data, results):
         X_train=attributes
         y_train=labels
         X_test=data
@@ -88,7 +96,7 @@ class NeuralNet(object):
                     ('output', layers.DenseLayer),
                     ],
             # input layer
-            input_shape=(None, 1, 28, 28),
+            input_shape=(None, 1, 1, self.RELATIONS),
             # layer conv2d1
             conv2d1_num_filters=32,
             conv2d1_filter_size=(5, 5),
@@ -111,7 +119,7 @@ class NeuralNet(object):
             dropout2_p=0.5,
             # output
             output_nonlinearity=lasagne.nonlinearities.softmax,
-            output_num_units=10,
+            output_num_units=4,
             # optimization method params
             update=nesterov_momentum,
             update_learning_rate=0.01,

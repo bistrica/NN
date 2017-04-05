@@ -19,7 +19,7 @@ class Propagator(object):
     NONE=0
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 11-hiponimia,10-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, rel_ids=[-8,10,11,12,62,104,141,169,244], weights=[15,2,2,-10,10,-4,10,10,10]):
+    def __init__(self, type, known_data_dic,  rel_ids=[-8,10,11,12,62,104,141,169,244], weights=[15,2,2,-10,10,-4,10,10,10]):#rel_ids=[-8], weights=[1]):#
         self.data_dic=known_data_dic
         for k in known_data_dic.keys():
             print k,' ',known_data_dic[k]
@@ -30,6 +30,80 @@ class Propagator(object):
 
     def simple_propagate(self):
         x=0
+
+
+    def get_vector(self,node):
+        self.rel_positive = dict()
+        self.rel_negative = dict()
+        self.rel_none = dict()
+        self.rel_amb = dict()
+
+        for e in node.all_edges():
+            #if e.source().lu.lu_id==108:
+
+            if e.rel_id in self.REL_IDS:
+
+
+                polarity=0
+                scnd_node=None
+                if e.source()==node:
+                    scnd_node=e.target()
+
+                else:
+                    scnd_node=e.source()
+                dic_to_update=dict()
+                #print ':: ',scnd_node.lu.lu_id, self.data_dic.has_key(scnd_node.lu.lu_id)
+                if self.data_dic.has_key(scnd_node.lu.lu_id):
+
+                    polarity=self.data_dic[scnd_node.lu.lu_id]
+
+                    if polarity>0:
+                        dic_to_update = self.rel_positive
+                        #print 'p: ',len(self.rel_positive)
+                    elif polarity<0:
+                        dic_to_update = self.rel_negative
+                        #print 'n: ', len(self.rel_negative)
+                    else:
+                        dic_to_update = self.rel_amb
+                        #print 'a: ', len(self.rel_amb)
+
+                else:
+
+                    dic_to_update=self.rel_none
+                    #print 'on: ', len(self.rel_none)
+                if dic_to_update.has_key(e.rel_id):
+                    dic_to_update[e.rel_id]+=1
+                else:
+                    dic_to_update[e.rel_id] = 1
+        vector_p=list()
+        vector_n = list()
+        vector_a = list()
+        vec_tuples=list()
+        #print 'None: ',none, ' cou ',count
+
+            #if not(len(self.rel_positive)!=0 and len(self.rel_negative)!=0):
+        for rel in self.REL_IDS:
+            if self.rel_positive.has_key(rel):
+                vector_p.append(self.rel_positive[rel])
+            else:
+                vector_p.append(0)
+            if self.rel_negative.has_key(rel):
+                vector_n.append(self.rel_negative[rel])
+            else:
+                vector_n.append(0)
+            if self.rel_amb.has_key(rel):
+                vector_a.append(self.rel_amb[rel])
+            else:
+                vector_a.append(0)
+
+            label=-10
+            if self.data_dic.has_key(node.lu.lu_id):
+                label=self.data_dic[node.lu.lu_id]
+
+        vector_p.extend(vector_n)
+        vector_p.extend(vector_a)
+        print 'v:',vector_p
+        return (vector_p, label)
 
     def evaluate_node_percent(self,node,percent=0.1):
 
@@ -46,7 +120,8 @@ class Propagator(object):
 
             if e.rel_id in self.REL_IDS:
                 count+=1
-                #print 'r: ', e.rel_id, e.source().lu.lemma, e.source().lu.variant, e.target().lu.lemma, e.target().lu.variant
+                if 'borowik' in node.lu.lemma:
+                    print 'r: ', e.rel_id, e.source().lu.lemma, e.source().lu.variant, e.target().lu.lemma, e.target().lu.variant
                # print 'REL IDS',self.REL_IDS
                 polarity=0
                 scnd_node=None
@@ -58,6 +133,8 @@ class Propagator(object):
                 dic_to_update=dict()
                 #print ':: ',scnd_node.lu.lu_id, self.data_dic.has_key(scnd_node.lu.lu_id)
                 if self.data_dic.has_key(scnd_node.lu.lu_id):
+                    if 'borowik' in node.lu.lemma:
+                        print ':: ', scnd_node.lu.lu_id, self.data_dic.has_key(scnd_node.lu.lu_id)
                     polarity=self.data_dic[scnd_node.lu.lu_id]
 
                     if polarity>0:
