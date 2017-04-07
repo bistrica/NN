@@ -7,6 +7,8 @@ from summarizer import Finder
 from propagator import Propagator
 from Neural import NeuralNet
 import numpy
+import time
+import copy
 
 class GraphReader(object):
     finder = Finder()
@@ -29,11 +31,15 @@ class GraphReader(object):
     lu_graph=BaseGraph
     base = BaseGraph()
 
-    def __init__(self, lu_graph_path, merged_graph_path=None, host=None, user=None, passw=None, db_name=None, rel_to_add=[10,11,20,25]):
+    def __init__(self, lu_graph_path, merged_graph_path=None, host=None, user=None, passw=None, db_name=None, rel_to_add=[10,11,12,13,14,15,19,20,21,22,23,24,25,26,27,28,29,30]):
         self.added_relations=rel_to_add
         self.lu_graph_path = lu_graph_path
         if host is not None:
+            t=time.time()
             self.get_data_from_db(host, user, passw, db_name)
+            t = time.time() - t
+            print 'Time0 ', t
+            t = time.time()
         if merged_graph_path is not None:
 
 
@@ -44,10 +50,20 @@ class GraphReader(object):
 
 
         self.lu_graph = BaseGraph()
+        t=time.time()
         self.lu_graph.unpickle(self.lu_graph_path)  # path + 'OUTPUT_GRAPHS_lu.xml.gz')
+        t=time.time()-t
+        print 'Time1 ',t
+        t = time.time()
         if merged_graph_path is None:
             self.create_map_lu_node()
+            t = time.time() - t
+            print 'Time2 ', t
+            t = time.time()
             self.create_lu_polar_list()
+            t = time.time() - t
+            print 'Time3 ', t
+            #t = time.time()
 
     #def __init__(self, final_graph_path):
     #    self.lu_graph = BaseGraph()
@@ -159,7 +175,7 @@ class GraphReader(object):
     def create_lu_polar_list(self):
 
         for n in self.lu_graph.all_nodes():
-            if not self.list_of_polar.has_key(n.lu.lu_id):
+            if True:#not self.list_of_polar.has_key(n.lu.lu_id):
                 idL = n.lu.lu_id  # str(lu.lu_id)+"L"
 
 
@@ -406,9 +422,10 @@ def create():
             ee+=1
     print 'L1: ',l, "( ",ee,")"
 
-    gg.save_graph(path+'withsyn_5.xml')
+    gg.save_graph(path+'withsyn_6_10_15_19_30.xml')
 
 #create()
+#c=9/0
 
 def make_comparator(less_than):
     def compare(x, y):
@@ -430,7 +447,7 @@ def cmpValue(node1, node2):
     return n1 > n2
 
 print 'GR'
-g2=GraphReader(path+'withsyn_5.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
+g2=GraphReader(path+'withsyn_6_10_15_19_30.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
 depth=2
 
 pr=Propagator(0,g2.list_of_polar)
@@ -448,11 +465,12 @@ for pol in g2.list_of_polar.keys():
 per=0.9
 X=[X_train[:int(per*len(X_train))],X_train[int(per*len(X_train)):]]
 Y=[Y_train[:int(per*len(Y_train))],Y_train[int(per*len(Y_train)):]]
-neu=NeuralNet()
-neu.create_neural(X[0],Y[0],X[1],Y[1])
-
-counter=0
-while counter>0:
+#neu=NeuralNet()
+#neu.create_neural(X[0],Y[0],X[1],Y[1])
+old_keys=copy.deepcopy(g2.list_of_polar)
+counter=30
+good_res=True
+while counter>0 and good_res:
     counter-=1
     freq_map=create_neighbourhood(g2,depth)
     print 'freq map ',freq_map
@@ -474,14 +492,20 @@ while counter>0:
 #        x+=1
 #    print '>',x
 #print 'ss ',sortedDict
+    good_res=False
     for i in range(len(freq_set)):
         for elem in freq_set[i]:
-            pr.evaluate_node_percent(elem)
+            res=pr.evaluate_node_percent(elem)
+            if res!=-2:
+                good_res=True
+print 'END COUNTER ',counter
 
-if False:
-    target = open(path+'alldata3.txt', 'w')
+if True:
+    target = open(path+'alldata_30levels_newEdges_onlyNew.txt', 'w')
     #target2 = open(path+'onlynew2.txt', 'w')
     for key in pr.data_dic.keys():
+        if key in old_keys.keys():
+            continue
         target.write(str(key))
         target.write(', ')
         target.write(g2.lu_nodes[key].lu.lemma)

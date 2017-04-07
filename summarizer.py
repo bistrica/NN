@@ -79,6 +79,7 @@ class Finder(object):
         distances=dict()
         polarized_nodes=list()
         print 'lis ',len(list_of_polar)
+        #c=9/0
         for node in lu_graph.all_nodes():
             if node.lu.lu_id in list_of_polar:
                 polarized_nodes.append(node)
