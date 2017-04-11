@@ -21,6 +21,8 @@ class GraphReader(object):
     list_of_dicts = list()
     list_of_polar = dict()
     synsets_polar = dict()
+    all_synset_relations=set()
+    all_lu_relations=set()
     path = '/home/aleksandradolega/'
     lu_graph_path = ''
     merged_graph_path = ''
@@ -31,12 +33,13 @@ class GraphReader(object):
     lu_graph=BaseGraph
     base = BaseGraph()
 
-    def __init__(self, lu_graph_path, merged_graph_path=None, host=None, user=None, passw=None, db_name=None, rel_to_add=[10,11,12,13,14,15,19,20,21,22,23,24,25,26,27,28,29,30]):
+    def __init__(self, lu_graph_path, merged_graph_path=None, host=None, user=None, passw=None, db_name=None, all_rels=False, rel_to_add=[10,11,12,13,14,15,19,20,21,22,23,24,25,26,27,28,29,30]):
         self.added_relations=rel_to_add
+
         self.lu_graph_path = lu_graph_path
         if host is not None:
             t=time.time()
-            self.get_data_from_db(host, user, passw, db_name)
+            self.get_data_from_db(host, user, passw, db_name, all_rels)
             t = time.time() - t
             print 'Time0 ', t
             t = time.time()
@@ -52,6 +55,8 @@ class GraphReader(object):
         self.lu_graph = BaseGraph()
         t=time.time()
         self.lu_graph.unpickle(self.lu_graph_path)  # path + 'OUTPUT_GRAPHS_lu.xml.gz')
+        for e in self.lu_graph.all_edges():
+            self.all_lu_relations.add(e.rel_id)
         t=time.time()-t
         print 'Time1 ',t
         t = time.time()
@@ -68,8 +73,12 @@ class GraphReader(object):
     #def __init__(self, final_graph_path):
     #    self.lu_graph = BaseGraph()
     #    self.lu_graph.unpickle(final_graph_path)
+    def get_all_relations(self):
+        rels=list(self.all_synset_relations)
+        rels.extend(list(self.all_lu_relations))
+        return rels
 
-    def get_data_from_db(self, host, user, passw, db_name):
+    def get_data_from_db(self, host, user, passw, db_name, all_rels):
         db = MySQLdb.connect(host=host,  # "localhost",    # your host, usually localhost
                              user=user,  # "root",         # your username
                              passwd=passw,  # "toor",  # your password
@@ -105,7 +114,13 @@ class GraphReader(object):
         print 'n ', len(self.negative_list)
         print 'p ', len(self.positive_list)
         # print 'd ', not_disamb_list
+        cur.execute(
+            "SELECT REL_ID from synsetrelation")
 
+        for row in cur.fetchall():
+            self.all_synset_relations.add(row[0])
+        if all_rels:
+            self.added_relations=list(self.all_synset_relations)
 
         cur.execute("SELECT LEX_ID, SYN_ID FROM unitandsynset")
 
@@ -412,7 +427,7 @@ def create():
 
     merged_graph_path=path+'merged_graph.xml.gz'
     lu_graph_path=path+'OUTPUT_GRAPHS_lu.xml.gz'
-    gg= GraphReader(lu_graph_path, merged_graph_path, 'localhost', 'root', 'toor', 'wordTEST')#host=None, user=None, passw=None, db_name=None)
+    gg= GraphReader(lu_graph_path, merged_graph_path, 'localhost', 'root', 'toor', 'wordTEST',all_rels=True)#host=None, user=None, passw=None, db_name=None)
     gg.read_graph()
     l=0
     ee=0
@@ -422,7 +437,7 @@ def create():
             ee+=1
     print 'L1: ',l, "( ",ee,")"
 
-    gg.save_graph(path+'withsyn_6_10_15_19_30.xml')
+    gg.save_graph(path+'withsyn_all_rels.xml')
 
 #create()
 #c=9/0
@@ -447,10 +462,10 @@ def cmpValue(node1, node2):
     return n1 > n2
 
 print 'GR'
-g2=GraphReader(path+'withsyn_6_10_15_19_30.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
+g2=GraphReader(path+'withsyn_all_rels.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
 depth=2
 
-pr=Propagator(0,g2.list_of_polar)
+pr=Propagator(0,g2.list_of_polar,rel_ids=g2.get_all_relations())
 
 X_train=list()
 Y_train=list()
@@ -458,17 +473,48 @@ for pol in g2.list_of_polar.keys():
     vec,label=pr.get_vector(g2.lu_nodes[pol])
     vec=numpy.asarray(vec)
     #vec=vec.reshape(-1, 1)
-    print 'VC ',vec.ndim
+    #print 'VC ',vec.ndim
     X_train.append(vec)
     Y_train.append(label)
 
 per=0.9
 X=[X_train[:int(per*len(X_train))],X_train[int(per*len(X_train)):]]
 Y=[Y_train[:int(per*len(Y_train))],Y_train[int(per*len(Y_train)):]]
-#neu=NeuralNet()
-#neu.create_neural(X[0],Y[0],X[1],Y[1])
+X_TEST=X[1]
+Y_TEST=Y[1]
+
+X_t=[]
+
+
+neu=NeuralNet()#len(pr.REL_IDS))neu.create_neural(X[0],Y[0],X[1],Y[1])
+neu.create_neural(X[0], Y[0], X[1], Y[1])
 old_keys=copy.deepcopy(g2.list_of_polar)
-counter=30
+counter=1
+while counter>0:
+    counter-=1
+#if True:
+    freq_map=create_neighbourhood(g2,depth)
+    #print '::',freq_map
+    for node in freq_map.keys():
+        if freq_map[node]==0:
+            continue
+        vec, label = pr.get_vector(g2.lu_nodes[node.lu.lu_id])
+        vec = numpy.asarray(vec)
+        #X_t.append(vec)
+        res=neu.predict(vec)
+        X[0].append(vec)
+        Y[0].append(res)
+        g2.list_of_polar[node.lu.lu_id]=res
+    neu.create_neural(X[0], Y[0], X[1], Y[1])
+    print counter
+print 'NEU RES, ',neu.res
+#while counter>0:
+#    counter-=1
+
+
+
+
+counter=0
 good_res=True
 while counter>0 and good_res:
     counter-=1
@@ -483,6 +529,7 @@ while counter>0 and good_res:
         if freq_map[k]==0:
             continue
         freq_set[freq_map[k]-1].append(k)
+    #sortowanie od najmniejszej liczby sasiadow
     for i in range(len(freq_set)):
         freq_set[i] = sorted(freq_set[i], cmp=make_comparator(cmpValue),reverse=True)
 #for l in sortedDict:
@@ -500,8 +547,8 @@ while counter>0 and good_res:
                 good_res=True
 print 'END COUNTER ',counter
 
-if True:
-    target = open(path+'alldata_30levels_newEdges_onlyNew.txt', 'w')
+if False:
+    target = open(path+'alldata_30levels_allEdges_onlyNew.txt', 'w')
     #target2 = open(path+'onlynew2.txt', 'w')
     for key in pr.data_dic.keys():
         if key in old_keys.keys():

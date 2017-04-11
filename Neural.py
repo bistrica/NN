@@ -28,41 +28,10 @@ from summarizer import Finder
 
 
 class NeuralNet(object):
-    RELATIONS=18
+    RELATIONS=24
     clf=None
+    res=''
 
-    #def __init__(self):
-
-
-    def load_dataset(self):
-        url = 'http://deeplearning.net/data/mnist/mnist.pkl.gz'
-        filename = 'mnist.pkl.gz'
-        if not os.path.exists(filename):
-            print("Downloading MNIST dataset...")
-            urlretrieve(url, filename)
-        with gzip.open(filename, 'rb') as f:
-            data = pickle.load(f)
-        X_train, y_train = data[0]
-        X_val, y_val = data[1]
-        X_test, y_test = data[2]
-        X_val = X_val.reshape((-1, 1, 28, 28))
-        X_test = X_test.reshape((-1, 1, 28, 28))
-        y_train = y_train.astype(np.uint8)
-        y_val = y_val.astype(np.uint8)
-        y_test = y_test.astype(np.uint8)
-
-        dataset_size = len(X_train)
-        #X_train = X_train.reshape(dataset_size, -1)
-
-        dataset_size2 = len(X_test)
-        #X_test = X_test.reshape(dataset_size2, -1)
-
-        #X_train=X_train[:50000]
-        #y_train = y_train[:50000]
-        #X_test = X_test[:100]
-        #y_test = y_test[:100]
-        print 's -> ',len(X_train),' ',len(X_test)
-        return X_train, y_train, X_val, y_val, X_test, y_test
 
     def create_neural(self,attributes, labels, data, data_labels):
 
@@ -72,10 +41,11 @@ class NeuralNet(object):
         self.clf.fit(attributes, labels)
         ccc=0
         for i in range(len(data)):
-            print self.clf.predict(data[i]), data_labels[i]
+        #    print self.clf.predict(data[i]), data_labels[i]
             if self.clf.predict(data[i])==data_labels[i]:
                 ccc+=1
         print 'res: ',ccc,'/',len(data)
+        self.res=self.res+', res: '+str(ccc)+'/'+str(len(data))
         #return result
         #print '>', clf.predict([[2., 2.], [-1., -2.]])
 
@@ -96,7 +66,7 @@ class NeuralNet(object):
                     ('output', layers.DenseLayer),
                     ],
             # input layer
-            input_shape=(None, 1, 1, self.RELATIONS),
+            input_shape=(None, 1, 1, self.RELATIONS*3),
             # layer conv2d1
             conv2d1_num_filters=32,
             conv2d1_filter_size=(5, 5),

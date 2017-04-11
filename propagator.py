@@ -102,7 +102,7 @@ class Propagator(object):
 
         vector_p.extend(vector_n)
         vector_p.extend(vector_a)
-        print 'v:',vector_p
+        #print 'v:',vector_p
         return (vector_p, label)
 
     def evaluate_node_percent(self,node,percent=0.5):
