@@ -31,23 +31,62 @@ class NeuralNet(object):
     RELATIONS=24
     clf=None
     res=''
+    graph=None
+    propagator=None
+    X_train=[]
+    X_test = []
+    Y_train = []
+    Y_test = []
+
+    def __init__(self,graph,propagator):
+        self.graph=graph
+        self.propagator=propagator
 
 
-    def create_neural(self,attributes, labels, data, data_labels):
-
+    def create_neural(self):#,attributes, labels, data, data_labels):
+        print 'lenn ',len(self.X_train), len(self.Y_train)
         self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                             hidden_layer_sizes=(7, 2), random_state=1)#5,2
 
-        self.clf.fit(attributes, labels)
-        ccc=0
-        for i in range(len(data)):
-        #    print self.clf.predict(data[i]), data_labels[i]
-            if self.clf.predict(data[i])==data_labels[i]:
-                ccc+=1
-        print 'res: ',ccc,'/',len(data)
-        self.res=self.res+', res: '+str(ccc)+'/'+str(len(data))
+        self.clf.fit(self.X_train, self.Y_train)
+
         #return result
         #print '>', clf.predict([[2., 2.], [-1., -2.]])
+
+    def predict_test_set(self):
+        ccc = 0
+        for i in range(len(self.Y_train)):
+            #    print self.clf.predict(data[i]), data_labels[i]
+            if self.clf.predict(self.Y_train[i]) == self.Y_test[i]:
+                ccc += 1
+        print 'res: ', ccc, '/', len(self.Y_train)
+        self.res = self.res + ', res: ' + str(ccc) + '/' + str(len(self.Y_train))
+
+    def create_data(self,percent):
+        X_train = list()
+        Y_train = list()
+        for pol in self.graph.list_of_polar.keys():
+            vec, label = self.propagator.get_vector(self.graph.lu_nodes[pol])
+            vec = numpy.asarray(vec)
+            # vec=vec.reshape(-1, 1)
+            # print 'VC ',vec.ndim
+            X_train.append(vec)
+            Y_train.append(label)
+        X = [X_train[:int(percent * len(X_train))], X_train[int(percent * len(X_train)):]]
+        Y = [Y_train[:int(percent * len(Y_train))], Y_train[int(percent * len(Y_train)):]]
+        print '.',len(X[0]),len(X[1])
+        print len(Y[0]), len(Y[1])
+        self.X_train=X[0]
+        self.Y_train=Y[0]
+        self.X_test=X[1]
+        self.Y_test=Y[1]
+        return self.X_train, self.X_test, self.Y_train, self.Y_test# X[0],X[1],Y[0],Y[1]
+
+    def append_training_item(self,item):
+        self.X_train=item
+
+    def append_training_label(self,item):
+        self.X_test=item
 
     def create_conv(self,attributes, labels, data, results):
         X_train=attributes
@@ -110,7 +149,12 @@ class NeuralNet(object):
         plt.show()
 
     def predict(self,data):
-        result=self.clf.predict(data)
+        if isinstance(data,list):
+            result=[]
+            for item in data:
+                result.append(self.clf.predict(data))
+        else:
+            result=self.clf.predict(data)
         return result
 
     def compare(result, ground_truth):

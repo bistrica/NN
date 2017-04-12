@@ -37,12 +37,9 @@ class GraphReader(object):
         self.added_relations=rel_to_add
 
         self.lu_graph_path = lu_graph_path
-        if host is not None:
-            t=time.time()
-            self.get_data_from_db(host, user, passw, db_name, all_rels)
-            t = time.time() - t
-            print 'Time0 ', t
-            t = time.time()
+        full_lu_graph=False#merged_graph_path is None
+
+
         if merged_graph_path is not None:
 
 
@@ -55,12 +52,25 @@ class GraphReader(object):
         self.lu_graph = BaseGraph()
         t=time.time()
         self.lu_graph.unpickle(self.lu_graph_path)  # path + 'OUTPUT_GRAPHS_lu.xml.gz')
+        for n in self.lu_graph.all_nodes():
+            if hasattr(n.lu,'polarity'):
+                full_lu_graph=True
+            break
+        print 'FULL ',full_lu_graph
+        #c=8/0
+        if host is not None:
+            t=time.time()
+            self.get_data_from_db(host, user, passw, db_name, all_rels, full_lu_graph)
+            t = time.time() - t
+            print 'Time0 ', t
+            t = time.time()
+
         for e in self.lu_graph.all_edges():
             self.all_lu_relations.add(e.rel_id)
         t=time.time()-t
         print 'Time1 ',t
         t = time.time()
-        if merged_graph_path is None:
+        if True:#merged_graph_path is None:
             self.create_map_lu_node()
             t = time.time() - t
             print 'Time2 ', t
@@ -68,52 +78,69 @@ class GraphReader(object):
             self.create_lu_polar_list()
             t = time.time() - t
             print 'Time3 ', t
-            #t = time.time()
 
-    #def __init__(self, final_graph_path):
-    #    self.lu_graph = BaseGraph()
-    #    self.lu_graph.unpickle(final_graph_path)
+
     def get_all_relations(self):
         rels=list(self.all_synset_relations)
         rels.extend(list(self.all_lu_relations))
         return rels
 
-    def get_data_from_db(self, host, user, passw, db_name, all_rels):
+
+    def get_data_from_db(self, host, user, passw, db_name, all_rels, is_graph_full):
         db = MySQLdb.connect(host=host,  # "localhost",    # your host, usually localhost
                              user=user,  # "root",         # your username
                              passwd=passw,  # "toor",  # your password
                              db=db_name)  # "wordTEST")        # name of the data base
 
         cur = db.cursor()
+        if not is_graph_full:
+            cur.execute("SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
 
-        cur.execute("SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
+                #"SELECT l.ID from lexicalunit l join lexicalunit l2 on l.lemma=l2.lemma where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l2.comment like '%+ m' or l2.comment like '%+ s' or l2.comment like '%+ m %' or l2.comment like '%+ s %')")
 
-            #"SELECT l.ID from lexicalunit l join lexicalunit l2 on l.lemma=l2.lemma where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l2.comment like '%+ m' or l2.comment like '%+ s' or l2.comment like '%+ m %' or l2.comment like '%+ s %')")
+            for row in cur.fetchall():
+                self.not_disamb_list.append(row[0])
 
-        for row in cur.fetchall():
-            self.not_disamb_list.append(row[0])
+            cur.execute(
+                "SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %')")
 
-        cur.execute(
-            "SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %')")
+            for row in cur.fetchall():
+                self.negative_list.append(row[0])
 
-        for row in cur.fetchall():
-            self.negative_list.append(row[0])
+            cur.execute(
+                "SELECT l.ID from lexicalunit l where (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
 
-        cur.execute(
-            "SELECT l.ID from lexicalunit l where (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
+            for row in cur.fetchall():
+                self.positive_list.append(row[0])
 
-        for row in cur.fetchall():
-            self.positive_list.append(row[0])
+            cur.execute(
+                "SELECT l.ID from lexicalunit l where l.comment like '% amb %'")
 
-        cur.execute(
-            "SELECT l.ID from lexicalunit l where l.comment like '% amb %'")
+            for row in cur.fetchall():
+                self.amb_list.append(row[0])
 
-        for row in cur.fetchall():
-            self.amb_list.append(row[0])
+            print 'n ', len(self.negative_list)
+            print 'p ', len(self.positive_list)
+            # print 'd ', not_disamb_list
 
-        print 'n ', len(self.negative_list)
-        print 'p ', len(self.positive_list)
-        # print 'd ', not_disamb_list
+            cur.execute("SELECT LEX_ID, SYN_ID FROM unitandsynset")
+
+            syns_map = dict()
+
+            for row in cur.fetchall():
+                if syns_map.has_key(row[1]):
+                    syns_map[row[1]].append(row[0])
+
+                else:
+                    lex = list()
+                    lex.append(row[0])
+                    syns_map[row[1]] = lex
+
+                self.lu_synset_dic[row[0]] = syns_map[row[1]]
+
+            print 'SYNS M ', len(syns_map), ' , ', len(self.lu_synset_dic)
+
+
         cur.execute(
             "SELECT REL_ID from synsetrelation")
 
@@ -122,22 +149,7 @@ class GraphReader(object):
         if all_rels:
             self.added_relations=list(self.all_synset_relations)
 
-        cur.execute("SELECT LEX_ID, SYN_ID FROM unitandsynset")
 
-        syns_map = dict()
-
-        for row in cur.fetchall():
-            if syns_map.has_key(row[1]):
-                syns_map[row[1]].append(row[0])
-
-            else:
-                lex = list()
-                lex.append(row[0])
-                syns_map[row[1]] = lex
-
-            self.lu_synset_dic[row[0]] = syns_map[row[1]]
-
-        print 'SYNS M ', len(syns_map), ' , ', len(self.lu_synset_dic)
         db.close()
 
     clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
@@ -190,28 +202,38 @@ class GraphReader(object):
     def create_lu_polar_list(self):
 
         for n in self.lu_graph.all_nodes():
+            if hasattr(n.lu, 'polarity') and n.lu.polarity!=None:
+                self.list_of_polar[n.lu.lu_id] = n.lu.polarity
+                continue
             if True:#not self.list_of_polar.has_key(n.lu.lu_id):
                 idL = n.lu.lu_id  # str(lu.lu_id)+"L"
 
 
                 if idL in self.not_disamb_list:
                     #self.list_of_polar[n.lu.lu_id] = 0
+                    n.lu.polarity = None
                     continue
                 elif idL in self.positive_list:
 
                     self.list_of_polar[n.lu.lu_id] = 1
+                    n.lu.polarity=1
                     # print 'POS'
                 elif idL in self.negative_list:
 
                     self.list_of_polar[n.lu.lu_id] = -1
+                    n.lu.polarity=-1
                     # print 'NEG'
                 elif idL in self.amb_list:
 
                     self.list_of_polar[n.lu.lu_id] = 0
+                    n.lu.polarity=0
+                else:
+                    n.lu.polarity = None
                 #else:
                     #self.list_of_polar[n.lu.lu_id] = -2
                     # list_of_polar[lu.lu_id] = 0 #zakom. do testu rozpiecia
-
+        #for n in self.lu_graph.all_nodes():
+        #    print 'N ',n.lu.polarity
 
 
     def create_lu_syn_polar_list(self, percent=0.5):
@@ -261,7 +283,7 @@ class GraphReader(object):
             if non:
                 print n.synset.synset_id, '--> ', local_polar
 
-        print 'CCC ', cc
+
         # if count<0.1*len(local_polar):
         #   polarity=sum(local_polar)
         #  if  polarity < 0:
@@ -429,6 +451,8 @@ def create():
     lu_graph_path=path+'OUTPUT_GRAPHS_lu.xml.gz'
     gg= GraphReader(lu_graph_path, merged_graph_path, 'localhost', 'root', 'toor', 'wordTEST',all_rels=True)#host=None, user=None, passw=None, db_name=None)
     gg.read_graph()
+    #for n in gg.lu_graph.all_nodes():
+     #   print ';; ',n.lu.polarity
     l=0
     ee=0
     for e in gg.lu_graph.all_edges():
@@ -437,7 +461,7 @@ def create():
             ee+=1
     print 'L1: ',l, "( ",ee,")"
 
-    gg.save_graph(path+'withsyn_all_rels.xml')
+    gg.save_graph(path+'all_rels_appended_fieldx.xml')
 
 #create()
 #c=9/0
@@ -462,34 +486,25 @@ def cmpValue(node1, node2):
     return n1 > n2
 
 print 'GR'
-g2=GraphReader(path+'withsyn_all_rels.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
+g2=GraphReader(path+'all_rels_appended_fieldx.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
 depth=2
-
+print 'G2'
 pr=Propagator(0,g2.list_of_polar,rel_ids=g2.get_all_relations())
+print 'P2'
 
-X_train=list()
-Y_train=list()
-for pol in g2.list_of_polar.keys():
-    vec,label=pr.get_vector(g2.lu_nodes[pol])
-    vec=numpy.asarray(vec)
-    #vec=vec.reshape(-1, 1)
-    #print 'VC ',vec.ndim
-    X_train.append(vec)
-    Y_train.append(label)
-
+print 'A2'
 per=0.9
-X=[X_train[:int(per*len(X_train))],X_train[int(per*len(X_train)):]]
-Y=[Y_train[:int(per*len(Y_train))],Y_train[int(per*len(Y_train)):]]
-X_TEST=X[1]
-Y_TEST=Y[1]
-
-X_t=[]
 
 
-neu=NeuralNet()#len(pr.REL_IDS))neu.create_neural(X[0],Y[0],X[1],Y[1])
-neu.create_neural(X[0], Y[0], X[1], Y[1])
+#X_t=[]
+
+
+neu=NeuralNet(g2,pr)#len(pr.REL_IDS))neu.create_neural(X[0],Y[0],X[1],Y[1])
+X_train, X_test, Y_train, Y_test=neu.create_data(per)
+neu.create_neural()#X[0], Y[0], X[1], Y[1])
 old_keys=copy.deepcopy(g2.list_of_polar)
-counter=1
+print 'D2'
+counter=2
 while counter>0:
     counter-=1
 #if True:
@@ -502,10 +517,12 @@ while counter>0:
         vec = numpy.asarray(vec)
         #X_t.append(vec)
         res=neu.predict(vec)
-        X[0].append(vec)
-        Y[0].append(res)
+        neu.append_training_item(vec)
+        neu.append_training_label(res)
+
         g2.list_of_polar[node.lu.lu_id]=res
-    neu.create_neural(X[0], Y[0], X[1], Y[1])
+        node.lu.polarity=res
+    neu.create_neural()#X[0], Y[0], X[1], Y[1])
     print counter
 print 'NEU RES, ',neu.res
 #while counter>0:
