@@ -75,7 +75,9 @@ class Finder(object):
         print 'FREQ ', frequency_dic
         print 'synonimy  ', inner_synset_rel
 
-    def find_nearest_simple(self,lu_graph, list_of_polar, lu_synset_dic=None, depth=5, synset_rel=False):
+    def find_nearest_simple(self,lu_graph, list_of_polar, lu_synset_dic=None, depth=5, relations=[], is_all=True, synset_rel=False):
+        if len(relations)>0:
+            is_all=False
         distances=dict()
         polarized_nodes=list()
         print 'lis ',len(list_of_polar)
@@ -101,6 +103,9 @@ class Finder(object):
 
 
                 for edge in node.all_edges():
+                    if not is_all:
+                        if edge.rel_id not in relations:
+                            continue
                     if node == edge.source():
                         target = edge.target()
                         if target not in distances:

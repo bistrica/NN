@@ -5,7 +5,7 @@ import MySQLdb
 from sklearn.neural_network import MLPClassifier
 from summarizer import Finder
 from propagator import Propagator
-from Neural import NeuralNet
+from Neural import Neural
 import numpy
 import time
 import copy
@@ -185,19 +185,11 @@ class GraphReader(object):
         print 'NEG: ', len(neg)
         print 'POS: ', len(pos)
 
-    # base._g.list_properties()
-    # print 'paus'
 
-
-    # lu_graph._g.list_properties()
-
-
-    # c=0
     def create_map_lu_node(self):
         for node in self.lu_graph.all_nodes():
             self.lu_nodes[node.lu.lu_id] = node
-            #  if not lu_synset_dic.has_key(lu.lu_id):
-            #      lu_synset_dic[lu.lu_id] = n.synset  # .lu_id]=n.synset
+
 
     def create_lu_polar_list(self):
 
@@ -440,9 +432,10 @@ class GraphReader(object):
     #    if node.lu_\
 path = '/home/aleksandradolega/'
 
-def create_neighbourhood(graph,depth):
+def create_neighbourhood(propagator,graph,depth):
     finder=Finder()
-    freq_map=finder.find_nearest_simple(graph.lu_graph, graph.list_of_polar, depth=depth)
+    print 'propagator.get_relations() ',propagator.get_relations()
+    freq_map=finder.find_nearest_simple(graph.lu_graph, graph.list_of_polar, depth=depth, relations=propagator.get_relations())#g2.get_all_relations())
     return freq_map
 
 def create():
@@ -489,26 +482,29 @@ print 'GR'
 g2=GraphReader(path+'all_rels_appended_fieldx.xml',host='localhost',user='root',passw='toor',db_name='wordTEST')
 depth=2
 print 'G2'
-pr=Propagator(0,g2.list_of_polar,rel_ids=g2.get_all_relations())
+pr=Propagator(0,g2.list_of_polar)#,rel_ids=g2.get_all_relations())
 print 'P2'
 
 print 'A2'
-per=0.9
+per=0.7
 
 
 #X_t=[]
 
 
-neu=NeuralNet(g2,pr)#len(pr.REL_IDS))neu.create_neural(X[0],Y[0],X[1],Y[1])
+neu=Neural(g2,pr)#len(pr.REL_IDS))neu.create_neural(X[0],Y[0],X[1],Y[1])
 X_train, X_test, Y_train, Y_test=neu.create_data(per)
-neu.create_neural()#X[0], Y[0], X[1], Y[1])
+#neu.create_neural()#X[0], Y[0], X[1], Y[1])
+#neu.create_conv(neu.X_train,neu.Y_train,neu.X_test,neu.Y_test)
+neu.create_mlp()
 old_keys=copy.deepcopy(g2.list_of_polar)
+
 print 'D2'
-counter=2
+counter=5
 while counter>0:
     counter-=1
 #if True:
-    freq_map=create_neighbourhood(g2,depth)
+    freq_map=create_neighbourhood(pr,g2,depth)
     #print '::',freq_map
     for node in freq_map.keys():
         if freq_map[node]==0:
@@ -517,12 +513,14 @@ while counter>0:
         vec = numpy.asarray(vec)
         #X_t.append(vec)
         res=neu.predict(vec)
-        neu.append_training_item(vec)
-        neu.append_training_label(res)
+        neu.append_training_item(vec,res)
+        #neu.append_training_label(res)
 
         g2.list_of_polar[node.lu.lu_id]=res
         node.lu.polarity=res
-    neu.create_neural()#X[0], Y[0], X[1], Y[1])
+    neu.create_mlp()
+    #neu.create_neural()#X[0], Y[0], X[1], Y[1])
+    #neu.create_conv(neu.X_train, neu.Y_train, neu.X_test, neu.Y_test)
     print counter
 print 'NEU RES, ',neu.res
 #while counter>0:

@@ -27,7 +27,7 @@ from summarizer import Finder
 
 
 
-class NeuralNet(object):
+class Neural(object):
     RELATIONS=24
     clf=None
     res=''
@@ -42,6 +42,17 @@ class NeuralNet(object):
         self.graph=graph
         self.propagator=propagator
 
+    def create_mlp(self):
+        mlp=self.build_mlp()
+        mlp.fit(self.X_train,self.Y_train,200)
+        preds = mlp.predict(self.X_test)
+        cm = confusion_matrix(self.Y_test, preds)
+        plt.matshow(cm)
+        plt.title('Confusion matrix')
+        plt.colorbar()
+        plt.ylabel('True label')
+        plt.xlabel('Predicted label')
+        plt.show()
 
     def create_neural(self):#,attributes, labels, data, data_labels):
         print 'lenn ',len(self.X_train), len(self.Y_train)
@@ -49,18 +60,20 @@ class NeuralNet(object):
                             hidden_layer_sizes=(7, 2), random_state=1)#5,2
 
         self.clf.fit(self.X_train, self.Y_train)
-
+        self.predict_test_set()
         #return result
         #print '>', clf.predict([[2., 2.], [-1., -2.]])
 
     def predict_test_set(self):
         ccc = 0
-        for i in range(len(self.Y_train)):
+        for i in range(len(self.X_test)):
             #    print self.clf.predict(data[i]), data_labels[i]
-            if self.clf.predict(self.Y_train[i]) == self.Y_test[i]:
+            #print 'y_t :',self.Y_train
+            #print 'lenY ',len(self.Y_train)#TODOTypeError: object of type 'int' has no len()
+            if self.clf.predict(self.X_test[i]) == self.Y_test[i]:
                 ccc += 1
-        print 'res: ', ccc, '/', len(self.Y_train)
-        self.res = self.res + ', res: ' + str(ccc) + '/' + str(len(self.Y_train))
+        print 'res: ', ccc, '/', len(self.Y_test)
+        self.res = self.res + ', res: ' + str(ccc) + '/' + str(len(self.Y_test))
 
     def create_data(self,percent):
         X_train = list()
@@ -80,73 +93,13 @@ class NeuralNet(object):
         self.Y_train=Y[0]
         self.X_test=X[1]
         self.Y_test=Y[1]
+        print '..', len(self.X_train), len(self.X_test), len(self.Y_train), len(self.Y_test)
         return self.X_train, self.X_test, self.Y_train, self.Y_test# X[0],X[1],Y[0],Y[1]
 
-    def append_training_item(self,item):
-        self.X_train=item
+    def append_training_item(self,item,label):
+        self.X_train.append(item)
+        self.Y_train.append(label)
 
-    def append_training_label(self,item):
-        self.X_test=item
-
-    def create_conv(self,attributes, labels, data, results):
-        X_train=attributes
-        y_train=labels
-        X_test=data
-        y_test=results
-        net1 = NeuralNet(
-            layers=[('input', layers.InputLayer),
-                    ('conv2d1', layers.Conv2DLayer),
-                    ('maxpool1', layers.MaxPool2DLayer),
-                    ('conv2d2', layers.Conv2DLayer),
-                    ('maxpool2', layers.MaxPool2DLayer),
-                    ('dropout1', layers.DropoutLayer),
-                    ('dense', layers.DenseLayer),
-                    ('dropout2', layers.DropoutLayer),
-                    ('output', layers.DenseLayer),
-                    ],
-            # input layer
-            input_shape=(None, 1, 1, self.RELATIONS*3),
-            # layer conv2d1
-            conv2d1_num_filters=32,
-            conv2d1_filter_size=(5, 5),
-            conv2d1_nonlinearity=lasagne.nonlinearities.rectify,
-            conv2d1_W=lasagne.init.GlorotUniform(),
-            # layer maxpool1
-            maxpool1_pool_size=(2, 2),
-            # layer conv2d2
-            conv2d2_num_filters=32,
-            conv2d2_filter_size=(5, 5),
-            conv2d2_nonlinearity=lasagne.nonlinearities.rectify,
-            # layer maxpool2
-            maxpool2_pool_size=(2, 2),
-            # dropout1
-            dropout1_p=0.5,
-            # dense
-            dense_num_units=256,
-            dense_nonlinearity=lasagne.nonlinearities.rectify,
-            # dropout2
-            dropout2_p=0.5,
-            # output
-            output_nonlinearity=lasagne.nonlinearities.softmax,
-            output_num_units=4,
-            # optimization method params
-            update=nesterov_momentum,
-            update_learning_rate=0.01,
-            update_momentum=0.9,
-            max_epochs=10,
-            verbose=1,
-            )
-        # Train the network
-        nn = net1.fit(X_train, y_train)
-        preds = net1.predict(X_test)
-
-        cm = confusion_matrix(y_test, preds)
-        plt.matshow(cm)
-        plt.title('Confusion matrix')
-        plt.colorbar()
-        plt.ylabel('True label')
-        plt.xlabel('Predicted label')
-        plt.show()
 
     def predict(self,data):
         if isinstance(data,list):
@@ -195,3 +148,35 @@ class NeuralNet(object):
     #a=
     #createNeural(a,l)
     #predict(d)
+
+
+
+    def build_mlp(self,input_var=None):
+        x=np.asarray(self.X_train)
+        shape=x.shape[1:]
+        print 'sha ',shape
+        l_in = lasagne.layers.InputLayer(shape=shape,
+                                         input_var=input_var)
+
+        l_in_drop = lasagne.layers.DropoutLayer(l_in, p=0.2)
+
+        l_hid1 = lasagne.layers.DenseLayer(
+            l_in_drop, num_units=800,
+            nonlinearity=lasagne.nonlinearities.rectify,
+            W=lasagne.init.GlorotUniform())
+
+        l_hid1_drop = lasagne.layers.DropoutLayer(l_hid1, p=0.5)
+
+        l_hid2 = lasagne.layers.DenseLayer(
+            l_hid1_drop, num_units=800,
+            nonlinearity=lasagne.nonlinearities.rectify)
+
+        l_hid2_drop = lasagne.layers.DropoutLayer(l_hid2, p=0.5)
+
+        l_out = lasagne.layers.DenseLayer(
+            l_hid2_drop, num_units=10,
+            nonlinearity=lasagne.nonlinearities.softmax)
+
+        net = NeuralNet(l_out, update_learning_rate=0.01)
+
+        return net

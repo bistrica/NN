@@ -19,18 +19,15 @@ class Propagator(object):
     NONE=0
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic,  rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15,19,20,21,22,23,24,25,26,27,28,29,30], weights=[15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
+    def __init__(self, type, known_data_dic,  rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[]):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
         self.data_dic=known_data_dic
         #for k in known_data_dic.keys():
         #    print k,' ',known_data_dic[k]
         self.REL_IDS=rel_ids
         self.WEIGHTS=weights
 
-
-
-    def simple_propagate(self):
-        x=0
-
+    def get_relations(self):
+        return self.REL_IDS
 
     def get_vector(self,node):
         self.rel_positive = dict()
