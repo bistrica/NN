@@ -24,7 +24,7 @@ from PLWNGraphBuilder import PLWNGraph
 import MySQLdb
 from sklearn.neural_network import MLPClassifier
 from summarizer import Finder
-
+import theano.tensor as T
 
 
 class Neural(object):
@@ -33,17 +33,20 @@ class Neural(object):
     res=''
     graph=None
     propagator=None
+    hidden_layers=(32,16,8)
     X_train=[]
     X_test = []
     Y_train = []
     Y_test = []
 
-    def __init__(self,graph,propagator):
-        self.graph=graph
+    def __init__(self,propagator,hidden_layers):
+        self.graph=propagator.graph
         self.propagator=propagator
+        self.hidden_layers=tuple(hidden_layers)
 
     def create_mlp(self):
         mlp=self.build_mlp()
+        print 'kel ',len(self.X_train),len(self.Y_train)
         mlp.fit(self.X_train,self.Y_train,200)
         preds = mlp.predict(self.X_test)
         cm = confusion_matrix(self.Y_test, preds)
@@ -57,7 +60,7 @@ class Neural(object):
     def create_neural(self):#,attributes, labels, data, data_labels):
         print 'lenn ',len(self.X_train), len(self.Y_train)
         self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
-                            hidden_layer_sizes=(7, 2), random_state=1)#5,2
+                            hidden_layer_sizes=self.hidden_layers, random_state=1)#5,2
 
         self.clf.fit(self.X_train, self.Y_train)
         self.predict_test_set()
@@ -152,11 +155,22 @@ class Neural(object):
 
 
     def build_mlp(self,input_var=None):
-        x=np.asarray(self.X_train)
-        shape=x.shape[1:]
-        print 'sha ',shape
-        l_in = lasagne.layers.InputLayer(shape=shape,
-                                         input_var=input_var)
+
+
+
+        self.X_train = np.asarray(self.X_train)
+        self.X_test = np.asarray(self.X_test)
+        #self.X_train = self.X_train.reshape((len(self.X_train),1,len(self.X_train[0])))
+
+        #self.X_test = self.X_test.reshape((len(self.X_test),1, len(self.X_test[0])))
+        shape = self.X_train.shape#[1:]
+        print 'shape ',shape,self.X_train.shape,self.X_train[0].shape
+        sha=self.X_train.shape#[0].shape
+        #input_var=np.asarray(self.X_train[0].shape)
+        #Y = T.lvector()
+        #input_var=T.tensor3('inputs')
+        l_in = lasagne.layers.InputLayer(shape=sha,
+                                         input_var=None)
 
         l_in_drop = lasagne.layers.DropoutLayer(l_in, p=0.2)
 
