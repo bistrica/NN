@@ -40,9 +40,10 @@ class Neural(object):
     Y_test = []
 
     def __init__(self,propagator,hidden_layers):
-        self.graph=propagator.graph
+        self.graph=propagator.GRAPH
         self.propagator=propagator
         self.hidden_layers=tuple(hidden_layers)
+        print 'hidde ',hidden_layers
 
     def create_mlp(self):
         mlp=self.build_mlp()

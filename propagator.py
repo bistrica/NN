@@ -20,7 +20,8 @@ class Propagator(object):
     LAYERS_UNITS=[32,16,8]
 
     network=None
-    network_path=''
+    network_path=None
+    new_lu_data_path=None
 
     rel_positive=dict()
     rel_negative=dict()
@@ -31,7 +32,7 @@ class Propagator(object):
 
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=1.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
+    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=1.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
 
         self.TYPE=type
         self.data_dic=known_data_dic
@@ -47,6 +48,8 @@ class Propagator(object):
             self.network=pickle.load(open(network, "rb" ))
         if save_network is not None and save_network!='':
             self.network_path = save_network
+        if save_new_lu_polarities is not None and save_new_lu_polarities!='':
+            self.new_lu_data_path=save_new_lu_polarities
 
     def create_neighbourhood(self, depth):
         finder = Finder()
@@ -85,11 +88,12 @@ class Propagator(object):
                             good_res = True
 
         elif self.TYPE==self.NEURAL:
+            old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
             if self.network is None:
                 self.network = Neural(self,self.LAYERS_UNITS)
                 X_train, X_test, Y_train, Y_test = self.network.create_data(0.98)
                 self.network.create_neural()  # X[0], Y[0], X[1], Y[1])
-                old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
+
 
                 training_counter=self.TRAINING_DEPTH
             else:
@@ -110,12 +114,20 @@ class Propagator(object):
 
                     self.GRAPH.list_of_polar[node.lu.lu_id] = res
                     node.lu.polarity = res
+                    self.data_dic[node.lu.lu_id]=res
                 if training_counter>0:
                     self.network.create_neural()
 
             print 'NEU RES, ', self.network.res
             if self.network_path!='' and self.network_path is not None:
-                pickle.dump(self.network, self.network_path)
+                file = open(self.network_path, 'wr+')
+                pickle.dump(self.network,file)# self.network_path)
+            if self.new_lu_data_path is not None:
+                file = open(self.new_lu_data_path, 'wr+')
+                for k in self.data_dic.keys():
+                    if k not in old_keys.keys():
+                        file.write(k,', ',self.data_dic[k],'\n')
+
 
     def make_comparator(less_than):
         def compare(x, y):
@@ -141,6 +153,8 @@ class Propagator(object):
         return self.REL_IDS
 
     def get_vector(self,node):
+        #print 'dic ',self.data_dic
+        #print 'n ',node.lu.lu_id
         self.rel_positive = dict()
         self.rel_negative = dict()
         self.rel_none = dict()

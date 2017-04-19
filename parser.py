@@ -23,6 +23,7 @@ class Parser(object):
     DEPTH = 0#
     TRAINING_DEPTH = 0#
     PERCENT = 0#
+    FILE_LEX_UNITS_WITH_NEW_POLARITY=''
 
     #parameters=[]
     def __init__(self, config_path):
@@ -44,13 +45,17 @@ class Parser(object):
                         line[1]=line[1].replace('\n','')
                         line[1] = line[1].strip()
                         if isinstance(getattr(self,line[0]),list):
-                            line[1]=line[1].replace('[','')
-                            line[1]=line[1].replace(']', '')
-                            if line[1].strip()=='':
-                                line[1]=[]
-                            else:
-                                line[1].replace(',', ' ')
-                                line[1]=list(line[1].split())
+                            if '[' in line[1]:
+
+                                line[1]=line[1].replace('[','')
+                                line[1]=line[1].replace(']', '')
+                                if line[1].strip()=='':
+                                    line[1]=[]
+                                else:
+                                    line[1]=line[1].replace(',', ' ')
+                                    line[1]=list(line[1].split())
+                                    for i in range(len(line[1])):
+                                        line[1][i]=int(line[1][i])
                         elif isinstance(getattr(self,line[0]),int):
                             print 'digit',line[0],line[1]
                             line[1]=float(line[1])
@@ -79,13 +84,14 @@ class Parser(object):
         if self.MANUAL_RELATION_TYPES == 'all':
             self.MANUAL_RELATION_TYPES = graph.get_all_relations()
         if self.PROPAGATION_TYPE == self.TYPE_MANUAL:
-            pr = Propagator(Propagator.MANUAL, graph.list_of_polar, percent=self.PERCENT, depth=self.DEPTH,
-                            rel_ids=self.MANUAL_RELATION_TYPES, weights=self.MANUAL_RELATION_WIGHTS)
+            pr = Propagator(type=Propagator.MANUAL, known_data_dic=graph.list_of_polar, graph=graph, percent=self.PERCENT, depth=self.DEPTH,
+                            rel_ids=self.MANUAL_RELATION_TYPES, weights=self.MANUAL_RELATION_WIGHTS, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
         elif self.PROPAGATION_TYPE == self.TYPE_NEURAL:
-            pr = Propagator(Propagator.NEURAL, graph.list_of_polar, depth=self.DEPTH, training_depth=self.TRAINING_DEPTH,
+            pr = Propagator(type=Propagator.NEURAL, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH, training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH)
+                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
         pr.propagate()
+
         if self.SAVE_MODIFIED_MERGED_GRAPH_PATH != '':
             graph.save_graph(self.SAVE_MODIFIED_MERGED_GRAPH_PATH)
 p=Parser('/home/aleksandradolega/config')

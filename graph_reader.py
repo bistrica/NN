@@ -184,6 +184,7 @@ class GraphReader(object):
 
         for n in self.lu_graph.all_nodes():
             if hasattr(n.lu, 'polarity') and n.lu.polarity!=None:
+                print 'po ',n.lu.lu_id,' - ',n.lu.polarity
                 self.list_of_polar[n.lu.lu_id] = n.lu.polarity
                 continue
             if True:
