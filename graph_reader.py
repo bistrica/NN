@@ -387,8 +387,6 @@ class GraphReader(object):
 
 
 
-print 'END COUNTER ',counter
-
 if False:
     target = open(path+'alldata_30levels_allEdges_onlyNew.txt', 'w')
     #target2 = open(path+'onlynew2.txt', 'w')

@@ -1,6 +1,6 @@
 from wosedon.basegraph import BaseGraph
 from Neural import Neural
-from graph_reader import GraphReader
+#from graph_reader import GraphReader
 import copy
 from summarizer import Finder
 import numpy
@@ -31,7 +31,7 @@ class Propagator(object):
 
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=1.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
+    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=1.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
 
         self.TYPE=type
         self.data_dic=known_data_dic
@@ -44,8 +44,9 @@ class Propagator(object):
         if neural_layers is not None:
             self.LAYERS_UNITS=neural_layers
         if network is not None and network!='':
-            self.network_path=network
             self.network=pickle.load(open(network, "rb" ))
+        if save_network is not None and save_network!='':
+            self.network_path = save_network
 
     def create_neighbourhood(self, depth):
         finder = Finder()
@@ -113,6 +114,8 @@ class Propagator(object):
                     self.network.create_neural()
 
             print 'NEU RES, ', self.network.res
+            if self.network_path!='' and self.network_path is not None:
+                pickle.dump(self.network, self.network_path)
 
     def make_comparator(less_than):
         def compare(x, y):
