@@ -4,12 +4,14 @@ import numpy
 class Bayes(object):
     gnb=None
     graph=None
+    propagator=None
     X_train=None
     Y_train=None
 
-    def __init__(self,graph):
+    def __init__(self,propagator):
         self.gnb = GaussianNB()
-        self.graph=graph
+        self.propagator=propagator
+        self.graph=propagator.GRAPH
         self.X_train = list()
         self.Y_train = list()
 

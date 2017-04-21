@@ -1,29 +1,23 @@
-
 from wosedon.basegraph import BaseGraph
-
 import MySQLdb
-from sklearn.neural_network import MLPClassifier
 from summarizer import Finder
-from propagator import Propagator
-from Neural import Neural
-import numpy
 import time
-import copy
+
 
 class GraphReader(object):
     finder = Finder()
     lu_synset_dic = dict()
     synsets = list()
     not_disamb_list = list()
-    positive_list = list()  # cur.fetchall()
-    negative_list = list()  # cur.fetchall()
+    positive_list = list()
+    negative_list = list()
     amb_list = list()
     list_of_dicts = list()
     list_of_polar = dict()
     synsets_polar = dict()
     all_synset_relations=set()
     all_lu_relations=set()
-    #path = '/home/aleksandradolega/'
+
     lu_graph_path = ''
     merged_graph_path = ''
 
@@ -46,12 +40,12 @@ class GraphReader(object):
             self.merged_graph_path = merged_graph_path
 
             self.base = BaseGraph()
-            self.base.unpickle(self.merged_graph_path)  # path + 'merged_graph.xml.gz') path = '/home/aleksandradolega/'
+            self.base.unpickle(self.merged_graph_path)
 
 
         self.lu_graph = BaseGraph()
         t=time.time()
-        self.lu_graph.unpickle(self.lu_graph_path)  # path + 'OUTPUT_GRAPHS_lu.xml.gz')
+        self.lu_graph.unpickle(self.lu_graph_path)
         for n in self.lu_graph.all_nodes():
             if hasattr(n.lu,'polarity'):
                 full_lu_graph=True
@@ -66,18 +60,18 @@ class GraphReader(object):
 
         for e in self.lu_graph.all_edges():
             self.all_lu_relations.add(e.rel_id)
-        print 'all lurels, ',self.all_lu_relations
+
         t=time.time()-t
         print 'Time1 ',t
         t = time.time()
-        if True:
-            self.create_map_lu_node()
-            t = time.time() - t
-            print 'Time2 ', t
-            t = time.time()
-            self.create_lu_polar_list()
-            t = time.time() - t
-            print 'Time3 ', t
+
+        self.create_map_lu_node()
+        t = time.time() - t
+        print 'Time2 ', t
+        t = time.time()
+        self.create_lu_polar_list()
+        t = time.time() - t
+        print 'Time3 ', t
 
 
     def get_all_relations(self):
@@ -120,7 +114,7 @@ class GraphReader(object):
             for row in cur.fetchall():
                 self.amb_list.append(row[0])
 
-            print '> ',len(self.amb_list),' ',len(self.negative_list),' ',len(self.positive_list)
+            #print '> ',len(self.amb_list),' ',len(self.negative_list),' ',len(self.positive_list)
 
             cur.execute("SELECT LEX_ID, SYN_ID FROM unitandsynset")
 
@@ -222,13 +216,10 @@ class GraphReader(object):
         for n in self.base.all_nodes():
             non = False
             local_polar = list()
-            # synsets.append(n.synset)
+
 
             for lu in n.synset.lu_set:
 
-                # print '> ',lu.lu_id
-                # if not lu_synset_dic.has_key(lu.lu_id):
-                #    lu_synset_dic[lu.lu_id]=n.synset#.lu_id]=n.synset
 
                 if not self.list_of_polar.has_key(lu.lu_id):
                     idL = lu.lu_id
@@ -328,123 +319,6 @@ class GraphReader(object):
                             if (self.lu_nodes[synonym].lu.lu_id,node.lu.lu_id) not in edges and (node.lu.lu_id, self.lu_nodes[synonym].lu.lu_id) not in edges:
                                 edges.add((node.lu.lu_id, self.lu_nodes[synonym].lu.lu_id))
 
-        print ' xx ', len(edges)
+
         for edge in edges:
             self.lu_graph.add_edge(self.lu_nodes[edge[0]], self.lu_nodes[edge[1]], [['rel_id', -8]], True)
-
-    MIN = -1000000
-    MAX = 3
-    MAXS = [3, 3]
-    INNER = [True, False]  # ,True,False]
-    COUNTER = [500000, 500000]
-    node_counter = 0
-    inner_synset_rel = True
-    node_counter = 100000
-    #print 'LU S ', len(lu_synset_dic)
-    # find_nearest(node_counter,inner_synset_rel,MAX)
-    #finder.find_nearest_simple(lu_graph, list_of_polar, lu_synset_dic, 4, False)  # True)
-
-
-    #for i in range(0):
-     #   MAX = MAXS[i]
-     #   inner_synset_rel = False  # INNER[i]
-     #   node_counter = COUNTER[i]
-     #   finder.find_nearest(lu_graph, list_of_polar, lu_synset_dic, node_counter, inner_synset_rel, MAX)
-
-    #for n in base.all_nodes():
-        # c+=1
-        # print n, ' syn : ',n.synset.synset_id, ', ',n.synset.lu_set
-    #    dic = dict()
-
-        # for nn in n.synset.lu_set:
-        #    print '** ',nn.lu_id,' ', nn.lemma,' ', nn.pos,' ',nn.domain,' ', nn.variant
-    #    for e in n.all_edges():
-    #        if e.target() == n:
-    #            s = 0
-
-     #       else:  # source
-     #           s = 2
-        # xx=1
-        #     if dic.has_key(e.rel):
-        #         dic[e.rel]=dic[e.rel]+1
-        # print ':: ',e.source().synset.synset_id,'---> ', e.target().synset.synset_id,' ',e, ' ',e.rel_id, ' ',e.rel
-        # for n2 in e.source().synset.lu_set:
-        #    print 'in source: ',n2.lemma,' , ',n2.lu_id
-        # for n2 in e.target().synset.lu_set:
-        #    print 'in target: ', n2.lemma, ' , ', n2.lu_id
-    #    tuple_for_dict = (n.synset.synset_id, dic)
-        # if c==10:
-        #    break
-    #x = set()
-
-    # print x
-
-    # def search_polarization_level(node):
-    #    if node.lu_\
-
-
-
-
-#create()
-#c=9/0
-
-
-
-
-
-if False:
-    target = open(path+'alldata_30levels_allEdges_onlyNew.txt', 'w')
-    #target2 = open(path+'onlynew2.txt', 'w')
-    for key in pr.data_dic.keys():
-        if key in old_keys.keys():
-            continue
-        target.write(str(key))
-        target.write(', ')
-        target.write(g2.lu_nodes[key].lu.lemma)
-        target.write(', ')
-        target.write(str(g2.lu_nodes[key].lu.variant))
-        target.write(', ')
-        target.write(str(pr.data_dic[key]))
-
-        #if freq_map.has_key(key):
-        #    target.write(', | ')
-        #    target.write(str(freq_map[key]))
-
-        target.write('\n')
-        #if key not in g2.list_of_polar.keys():
-        #    target2.write(key)
-        #    target2.write(', ')
-        #    target2.write(g2.lu_nodes[key].lu.lemma)
-        #    target2.write(', ')
-        #    target2.write(str(g2.lu_nodes[key].lu.variant))
-        #    target2.write(', ')
-        #    target2.write(str(pr.data_dic[key]))
-        #    if freq_map.has_key(key):
-        #        target2.write(', ')
-        #        target2.write(str(freq_map[key]))
-        #    target2.write('\n')
-    target.close()
-#target2.close()
-
-
-c=0
-#for n in g2.lu_nodes():
-#for id in g2.list_of_polar:
-#    n=g2.lu_nodes[id]
-#    c+=1
-    #if c==20:
-    #    break
-#    print 'EV',n
-#    pr.evaluate_node_percent(n)
-#l=0
-#for e in g2.lu_graph.all_edges():
-#    l+=1
-#print 'L ',l
-#for n in g2.lu_graph.all_nodes():
-
-#    for e in n.all_edges():
-#        if e.rel_id==-8:
-#            print 'N: ',n,' ',e.rel_id,' ',e.source().lu.lemma, e.source().lu.variant, ' -> ', e.target().lu.lemma,e.target().lu.variant
-#    print '***'
-
-#g2.save_graph(path+'withsyn_ADDED.xml')

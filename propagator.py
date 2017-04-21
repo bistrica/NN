@@ -1,6 +1,5 @@
-from wosedon.basegraph import BaseGraph
+
 from Neural import Neural
-#from graph_reader import GraphReader
 import copy
 from summarizer import Finder
 import numpy
@@ -13,7 +12,7 @@ class Propagator(object):
     NEURAL_MULTIPLE=2
     BAYES=3
 
-    PERCENT=0.5
+    PERCENT=0
     REL_IDS=[]
     WEIGHTS=[]
     TYPE=0
@@ -21,7 +20,7 @@ class Propagator(object):
     DEPTH=1
     TRAINING_DEPTH=2
     LAYERS_UNITS=[32,16,8]
-    MIN_PERCENT=0
+    #MIN_PERCENT=0
 
     network=None
     network_path=None
@@ -36,7 +35,7 @@ class Propagator(object):
 
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=1.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None,min_percent=0):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
+    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=0.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None):#,min_percent=0):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
 
         self.TYPE=type
         self.data_dic=known_data_dic
@@ -46,7 +45,7 @@ class Propagator(object):
         self.DEPTH=depth
         self.TRAINING_DEPTH=training_depth
         self.PERCENT = percent
-        self.MIN_PERCENT=min_percent
+
         if neural_layers is not None:
             self.LAYERS_UNITS=neural_layers
         if network is not None and network!='':
@@ -58,12 +57,13 @@ class Propagator(object):
 
     def create_neighbourhood(self, depth):
         finder = Finder()
-        print'x rels',self.get_relations()
+
         freq_map = finder.find_nearest_simple(self.GRAPH.lu_graph, self.GRAPH.list_of_polar, depth=depth,
                                               relations=self.get_relations())
         return freq_map
 
     def propagate(self):
+        old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
 
         if self.TYPE==self.MANUAL:
             self.propagate_manual()
@@ -73,9 +73,16 @@ class Propagator(object):
         elif self.TYPE==self.BAYES:
             self.propagate_bayes()
 
+        if self.new_lu_data_path is not None:
+            file = open(self.new_lu_data_path, 'wr+')
+            for k in self.data_dic.keys():
+                if k not in old_keys.keys():
+                    file.write(str(k) + ', ' + str(self.GRAPH.lu_nodes[k].lu.lemma) + ', ' + str(
+                        self.GRAPH.lu_nodes[k].lu.variant) + ', ' + str(self.data_dic[k]) + '\n')
+
 
     def propagate_bayes(self):
-        bayes=Bayes(self.GRAPH)
+        bayes=Bayes(self)
         bayes.create_model()
 
         counter = self.DEPTH
@@ -97,12 +104,11 @@ class Propagator(object):
                 vec = numpy.asarray(vec)
                 res = bayes.predict(vec)
 
-
                 self.GRAPH.list_of_polar[node.lu.lu_id] = res
                 node.lu.polarity = res
                 self.data_dic[node.lu.lu_id] = res
             if training_counter > 0:
-                #bayes.append_training_item(vec, res)
+                bayes.append_training_item(vec, res)
                 bayes.create_model()
 
     def propagate_manual(self):
@@ -113,10 +119,10 @@ class Propagator(object):
         while counter > 0 and good_res:
             counter -= 1
             dist_map = self.create_neighbourhood(depth + 1)
-            print 'dist_map map ', dist_map
+
             freq_set = list()
 
-            for i in range(1, depth, 1):
+            for i in range(1, depth+1, 1):
                 freq_set.append(list())
             for k in dist_map.keys():
                 if dist_map[k] == 0:
@@ -135,27 +141,27 @@ class Propagator(object):
 
 
     def propagate_neural(self):
-        # print 'NEURAL X'
+
         counter = self.DEPTH
         depth = 1
-        old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
+
 
         if self.network is None:
             self.network = Neural(self, self.LAYERS_UNITS)
             X_train, X_test, Y_train, Y_test = self.network.create_data(1.0)  # 0.9)
-            self.network.create_neural()  # X[0], Y[0], X[1], Y[1])
+            self.network.create_neural()
 
             training_counter = self.TRAINING_DEPTH
         else:
             training_counter = 0
 
-        # print 'WHILE'
+
         while counter > 0:
 
             counter -= 1
             training_counter -= 1
             dist_map = self.create_neighbourhood(depth + 1)
-            # print 'DIST MAP ',dist_map.keys()
+
             for node in dist_map.keys():
                 if dist_map[node] == 0:
                     continue
@@ -175,15 +181,10 @@ class Propagator(object):
         print 'NEU RES, ', self.network.res
         if self.network_path != '' and self.network_path is not None:
             file = open(self.network_path, 'wr+')
-            pickle.dump(self.network, file)  # self.network_path)
-        if self.new_lu_data_path is not None:
-            file = open(self.new_lu_data_path, 'wr+')
-            for k in self.data_dic.keys():
-                if k not in old_keys.keys():
-                    file.write(str(k) + ', ' + str(self.GRAPH.lu_nodes[k].lu.lemma) + ', ' + str(
-                        self.GRAPH.lu_nodes[k].lu.variant) + ', ' + str(self.data_dic[k]) + '\n')
+            pickle.dump(self.network, file)
 
-    def make_comparator(less_than):
+
+    def make_comparator(self,less_than):
         def compare(x, y):
             if less_than(x, y):
                 return -1
@@ -194,7 +195,7 @@ class Propagator(object):
 
         return compare
 
-    def cmpValue(node1, node2):
+    def cmpValue(self,node1, node2):
         n1 = 0
         n2 = 0
         for n in node1.all_edges():
@@ -207,15 +208,13 @@ class Propagator(object):
         return self.REL_IDS
 
     def get_vector(self,node):
-        #print 'dic ',self.data_dic
-        #print 'n ',node.lu.lu_id
+
         self.rel_positive = dict()
         self.rel_negative = dict()
         self.rel_none = dict()
         self.rel_amb = dict()
         count=0
-        #print 'relid ',self.REL_IDS
-        #print 'no ',node.lu.lu_id
+
         for e in node.all_edges():
             #print 'e.r',e.rel_id
             if e.rel_id in self.REL_IDS:
@@ -272,14 +271,14 @@ class Propagator(object):
 
         vector_p.extend(vector_n)
         vector_p.extend(vector_a)
-        #print 'v:',vector_p
-        if count==0 or float(sum(vector_p))/float(count)<=self.MIN_PERCENT:
+
+        if count==0 or float(sum(vector_p))/float(count)<=self.PERCENT:
             return (None,None)
         return (vector_p, label)
 
     def evaluate_node_percent(self,node):
         percent=self.PERCENT
-        self.CN+=1
+
         self.rel_positive = dict()
         self.rel_negative = dict()
         self.rel_none = dict()
@@ -329,7 +328,7 @@ class Propagator(object):
         vec_tuples=list()
 
         if count!=0 and none!=count and (count-none)>=percent*count:
-            #if not(len(self.rel_positive)!=0 and len(self.rel_negative)!=0):
+
             for rel in self.REL_IDS:
                 if self.rel_positive.has_key(rel):
                     vector_p.append(self.rel_positive[rel])
@@ -364,8 +363,8 @@ class Propagator(object):
                     neg=0
 
 
-            print 'vec ',vector_p,' -  ',vector_n, ' - ',vector_a
-            print 'f Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - '
+            #print 'vec ',vector_p,' -  ',vector_n, ' - ',vector_a
+            #print 'f Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - '
             if self.data_dic.has_key(node.lu.lu_id):
                 print '[',self.data_dic[node.lu.lu_id],']'
 
@@ -386,5 +385,5 @@ class Propagator(object):
             if res!=-2:
                 self.data_dic[node.lu.lu_id]=res
 
-            print res,' Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - '#, \
+            #print res,' Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - '#, \
             return res

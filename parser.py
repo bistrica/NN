@@ -7,7 +7,7 @@ class Parser(object):
     TYPE_NEURAL='NEURAL'
     TYPE_NEURAL_MULTIPLE='NEURAL_MULTIPLE'
     TYPE_BAYES='BAYES'
-    TYPES=[TYPE_NEURAL,TYPE_MANUAL]
+    TYPES=[TYPE_NEURAL,TYPE_MANUAL,TYPE_BAYES]#TYPE_NEURAL_MULTIPLE
     MANUAL_RELATION_TYPES=[]#
     MANUAL_RELATION_WIGHTS=[]#
     LAYERS_UNITS=[]#
@@ -25,15 +25,15 @@ class Parser(object):
     DEPTH = 0#
     TRAINING_DEPTH = 0#
     PERCENT = 0#
-    MIN_PERCENT=0#
+
     FILE_LEX_UNITS_WITH_NEW_POLARITY=''
 
-    #parameters=[]
+
     def __init__(self, config_path):
         f = open(config_path, 'r')
         counter=0
-        #try:
-        if True:
+        try:
+        #if True:
             for line in f:
                 counter+=1
                 if line.strip()=='':
@@ -58,14 +58,14 @@ class Parser(object):
                                     line[1]=line[1].replace(',', ' ')
                                     line[1]=list(line[1].split())
                                     for i in range(len(line[1])):
-                                        line[1][i]=int(line[1][i])
+                                        line[1][i]=float(line[1][i])
                         elif isinstance(getattr(self,line[0]),int):
                             print 'digit',line[0],line[1]
                             line[1]=float(line[1])
 
                         setattr(self, line[0],line[1])
-        #except:
-        #    raise ValueError('Wrong input in line '+str(counter)+' in config file.')
+        except:
+            raise ValueError('Wrong input in line '+str(counter)+' in config file.')
 
     def main(self):
         if self.MERGED_PATH!='' and self.LU_PATH !='':
@@ -93,7 +93,16 @@ class Parser(object):
         elif self.PROPAGATION_TYPE == self.TYPE_NEURAL:
             pr = Propagator(type=Propagator.NEURAL, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH, training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, min_percent=self.MIN_PERCENT)
+                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
+        elif self.PROPAGATION_TYPE == self.TYPE_NEURAL_MULTIPLE:
+            #TODO
+            return
+        elif self.PROPAGATION_TYPE == self.TYPE_BAYES:
+            pr = Propagator(type=Propagator.BAYES, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,
+                            training_depth=self.TRAINING_DEPTH,
+                            percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
+
         pr.propagate()
 
         if self.SAVE_MODIFIED_MERGED_GRAPH_PATH != '':

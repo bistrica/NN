@@ -1,12 +1,11 @@
 class Finder(object):
-    #print_pos_neg()
+
     def find_nearest(self,lu_graph, list_of_polar, lu_synset_dic, node_counter,inner_synset_rel,MAX, MIN):
         lu_dict=dict()
         for node in lu_graph.all_nodes():
-            #print 'N ', node_counter
+
             node_counter -= 1
             if node_counter == 0:
-                #'COUNTER STOP'
                 break
 
             current = node
@@ -18,7 +17,7 @@ class Finder(object):
             while current.lu.lu_id not in list_of_polar:
                 if queue_level[current] >= MAX:
                     distance = 2 * MIN
-                    #print 'BREAK - DEEP'
+
                     break
                 visited.append(current)
                 found = False
@@ -35,11 +34,9 @@ class Finder(object):
                         print 'WRONG KEY ', current.lu.lu_id,' ',current.lu.lemma,' ',current.lu.variant
 
                     if found:
-                        #print 'SYNONYM'
                         break
 
                 for item in current.all_edges():
-                    # print item.source().lu.lu_id," (",item.source().lu.lemma,") --> ",item.target().lu.lu_id," (",item.target().lu.lemma,")",item.rel_id
                     if current == item.source():
                         target = item.target()
                         if target not in visited:
@@ -52,36 +49,31 @@ class Finder(object):
                             queue_level[source] = queue_level[current] + 1
                 if len(queue) == 0:
                     distance = MIN
-                    #print 'BREAK'
+
                     break
                 current = queue[0]
                 queue.remove(current)
-                # if queue_level[current]>MAX:
-                #    print 'BREAK - DEEP'
-                #    break
 
             if distance > MIN:
                 distance = queue_level[current]
             lu_dict[node.lu.lu_id] = distance
-            #print 'LU DIC : ', len(lu_dict)
 
-        print 'LU DIC : ', len(lu_dict)
+
+
         frequency_dic = dict()
         for key in lu_dict.keys():
             if frequency_dic.has_key(lu_dict[key]):
                 frequency_dic[lu_dict[key]] += 1
             else:
                 frequency_dic[lu_dict[key]] = 1
-        print 'FREQ ', frequency_dic
-        print 'synonimy  ', inner_synset_rel
+
 
     def find_nearest_simple(self,lu_graph, list_of_polar, lu_synset_dic=None, depth=5, relations=[], is_all=True, synset_rel=False):
         if len(relations)>0:
             is_all=False
         distances=dict()
         polarized_nodes=list()
-        print 'lis ',len(list_of_polar)
-        #c=9/0
+
         for node in lu_graph.all_nodes():
             if node.lu.lu_id in list_of_polar:
                 polarized_nodes.append(node)
@@ -95,7 +87,7 @@ class Finder(object):
 
                     if lu_synset_dic.has_key(node.lu.lu_id):
                         synset = lu_synset_dic[node.lu.lu_id]
-                        for synonym in synset:#.lu_set:
+                        for synonym in synset:
                             if synonym in list_of_polar:
                                 if not (node in distances and distances[node]==0):
                                     distances[node] = 1
@@ -119,13 +111,11 @@ class Finder(object):
 
             level+=1
             polarized_nodes=new_polar_nodes
-        #print 'DIC: ',distances
-        print 'DIC LEN: ', len(distances)
+
         frequency_dic = dict()
         for key in distances.keys():
             if frequency_dic.has_key(distances[key]):
                 frequency_dic[distances[key]] += 1
             else:
                 frequency_dic[distances[key]] = 1
-        print 'FREQ ', frequency_dic
         return distances
