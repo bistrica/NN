@@ -5,6 +5,8 @@ class Parser(object):
     PROPAGATION_TYPE='MANUAL'#
     TYPE_MANUAL='MANUAL'
     TYPE_NEURAL='NEURAL'
+    TYPE_NEURAL_MULTIPLE='NEURAL_MULTIPLE'
+    TYPE_BAYES='BAYES'
     TYPES=[TYPE_NEURAL,TYPE_MANUAL]
     MANUAL_RELATION_TYPES=[]#
     MANUAL_RELATION_WIGHTS=[]#
@@ -23,6 +25,7 @@ class Parser(object):
     DEPTH = 0#
     TRAINING_DEPTH = 0#
     PERCENT = 0#
+    MIN_PERCENT=0#
     FILE_LEX_UNITS_WITH_NEW_POLARITY=''
 
     #parameters=[]
@@ -83,13 +86,14 @@ class Parser(object):
     def choose_propagation(self, graph):
         if self.MANUAL_RELATION_TYPES == 'all':
             self.MANUAL_RELATION_TYPES = graph.get_all_relations()
+        print 'manual rels ',self.MANUAL_RELATION_TYPES
         if self.PROPAGATION_TYPE == self.TYPE_MANUAL:
             pr = Propagator(type=Propagator.MANUAL, known_data_dic=graph.list_of_polar, graph=graph, percent=self.PERCENT, depth=self.DEPTH,
                             rel_ids=self.MANUAL_RELATION_TYPES, weights=self.MANUAL_RELATION_WIGHTS, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
         elif self.PROPAGATION_TYPE == self.TYPE_NEURAL:
             pr = Propagator(type=Propagator.NEURAL, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH, training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
+                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, min_percent=self.MIN_PERCENT)
         pr.propagate()
 
         if self.SAVE_MODIFIED_MERGED_GRAPH_PATH != '':

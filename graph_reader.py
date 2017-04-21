@@ -66,6 +66,7 @@ class GraphReader(object):
 
         for e in self.lu_graph.all_edges():
             self.all_lu_relations.add(e.rel_id)
+        print 'all lurels, ',self.all_lu_relations
         t=time.time()-t
         print 'Time1 ',t
         t = time.time()
@@ -92,6 +93,7 @@ class GraphReader(object):
                              db=db_name)  # "wordTEST")        # name of the data base
 
         cur = db.cursor()
+        #is_graph_full=False
         if not is_graph_full:
             cur.execute("SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
 
@@ -117,6 +119,8 @@ class GraphReader(object):
 
             for row in cur.fetchall():
                 self.amb_list.append(row[0])
+
+            print '> ',len(self.amb_list),' ',len(self.negative_list),' ',len(self.positive_list)
 
             cur.execute("SELECT LEX_ID, SYN_ID FROM unitandsynset")
 

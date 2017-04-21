@@ -59,12 +59,12 @@ class Neural(object):
         plt.show()
 
     def create_neural(self):#,attributes, labels, data, data_labels):
-        print 'lenn ',len(self.X_train), len(self.Y_train)
+        print 'lenn ',len(self.X_train), len(self.Y_train), len(self.X_test), len(self.Y_test)
         self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                             hidden_layer_sizes=self.hidden_layers, random_state=1)#5,2
 
         self.clf.fit(self.X_train, self.Y_train)
-        self.predict_test_set()
+        #self.predict_test_set()
         #return result
         #print '>', clf.predict([[2., 2.], [-1., -2.]])
 
@@ -84,6 +84,8 @@ class Neural(object):
         Y_train = list()
         for pol in self.graph.list_of_polar.keys():
             vec, label = self.propagator.get_vector(self.graph.lu_nodes[pol])
+            if vec is None:
+                continue
             vec = numpy.asarray(vec)
             # vec=vec.reshape(-1, 1)
             # print 'VC ',vec.ndim

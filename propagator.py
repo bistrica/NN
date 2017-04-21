@@ -4,11 +4,14 @@ from Neural import Neural
 import copy
 from summarizer import Finder
 import numpy
+from bayes import Bayes
 import pickle
 
 class Propagator(object):
     MANUAL=0
     NEURAL=1
+    NEURAL_MULTIPLE=2
+    BAYES=3
 
     PERCENT=0.5
     REL_IDS=[]
@@ -18,6 +21,7 @@ class Propagator(object):
     DEPTH=1
     TRAINING_DEPTH=2
     LAYERS_UNITS=[32,16,8]
+    MIN_PERCENT=0
 
     network=None
     network_path=None
@@ -32,7 +36,7 @@ class Propagator(object):
 
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=1.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
+    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, percent=1.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None,min_percent=0):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
 
         self.TYPE=type
         self.data_dic=known_data_dic
@@ -42,6 +46,7 @@ class Propagator(object):
         self.DEPTH=depth
         self.TRAINING_DEPTH=training_depth
         self.PERCENT = percent
+        self.MIN_PERCENT=min_percent
         if neural_layers is not None:
             self.LAYERS_UNITS=neural_layers
         if network is not None and network!='':
@@ -53,81 +58,130 @@ class Propagator(object):
 
     def create_neighbourhood(self, depth):
         finder = Finder()
-
+        print'x rels',self.get_relations()
         freq_map = finder.find_nearest_simple(self.GRAPH.lu_graph, self.GRAPH.list_of_polar, depth=depth,
                                               relations=self.get_relations())
         return freq_map
 
     def propagate(self):
-        counter = self.DEPTH
-        depth = 1
+
         if self.TYPE==self.MANUAL:
-            counter = 0
-            good_res = True
-            while counter > 0 and good_res:
-                counter -= 1
-                dist_map = self.create_neighbourhood(depth+1)
-                print 'dist_map map ', dist_map
-                freq_set = list()
-
-                for i in range(1, depth, 1):
-                    freq_set.append(list())
-                for k in dist_map.keys():
-                    if dist_map[k] == 0:
-                        continue
-                    freq_set[dist_map[k] - 1].append(k)
-                # sortowanie od najmniejszej liczby sasiadow
-                for i in range(len(freq_set)):
-                    freq_set[i] = sorted(freq_set[i], cmp=self.make_comparator(self.cmpValue), reverse=True)
-
-                good_res = False
-                for i in range(len(freq_set)):
-                    for elem in freq_set[i]:
-                        res = self.evaluate_node_percent(elem)
-                        if res != -2:
-                            good_res = True
+            self.propagate_manual()
 
         elif self.TYPE==self.NEURAL:
-            old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
-            if self.network is None:
-                self.network = Neural(self,self.LAYERS_UNITS)
-                X_train, X_test, Y_train, Y_test = self.network.create_data(0.98)
-                self.network.create_neural()  # X[0], Y[0], X[1], Y[1])
+            self.propagate_neural()
+        elif self.TYPE==self.BAYES:
+            self.propagate_bayes()
 
 
-                training_counter=self.TRAINING_DEPTH
-            else:
-                training_counter=0
+    def propagate_bayes(self):
+        bayes=Bayes(self.GRAPH)
+        bayes.create_model()
+
+        counter = self.DEPTH
+        training_counter=self.TRAINING_DEPTH
+        depth = 1
+
+        while counter > 0:
+
+            counter -= 1
+            training_counter -= 1
+            dist_map = self.create_neighbourhood(depth + 1)
+            # print 'DIST MAP ',dist_map.keys()
+            for node in dist_map.keys():
+                if dist_map[node] == 0:
+                    continue
+                vec, label = self.get_vector(self.GRAPH.lu_nodes[node.lu.lu_id])
+                if vec is None:
+                    continue
+                vec = numpy.asarray(vec)
+                res = bayes.predict(vec)
 
 
-            while counter > 0:
-                counter -= 1
-                training_counter-=1
-                dist_map = self.create_neighbourhood(depth + 1)
-                for node in dist_map.keys():
-                    if dist_map[node] == 0:
-                        continue
-                    vec, label = self.get_vector(self.GRAPH.lu_nodes[node.lu.lu_id])
-                    vec = numpy.asarray(vec)
-                    res = self.network.predict(vec)
-                    self.network.append_training_item(vec, res)
+                self.GRAPH.list_of_polar[node.lu.lu_id] = res
+                node.lu.polarity = res
+                self.data_dic[node.lu.lu_id] = res
+            if training_counter > 0:
+                #bayes.append_training_item(vec, res)
+                bayes.create_model()
 
-                    self.GRAPH.list_of_polar[node.lu.lu_id] = res
-                    node.lu.polarity = res
-                    self.data_dic[node.lu.lu_id]=res
-                if training_counter>0:
-                    self.network.create_neural()
+    def propagate_manual(self):
+        counter = self.DEPTH
+        depth = 1
 
-            print 'NEU RES, ', self.network.res
-            if self.network_path!='' and self.network_path is not None:
-                file = open(self.network_path, 'wr+')
-                pickle.dump(self.network,file)# self.network_path)
-            if self.new_lu_data_path is not None:
-                file = open(self.new_lu_data_path, 'wr+')
-                for k in self.data_dic.keys():
-                    if k not in old_keys.keys():
-                        file.write(k,', ',self.data_dic[k],'\n')
+        good_res = True
+        while counter > 0 and good_res:
+            counter -= 1
+            dist_map = self.create_neighbourhood(depth + 1)
+            print 'dist_map map ', dist_map
+            freq_set = list()
 
+            for i in range(1, depth, 1):
+                freq_set.append(list())
+            for k in dist_map.keys():
+                if dist_map[k] == 0:
+                    continue
+                freq_set[dist_map[k] - 1].append(k)
+            # sortowanie od najmniejszej liczby sasiadow
+            for i in range(len(freq_set)):
+                freq_set[i] = sorted(freq_set[i], cmp=self.make_comparator(self.cmpValue), reverse=True)
+
+            good_res = False
+            for i in range(len(freq_set)):
+                for elem in freq_set[i]:
+                    res = self.evaluate_node_percent(elem)
+                    if res != -2:
+                        good_res = True
+
+
+    def propagate_neural(self):
+        # print 'NEURAL X'
+        counter = self.DEPTH
+        depth = 1
+        old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
+
+        if self.network is None:
+            self.network = Neural(self, self.LAYERS_UNITS)
+            X_train, X_test, Y_train, Y_test = self.network.create_data(1.0)  # 0.9)
+            self.network.create_neural()  # X[0], Y[0], X[1], Y[1])
+
+            training_counter = self.TRAINING_DEPTH
+        else:
+            training_counter = 0
+
+        # print 'WHILE'
+        while counter > 0:
+
+            counter -= 1
+            training_counter -= 1
+            dist_map = self.create_neighbourhood(depth + 1)
+            # print 'DIST MAP ',dist_map.keys()
+            for node in dist_map.keys():
+                if dist_map[node] == 0:
+                    continue
+                vec, label = self.get_vector(self.GRAPH.lu_nodes[node.lu.lu_id])
+                if vec is None:
+                    continue
+                vec = numpy.asarray(vec)
+                res = self.network.predict(vec)
+                self.network.append_training_item(vec, res)
+
+                self.GRAPH.list_of_polar[node.lu.lu_id] = res
+                node.lu.polarity = res
+                self.data_dic[node.lu.lu_id] = res
+            if training_counter > 0:
+                self.network.create_neural()
+
+        print 'NEU RES, ', self.network.res
+        if self.network_path != '' and self.network_path is not None:
+            file = open(self.network_path, 'wr+')
+            pickle.dump(self.network, file)  # self.network_path)
+        if self.new_lu_data_path is not None:
+            file = open(self.new_lu_data_path, 'wr+')
+            for k in self.data_dic.keys():
+                if k not in old_keys.keys():
+                    file.write(str(k) + ', ' + str(self.GRAPH.lu_nodes[k].lu.lemma) + ', ' + str(
+                        self.GRAPH.lu_nodes[k].lu.variant) + ', ' + str(self.data_dic[k]) + '\n')
 
     def make_comparator(less_than):
         def compare(x, y):
@@ -159,9 +213,13 @@ class Propagator(object):
         self.rel_negative = dict()
         self.rel_none = dict()
         self.rel_amb = dict()
-
+        count=0
+        #print 'relid ',self.REL_IDS
+        #print 'no ',node.lu.lu_id
         for e in node.all_edges():
+            #print 'e.r',e.rel_id
             if e.rel_id in self.REL_IDS:
+                count+=1
                 polarity=0
                 scnd_node=None
                 if e.source()==node:
@@ -194,7 +252,6 @@ class Propagator(object):
         vector_n = list()
         vector_a = list()
         vec_tuples=list()
-
         for rel in self.REL_IDS:
             if self.rel_positive.has_key(rel):
                 vector_p.append(self.rel_positive[rel])
@@ -216,6 +273,8 @@ class Propagator(object):
         vector_p.extend(vector_n)
         vector_p.extend(vector_a)
         #print 'v:',vector_p
+        if count==0 or float(sum(vector_p))/float(count)<=self.MIN_PERCENT:
+            return (None,None)
         return (vector_p, label)
 
     def evaluate_node_percent(self,node):
@@ -269,7 +328,7 @@ class Propagator(object):
         vector_a = list()
         vec_tuples=list()
 
-        if count!=0 and none!=count and none<=percent*count:
+        if count!=0 and none!=count and (count-none)>=percent*count:
             #if not(len(self.rel_positive)!=0 and len(self.rel_negative)!=0):
             for rel in self.REL_IDS:
                 if self.rel_positive.has_key(rel):
