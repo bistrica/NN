@@ -11,6 +11,8 @@ class GraphReader(object):
     not_disamb_list = list()
     positive_list = list()
     negative_list = list()
+    positive_list_strong=list()
+    negative_list_strong=list()
     amb_list = list()
     list_of_dicts = list()
     list_of_polar = dict()
@@ -97,19 +99,31 @@ class GraphReader(object):
                 self.not_disamb_list.append(row[0])
 
             cur.execute(
-                "SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %')")
+                "SELECT l.ID from lexicalunit l where (l.comment like '%- s' or l.comment like '%- s %')")
 
             for row in cur.fetchall():
                 self.negative_list.append(row[0])
 
             cur.execute(
-                "SELECT l.ID from lexicalunit l where (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
+                "SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- m %')")
+
+            for row in cur.fetchall():
+                self.negative_list_strong.append(row[0])
+
+            cur.execute(
+                "SELECT l.ID from lexicalunit l where (l.comment like '%+ s' or l.comment like '%+ s %')")
 
             for row in cur.fetchall():
                 self.positive_list.append(row[0])
 
             cur.execute(
-                "SELECT l.ID from lexicalunit l where l.comment like '% amb %'")
+                "SELECT l.ID from lexicalunit l where (l.comment like '%+ m' or l.comment like '%+ m %'")
+
+            for row in cur.fetchall():
+                self.positive_list_strong.append(row[0])
+
+            cur.execute(
+                "SELECT l.ID from lexicalunit l where l.comment like '% amb %' or l.comment like '%A_:0' or l.comment like '%A_: 0'")
 
             for row in cur.fetchall():
                 self.amb_list.append(row[0])
@@ -197,11 +211,19 @@ class GraphReader(object):
 
                     self.list_of_polar[n.lu.lu_id] = 1
                     n.lu.polarity=1
+                elif idL in self.positive_list_strong:
+
+                    self.list_of_polar[n.lu.lu_id] = 10
+                    n.lu.polarity=10
 
                 elif idL in self.negative_list:
 
                     self.list_of_polar[n.lu.lu_id] = -1
                     n.lu.polarity=-1
+                elif idL in self.negative_list_strong:
+
+                    self.list_of_polar[n.lu.lu_id] = -10
+                    n.lu.polarity=-10
 
                 elif idL in self.amb_list:
 
@@ -230,7 +252,12 @@ class GraphReader(object):
                     if idL in self.positive_list:
                         local_polar.append(1)
                         self.list_of_polar[lu.lu_id] = 1
-
+                    elif idL in self.negative_list_strong:
+                        local_polar.append(-10)
+                        self.list_of_polar[lu.lu_id] = -10
+                    elif idL in self.positive_list_strong:
+                        local_polar.append(10)
+                        self.list_of_polar[lu.lu_id] = 10
                     elif idL in self.negative_list:
                         local_polar.append(-1)
                         self.list_of_polar[lu.lu_id] = -1
