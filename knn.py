@@ -31,9 +31,15 @@ class KNN(object):
         self.graph = propagator.GRAPH
 
     def create_model(self):
+        le=len(self.graph.list_of_polar.keys())
+        cnt=int(0.7*le)
+        ind=cnt
         if self.X_train == [] and self.Y_train == []:
 
             for pol in self.graph.list_of_polar.keys():
+                cnt-=1
+                #if cnt==0:
+                #    break
                 vec, label = self.propagator.get_vector(self.graph.lu_nodes[pol])
                 if vec is None:
                     continue
@@ -42,9 +48,24 @@ class KNN(object):
                 self.X_train.append(vec)
                 self.Y_train.append(label)
         self.knn.fit(self.X_train,self.Y_train)
+        if False:
+            x=0
+            xx=0
+            for i in range(ind,le,1):
+                vec, label = self.propagator.get_vector(self.graph.lu_nodes[pol])
+                if vec is None:
+                    continue
+                xx+=1
+                vec = numpy.asarray(vec)
+                l=self.predict(vec)
+                print 'PRED ',label,' ',l
+                if label==l:
+                    x+=1
+            print 'x/l ',x,'/',xx
+            x=2/0
 
     def predict(self,item):
-        return self.svc.predict(item)
+        return self.knn.predict(item)
 
     def append_training_item(self,vec,label):
         self.X_train.append(vec)

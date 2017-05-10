@@ -52,11 +52,15 @@ class Neural(object):
                 ccc += 1
         print 'res: ', ccc, '/', len(self.Y_test)
         self.res = self.res + ', res: ' + str(ccc) + '/' + str(len(self.Y_test))
+        #x=9/0
 
-    def create_data(self,percent):
+    def create_data(self,percent,pos=None):
         X_train = list()
         Y_train = list()
         for pol in self.graph.list_of_polar.keys():
+            if pos is not None:
+                if self.graph.lu_nodes[pol].lu.pos!=pos:
+                    continue
             vec, label = self.propagator.get_vector(self.graph.lu_nodes[pol])
             if vec is None:
                 continue

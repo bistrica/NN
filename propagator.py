@@ -7,13 +7,15 @@ from bayes import Bayes
 import pickle
 from knn import KNN
 from svm import SVM
-
+from collections import OrderedDict
 
 class Propagator(object):
     MANUAL=0
     NEURAL=1
     NEURAL_MULTIPLE=2
     BAYES=3
+    KNN=4
+    SVM=5
 
     PERCENT=0
     REL_IDS=[]
@@ -101,7 +103,11 @@ class Propagator(object):
 
         if self.new_lu_data_path is not None:
             file = open(self.new_lu_data_path, 'wr+')
-            for k in self.data_dic.keys():
+
+            self.data_dic=OrderedDict(sorted(self.data_dic.items(), key=lambda t: t[1]))
+            #keys.sort()
+            keys = self.data_dic.keys()
+            for k in keys:
                 if k not in old_keys.keys():
                     file.write(str(k) + ', ' + str(self.GRAPH.lu_nodes[k].lu.lemma) + ', ' + str(
                         self.GRAPH.lu_nodes[k].lu.variant) + ', ' + str(self.data_dic[k]) + '\n')
@@ -173,7 +179,7 @@ class Propagator(object):
 
         if self.network is None:
             self.network = Neural(self, self.LAYERS_UNITS)
-            X_train, X_test, Y_train, Y_test = self.network.create_data(1.0)  # 0.9)
+            X_train, X_test, Y_train, Y_test = self.network.create_data(1.0)
             self.network.create_neural()
 
             training_counter = self.TRAINING_DEPTH
@@ -220,7 +226,7 @@ class Propagator(object):
             for pos in self.ALL_POS:
                 if pos in self.chosen_pos:
                     network_pos = Neural(self, self.LAYERS_UNITS)
-                    network_pos.create_data(1.0)
+                    network_pos.create_data(1.0,pos)
                     network_pos.create_neural()
                 else:
                     network_pos=None
@@ -237,12 +243,12 @@ class Propagator(object):
 
             training_counter = self.TRAINING_DEPTH
         else:
-
+            print 'ELS'
             training_counter = 0
 
 
         while counter > 0:
-
+            print 'WH'
             counter -= 1
             training_counter -= 1
             dist_map = self.create_neighbourhood(depth + 1)
@@ -256,6 +262,7 @@ class Propagator(object):
                 vec = numpy.asarray(vec)
 
                 if node.lu.pos in self.chosen_pos:
+                    #print '> ',node.lu.pos-1,' ',len(self.network)
                     net=self.network[node.lu.pos-1]
 
                     res = net.predict(vec)
@@ -268,7 +275,8 @@ class Propagator(object):
                 self.data_dic[node.lu.lu_id] = res
             if training_counter > 0:
                 for net in self.network:
-                    net.create_neural()
+                    if net is not None:
+                        net.create_neural()
 
 
         #print 'NEU RES, ', self.network.res

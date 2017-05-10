@@ -117,7 +117,7 @@ class GraphReader(object):
                 self.positive_list.append(row[0])
 
             cur.execute(
-                "SELECT l.ID from lexicalunit l where (l.comment like '%+ m' or l.comment like '%+ m %'")
+                "SELECT l.ID from lexicalunit l where (l.comment like '%+ m' or l.comment like '%+ m %')")
 
             for row in cur.fetchall():
                 self.positive_list_strong.append(row[0])

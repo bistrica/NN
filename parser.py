@@ -134,7 +134,7 @@ class Parser(object):
 
         pr.propagate()
 
-        if self.SAVE_MODIFIED_MERGED_GRAPH_PATH != '':
+        if self.SAVE_MODIFIED_MERGED_GRAPH_PATH is not None:
             graph.save_graph(self.SAVE_MODIFIED_MERGED_GRAPH_PATH)
-p=Parser('/home/olusiak/Pobrane/projekt/config')
+p=Parser('/home/aleksandradolega/config')
 p.main()
