@@ -9,7 +9,8 @@ class Parser(object):
     TYPE_KNN='KNN'
     TYPE_SVM='SVM'
     TYPE_BAYES='BAYES'
-    TYPES=[TYPE_NEURAL,TYPE_MANUAL,TYPE_BAYES,TYPE_NEURAL_MULTIPLE,TYPE_SVM,TYPE_KNN]
+    TYPE_ENSEMBLE='ENSEMBLE'
+    TYPES=[TYPE_NEURAL,TYPE_MANUAL,TYPE_BAYES,TYPE_NEURAL_MULTIPLE,TYPE_SVM,TYPE_KNN,TYPE_ENSEMBLE]
     MANUAL_RELATION_TYPES=[]#
     MANUAL_RELATION_WIGHTS=[]#
     LAYERS_UNITS=[]#
@@ -129,8 +130,16 @@ class Parser(object):
         elif self.PROPAGATION_TYPE == self.TYPE_SVM:
             pr = Propagator(type=Propagator.SVM, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,normalization=self.NORMALIZATION,
                             training_depth=self.TRAINING_DEPTH,
-                            percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
+                            percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES,
                             save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL)
+        elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE:
+            pr = Propagator(type=Propagator.ENSEMBLE, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,
+                            normalization=self.NORMALIZATION,
+                            training_depth=self.TRAINING_DEPTH,
+                            percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,
+                            chosen_pos=self.CHOSEN_POS)
+
 
         pr.propagate()
 

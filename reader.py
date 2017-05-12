@@ -4,7 +4,7 @@ from os import listdir
 def summarize():
     dir='/home/aleksandradolega/'
     path1='NEURAL_5layers_75per_norm_allrels_sortedByVal_DEPTH_1.txt'#'NEURAL_MULTIPLE_3layers_50per_norm_allrels_sortedByVal_DEPTH_1.txt'
-    path2='NEURAL_4layers_75per_norm_allrels_sortedByVal_DEPTH_1.txt'
+    path2='SVM_30per_norm_allrels_sortedByVal.txt'#''NEURAL_[256,64,128,32,64,16]layers_50per_norm_allrels_sortedByVal_DEPTH_1.txt'#'NEURAL_4layers_75per_norm_allrels_sortedByVal_DEPTH_1.txt'
     save=dir+'POROWNANIE_'+path1+'_'+path2
     path1=dir+path1
     path2=dir+path2

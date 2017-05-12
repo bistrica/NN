@@ -16,6 +16,7 @@ class Propagator(object):
     BAYES=3
     KNN=4
     SVM=5
+    ENSEMBLE=6
 
     PERCENT=0
     REL_IDS=[]
@@ -100,7 +101,54 @@ class Propagator(object):
         elif self.TYPE==self.SVM:
             classifier=SVM(self)
             self.propagate_classifier(classifier)
+        elif self.TYPE==self.ENSEMBLE:
+            data0 = copy.deepcopy(self.data_dic)
+            classifier=SVM(self)
+            self.propagate_classifier(classifier)
+            data1 = copy.deepcopy(self.data_dic)
+            self.data_dic=copy.deepcopy(data0)
+            self.propagate_neural_multiple()
+            data2 = copy.deepcopy(self.data_dic)
+            self.data_dic = copy.deepcopy(data0)
+            self.propagate_neural()
+            data3 = copy.deepcopy(self.data_dic)
+            new_dic=dict()
+            for k in data1.keys():
 
+                if k in data2.keys() and k in data3.keys():
+                    val1 = data1[k]
+                    val2 = data2[k]
+                    val3 = data3[k]
+                    if val1==val2 and val1==val3:
+                        new_dic[k]=data1[k]
+                    else:
+                        polar_dic=dict()
+                        polar_dic[-10]=0
+                        polar_dic[-1] = 0
+                        polar_dic[0] = 0
+                        polar_dic[1] = 0
+                        polar_dic[10] = 0
+                        polar_dic[val1]+=1
+                        polar_dic[val2]+=1
+                        polar_dic[val3]+=1
+
+                        negative=polar_dic[-10]+polar_dic[-1]
+                        positive=polar_dic[1]+polar_dic[10]
+                        if negative>0 and positive>0:
+                            continue
+                        if negative>0 and negative>polar_dic[0]:
+                            if polar_dic[-10]>polar_dic[-1]:
+                                new_dic[k]=-10
+                            else:
+                                new_dic[k]=-1
+                        elif positive>0 and positive>polar_dic[0]:
+                            if polar_dic[10]>polar_dic[1]:
+                                new_dic[k]=10
+                            else:
+                                new_dic[k]=1
+                        else:
+                            new_dic[k]=0
+            self.data_dic=new_dic
         if self.new_lu_data_path is not None:
             file = open(self.new_lu_data_path, 'wr+')
 
