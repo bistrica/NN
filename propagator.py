@@ -8,6 +8,8 @@ import pickle
 from knn import KNN
 from svm import SVM
 from collections import OrderedDict
+import thread
+__all__ = ("error", "LockType", "start_new_thread", "interrupt_main", "exit", "allocate_lock", "get_ident", "stack_size", "acquire", "release", "locked")
 
 class Propagator(object):
     MANUAL=0
@@ -41,6 +43,21 @@ class Propagator(object):
     rel_none=dict()
     rel_amb=dict()
     data_dic=None
+
+    @staticmethod
+    def create_multithread_ensemble(pr,pr2,pr3,path):
+
+        old_keys = copy.deepcopy(pr.GRAPH.list_of_polar)
+        try:
+            # x=0
+            thread.start_new_thread(pr.propagate(), ("Thread-1", 2,))
+            thread.start_new_thread(pr2.propagate(), ("Thread-2", 4,))
+            thread.start_new_thread(pr3.propagate(), ("Thread-3", 6,))
+        except:
+            print ("Error: unable to start thread")
+        pr.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
+        pr.new_lu_data_path=path
+        pr.save_propagated_data(old_keys)
 
 
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
@@ -82,6 +99,46 @@ class Propagator(object):
                                               relations=self.get_relations())
         return freq_map
 
+    def get_common_result(self,data1,data2,data3):
+        new_dic = dict()
+        for k in data1.keys():
+
+            if k in data2.keys() and k in data3.keys():
+                print 'k: ', k, data1[k], data2[k], data3[k]
+                val1 = data1[k]
+                val2 = data2[k]
+                val3 = data3[k]
+                if val1 == val2 and val1 == val3:
+                    new_dic[k] = data1[k]
+                else:
+                    polar_dic = dict()
+                    polar_dic[-10] = 0
+                    polar_dic[-1] = 0
+                    polar_dic[0] = 0
+                    polar_dic[1] = 0
+                    polar_dic[10] = 0
+                    polar_dic[val1] += 1
+                    polar_dic[val2] += 1
+                    polar_dic[val3] += 1
+
+                    negative = polar_dic[-10] + polar_dic[-1]
+                    positive = polar_dic[1] + polar_dic[10]
+                    if negative > 0 and positive > 0:
+                        continue
+                    if negative > 0 and negative > polar_dic[0]:
+                        if polar_dic[-10] > polar_dic[-1]:
+                            new_dic[k] = -10
+                        else:
+                            new_dic[k] = -1
+                    elif positive > 0 and positive > polar_dic[0]:
+                        if polar_dic[10] > polar_dic[1]:
+                            new_dic[k] = 10
+                        else:
+                            new_dic[k] = 1
+                    else:
+                        new_dic[k] = 0
+        return new_dic
+
     def propagate(self):
         old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
 
@@ -105,50 +162,21 @@ class Propagator(object):
             data0 = copy.deepcopy(self.data_dic)
             classifier=SVM(self)
             self.propagate_classifier(classifier)
+            self.GRAPH.list_of_polar=copy.deepcopy(old_keys)
             data1 = copy.deepcopy(self.data_dic)
             self.data_dic=copy.deepcopy(data0)
             self.propagate_neural_multiple()
+            self.GRAPH.list_of_polar = copy.deepcopy(old_keys)
             data2 = copy.deepcopy(self.data_dic)
             self.data_dic = copy.deepcopy(data0)
+            self.network=None
             self.propagate_neural()
             data3 = copy.deepcopy(self.data_dic)
-            new_dic=dict()
-            for k in data1.keys():
-
-                if k in data2.keys() and k in data3.keys():
-                    val1 = data1[k]
-                    val2 = data2[k]
-                    val3 = data3[k]
-                    if val1==val2 and val1==val3:
-                        new_dic[k]=data1[k]
-                    else:
-                        polar_dic=dict()
-                        polar_dic[-10]=0
-                        polar_dic[-1] = 0
-                        polar_dic[0] = 0
-                        polar_dic[1] = 0
-                        polar_dic[10] = 0
-                        polar_dic[val1]+=1
-                        polar_dic[val2]+=1
-                        polar_dic[val3]+=1
-
-                        negative=polar_dic[-10]+polar_dic[-1]
-                        positive=polar_dic[1]+polar_dic[10]
-                        if negative>0 and positive>0:
-                            continue
-                        if negative>0 and negative>polar_dic[0]:
-                            if polar_dic[-10]>polar_dic[-1]:
-                                new_dic[k]=-10
-                            else:
-                                new_dic[k]=-1
-                        elif positive>0 and positive>polar_dic[0]:
-                            if polar_dic[10]>polar_dic[1]:
-                                new_dic[k]=10
-                            else:
-                                new_dic[k]=1
-                        else:
-                            new_dic[k]=0
+            new_dic=self.get_common_result(data1,data2,data3)
+            print 'new dic ',new_dic
             self.data_dic=new_dic
+
+    def save_propagated_data(self,old_keys):
         if self.new_lu_data_path is not None:
             file = open(self.new_lu_data_path, 'wr+')
 
