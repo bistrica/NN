@@ -9,6 +9,8 @@ from knn import KNN
 from svm import SVM
 from collections import OrderedDict
 import thread
+import sys
+
 __all__ = ("error", "LockType", "start_new_thread", "interrupt_main", "exit", "allocate_lock", "get_ident", "stack_size", "acquire", "release", "locked")
 
 class Propagator(object):
@@ -44,25 +46,69 @@ class Propagator(object):
     rel_amb=dict()
     data_dic=None
 
-    @staticmethod
-    def create_multithread_ensemble(pr,pr2,pr3,path):
 
+
+    def create_ensemble(self):
+        if self.ensemble_path is None:
+            pr1 = Propagator(type=Propagator.SVM, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar), graph=self.GRAPH,
+                             depth=self.DEPTH,
+                             normalization=self.normalization,
+                             training_depth=self.TRAINING_DEPTH,
+                             percent=self.PERCENT, rel_ids=self.REL_IDS,
+                             kernel=self.kernel)
+            pr2 = Propagator(type=Propagator.NEURAL_MULTIPLE, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar),
+                             graph=self.GRAPH,
+                             depth=self.DEPTH, normalization=self.normalization,
+                             training_depth=self.TRAINING_DEPTH,
+                             percent=self.PERCENT, rel_ids=self.REL_IDS, neural_layers=self.LAYERS_UNITS,
+
+                             chosen_pos=self.chosen_pos)
+            pr3 = Propagator(type=Propagator.NEURAL, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar), graph=self.GRAPH,
+                             depth=self.DEPTH,
+                             training_depth=self.TRAINING_DEPTH, normalization=self.normalization,
+                             percent=self.PERCENT, rel_ids=self.REL_IDS, neural_layers=self.LAYERS_UNITS
+
+                             )
+        else:
+            [pr1, pr2, pr3] = pickle.load(open(self.ensemble_path, "rb"))
+            pr1.TRAINING_DEPTH = 0
+            pr2.TRAINING_DEPTH = 0
+            pr3.TRAINING_DEPTH = 0
+            pr1.DEPTH = self.DEPTH
+            pr2.DEPTH = self.DEPTH
+            pr3.DEPTH = self.DEPTH
+
+        self.create_multithread_ensemble(pr1, pr2, pr3)
+        if self.save_ensemble_path is not None:
+            file=open(self.save_ensemble_path, 'wr+')
+            pickle.dump([pr1, pr2, pr3], file)
+
+
+    def create_multithread_ensemble(self,pr,pr2,pr3):
         old_keys = copy.deepcopy(pr.GRAPH.list_of_polar)
         try:
-            # x=0
+
+            print '1'
             thread.start_new_thread(pr.propagate(), ("Thread-1", 2,))
+            print '2'
             thread.start_new_thread(pr2.propagate(), ("Thread-2", 4,))
+            print '3'
             thread.start_new_thread(pr3.propagate(), ("Thread-3", 6,))
         except:
-            print ("Error: unable to start thread")
+            print 'Thread error: ',sys.exc_info()
+            pr.propagate()
+            pr2.propagate()
+            pr3.propagate()
+        #    print ("Error: unable to start thread")
         pr.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
-        pr.new_lu_data_path=path
-        pr.save_propagated_data(old_keys)
+        #new_lu_data_path=path
+        self.save_propagated_data(old_keys)
+
 
 
     #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
     #-8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, normalization=False, percent=0.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None, chosen_pos=None, kernel=None, neighbours_number=None, knn_algorithm=None, knn_weights=None):#,min_percent=0):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
+    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, normalization=False, percent=0.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None, chosen_pos=None, kernel=None, neighbours_number=None, knn_algorithm=None, knn_weights=None,ensemble_path=None,save_ensemble_path=None):#,min_percent=0):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
 
         self.TYPE=type
         self.data_dic=known_data_dic
@@ -87,10 +133,12 @@ class Propagator(object):
             #elif type==Propagator.NEURAL_MULTIPLE:
                 #net_list = pickle.load(open(network, "rb"))
             #    self.network = pickle.load(open(network, "rb"))
-        if save_network is not None:# and save_network!='':
-            self.network_path = save_network
-        if save_new_lu_polarities is not None:# and save_new_lu_polarities!='':
-            self.new_lu_data_path=save_new_lu_polarities
+        #if save_network is not None:# and save_network!='':
+        self.network_path = save_network
+        #if save_new_lu_polarities is not None:# and save_new_lu_polarities!='':
+        self.new_lu_data_path=save_new_lu_polarities
+        self.ensemble_path=ensemble_path
+        self.save_ensemble_path=save_ensemble_path
 
     def create_neighbourhood(self, depth):
         finder = Finder()
@@ -158,23 +206,26 @@ class Propagator(object):
         elif self.TYPE==self.SVM:
             classifier=SVM(self)
             self.propagate_classifier(classifier)
+        #elif self.TYPE==self.ENSEMBLE:
+        #    data0 = copy.deepcopy(self.data_dic)
+        #    classifier=SVM(self)
+        #    self.propagate_classifier(classifier)
+        #    self.GRAPH.list_of_polar=copy.deepcopy(old_keys)
+        #    data1 = copy.deepcopy(self.data_dic)
+        #    self.data_dic=copy.deepcopy(data0)
+        #    self.propagate_neural_multiple()
+        #    self.GRAPH.list_of_polar = copy.deepcopy(old_keys)
+        #    data2 = copy.deepcopy(self.data_dic)
+        #    self.data_dic = copy.deepcopy(data0)
+        #    self.network=None
+        #    self.propagate_neural()
+        #    data3 = copy.deepcopy(self.data_dic)
+        #    new_dic=self.get_common_result(data1,data2,data3)
+        #    print 'new dic ',new_dic
+        #    self.data_dic=new_dic
         elif self.TYPE==self.ENSEMBLE:
-            data0 = copy.deepcopy(self.data_dic)
-            classifier=SVM(self)
-            self.propagate_classifier(classifier)
-            self.GRAPH.list_of_polar=copy.deepcopy(old_keys)
-            data1 = copy.deepcopy(self.data_dic)
-            self.data_dic=copy.deepcopy(data0)
-            self.propagate_neural_multiple()
-            self.GRAPH.list_of_polar = copy.deepcopy(old_keys)
-            data2 = copy.deepcopy(self.data_dic)
-            self.data_dic = copy.deepcopy(data0)
-            self.network=None
-            self.propagate_neural()
-            data3 = copy.deepcopy(self.data_dic)
-            new_dic=self.get_common_result(data1,data2,data3)
-            print 'new dic ',new_dic
-            self.data_dic=new_dic
+            self.create_ensemble()
+
 
     def save_propagated_data(self,old_keys):
         if self.new_lu_data_path is not None:
@@ -319,12 +370,12 @@ class Propagator(object):
 
             training_counter = self.TRAINING_DEPTH
         else:
-            print 'ELS'
+
             training_counter = 0
 
 
         while counter > 0:
-            print 'WH'
+
             counter -= 1
             training_counter -= 1
             dist_map = self.create_neighbourhood(depth + 1)

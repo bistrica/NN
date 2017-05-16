@@ -3,6 +3,7 @@ from propagator import Propagator
 #import _thread
 import time
 import copy
+import pickle
 
 class Parser(object):
     PROPAGATION_TYPE='MANUAL'#
@@ -24,6 +25,8 @@ class Parser(object):
     SAVE_MERGED_GRAPH_PATH=''#
     SAVE_MODIFIED_MERGED_GRAPH_PATH = ''#
     SAVE_NEURAL_NETWORK_MODEL_PATH=''
+    SAVE_ENSEMBLE_PATH=''
+    ENSEMBLE_PATH=''
     HOST=''#
     USER=''#
     PASS=''#
@@ -136,33 +139,21 @@ class Parser(object):
                             training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES,
                             save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL)
-        elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE:
+        #elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE:
+        #    pr = Propagator(type=Propagator.ENSEMBLE, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,
+        #                    normalization=self.NORMALIZATION,
+        #                    training_depth=self.TRAINING_DEPTH,
+        #                    percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
+        #                    save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,
+        #                    chosen_pos=self.CHOSEN_POS)
+        elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE_MULTI:
             pr = Propagator(type=Propagator.ENSEMBLE, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,
                             normalization=self.NORMALIZATION,
                             training_depth=self.TRAINING_DEPTH,
-                            percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,
-                            chosen_pos=self.CHOSEN_POS)
-        elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE_MULTI:
-            pr1 = Propagator(type=Propagator.SVM, known_data_dic=copy.deepcopy(graph.list_of_polar), graph=graph, depth=self.DEPTH,
-                            normalization=self.NORMALIZATION,
-                            training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES,
-                            kernel=self.SVM_KERNEL)
-            pr2 = Propagator(type=Propagator.NEURAL_MULTIPLE, known_data_dic=copy.deepcopy(graph.list_of_polar), graph=graph,
-                             depth=self.DEPTH, normalization=self.NORMALIZATION,
-                             training_depth=self.TRAINING_DEPTH,
-                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                             network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH,
-                             chosen_pos=self.CHOSEN_POS)
-            pr3 = Propagator(type=Propagator.NEURAL, known_data_dic=copy.deepcopy(graph.list_of_polar), graph=graph, depth=self.DEPTH,
-                             training_depth=self.TRAINING_DEPTH, normalization=self.NORMALIZATION,
-                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                             network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH
-                             )
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,chosen_pos=self.CHOSEN_POS, neural_layers=self.LAYERS_UNITS, ensemble_path=self.ENSEMBLE_PATH, save_ensemble_path=self.SAVE_ENSEMBLE_PATH)
 
 
-            Propagator.create_multithread_ensemble(pr1,pr2,pr3,self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
 
 
         if pr is not None:
