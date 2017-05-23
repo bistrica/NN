@@ -4,6 +4,7 @@ from propagator import Propagator
 import time
 import copy
 import pickle
+import time
 
 class Parser(object):
     PROPAGATION_TYPE='MANUAL'#
@@ -14,14 +15,17 @@ class Parser(object):
     TYPE_SVM='SVM'
     TYPE_BAYES='BAYES'
     TYPE_ENSEMBLE='ENSEMBLE'
-    TYPE_ENSEMBLE_MULTI='ENSEMBLE_MULTITHREADING'
-    TYPES=[TYPE_NEURAL,TYPE_MANUAL,TYPE_BAYES,TYPE_NEURAL_MULTIPLE,TYPE_SVM,TYPE_KNN,TYPE_ENSEMBLE,TYPE_ENSEMBLE_MULTI]
+    #TYPE_ENSEMBLE_MULTI='ENSEMBLE_MULTITHREADING'
+    SAVE_TO_DATABASE=0
+    TYPES=[TYPE_NEURAL,TYPE_MANUAL,TYPE_BAYES,TYPE_NEURAL_MULTIPLE,TYPE_SVM,TYPE_KNN,TYPE_ENSEMBLE]#,TYPE_ENSEMBLE_MULTI]
     MANUAL_RELATION_TYPES=[]#
     MANUAL_RELATION_WIGHTS=[]#
     LAYERS_UNITS=[]#
     LU_PATH=''#
     MERGED_PATH=''#
     NEURAL_NETWORK_MODEL_PATH = ''#
+    SVM_MODEL_PATH=''
+    SAVE_SVM_MODEL_PATH = ''
     SAVE_MERGED_GRAPH_PATH=''#
     SAVE_MODIFIED_MERGED_GRAPH_PATH = ''#
     SAVE_NEURAL_NETWORK_MODEL_PATH=''
@@ -107,38 +111,40 @@ class Parser(object):
             self.choose_propagation(gg)
 
     def choose_propagation(self, graph):
+        pr=None
+        self.SAVE_TO_DATABASE = self.SAVE_TO_DATABASE==1
         if self.MANUAL_RELATION_TYPES == 'all':
             self.MANUAL_RELATION_TYPES = graph.get_all_relations()
         #print 'manual rels ',self.MANUAL_RELATION_TYPES
         if self.PROPAGATION_TYPE == self.TYPE_MANUAL:
             pr = Propagator(type=Propagator.MANUAL, known_data_dic=graph.list_of_polar, graph=graph, percent=self.PERCENT, depth=self.DEPTH, normalization=self.NORMALIZATION,
-                            rel_ids=self.MANUAL_RELATION_TYPES, weights=self.MANUAL_RELATION_WIGHTS, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
+                            rel_ids=self.MANUAL_RELATION_TYPES, weights=self.MANUAL_RELATION_WIGHTS, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY,save_to_db=self.SAVE_TO_DATABASE)
         elif self.PROPAGATION_TYPE == self.TYPE_NEURAL:
             pr = Propagator(type=Propagator.NEURAL, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH, training_depth=self.TRAINING_DEPTH, normalization=self.NORMALIZATION,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
+                            network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH, save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY,save_to_db=self.SAVE_TO_DATABASE)
         elif self.PROPAGATION_TYPE == self.TYPE_NEURAL_MULTIPLE:
             pr = Propagator(type=Propagator.NEURAL_MULTIPLE, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH, normalization=self.NORMALIZATION,
                             training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
                             network=self.NEURAL_NETWORK_MODEL_PATH, save_network=self.SAVE_NEURAL_NETWORK_MODEL_PATH,
-                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY,chosen_pos=self.CHOSEN_POS)
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY,chosen_pos=self.CHOSEN_POS,save_to_db=self.SAVE_TO_DATABASE)
 
         elif self.PROPAGATION_TYPE == self.TYPE_BAYES:
             pr = Propagator(type=Propagator.BAYES, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH, normalization=self.NORMALIZATION,
                             training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
-                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY,save_to_db=self.SAVE_TO_DATABASE)
         elif self.PROPAGATION_TYPE == self.TYPE_KNN:
             pr = Propagator(type=Propagator.KNN, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH, normalization=self.NORMALIZATION,
                             training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS, knn_algorithm=self.KNN_ALGORITHM, knn_weights=self.KNN_WEIGHTS, neighbours_number=self.KNN_NEIGHBOURS_NUMBER,
-                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY)
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY,save_to_db=self.SAVE_TO_DATABASE)
         elif self.PROPAGATION_TYPE == self.TYPE_SVM:
             pr = Propagator(type=Propagator.SVM, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,normalization=self.NORMALIZATION,
                             training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES,
-                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL)
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,svm_model=self.SVM_MODEL_PATH,save_svm_path=self.SAVE_SVM_MODEL_PATH,save_to_db=self.SAVE_TO_DATABASE)
         #elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE:
         #    pr = Propagator(type=Propagator.ENSEMBLE, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,
         #                    normalization=self.NORMALIZATION,
@@ -146,20 +152,24 @@ class Parser(object):
         #                    percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES, neural_layers=self.LAYERS_UNITS,
         #                    save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,
         #                    chosen_pos=self.CHOSEN_POS)
-        elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE_MULTI:
+        elif self.PROPAGATION_TYPE==self.TYPE_ENSEMBLE:
             pr = Propagator(type=Propagator.ENSEMBLE, known_data_dic=graph.list_of_polar, graph=graph, depth=self.DEPTH,
                             normalization=self.NORMALIZATION,
                             training_depth=self.TRAINING_DEPTH,
                             percent=self.PERCENT, rel_ids=self.MANUAL_RELATION_TYPES,
-                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,chosen_pos=self.CHOSEN_POS, neural_layers=self.LAYERS_UNITS, ensemble_path=self.ENSEMBLE_PATH, save_ensemble_path=self.SAVE_ENSEMBLE_PATH)
+                            save_new_lu_polarities=self.FILE_LEX_UNITS_WITH_NEW_POLARITY, kernel=self.SVM_KERNEL,chosen_pos=self.CHOSEN_POS, neural_layers=self.LAYERS_UNITS, ensemble_path=self.ENSEMBLE_PATH, save_ensemble_path=self.SAVE_ENSEMBLE_PATH, save_to_db=self.SAVE_TO_DATABASE)
 
 
 
 
         if pr is not None:
+            t=time.time()
             pr.propagate()
+            t = time.time()-t
+            print 'TIME ',t
 
         if self.SAVE_MODIFIED_MERGED_GRAPH_PATH is not None:
             graph.save_graph(self.SAVE_MODIFIED_MERGED_GRAPH_PATH)
+
 p=Parser('/home/aleksandradolega/config')
 p.main()

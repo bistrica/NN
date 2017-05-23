@@ -1,7 +1,7 @@
 import numpy
 
 from sklearn.neural_network import MLPClassifier
-
+import time
 
 
 class Neural(object):
@@ -36,7 +36,7 @@ class Neural(object):
     #    plt.show()
 
     def create_neural(self):#,attributes, labels, data, data_labels):
-        print 'lenn ',len(self.X_train), len(self.Y_train), len(self.X_test), len(self.Y_test)
+        #print 'lenn ',len(self.X_train), len(self.Y_train), len(self.X_test), len(self.Y_test)
         self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                             hidden_layer_sizes=self.hidden_layers, random_state=1)#5,2
 
@@ -78,6 +78,58 @@ class Neural(object):
         self.Y_test=Y[1]
 
         return self.X_train, self.X_test, self.Y_train, self.Y_test# X[0],X[1],Y[0],Y[1]
+
+    def set_data(self,data_tuple):
+        X=data_tuple[0]
+
+        Y=data_tuple[1]
+
+        self.X_train = X
+        self.Y_train = Y
+        self.X_test = list()
+        self.Y_test = list()
+
+
+    def create_data_lists(self,poss):
+
+        data_lists=[None,None,None,None]
+        print 'poss ',poss
+        for p in poss:
+            data_lists[int(p)-1]=(list(),list())
+
+
+        c=time.time()
+        for pol in self.graph.list_of_polar.keys():
+            tt = time.time()
+            pos =self.graph.lu_nodes[pol].lu.pos
+            if pos not in poss:
+                    continue
+            tt = time.time()-tt
+
+            tt = time.time()
+            vec, label = self.propagator.get_vector(self.graph.lu_nodes[pol])
+            tt = time.time()-tt
+
+            if vec is None:
+                continue
+            vec = numpy.asarray(vec)
+
+            data_lists[pos - 1][0].append(vec)
+            data_lists[pos - 1][1].append(label)
+        c = time.time()-c
+        print 'Time CDL FOR ',c
+
+
+        #X = [X_train[:int(percent * len(X_train))], X_train[int(percent * len(X_train)):]]
+        #Y = [Y_train[:int(percent * len(Y_train))], Y_train[int(percent * len(Y_train)):]]
+        #print '.',len(X[0]),len(X[1])
+        #print len(Y[0]), len(Y[1])
+        #self.X_train=X[0]
+        #self.Y_train=Y[0]
+        #self.X_test=X[1]
+        #self.Y_test=Y[1]
+
+        return data_lists #self.X_train, self.X_test, self.Y_train, self.Y_test# X[0],X[1],Y[0],Y[1]
 
     def append_training_item(self,item,label):
         self.X_train.append(item)

@@ -10,6 +10,7 @@ from svm import SVM
 from collections import OrderedDict
 import thread
 import sys
+import time
 
 __all__ = ("error", "LockType", "start_new_thread", "interrupt_main", "exit", "allocate_lock", "get_ident", "stack_size", "acquire", "release", "locked")
 
@@ -39,6 +40,9 @@ class Propagator(object):
     new_lu_data_path=None
     chosen_pos=None
     kernel=None
+    save_svm_path=None
+    svm_model=None
+    classifier=None
 
     rel_positive=dict()
     rel_negative=dict()
@@ -46,7 +50,50 @@ class Propagator(object):
     rel_amb=dict()
     data_dic=None
 
+    debug=False
+    save_to_db=False
 
+    # [-8, 10, 11, 12, 62, 104, 141, 169, 244]
+    # -8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
+    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, normalization=False, percent=0.0,
+                 rel_ids=[-8, 10, 11, 12, 62, 104, 141, 169, 244, 13, 14, 15], weights=[], neural_layers=None,
+                 network=None, save_network=None, save_new_lu_polarities=None, chosen_pos=None, kernel=None,
+                 neighbours_number=None, knn_algorithm=None, knn_weights=None, ensemble_path=None,
+                 save_ensemble_path=None, svm_model=None, save_svm_path=None,
+                 save_to_db=False):  # ,min_percent=0):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
+
+        self.TYPE = type
+        self.data_dic = known_data_dic
+        self.REL_IDS = rel_ids
+        self.WEIGHTS = weights
+        self.GRAPH = graph
+        self.DEPTH = depth
+        self.TRAINING_DEPTH = training_depth
+        self.PERCENT = percent
+        self.normalization = normalization
+        self.chosen_pos = chosen_pos
+        self.kernel = kernel
+        self.knn_algorithm = knn_algorithm
+        self.knn_weights = knn_weights
+        self.neighbours_number = neighbours_number
+
+        if neural_layers is not None:
+            self.LAYERS_UNITS = neural_layers
+        if network is not None:  # and network!='':
+            # if type==Propagator.NEURAL:
+            self.network = pickle.load(open(network, "rb"))
+            # elif type==Propagator.NEURAL_MULTIPLE:
+            # net_list = pickle.load(open(network, "rb"))
+            #    self.network = pickle.load(open(network, "rb"))
+        # if save_network is not None:# and save_network!='':
+        self.network_path = save_network
+        # if save_new_lu_polarities is not None:# and save_new_lu_polarities!='':
+        self.new_lu_data_path = save_new_lu_polarities
+        self.ensemble_path = ensemble_path
+        self.save_ensemble_path = save_ensemble_path
+        self.save_svm_path=save_svm_path
+        self.svm_model=svm_model
+        self.save_to_db = save_to_db
 
     def create_ensemble(self):
         if self.ensemble_path is None:
@@ -70,30 +117,34 @@ class Propagator(object):
 
                              )
         else:
-            [pr1, pr2, pr3] = pickle.load(open(self.ensemble_path, "rb"))
+            [pr1, pr2, pr3,classifier] = pickle.load(open(self.ensemble_path, "rb"))
+            pr1.classifier=classifier#to check
             pr1.TRAINING_DEPTH = 0
             pr2.TRAINING_DEPTH = 0
             pr3.TRAINING_DEPTH = 0
             pr1.DEPTH = self.DEPTH
             pr2.DEPTH = self.DEPTH
             pr3.DEPTH = self.DEPTH
+            pr1.PERCENT = self.PERCENT
+            pr2.PERCENT = self.PERCENT
+            pr3.PERCENT = self.PERCENT
 
         self.create_multithread_ensemble(pr1, pr2, pr3)
         if self.save_ensemble_path is not None:
             file=open(self.save_ensemble_path, 'wr+')
-            pickle.dump([pr1, pr2, pr3], file)
+            pickle.dump([pr1, pr2, pr3,pr1.classifier], file)
 
 
     def create_multithread_ensemble(self,pr,pr2,pr3):
-        old_keys = copy.deepcopy(pr.GRAPH.list_of_polar)
+
         try:
 
             print '1'
-            thread.start_new_thread(pr.propagate(), ("Thread-1", 2,))
+            thread.start_new_thread(pr.propagate,())
             print '2'
-            thread.start_new_thread(pr2.propagate(), ("Thread-2", 4,))
+            thread.start_new_thread(pr2.propagate,())
             print '3'
-            thread.start_new_thread(pr3.propagate(), ("Thread-3", 6,))
+            thread.start_new_thread(pr3.propagate,())
         except:
             print 'Thread error: ',sys.exc_info()
             pr.propagate()
@@ -102,60 +153,39 @@ class Propagator(object):
         #    print ("Error: unable to start thread")
         pr.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
         #new_lu_data_path=path
-        self.save_propagated_data(old_keys)
 
 
 
-    #[-8, 10, 11, 12, 62, 104, 141, 169, 244]
-    #-8:synonimia, 12-antonimia, 10-hiponimia,11-hiperonimia, 62-syn.miedzyparadygmatyczna,104-antonimia wlasciwa,141-syn.miedzypar.,169-syn.mmiedzy,244-syn..miedzypar
-    def __init__(self, type, known_data_dic, graph, depth, training_depth=2, normalization=False, percent=0.0, rel_ids=[-8,10,11,12,62,104,141,169,244, 13,14,15],weights=[], neural_layers=None, network=None, save_network=None, save_new_lu_polarities=None, chosen_pos=None, kernel=None, neighbours_number=None, knn_algorithm=None, knn_weights=None,ensemble_path=None,save_ensemble_path=None):#,min_percent=0):#,19,20,21,22,23,24,25,26,27,28,29,30], weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]):#15,2,2,-10,10,-4,10,10,10,5,5,5,5,5,5,5,5,5,5,5,5,5,5,10]):#rel_ids=[-8], weights=[1]):#
 
-        self.TYPE=type
-        self.data_dic=known_data_dic
-        self.REL_IDS=rel_ids
-        self.WEIGHTS=weights
-        self.GRAPH=graph
-        self.DEPTH=depth
-        self.TRAINING_DEPTH=training_depth
-        self.PERCENT = percent
-        self.normalization=normalization
-        self.chosen_pos=chosen_pos
-        self.kernel=kernel
-        self.knn_algorithm=knn_algorithm
-        self.knn_weights=knn_weights
-        self.neighbours_number=neighbours_number
 
-        if neural_layers is not None:
-            self.LAYERS_UNITS=neural_layers
-        if network is not None:# and network!='':
-            #if type==Propagator.NEURAL:
-            self.network=pickle.load(open(network, "rb" ))
-            #elif type==Propagator.NEURAL_MULTIPLE:
-                #net_list = pickle.load(open(network, "rb"))
-            #    self.network = pickle.load(open(network, "rb"))
-        #if save_network is not None:# and save_network!='':
-        self.network_path = save_network
-        #if save_new_lu_polarities is not None:# and save_new_lu_polarities!='':
-        self.new_lu_data_path=save_new_lu_polarities
-        self.ensemble_path=ensemble_path
-        self.save_ensemble_path=save_ensemble_path
 
-    def create_neighbourhood(self, depth):
+
+    def create_neighbourhood(self, depth,polarized=None):
+        #if polarized is None:#len(polarized)==0:
+        #    polarized=list()#None
         finder = Finder()
+        t=time.time()
 
-        freq_map = finder.find_nearest_simple(self.GRAPH.lu_graph, self.GRAPH.list_of_polar, depth=depth,
-                                              relations=self.get_relations())
-        return freq_map
+        print 'finder'
+        freq_map,polarized_items = finder.find_nearest_simple(self.GRAPH.lu_graph, self.GRAPH.list_of_polar, depth=depth,
+                                              relations=self.get_relations(),polarized=polarized)
+        t=time.time()-t
+        print 'Time CN ',t
+        return freq_map,polarized_items
 
     def get_common_result(self,data1,data2,data3):
         new_dic = dict()
         for k in data1.keys():
 
             if k in data2.keys() and k in data3.keys():
-                print 'k: ', k, data1[k], data2[k], data3[k]
+                #print 'k: ', k, data1[k], data2[k], data3[k]
                 val1 = data1[k]
                 val2 = data2[k]
                 val3 = data3[k]
+                if not isinstance(val1,int):
+                    val1 = data1[k][0]
+                    val2 = data2[k][0]
+                    val3 = data3[k][0]
                 if val1 == val2 and val1 == val3:
                     new_dic[k] = data1[k]
                 else:
@@ -205,6 +235,7 @@ class Propagator(object):
             self.propagate_classifier(classifier)
         elif self.TYPE==self.SVM:
             classifier=SVM(self)
+            self.classifier=classifier
             self.propagate_classifier(classifier)
         #elif self.TYPE==self.ENSEMBLE:
         #    data0 = copy.deepcopy(self.data_dic)
@@ -225,32 +256,63 @@ class Propagator(object):
         #    self.data_dic=new_dic
         elif self.TYPE==self.ENSEMBLE:
             self.create_ensemble()
+        self.save_propagated_data(old_keys)
 
 
     def save_propagated_data(self,old_keys):
-        if self.new_lu_data_path is not None:
+        if self.new_lu_data_path is not None or self.save_to_db:
+            update_dic=dict()
+            vals=dict()
+            prefix='ENS'
+            vals[-10]=prefix+'{Auto: -m}'
+            vals[-1]=prefix+'{Auto: -s}'
+            vals[10] =prefix+ '{Auto: +m}'
+            vals[1] = prefix+'{Auto: +s}'
+            vals[0]=prefix+'{Auto: am0}'
             file = open(self.new_lu_data_path, 'wr+')
 
             self.data_dic=OrderedDict(sorted(self.data_dic.items(), key=lambda t: t[1]))
-            #keys.sort()
+                #keys.sort()
             keys = self.data_dic.keys()
-            for k in keys:
-                if k not in old_keys.keys():
-                    file.write(str(k) + ', ' + str(self.GRAPH.lu_nodes[k].lu.lemma) + ', ' + str(
-                        self.GRAPH.lu_nodes[k].lu.variant) + ', ' + str(self.data_dic[k]) + '\n')
+            if self.new_lu_data_path is not None:
+                if self.save_to_db:
+                    for k in keys:
+                        if k not in old_keys.keys():
+                            update_dic[k]=vals[self.data_dic[k][0]]
+                            file.write(str(k) + ', ' + str(self.GRAPH.lu_nodes[k].lu.lemma) + ', ' + str(
+                                self.GRAPH.lu_nodes[k].lu.variant) + ', ' + str(self.data_dic[k]) + '\n')
+                else:
+                    for k in keys:
+                        if k not in old_keys.keys():
+                            file.write(str(k) + ', ' + str(self.GRAPH.lu_nodes[k].lu.lemma) + ', ' + str(
+                                self.GRAPH.lu_nodes[k].lu.variant) + ', ' + str(self.data_dic[k]) + '\n')
+            else:
+                for k in keys:
+                    if k not in old_keys.keys():
+                        update_dic[k] = vals[self.data_dic[k][0]]
+
+            if len(update_dic)!=0:
+                self.GRAPH.save_polarity_to_db(update_dic)
+
+
 
     def propagate_classifier(self,classifier):
-        classifier.create_model()
-
+        print 'propagate'
+        if not ((self.TYPE==Propagator.ENSEMBLE and self.ensemble_path is None) or (self.TYPE==Propagator.SVM and self.svm_model is None )):
+            print 'model'
+            classifier.create_model()
+        print 'after model'
         counter = self.DEPTH
         training_counter = self.TRAINING_DEPTH
         depth = 1
 
+        polarized=None
         while counter > 0:
+            print 'while ',counter
 
             counter -= 1
             training_counter -= 1
-            dist_map = self.create_neighbourhood(depth + 1)
+            dist_map,polarized = self.create_neighbourhood(depth + 1,polarized)
             for node in dist_map.keys():
                 if dist_map[node] == 0:
                     continue
@@ -263,6 +325,7 @@ class Propagator(object):
                 self.GRAPH.list_of_polar[node.lu.lu_id] = res
                 node.lu.polarity = res
                 self.data_dic[node.lu.lu_id] = res
+                polarized.append(node)
             if training_counter > 0:
                 classifier.append_training_item(vec, res)
                 classifier.create_model()
@@ -274,9 +337,10 @@ class Propagator(object):
         depth = 1
 
         good_res = True
+        polarized = None
         while counter > 0 and good_res:
             counter -= 1
-            dist_map = self.create_neighbourhood(depth + 1)
+            dist_map,polarized = self.create_neighbourhood(depth + 1,polarized)
 
             freq_set = list()
 
@@ -294,8 +358,10 @@ class Propagator(object):
             for i in range(len(freq_set)):
                 for elem in freq_set[i]:
                     res = self.evaluate_node_percent(elem)
-                    if res != -2:
+                    if res is not None:
                         good_res = True
+
+
 
 
     def propagate_neural(self):
@@ -305,6 +371,7 @@ class Propagator(object):
 
 
         if self.network is None:
+            print 'NN None!'
             self.network = Neural(self, self.LAYERS_UNITS)
             X_train, X_test, Y_train, Y_test = self.network.create_data(1.0)
             self.network.create_neural()
@@ -313,12 +380,12 @@ class Propagator(object):
         else:
             training_counter = 0
 
-
+        polarized = None
         while counter > 0:
 
             counter -= 1
             training_counter -= 1
-            dist_map = self.create_neighbourhood(depth + 1)
+            dist_map,polarized = self.create_neighbourhood(depth + 1,polarized)
 
             for node in dist_map.keys():
                 if dist_map[node] == 0:
@@ -333,10 +400,13 @@ class Propagator(object):
                 self.GRAPH.list_of_polar[node.lu.lu_id] = res
                 node.lu.polarity = res
                 self.data_dic[node.lu.lu_id] = res
+                if polarized is None:
+                    polarized=list()
+                polarized.append(node)
             if training_counter > 0:
                 self.network.create_neural()
 
-        if self.network_path != '' and self.network_path is not None:
+        if self.network_path is not None:#self.network_path != '' and
             file = open(self.network_path, 'wr+')
             pickle.dump(self.network, file)
 
@@ -344,21 +414,41 @@ class Propagator(object):
 
         counter = self.DEPTH
         depth = 1
-
+        t=time.time()
+        any_net=None
 
         if self.network is None:
+            print 'NM None!'
             self.network = list()
             if self.chosen_pos is None:
                 self.chosen_pos=self.ALL_POS
+
             for pos in self.ALL_POS:
                 if pos in self.chosen_pos:
                     network_pos = Neural(self, self.LAYERS_UNITS)
-                    network_pos.create_data(1.0,pos)
-                    network_pos.create_neural()
+                    any_net=network_pos
+                    if self.debug:
+                        network_pos.create_data(1.0,pos)
+                        network_pos.create_neural()
                 else:
                     network_pos=None
 
                 self.network.append(network_pos)
+            t = time.time()-t
+            print 'Time AP ',t
+            t = time.time()
+
+            if not self.debug and any_net is not None:
+                data_lists=any_net.create_data_lists(self.chosen_pos)
+
+                t = time.time() - t
+                print 'Time CDL ', t
+                t = time.time()
+                for i in range(len(data_lists)):
+                    if self.network[i] is not None:
+                        self.network[i].set_data(data_lists[i])
+                        self.network[i].create_neural()
+
             #network_pos4=Neural(self, self.LAYERS_UNITS)
             #network_pos2=Neural(self, self.LAYERS_UNITS)
             #network_pos4.create_data(1.0)
@@ -373,12 +463,16 @@ class Propagator(object):
 
             training_counter = 0
 
+        t=time.time()-t
+        print 'Time PNM ',t
 
+        polarized=list()
         while counter > 0:
+            t=time.time()
 
             counter -= 1
             training_counter -= 1
-            dist_map = self.create_neighbourhood(depth + 1)
+            dist_map,polarized = self.create_neighbourhood(depth + 1,polarized)
 
             for node in dist_map.keys():
                 if dist_map[node] == 0:
@@ -393,17 +487,23 @@ class Propagator(object):
                     net=self.network[node.lu.pos-1]
 
                     res = net.predict(vec)
+                    polarized.append(node)
+                    #polarized=None
                     net.append_training_item(vec, res)
                 else:
                     continue
 
                 self.GRAPH.list_of_polar[node.lu.lu_id] = res
                 node.lu.polarity = res
+
                 self.data_dic[node.lu.lu_id] = res
+
             if training_counter > 0:
                 for net in self.network:
                     if net is not None:
                         net.create_neural()
+            t=time.time()-t
+            print 'Time WHILE ',counter,t
 
 
         #print 'NEU RES, ', self.network.res
@@ -437,12 +537,12 @@ class Propagator(object):
 
     def get_vector(self,node):
 
-        self.rel_positive = dict()
-        self.rel_negative = dict()
-        self.rel_positive_strong = dict()
-        self.rel_negative_strong = dict()
-        self.rel_none = dict()
-        self.rel_amb = dict()
+        rel_positive = dict()
+        rel_negative = dict()
+        rel_positive_strong = dict()
+        rel_negative_strong = dict()
+        rel_none = dict()
+        rel_amb = dict()
         count=0
 
         for e in node.all_edges():
@@ -463,20 +563,20 @@ class Propagator(object):
                     polarity=self.data_dic[scnd_node.lu.lu_id]
 
                     if polarity>0:
-                        dic_to_update = self.rel_positive
+                        dic_to_update = rel_positive
                         if polarity==10:
-                            dic_to_update = self.rel_positive_strong
+                            dic_to_update = rel_positive_strong
 
                     elif polarity<0:
-                        dic_to_update = self.rel_negative
+                        dic_to_update = rel_negative
                         if polarity==-10:
-                            dic_to_update = self.rel_negative_strong
+                            dic_to_update = rel_negative_strong
 
                     else:
-                        dic_to_update = self.rel_amb
+                        dic_to_update = rel_amb
 
                 else:
-                   dic_to_update=self.rel_none
+                   dic_to_update=rel_none
                 if dic_to_update.has_key(e.rel_id):
                     dic_to_update[e.rel_id]+=1
                 else:
@@ -488,24 +588,27 @@ class Propagator(object):
         vector_a = list()
         vec_tuples=list()
         for rel in self.REL_IDS:
-            if self.rel_positive.has_key(rel):
-                vector_p.append(self.rel_positive[rel])
+            rel=int(rel)
+            if rel_positive.has_key(rel):
+                vector_p.append(rel_positive[rel])
             else:
                 vector_p.append(0)
-            if self.rel_positive_strong.has_key(rel):
-                vector_ps.append(self.rel_positive_strong[rel])
+            if rel_positive_strong.has_key(rel):
+                vector_ps.append(rel_positive_strong[rel])
             else:
                 vector_ps.append(0)
-            if self.rel_negative.has_key(rel):
-                vector_n.append(self.rel_negative[rel])
+            if rel_negative.has_key(rel):
+                #print 'rel ',rel,self.rel_negative
+                #print 'rel ', rel
+                vector_n.append(rel_negative[rel])
             else:
                 vector_n.append(0)
-            if self.rel_negative_strong.has_key(rel):
-                vector_ns.append(self.rel_negative_strong[rel])
+            if rel_negative_strong.has_key(rel):
+                vector_ns.append(rel_negative_strong[rel])
             else:
                 vector_ns.append(0)
-            if self.rel_amb.has_key(rel):
-                vector_a.append(self.rel_amb[rel])
+            if rel_amb.has_key(rel):
+                vector_a.append(rel_amb[rel])
             else:
                 vector_a.append(0)
 
@@ -562,7 +665,7 @@ class Propagator(object):
             elif pos == max_val:
                 res=1
         else:
-            res=-2
+            res=None
         return res
 
 
@@ -717,8 +820,9 @@ class Propagator(object):
                 if res!=-2:
                     self.data_dic[node.lu.lu_id]=res
 
-            if res != -2:
+            if res is not None:
                 self.data_dic[node.lu.lu_id] = res
 
             #print res,' Pos: ', pos, ' neg: ', neg, ', amb ', amb, "(", node.lu.lemma, ',', node.lu.variant, ' - '#, \
             return res
+

@@ -68,16 +68,22 @@ class Finder(object):
                 frequency_dic[lu_dict[key]] = 1
 
 
-    def find_nearest_simple(self,lu_graph, list_of_polar, lu_synset_dic=None, depth=5, relations=[], is_all=True, synset_rel=False):
+    def find_nearest_simple(self,lu_graph, list_of_polar, lu_synset_dic=None, depth=5, relations=[], is_all=True, synset_rel=False,polarized=None):
         if len(relations)>0:
             is_all=False
         distances=dict()
         polarized_nodes=list()
 
-        for node in lu_graph.all_nodes():
-            if node.lu.lu_id in list_of_polar:
-                polarized_nodes.append(node)
-                distances[node]=0
+        if polarized is None or len(polarized)==0:
+
+            for node in lu_graph.all_nodes():
+                if node.lu.lu_id in list_of_polar:
+                    polarized_nodes.append(node)
+                    distances[node]=0
+        else:
+            polarized_nodes=polarized
+            for n in polarized_nodes:
+                distances[n]=0
         level=1
         while (level!=depth):
             new_polar_nodes=list()
@@ -118,4 +124,4 @@ class Finder(object):
                 frequency_dic[distances[key]] += 1
             else:
                 frequency_dic[distances[key]] = 1
-        return distances
+        return distances,polarized_nodes#polarized

@@ -20,6 +20,10 @@ class GraphReader(object):
     all_synset_relations=set()
     all_lu_relations=set()
 
+    host = None
+    user = None
+    passw = None
+    db_name = None
     lu_graph_path = ''
     merged_graph_path = ''
 
@@ -60,8 +64,15 @@ class GraphReader(object):
             print 'Time0 ', t
             t = time.time()
 
-        for e in self.lu_graph.all_edges():
-            self.all_lu_relations.add(e.rel_id)
+            self.host = host
+            self.user = user
+            self.passw = passw
+            self.db_name = db_name
+
+        for e in self.lu_graph.all_edges(): #zostawic?
+            self.all_lu_relations.add(e.rel_id) #?
+
+
 
         t=time.time()-t
         print 'Time1 ',t
@@ -91,6 +102,9 @@ class GraphReader(object):
         cur = db.cursor()
         #is_graph_full=False
         if not is_graph_full:
+
+
+
             cur.execute("SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
 
                 #"SELECT l.ID from lexicalunit l join lexicalunit l2 on l.lemma=l2.lemma where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l2.comment like '%+ m' or l2.comment like '%+ s' or l2.comment like '%+ m %' or l2.comment like '%+ s %')")
@@ -150,11 +164,32 @@ class GraphReader(object):
 
         for row in cur.fetchall():
             self.all_synset_relations.add(row[0])
+
+        cur.execute("SELECT ID FROM relationtype")
+
+        #for row in cur.fetchall():
+        #    self.all_lu_relations.add(row[0])
+
         if all_rels:
             self.added_relations=list(self.all_synset_relations)
 
 
         db.close()
+
+    def save_polarity_to_db(self, update_dic):
+        db = MySQLdb.connect(host=self.host,  # "localhost",    # your host, usually localhost
+                             user=self.user,  # "root",         # your username
+                             passwd=self.passw,  # "toor",  # your password
+                             db=self.db_name)  # "wordTEST")        # name of the data base
+
+        cur = db.cursor()
+        # is_graph_full=False
+
+
+        for k in update_dic.keys():
+            cur.execute("UPDATE lexicalunit SET comment=CONCAT(comment, '"+str(update_dic[k])+"') WHERE id="+str(k))
+
+
 
 
 
@@ -349,3 +384,5 @@ class GraphReader(object):
 
         for edge in edges:
             self.lu_graph.add_edge(self.lu_nodes[edge[0]], self.lu_nodes[edge[1]], [['rel_id', -8]], True)
+
+
