@@ -24,6 +24,9 @@ class SVM(object):
         self.propagator=propagator
         self.graph = propagator.GRAPH
 
+    def set_svc(self,svc):
+        self.svc=svc
+
     def create_model(self):
         self.X_train = list()
         self.Y_train = list()

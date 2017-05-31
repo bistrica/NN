@@ -10,7 +10,9 @@ from svm import SVM
 from collections import OrderedDict
 import thread
 import sys
+from threading import Thread
 import time
+from sklearn.externals import joblib
 
 __all__ = ("error", "LockType", "start_new_thread", "interrupt_main", "exit", "allocate_lock", "get_ident", "stack_size", "acquire", "release", "locked")
 
@@ -66,6 +68,7 @@ class Propagator(object):
         self.data_dic = known_data_dic
         self.REL_IDS = rel_ids
         self.WEIGHTS = weights
+        print 'weights ',weights
         self.GRAPH = graph
         self.DEPTH = depth
         self.TRAINING_DEPTH = training_depth
@@ -93,6 +96,8 @@ class Propagator(object):
         self.save_ensemble_path = save_ensemble_path
         self.save_svm_path=save_svm_path
         self.svm_model=svm_model
+        if svm_model is not None:
+            self.svm_model = joblib.load(svm_model)#open(svm_model, "rb"))
         self.save_to_db = save_to_db
 
     def create_ensemble(self):
@@ -117,8 +122,11 @@ class Propagator(object):
 
                              )
         else:
-            [pr1, pr2, pr3,classifier] = pickle.load(open(self.ensemble_path, "rb"))
-            pr1.classifier=classifier#to check
+            [pr1, pr2, pr3,svm_model] = joblib.load(self.ensemble_path)
+            pr1.classifier=SVM()
+            #classifier#to check
+            pr1.svm_model=svm_model
+
             pr1.TRAINING_DEPTH = 0
             pr2.TRAINING_DEPTH = 0
             pr3.TRAINING_DEPTH = 0
@@ -131,8 +139,8 @@ class Propagator(object):
 
         self.create_multithread_ensemble(pr1, pr2, pr3)
         if self.save_ensemble_path is not None:
-            file=open(self.save_ensemble_path, 'wr+')
-            pickle.dump([pr1, pr2, pr3,pr1.classifier], file)
+            #file=open(self.save_ensemble_path, 'wr+')
+            joblib.dump([pr1, pr2, pr3,pr1.classifier.svc], self.save_ensemble_path)
 
 
     def create_multithread_ensemble(self,pr,pr2,pr3):
@@ -140,17 +148,29 @@ class Propagator(object):
         try:
 
             print '1'
-            thread.start_new_thread(pr.propagate,())
+            t1=Thread(target=pr.propagate)
+            #thread.start_new_thread(pr.propagate,())
             print '2'
-            thread.start_new_thread(pr2.propagate,())
+            t2=Thread(target=pr2.propagate)
+            #thread.start_new_thread(pr2.propagate,())
             print '3'
-            thread.start_new_thread(pr3.propagate,())
+            t3 = Thread(target=pr3.propagate)
+            t1.start()
+            t2.start()
+            t3.start()
+
+            t1.join()
+            t2.join()
+            t3.join()
+           # thread.start_new_thread(pr3.propagate,())
         except:
             print 'Thread error: ',sys.exc_info()
             pr.propagate()
             pr2.propagate()
             pr3.propagate()
         #    print ("Error: unable to start thread")
+
+
         pr.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
         #new_lu_data_path=path
 
@@ -182,9 +202,15 @@ class Propagator(object):
                 val1 = data1[k]
                 val2 = data2[k]
                 val3 = data3[k]
+                print '[k]',data1[k]
                 if not isinstance(val1,int):
+                    data1[k]=data1[k].flatten()
                     val1 = data1[k][0]
+                if not isinstance(val2, int):
+                    data2[k] = data2[k].flatten()
                     val2 = data2[k][0]
+                if not isinstance(val3, int):
+                    data3[k] = data3[k].flatten()
                     val3 = data3[k][0]
                 if val1 == val2 and val1 == val3:
                     new_dic[k] = data1[k]
@@ -235,6 +261,8 @@ class Propagator(object):
             self.propagate_classifier(classifier)
         elif self.TYPE==self.SVM:
             classifier=SVM(self)
+            if self.svm_model is not None:
+                classifier.set_svc(self.svm_model)
             self.classifier=classifier
             self.propagate_classifier(classifier)
         #elif self.TYPE==self.ENSEMBLE:
@@ -298,8 +326,13 @@ class Propagator(object):
 
     def propagate_classifier(self,classifier):
         print 'propagate'
-        if not ((self.TYPE==Propagator.ENSEMBLE and self.ensemble_path is None) or (self.TYPE==Propagator.SVM and self.svm_model is None )):
-            print 'model'
+        if (self.TYPE==Propagator.SVM):# and self.svm_model is None ):#((self.TYPE==Propagator.ENSEMBLE and self.ensemble_path is None) or (self.TYPE==Propagator.SVM and self.svm_model is None )):
+            if self.svm_model is None:
+                print 'model'
+                classifier.create_model()
+            else:
+                classifier.set_svc(self.svm_model)
+        else:
             classifier.create_model()
         print 'after model'
         counter = self.DEPTH
@@ -329,6 +362,11 @@ class Propagator(object):
             if training_counter > 0:
                 classifier.append_training_item(vec, res)
                 classifier.create_model()
+
+        if self.TYPE==Propagator.SVM and self.save_svm_path is not None:
+
+            joblib.dump(self.classifier.svc, self.save_svm_path)
+
 
 
 
@@ -631,6 +669,7 @@ class Propagator(object):
 
     def check_result(self,pos,pos_s,neg,neg_s,amb):
         max_val=max([pos,pos_s,neg,neg_s,amb])
+        res=None
         if (pos==max_val and neg==max_val) or (pos_s==max_val and neg_s==max_val) or (pos_s==max_val and neg==max_val) or (pos==max_val and neg_s==max_val):
             res=-2
         elif pos + pos_s > neg + neg_s:
@@ -678,6 +717,8 @@ class Propagator(object):
 
         self.rel_positive = dict()
         self.rel_negative = dict()
+        self.rel_positive_strong = dict()
+        self.rel_negative_strong = dict()
         self.rel_none = dict()
         self.rel_amb = dict()
         count=0
@@ -753,6 +794,10 @@ class Propagator(object):
                     vector_a.append(self.rel_amb[rel])
                 else:
                     vector_a.append(0)
+            if self.WEIGHTS is None or len(self.WEIGHTS)==0:
+                self.WEIGHTS=list()
+                for i in vector_p:
+                    self.WEIGHTS.append(1)
             pos = sum([a * b for a, b in zip(vector_p, self.WEIGHTS)])
             pos_s = sum([a * b for a, b in zip(vector_ps, self.WEIGHTS)])
             neg = sum([a * b for a, b in zip(vector_n, self.WEIGHTS)])
