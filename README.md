@@ -188,7 +188,7 @@ Jeśli zapisałeś zespół klasyfikatorów, możesz go użyć ponownie. Wówcza
 Przy korzystaniu z zapisanego zespołu, zmienne TRAINING_DEPTH, SAVE_NEURAL_NETWORK_MODEL_PATH, NEURAL_NETWORK_MODEL_PATH, SVM_MODEL_PATH, SAVE_SVM_MODEL_PATH nie będą brane pod uwagę.
 
 
-
+===
 
 3. Klasyfikacja
 
