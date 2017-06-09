@@ -188,6 +188,8 @@ Jeśli zapisałeś zespół klasyfikatorów, możesz go użyć ponownie. Wówcza
 Przy korzystaniu z zapisanego zespołu, zmienne TRAINING_DEPTH, SAVE_NEURAL_NETWORK_MODEL_PATH, NEURAL_NETWORK_MODEL_PATH, SVM_MODEL_PATH, SAVE_SVM_MODEL_PATH nie będą brane pod uwagę.
 
 
+
+
 3. Klasyfikacja
 
 W przypadku propagacji wyniki nie muszą być oczywiście zapisane w bazie lub grafie, ale otrzymywane są jedynie te, które znajdują się w sąsiedztwie oznaczonych węzłów (również w dalszym, zależnie od wybranej odległości sąsiedztwa). Zdarza się jednak konieczność klasyfikacji dowolnego węzła na podstawie wyuczonego modelu, nawet jeśli nie znajduje się on w sąsiedztwie oznaczonych węzłów i nie spełnia kryterium procentu oznaczonych sąsiadów. (Można propagować dane dla minimalnego procenta oznaczonych sąsiadów równego 0, jednakże wciąż będą to dane blisko danych oznaczonych).
