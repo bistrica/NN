@@ -1,0 +1,5358 @@
+911, czczy, 1, -10
+104754, szantażystka, 1, -10
+656737, ktoś trzeci, 1, -10
+657278, down, 3, -10
+657280, daun, 1, -10
+2023, groźny, 1, -10
+657491, głupiec patentowany, 1, -10
+657855, męki piekielne, 1, -10
+657903, kaleka umysłowy, 1, -10
+658472, bachorek, 1, -10
+677799, kliniczny, 5, -10
+22470, cywilizowany, 1, -10
+4089, niegodny, 1, -10
+4302, niesłuszny, 1, -10
+397170, deprywacja polityczna, 1, -10
+110332, skandalik, 1, -10
+662035, meksyk, 3, -10
+366663, traciciel, 1, -10
+662588, kłótny, 1, -10
+663310, zakupoholizm, 1, -10
+8091, śliczny, 1, -10
+372729, prosię, 4, -10
+105047, demagożka, 1, -10
+1640, emocja, 1, -10
+358227, mistyfikatorka, 1, -10
+10128, wstrętny, 1, -10
+665870, mumia, 4, -10
+666059, pogromowy, 2, -10
+666077, trol, 1, -10
+10800, zabrudzony, 1, -10
+666283, ćma barowa, 1, -10
+666367, wrzuta, 1, -10
+666549, hołdowny, 1, -10
+11464, zdołowany, 1, -10
+11721, zniecierpliwienie, 2, -10
+667277, sierota nieboża, 2, -10
+143103, uczucie, 5, -10
+143136, żal, 1, -10
+667614, opętany, 2, -10
+111310, pampers, 2, -10
+143637, wkurw, 1, -10
+668175, seksskandal, 1, -10
+144511, egoistyczny, 1, -10
+668894, kutas złamany, 1, -10
+144648, miałki, 3, -10
+144993, niegodny, 3, -10
+145478, zatracony, 1, -10
+145492, zasrany, 2, -10
+146216, sprytny, 3, -10
+146606, niestabilny, 2, -10
+658051, niebieski ptaszek, 1, -10
+672309, wypadek jądrowy, 1, -10
+672316, ciamcia lamcia, 1, -10
+672408, jarmarkowicz, 1, -10
+17985, niekonstruktywny, 1, -10
+678790, siano w głowie, 1, -10
+674052, żal, 4, -10
+674053, bieda, 4, -10
+674238, traiczny, 1, -10
+18879, niewyrozumiały, 1, -10
+674300, dosiebność, 1, -10
+18994, czarny, 4, -10
+19060, przeczulony, 1, -10
+19127, fatalny, 3, -10
+674584, kaduczny, 1, -10
+674589, kaduk, 3, -10
+19367, niekulturalny, 1, -10
+19397, nielojalny, 1, -10
+675041, krwiopijczy, 2, -10
+680503, dekonstrukcyjny, 1, -10
+675264, zdzierczy, 1, -10
+675373, cios młotkowy, 1, -10
+675586, ordynaryjny, 3, -10
+675700, Bogu ducha winny, 1, -10
+68927, sobiepan, 1, -10
+20384, niewinny, 2, -10
+20448, nikły, 3, -10
+676052, uporny, 2, -10
+676099, fekalny, 4, -10
+676220, małoobsadowy, 1, -10
+676247, spazmatyczny, 2, -10
+676407, zlękły, 1, -10
+676634, dupoliz, 1, -10
+676658, obraza majestatu, 1, -10
+676832, kop, 3, -10
+676937, boleśny, 1, -10
+676939, boleśny, 2, -10
+677689, niedoszły, 2, -10
+22538, używany, 1, -10
+22601, nieuleczalny, 1, -10
+22614, niewierny, 2, -10
+677999, nieścigniony, 1, -10
+22985, senny, 3, -10
+678535, gorąca krew, 2, -10
+23421, niekorzyść, 1, -10
+678807, chory na głowę, 1, -10
+23468, palenie, 2, -10
+678939, kutasi łeb, 1, -10
+679027, sztywniactwo, 1, -10
+679161, krwawy, 10, -10
+679322, przestały, 3, -10
+7060089, zatrważający, 1, -10
+659856, chudy, 12, -10
+679840, ciemność, 4, -10
+105567, donosicielka, 1, -10
+24736, flejtuch, 1, -10
+680103, popis, 2, -10
+367445, hołysz, 1, -10
+681031, pseudointelektualny, 2, -10
+25685, rozbój, 2, -10
+4288, niesurowy, 1, -10
+681097, potwarczy, 1, -10
+681099, potwarczy, 2, -10
+681113, oparszywiały, 2, -10
+681294, biała gorączka, 2, -10
+681334, chutny, 1, -10
+681535, chłopacki, 4, -10
+681792, szubrawy, 1, -10
+681817, roztrzęsiony, 3, -10
+7060453, szarpanka, 5, -10
+681926, żydożerstwo, 1, -10
+681938, mistyfikacyjny, 1, -10
+682208, gadzinowy, 4, -10
+682328, perkunowy, 1, -10
+682415, głodowy, 2, -10
+681746, żołdacki, 3, -10
+682724, nieszczędny, 1, -10
+682966, poniewolny, 4, -10
+682995, skompleksowany, 2, -10
+683352, zwarciowy, 2, -10
+683361, pokemonowy, 7, -10
+683760, wpółdziki, 2, -10
+7060798, syfek, 2, -10
+683900, bezlitośny, 2, -10
+659994, lekki, 10, -10
+683939, malkontencki, 3, -10
+684032, swarny, 1, -10
+684071, paralogiczny, 1, -10
+684198, słabiuchny, 8, -10
+684251, masakryczny, 1, -10
+684252, masakryczny, 2, -10
+684419, szmatławy, 2, -10
+684423, szmatławy, 3, -10
+684426, szmatławy, 5, -10
+684473, kłamny, 1, -10
+684474, kłamny, 2, -10
+101357, łajdus, 1, -10
+684591, uczniacki, 2, -10
+684706, pusty, 9, -10
+684776, puściutki, 1, -10
+684778, puściutki, 3, -10
+684796, drapieżczy, 1, -10
+684825, barania łąka, 1, -10
+684920, pseudoartysta, 2, -10
+660288, dziecko Beliala, 1, -10
+620747, szyd, 1, -10
+684979, spsiały, 1, -10
+684983, spsiały, 3, -10
+684993, spsiały, 4, -10
+685201, rozwięzły, 2, -10
+354530, obraźliwy, 1, -10
+30127, świętoszek, 1, -10
+30128, świętoszka, 1, -10
+685640, bezbożny, 3, -10
+685649, żałościwy, 3, -10
+685928, gniły, 1, -10
+686017, autoagresywny, 1, -10
+686021, autoagresywny, 3, -10
+686118, specjalna troska, 1, -10
+30794, golizna, 2, -10
+31008, bandzior, 1, -10
+105828, rozbójniczka, 1, -10
+686620, ciemnogłowy, 3, -10
+31326, Boruta, 2, -10
+686788, letki, 2, -10
+686789, lekki, 15, -10
+686830, długojęzyczny, 1, -10
+686836, egotystyczny, 2, -10
+686936, lichawy, 2, -10
+687280, napastny, 1, -10
+687285, napastny, 2, -10
+376781, tkliwość, 3, -10
+688055, szalbierczy, 1, -10
+688056, szalbierczy, 2, -10
+688169, bigoteryjny, 2, -10
+688233, biednieńki, 2, -10
+32914, skrucha, 1, -10
+355028, sparciały, 1, -10
+7061570, chamówa, 4, -10
+33393, upadły anioł, 2, -10
+617336, świńsko, 3, -10
+7061711, szydera, 1, -10
+661061, nieprzystępność, 2, -10
+7061802, zgodność, 5, -10
+704818, pieruński, 1, -10
+34731, dziad kalwaryjski, 1, -10
+7061906, paskuda, 3, -10
+683183, wieloodłamowy, 1, -10
+36237, złośnica, 1, -10
+36337, gejowski, 1, -10
+36369, kloaka, 3, -10
+36791, schizol, 1, -10
+37099, tułaczka, 2, -10
+677737, rozlazły, 5, -10
+37423, diablica, 2, -10
+37425, diablica, 1, -10
+37458, głuptas, 1, -10
+7062358, buracki, 1, -10
+7062361, ciemniactwo, 1, -10
+38154, niewdzięcznica, 1, -10
+38170, pijaczysko, 1, -10
+38382, purchawka, 2, -10
+38476, bamber, 1, -10
+38833, okrutnica, 1, -10
+377869, gminność, 1, -10
+39058, faja, 1, -10
+39102, Hydra lernejska, 1, -10
+377932, melodramatyczność, 1, -10
+6608, prymitywny, 1, -10
+7062665, czereśniak, 1, -10
+683896, bezlitośny, 1, -10
+683904, bezlitośny, 3, -10
+683915, beztroskliwy, 1, -10
+705833, wstrętny, 6, -10
+7063151, gówniak, 1, -10
+684145, zwadliwy, 1, -10
+41995, pipa, 2, -10
+42465, fanfaronada, 1, -10
+18878, niepobłażliwy, 1, -10
+42724, krówsko, 2, -10
+42766, fleja, 1, -10
+42771, łajza, 1, -10
+42774, morus, 1, -10
+42956, oślica, 2, -10
+7063238, nieczynność, 4, -10
+43277, zdarzenie oceniane negatywnie, 1, -10
+684429, szmatławy, 6, -10
+698883, czortowski, 1, -10
+698884, czortowski, 2, -10
+7063246, nieczynny, 8, -10
+700571, mroźny, 2, -10
+45397, własność rozumowania lub rozumowań, 1, -10
+700936, biały, 15, -10
+45670, szpicel, 1, -10
+701598, rozpustny, 2, -10
+46521, leszcz, 1, -10
+46522, naiwniaczek, 1, -10
+684982, spsiały, 2, -10
+374536, podrabiaczka, 1, -10
+379237, łachmaniara, 1, -10
+47474, proletariusz, 2, -10
+357464, minion, 1, -10
+703155, ujemny, 8, -10
+703290, przytłaczający, 2, -10
+48162, terrorystka, 1, -10
+360832, gniewek, 1, -10
+704395, fałszywy, 6, -10
+704396, rzeczywisty, 2, -10
+49038, nikotynizm, 1, -10
+49039, eteromania, 1, -10
+49046, pracoholizm, 1, -10
+49051, erotomania, 1, -10
+357714, przeklętnica, 1, -10
+49599, war, 2, -10
+685509, tajniacki, 2, -10
+705217, nieczłowieczy, 3, -10
+705296, przepastny, 3, -10
+685537, żałościwy, 2, -10
+705835, wstrętny, 8, -10
+705865, ohydny, 5, -10
+379872, furiatka, 1, -10
+706465, po dyktatorsku, 1, -10
+706520, durny, 7, -10
+51557, pisanina, 2, -10
+707423, z piekła rodem, 1, -10
+52442, człowiek uprzedzony, 1, -10
+52496, grasant, 1, -10
+53006, sytuacja materialna, 1, -10
+53014, pauperyzm, 1, -10
+708493, lekki, 23, -10
+708643, marnotrawny, 2, -10
+708033, kretyński, 7, -10
+54197, fujara, 1, -10
+54631, umartwienie, 1, -10
+686326, grubymi nićmi szyty, 1, -10
+54835, cecha osobowości, 1, -10
+710206, żółwiowy, 3, -10
+358671, rutyniara, 1, -10
+710460, wątły, 8, -10
+55168, sobiepanek, 1, -10
+710682, zrezygnowanie, 2, -10
+55542, obrzydłość, 1, -10
+711248, diabelny, 3, -10
+711299, tragiczny, 7, -10
+686554, obciachowy, 1, -10
+56219, drabisko, 1, -10
+56347, nerwacja, 1, -10
+358980, szowinistka, 1, -10
+57096, opętaniec, 2, -10
+686728, mydłkowaty, 2, -10
+57255, obrzydłość, 2, -10
+359071, zawistnica, 1, -10
+57787, zwierzęcość, 1, -10
+686941, bezuczuciowość, 1, -10
+686972, bezzwiązkowy, 4, -10
+59204, Rokita, 2, -10
+59929, akatyzja, 1, -10
+60029, morderczyni, 1, -10
+60097, trucicielka, 1, -10
+60157, kusicielka, 2, -10
+60261, kryminalistka, 1, -10
+60386, kabotyn, 1, -10
+60401, wazeliniarz, 1, -10
+60421, zbrodniarka, 1, -10
+60422, zdrajczyni, 1, -10
+60441, awanturka, 1, -10
+60449, egocentryczka, 1, -10
+60450, histeryczka, 1, -10
+60671, przestępczyni, 1, -10
+61011, fanatyczka, 2, -10
+61057, despekt, 1, -10
+621902, gnuśnik, 1, -10
+61429, kondolencja, 1, -10
+61562, golgota, 1, -10
+61806, idiosynkrazja, 1, -10
+61807, ignorantka, 1, -10
+54045, głuptasek, 1, -10
+62181, cecha charakteru, 1, -10
+62182, cecha psychiczna, 1, -10
+62275, korba, 2, -10
+62330, paniczyk, 1, -10
+62367, liliputka, 1, -10
+62526, złodziejka, 1, -10
+62890, napastniczka, 1, -10
+63031, rankor, 1, -10
+63056, snobka, 1, -10
+63280, tęsknica, 1, -10
+63634, cipa, 1, -10
+719100, z piekła rodem, 2, -10
+64101, oślisko, 1, -10
+360258, inwigilatorka, 1, -10
+64464, kortezanin, 2, -10
+64465, kortezan, 2, -10
+720154, niebaczny, 4, -10
+64863, chimeryczka, 1, -10
+64962, chuliganka, 1, -10
+65094, człowiek mało ważny, 1, -10
+65123, fisza, 1, -10
+65164, ciura, 2, -10
+65170, neptek, 1, -10
+65509, markieranctwo, 1, -10
+674326, zelżywy, 1, -10
+66073, rozrzutnica, 1, -10
+360551, tyranek, 1, -10
+360595, biedaczek, 1, -10
+66531, dezolacja, 1, -10
+66913, siekaninka, 1, -10
+68260, kipisz, 2, -10
+68578, smętek, 1, -10
+68579, tęskność, 1, -10
+68608, doliniarz, 1, -10
+68863, dupa, 3, -10
+68864, dupa wołowa, 1, -10
+68914, pauper, 1, -10
+68928, szachrajka, 1, -10
+98883, antysemitka, 1, -10
+69012, korona cierniowa, 2, -10
+69365, łoże boleści, 2, -10
+69511, impertynentka, 1, -10
+69591, dzieciobójczyni, 1, -10
+70310, famulus, 1, -10
+70596, wysiadka, 1, -10
+70727, podpalaczka, 1, -10
+71102, zezowate szczęście, 1, -10
+71103, garbate szczęście, 1, -10
+710959, debilowaty, 6, -10
+667273, sierota nieboża, 1, -10
+718254, kutasiarz, 1, -10
+143668, rys, 3, -10
+362354, wypadeczek, 1, -10
+362361, żalik, 2, -10
+679628, makiawelistyczny, 1, -10
+77565, kupczyk, 1, -10
+100638, próżniaczka, 1, -10
+102666, brygant, 1, -10
+363135, zbirek, 1, -10
+606420, fisz, 1, -10
+683667, naprzykrzony, 1, -10
+625719, permareksja, 1, -10
+363612, pismaczek, 1, -10
+364170, głuptaś, 1, -10
+364171, jędzula, 1, -10
+364268, nieprzyjemnostka, 1, -10
+627075, pochlebnik, 1, -10
+105340, rasistka, 1, -10
+80389, jałowy, 6, -10
+613871, drygant, 2, -10
+364598, obdzierca, 1, -10
+648644, ciężka dupa, 1, -10
+626810, plebejka, 2, -10
+353814, cyniczny, 2, -10
+353921, niesławny, 2, -10
+353980, naiwny, 2, -10
+616142, wardęga, 1, -10
+91947, strzał, 3, -10
+354121, pretensjonalny, 1, -10
+354134, pyskaty, 1, -10
+354562, burżujka, 2, -10
+354705, wszawy, 5, -10
+354720, ohydny, 3, -10
+617332, świńsko, 2, -10
+617334, świnia, 4, -10
+617408, ździerstwo, 1, -10
+355452, dziuplasty, 1, -10
+355668, zapadły, 3, -10
+355745, zdziwaczały, 1, -10
+679621, hulacki, 1, -10
+356328, kujonka, 1, -10
+356361, naciągaczka, 1, -10
+356373, recydywistka, 1, -10
+356400, kapitalistka, 2, -10
+356430, prowokatorka, 1, -10
+356432, prześladowczyni, 1, -10
+356479, grafomanka, 1, -10
+103191, matkobójczyni, 1, -10
+357286, wazeliniara, 1, -10
+357334, mizantropka, 1, -10
+357346, podżegaczka, 1, -10
+357354, spekulantka, 1, -10
+357420, malkontentka, 1, -10
+357436, szabrowniczka, 1, -10
+357511, kumoterski, 1, -10
+619681, szpiegówka, 1, -10
+357736, fundamentalistka, 1, -10
+357755, skazana, 1, -10
+357766, ważniaczka, 1, -10
+357767, ważniaczka, 2, -10
+357770, zwodzicielka, 1, -10
+357962, wywrotny, 1, -10
+358124, marnotrawczyni, 1, -10
+358126, mitomanka, 1, -10
+358233, bankrutka, 1, -10
+358354, bufonka, 1, -10
+358363, kundmanka, 1, -10
+620554, oślina, 3, -10
+358446, mocarny, 2, -10
+620664, ubliga, 1, -10
+358545, kidnaperka, 1, -10
+358637, równoprawny, 1, -10
+358641, sofistyczny, 1, -10
+358832, sodomitka, 1, -10
+358842, ceperka, 1, -10
+358864, seksistka, 1, -10
+358994, cyniczka, 1, -10
+359031, krzywdzicielka, 1, -10
+359074, doliniarka, 1, -10
+359246, katastrofistka, 1, -10
+359317, pokrętny, 3, -10
+359338, królobójczyni, 1, -10
+359341, megalomanka, 1, -10
+359356, pedofilka, 1, -10
+359357, pieniaczka, 1, -10
+621565, samota, 1, -10
+621896, cymbałek, 1, -10
+360157, obelżywy, 1, -10
+360674, paróweczka, 3, -10
+360842, dramacik, 3, -10
+360864, leszczyk, 1, -10
+98806, abnegatka, 1, -10
+623129, straszydełko, 1, -10
+98866, anarchistka, 2, -10
+98872, anglofobka, 1, -10
+361180, kreaturka, 1, -10
+99116, austrofobka, 1, -10
+99354, poruta, 1, -10
+623660, parazyt, 1, -10
+99388, dziadek, 4, -10
+623697, mlon, 1, -10
+623711, nikczemnica, 1, -10
+361631, obszarpany, 1, -10
+623781, pastrana, 1, -10
+99524, bandytka, 1, -10
+366139, nieprzejednany, 1, -10
+624138, seksoholizm, 1, -10
+99908, materialistka, 1, -10
+362152, lichewka, 1, -10
+362160, obławka, 1, -10
+100118, mężobójca, 1, -10
+362324, grymasik, 1, -10
+362362, żalik, 3, -10
+362384, klątewka, 1, -10
+362503, pretensyjka, 1, -10
+624652, łeb, 3, -10
+362533, gadzinka, 3, -10
+100508, porywaczka, 1, -10
+100584, borsuk, 3, -10
+100615, bratobójczyni, 1, -10
+100635, bumelantka, 1, -10
+100636, leserka, 1, -10
+100637, markierantka, 1, -10
+100644, burzycielka, 1, -10
+100780, pseudoartystka, 1, -10
+625143, słonica, 2, -10
+363110, głuptaczek, 3, -10
+363112, liliputek, 1, -10
+16831, nieszczęsny, 1, -10
+363146, morusek, 1, -10
+363422, judaszek, 1, -10
+363505, łajdaczyna, 1, -10
+363605, komediancik, 2, -10
+101520, cipsko, 2, -10
+101675, homofobia, 1, -10
+363822, próżniaczysko, 1, -10
+363867, baranisko, 2, -10
+101831, chytruska, 1, -10
+363984, pisarczyna, 1, -10
+363990, tupecik, 1, -10
+364297, pieklisko, 2, -10
+102813, desperatka, 1, -10
+365301, skąpiarz, 1, -10
+103193, ojcobójczyni, 1, -10
+365485, trwoniciel, 1, -10
+103475, kaban, 1, -10
+103484, korybant, 2, -10
+103593, nędzarka, 1, -10
+103901, wał, 5, -10
+366054, Hiob, 1, -10
+366078, krwawy, 8, -10
+366242, znoszony, 1, -10
+659732, zmartwienie, 5, -10
+628545, animalność, 1, -10
+104277, szulerka, 1, -10
+104514, lowelasek, 1, -10
+366768, utratnik, 1, -10
+104639, chachar, 2, -10
+629216, immoralny, 1, -10
+105033, degeneratka, 1, -10
+105071, denuncjatorka, 1, -10
+105109, dezerterka, 2, -10
+367544, ofensywny, 2, -10
+367662, cenzorski, 2, -10
+367717, letalny, 1, -10
+367731, patologiczny, 2, -10
+105795, paranoiczka, 1, -10
+630110, szczeniara, 1, -10
+105830, sadystka, 1, -10
+630751, bęś, 1, -10
+631081, oszołomstwo, 2, -10
+369078, fajans, 4, -10
+631822, chojractwo, 1, -10
+369867, obijaczka, 1, -10
+370008, pirat, 4, -10
+108035, włamywaczka, 1, -10
+108092, szwank, 1, -10
+108289, pokurcz, 1, -10
+370476, krzyż, 5, -10
+370543, profaneria, 1, -10
+108570, garbusek, 1, -10
+632964, rajzerka, 1, -10
+109257, dzikuska, 1, -10
+371506, frustratka, 1, -10
+109389, ekshibicjonistka, 2, -10
+371787, pieniacki, 2, -10
+109801, głupstwo, 3, -10
+372036, szyderski, 2, -10
+110077, mścicielka, 1, -10
+110334, smuteczek, 1, -10
+105792, horrendum, 1, -10
+634829, rutynista, 1, -10
+110542, hochsztaplerka, 2, -10
+706369, nieśmiertelny, 4, -10
+372730, prosiak, 2, -10
+634901, partacki, 2, -10
+105823, garbuska, 1, -10
+105829, sadystka, 2, -10
+110755, uzurpatorka, 1, -10
+110795, nieudacznica, 1, -10
+110796, przydupas, 1, -10
+373295, kurwiarz, 2, -10
+373431, człowiek określany jakoś ze względu na predyspozycje umysłowe, 1, -10
+374708, synobójczyni, 1, -10
+375187, zapalczywy, 2, -10
+375202, kurwica, 1, -10
+7059887, porażający, 1, -10
+7059894, nielichy, 3, -10
+375232, rogi, 2, -10
+375271, gniewny, 3, -10
+674252, tragiczny, 5, -10
+7060447, szarpanka, 4, -10
+674309, prowokacyjny, 1, -10
+375870, leniwy, 4, -10
+7060585, aferka, 2, -10
+7060599, głupiątko, 1, -10
+638100, mondzioł, 1, -10
+7060773, siurek, 2, -10
+7060797, syfek, 1, -10
+7060799, syfek, 3, -10
+7061292, picuś-glancuś, 1, -10
+7061293, picuś, 1, -10
+376673, naganny, 2, -10
+638897, rzeźniczka, 3, -10
+376838, mafijny, 1, -10
+7061564, anarch, 2, -10
+376962, marnotrawny, 1, -10
+377018, paria, 1, -10
+377135, zbutwiały, 1, -10
+7061905, paskudztwo, 2, -10
+7061962, skunks, 4, -10
+7062065, majsterklepka, 1, -10
+106629, dyktatorka, 1, -10
+7062356, buractwo, 1, -10
+377931, melodramatyzm, 1, -10
+7062666, czereśniak, 2, -10
+640202, kabotyn, 2, -10
+718377, pociągający, 2, -10
+378167, kurduplowatość, 1, -10
+378295, dupowatość, 1, -10
+378361, zimność, 2, -10
+674769, odrodny, 1, -10
+378830, chciwstwo, 1, -10
+641022, bolejący, 1, -10
+7063629, antymobbing, 1, -10
+379155, narowistość, 2, -10
+379560, cyganicha, 3, -10
+379561, oszustka, 1, -10
+379581, bezbożnica, 1, -10
+680414, półciemny, 2, -10
+379691, palantino, 1, -10
+379898, fajfus, 1, -10
+380103, bajerantka, 1, -10
+7065223, wazeliniarski, 1, -10
+380804, spina, 1, -10
+719745, mania wielkości, 2, -10
+643392, niewyleczalny, 1, -10
+653419, koszula Dejaniry, 1, -10
+646159, perfidność, 1, -10
+20353, nieszczery, 1, -10
+647744, nepotyczny, 1, -10
+108006, karakan, 1, -10
+648253, biesowski, 2, -10
+7061597, horrorek, 3, -10
+650956, wołający o pomstę, 1, -10
+651454, niedarowany, 1, -10
+651580, niedestrukcyjny, 1, -10
+104638, chachar, 1, -10
+653768, dzika lokatorka, 1, -10
+654605, szata Dejaniry, 1, -10
+654607, suknia Dejaniry, 1, -10
+654620, przytupas, 3, -10
+655106, bystra głowa, 1, -10
+677828, furiacki, 1, -2
+680094, jednogłosowy, 5, -2
+45104, jajogłowy, 1, -2
+57267, wielkolud, 2, -2
+365866, martyrologiczny, 1, -2
+675252, rezerwa, 5, -2
+655547, żywy trup, 1, -1
+656872, gliniane ręce, 1, -1
+657042, zerojedynkowy, 2, -1
+657249, sokole oko, 2, -1
+657339, lwica salonowa, 1, -1
+657930, niskobudżetowy, 1, -1
+658195, gwarliwy, 2, -1
+658336, dziwotworny, 1, -1
+3626, mozolny, 1, -1
+659518, finezyjność, 2, -1
+4354, niewierny, 1, -1
+4436, niezrównoważony, 1, -1
+660267, plaga egipska, 1, -1
+5470, pedagogiczny, 1, -1
+661055, zboczeniec, 2, -1
+22875, nieprzyjazny, 3, -1
+372439, pieściwy, 2, -1
+6467, prażący, 1, -1
+685453, spąsowiały, 1, -1
+7103, przytłaczający, 1, -1
+8419, starucha, 1, -1
+663957, worek treningowy, 3, -1
+664247, płony, 1, -1
+10511, wyróżniający się, 1, -1
+665889, wieloczynnikowość, 1, -1
+666092, obwiniony, 1, -1
+666432, szczaw, 3, -1
+11186, zarozumiały, 1, -1
+679072, pasywistyczny, 1, -1
+373253, samochwalca, 1, -1
+666856, grzech główny, 1, -1
+628564, głuchociemnota, 1, -1
+11938, złożony, 1, -1
+143111, gniew, 2, -1
+143315, numerek, 2, -1
+676931, bezradosny, 1, -1
+144233, skromny, 2, -1
+144540, nieprawdziwy, 4, -1
+144612, markotny, 1, -1
+679497, wrzawliwy, 2, -1
+144835, ospały, 4, -1
+145284, ulotny, 1, -1
+109587, problemik, 2, -1
+145488, zatracony, 6, -1
+146210, dziecinny, 3, -1
+670755, akademiczny, 2, -1
+671334, pseudofilozoficzny, 1, -1
+671480, siwowąsy, 1, -1
+16355, blondynka, 1, -1
+2749, konfuzja, 1, -1
+16528, niejednostajny, 1, -1
+16650, niemodny, 1, -1
+672864, skwaśniały, 1, -1
+673227, synek mamusi, 1, -1
+18494, wychowawczy, 1, -1
+18851, dorobkiewiczowski, 1, -1
+680361, meandrowaty, 3, -1
+19189, hałaśliwy, 1, -1
+19245, gotowy, 3, -1
+680425, półciemny, 6, -1
+674836, ponadnormalny, 1, -1
+19691, dumny, 2, -1
+675158, ekshibicjonistyczny, 1, -1
+675265, zdzierczy, 2, -1
+675483, różowa landrynka, 2, -1
+675578, monotoniczny, 3, -1
+20237, niedostatek, 1, -1
+675825, zwarcie elektryczne, 1, -1
+675940, zbytkowy, 2, -1
+676050, uporny, 1, -1
+680661, głęboki, 11, -1
+676277, dziewoja, 2, -1
+676448, piłatowy, 2, -1
+676498, diaboliczny, 6, -1
+676499, ujemny, 4, -1
+676977, zatęchły, 3, -1
+7059658, niedwuznaczny, 1, -1
+677476, skisły, 3, -1
+22133, żmudny, 2, -1
+677839, lamentliwy, 1, -1
+22668, nieodpowiedzialny, 1, -1
+678129, porobiony, 1, -1
+678437, nierozwikłany, 1, -1
+678531, skaranie boskie, 1, -1
+678536, mrocznawy, 3, -1
+678568, krew z mlekiem, 1, -1
+678569, purnonsensowy, 2, -1
+678645, nabrzmiały, 5, -1
+678720, ból głowy, 1, -1
+678737, domorosły, 4, -1
+679081, półobłąkany, 2, -1
+679444, sól w oku, 1, -1
+679644, niedospany, 1, -1
+679649, niedospany, 3, -1
+679792, chłopak do bicia, 1, -1
+7062610, goluśki, 3, -1
+679933, przedpokojowy, 3, -1
+679941, ślepawy, 1, -1
+7060148, nieprzesadny, 1, -1
+680195, zasuszony, 1, -1
+680658, głębinny, 4, -1
+681612, ciemnopąsowy, 2, -1
+681649, trupiogłowy, 1, -1
+681720, hamletyczny, 2, -1
+681820, stronny, 1, -1
+681965, szychowy, 2, -1
+703513, arbitralny, 3, -1
+4479, normalny, 2, -1
+682249, zadufały, 1, -1
+682721, ważniacki, 1, -1
+682726, ważniacki, 2, -1
+683178, spasły, 1, -1
+683265, pseudoklasyczny, 2, -1
+683374, żerty, 1, -1
+683443, podgniły, 1, -1
+683469, okrągłogłowy, 1, -1
+683546, podufały, 4, -1
+683549, zmizerniały, 1, -1
+683757, pseudomedyczny, 2, -1
+683917, duperelny, 1, -1
+655629, swawolnica, 2, -1
+703816, debilowaty, 4, -1
+684234, bezlicy, 1, -1
+684299, meandryczny, 1, -1
+684384, masakryczny, 6, -1
+684425, szmatławy, 4, -1
+684580, strączkowaty, 1, -1
+682094, oleodrukowy, 2, -1
+684875, hebefreniczny, 2, -1
+684906, oczojebny, 2, -1
+684947, sztywniacki, 1, -1
+684967, kwadratura koła, 2, -1
+685200, rozwięzły, 1, -1
+30118, plotkarz, 1, -1
+686121, odtwórczy, 3, -1
+686242, ataktyczny, 3, -1
+686260, notatkowy, 2, -1
+686550, nadobłoczny, 2, -1
+31317, okrągłość, 2, -1
+686736, jednotonny, 1, -1
+686933, bezpotrzebny, 1, -1
+687081, deficyt tlenowy, 1, -1
+638819, nawalanka, 5, -1
+687258, defekacyjny, 3, -1
+687270, gołogłowy, 1, -1
+27185, blondyna, 1, -1
+376713, mieszany, 4, -1
+687507, wpółobłąkany, 2, -1
+687512, półsenny, 3, -1
+687513, wpółsenny, 2, -1
+687561, minoderyjny, 1, -1
+687628, wyżółkły, 1, -1
+686308, efemerydalny, 2, -1
+660778, niewola egipska, 2, -1
+688030, arcynudny, 1, -1
+688085, pijaczy, 3, -1
+688127, przesłodzony, 1, -1
+688137, przełzawiony, 3, -1
+688237, półgłuchy, 1, -1
+34762, koniec świata, 1, -1
+36238, awanturnica, 1, -1
+36767, farmazon, 1, -1
+36780, kłamczuszek, 1, -1
+37039, pożeracz, 1, -1
+37537, miastowy, 1, -1
+683502, barowy, 5, -1
+38166, opilca, 1, -1
+38167, opilec, 1, -1
+38202, maglara, 1, -1
+38203, plotkara, 1, -1
+38204, maglarka, 1, -1
+38484, gburzysko, 1, -1
+38495, bezdomna, 1, -1
+38501, rozrabiaka, 1, -1
+7062496, przesadyzm, 1, -1
+38838, dręczycielka, 1, -1
+41273, kołowrót, 3, -1
+679391, nieubłagalny, 1, -1
+684156, przeziębły, 1, -1
+42408, nieukontentowanie, 1, -1
+42980, tłustość, 2, -1
+698685, wyżyty, 1, -1
+698927, mądraliński, 1, -1
+43910, chomik, 2, -1
+699512, świszczypała, 1, -1
+372462, rozpłakany, 2, -1
+44622, uciekinierka, 1, -1
+45515, konus, 1, -1
+701455, odległy, 6, -1
+701474, niezdarny, 3, -1
+701573, ciężkawy, 5, -1
+684950, sztywniacki, 3, -1
+702214, przykrótki, 2, -1
+702216, przykrótki, 3, -1
+379203, niewydolny, 1, -1
+47135, punia, 1, -1
+685147, płaksiwy, 3, -1
+663395, córa marnotrawna, 1, -1
+48212, blondyneczka, 1, -1
+48364, okularnica, 1, -1
+704224, bidny, 6, -1
+357707, powodzianka, 1, -1
+704539, sędziwy, 3, -1
+704671, dawny, 10, -1
+704825, prehistoryczny, 3, -1
+704852, mimetyczny, 3, -1
+705030, goły i wesoły, 1, -1
+685531, owrzodziały, 1, -1
+705320, dalekowzroczny, 3, -1
+685577, pseudohumanitarny, 1, -1
+705859, antynaturalistyczny, 7, -1
+705982, niewymyślny, 2, -1
+706164, nieostry, 5, -1
+706213, nieostry, 17, -1
+706249, pociągły, 3, -1
+706365, inercyjny, 2, -1
+706386, niesłony, 2, -1
+363972, gałganisko, 2, -1
+707202, twardy, 10, -1
+51882, psubrat, 1, -1
+52375, łono, 3, -1
+707978, majowy robotnik, 1, -1
+708000, kryminalny, 4, -1
+52793, szczutek, 1, -1
+52938, sprawczyni, 1, -1
+708390, kryptonimowy, 3, -1
+53101, magiel, 3, -1
+53153, śpioszka, 1, -1
+686100, jednoramienny, 3, -1
+620595, zbójniczek, 2, -1
+709070, przeciętny, 6, -1
+7065053, przygłupiasty, 1, -1
+105110, dezerterka, 1, -1
+358601, niedobrowolny, 1, -1
+710394, dwa grzyby w barszczu, 1, -1
+710843, strawny, 3, -1
+710847, czynny, 6, -1
+710848, czynny, 7, -1
+710853, czynny, 12, -1
+56092, śmiertelniczka, 1, -1
+56241, jeremiada, 2, -1
+711791, żebracki, 3, -1
+56761, puszystość, 3, -1
+57067, filut, 2, -1
+57254, zgrzybiałość, 2, -1
+57265, nieułomek, 1, -1
+57439, kózka, 1, -1
+364173, kopniaczek, 1, -1
+713885, brudas, 2, -1
+59110, dupowaty, 1, -1
+60423, zdrajczyni, 2, -1
+60467, rozrabiacz, 1, -1
+687319, śpioszydło, 1, -1
+717019, guzik z pętelką, 1, -1
+62365, nerwówa, 1, -1
+62744, płaczka, 1, -1
+63183, szczekacz, 1, -1
+63286, swawolnik, 1, -1
+718703, z czapy, 1, -1
+687766, zdziadziały, 4, -1
+366174, odwieczny, 2, -1
+687379, harny, 1, -1
+64576, pierepałka, 1, -1
+64886, bałaganik, 1, -1
+688134, przełzawiony, 1, -1
+622661, pokuśnica, 1, -1
+622662, pokuśnik, 1, -1
+66097, egotystka, 1, -1
+688234, biednieńki, 3, -1
+11115, zaplanowany, 1, -1
+66918, szatanek, 1, -1
+360833, gniewek, 2, -1
+361009, bluesowy, 2, -1
+69226, żebraczka, 1, -1
+69516, incydencik, 1, -1
+69522, rozpierducha, 2, -1
+69692, wieśniaczek, 1, -1
+70366, wąskie gardło, 1, -1
+623434, stupaja, 1, -1
+70610, ciężka ręka, 1, -1
+70938, filutek, 2, -1
+70996, śpioszek, 1, -1
+72043, niejadalny, 1, -1
+361723, usłużny, 2, -1
+679728, niezbłagany, 2, -1
+624175, znajdek, 1, -1
+362355, wypadeczek, 2, -1
+78040, bałamutnica, 1, -1
+624921, utrata słuchu, 1, -1
+624924, głuchoniemota, 1, -1
+100639, buntowniczka, 1, -1
+647030, rzewliwy, 1, -1
+687936, tabuistyczny, 1, -1
+363159, dziwotworek, 1, -1
+647219, pseudolosowy, 1, -1
+363392, młokosik, 1, -1
+101293, małolatek, 1, -1
+365081, niewyspany, 2, -1
+363835, buraczysko, 3, -1
+101859, kalkulatorka, 1, -1
+101933, psiajucha, 1, -1
+622690, popijała, 1, -1
+612650, bachus, 2, -1
+103396, drech, 1, -1
+679537, znikliwy, 2, -1
+670566, konający, 1, -1
+102673, paliwoda, 2, -1
+353949, karkołomny, 1, -1
+353987, niechlujny, 3, -1
+354013, niegustowny, 3, -1
+354037, nieuprzejmy, 2, -1
+354171, mniemany, 1, -1
+354575, zadufany, 1, -1
+146601, niewesoły, 1, -1
+355594, niewprawny, 1, -1
+355595, niewprawny, 2, -1
+355664, wyłupiasty, 1, -1
+355732, schorowany, 1, -1
+355734, schorzały, 1, -1
+355988, niefunkcjonalny, 1, -1
+701454, odległy, 5, -1
+356282, redundantny, 1, -1
+356364, kłamczucha, 1, -1
+356408, partykularystka, 1, -1
+356420, melancholiczka, 1, -1
+356499, kombinatorka, 1, -1
+356518, nihilistka, 2, -1
+618804, zwodnik, 2, -1
+356676, ponuraczka, 1, -1
+356683, purytanka, 2, -1
+356924, pokutniczy, 2, -1
+619113, szatanica, 1, -1
+357343, pieguska, 1, -1
+357348, purystka, 1, -1
+357358, spóźnialska, 1, -1
+357403, fetyszystka, 1, -1
+357408, gorszycielka, 1, -1
+357522, prześladowczy, 1, -1
+357849, pracochłonny, 1, -1
+357877, rozciągliwy, 2, -1
+358129, paskudnica, 1, -1
+358540, antyfeministka, 1, -1
+358541, biedniaczka, 1, -1
+358636, płonny, 2, -1
+358681, luzaczka, 1, -1
+358873, współsprawczyni, 1, -1
+358961, nieścisły, 1, -1
+358974, przywłaszczycielka, 1, -1
+358984, uchodźczyni, 1, -1
+359036, maruderka, 1, -1
+359242, golaska, 1, -1
+359350, obca, 1, -1
+359361, populistka, 1, -1
+359369, sceptyczka, 1, -1
+359481, niszczycielski, 1, -1
+360247, nierychliwy, 1, -1
+365882, konwulsyjny, 1, -1
+360604, kobiecinka, 1, -1
+360663, pryszczyk, 1, -1
+98646, szpetny, 1, -1
+622993, pampuszek, 2, -1
+360897, piegusek, 1, -1
+360904, tłoczek, 1, -1
+360917, brudek, 1, -1
+623083, paneczek, 1, -1
+360989, myszeczka, 4, -1
+361058, nieporządeczek, 1, -1
+361171, grzmocik, 2, -1
+99177, chłopek, 1, -1
+99483, bałaganiara, 1, -1
+99532, banitka, 1, -1
+99610, jadowity, 1, -1
+624174, znajdka, 1, -1
+362316, galimatiasik, 1, -1
+362344, plotkareczka, 1, -1
+104085, libacyjka, 1, -1
+624624, ancymonek, 2, -1
+362531, gadzinka, 1, -1
+362702, zgryzotka, 1, -1
+100562, bojówkarka, 1, -1
+624876, prowincjonalista, 1, -1
+362782, konflikcik, 1, -1
+100645, burżujka, 1, -1
+363072, mankamencik, 1, -1
+363095, cudaczek, 1, -1
+363113, mieszczuszek, 1, -1
+625266, kumocha, 1, -1
+363133, żebraczyna, 1, -1
+363161, gburek, 1, -1
+363393, wstręciuszek, 1, -1
+101329, sybiraczka, 1, -1
+363489, pedancik, 1, -1
+363501, uparciuszek, 1, -1
+101524, ciułaczka, 1, -1
+101594, stworek, 1, -1
+363756, nieboraczysko, 1, -1
+363865, zdechlactwo, 1, -1
+363925, charłaczyna, 1, -1
+626701, głuchoślepota, 1, -1
+364826, zagrabiciel, 1, -1
+102687, charłak, 1, -1
+364938, hałasownik, 1, -1
+365068, stateczny, 1, -1
+365147, potężny, 6, -1
+103143, człowiek, 4, -1
+365881, napadowy, 1, -1
+366161, nudnawy, 1, -1
+628831, hałaśnik, 1, -1
+105039, dekadentka, 2, -1
+105042, deklamatorka, 2, -1
+105066, denatka, 1, -1
+367286, obrażalska, 1, -1
+105379, dysfunkcjonalność, 1, -1
+629769, kołomyja, 1, -1
+367684, nieżyciowy, 2, -1
+105568, Don Juan, 1, -1
+105570, Casanova, 1, -1
+105661, niecnota, 1, -1
+105726, figurantka, 1, -1
+105937, dyferencja, 2, -1
+630379, kawalarka, 1, -1
+630673, czupiradełko, 1, -1
+630713, kokotka, 1, -1
+106628, dyktatorka, 2, -1
+368807, oklapły, 2, -1
+106709, bezczyn, 1, -1
+631928, dybidzban, 1, -1
+632158, ranczowy, 4, -1
+367677, kolizyjny, 2, -1
+108948, reklamiarz, 2, -1
+105577, dowcipasek, 1, -1
+109388, ekshibicjonistka, 1, -1
+109395, szumek, 2, -1
+372368, dychawiczny, 2, -1
+105752, pedantka, 1, -1
+706366, inercyjny, 3, -1
+651956, zazdrość, 2, -1
+110738, brzydulka, 1, -1
+373070, strateg, 3, -1
+635260, nierzetelny, 2, -1
+379050, nieszczelny, 2, -1
+373429, człowiek charakteryzowany ze względu na cechy fizyczne, 1, -1
+373656, kpinkarz, 1, -1
+374347, niemożebny, 1, -1
+374560, nietrudny, 3, -1
+374884, protekcjonistyczny, 2, -1
+113276, wyrzekanie, 1, -1
+7060178, jakiś, 4, -1
+375723, nadwyżkowy, 1, -1
+638060, komeraż, 3, -1
+7060672, klekotka, 2, -1
+674343, golusieńki, 3, -1
+638201, spina, 2, -1
+674350, kłębowy, 1, -1
+7060793, stresik, 1, -1
+638277, ambaras, 2, -1
+7060843, potrzebująca, 1, -1
+376319, pośmiewisko, 2, -1
+674406, bezpożyteczny, 1, -1
+630725, bezrada, 1, -1
+638726, brzydactwo, 2, -1
+19081, ostentacyjny, 1, -1
+376714, niejednoznaczny, 1, -1
+376844, człowiek znajdujący się w określonym stanie, 1, -1
+376858, niezamożny, 2, -1
+7061862, śmierdziel, 5, -1
+7061920, szajbuska, 1, -1
+7062034, dresik, 2, -1
+7062036, ubogość, 2, -1
+7062051, aktualność, 2, -1
+377640, zwiotczały, 1, -1
+377761, nieuczynny, 1, -1
+639946, sposępniały, 1, -1
+378012, występny, 2, -1
+7062757, podmianka, 1, -1
+378101, przepiórcze jajo, 1, -1
+378226, niedosłowny, 2, -1
+378570, niekosztowny, 2, -1
+378885, gównianość, 2, -1
+379232, płyciutki, 2, -1
+379650, człowiek nazywany jakoś ze względu na swój wzrost, 1, -1
+379873, raptuska, 1, -1
+380237, chudawy, 1, -1
+380282, szczuplusieńki, 3, -1
+7065568, nieprawdziwość, 3, -1
+7065857, nudziarski, 1, -1
+381589, ograniczony, 3, -1
+675304, mrówczany, 1, -1
+381854, prędkość, 6, -1
+719186, naparzanka, 1, -1
+646934, koszlawy, 1, -1
+684949, kurzy, 2, -1
+647071, podpiły, 1, -1
+675945, zakrzepły, 3, -1
+650363, suchawy, 1, -1
+650440, robaczliwy, 1, -1
+4210, nieprecyzyjny, 1, -1
+651220, aideologiczny, 1, -1
+652339, Hotentotka, 1, -1
+653293, ciąża spożywcza, 1, -1
+371378, ogrodzeniowy, 1, 0
+655504, Henryk VIII, 1, 0
+655512, cementowy, 3, 0
+393378, jelonkowate, 1, 0
+393424, tutkarzowate, 1, 0
+393440, żukowate, 1, 0
+393443, poświętnikowate, 1, 0
+393500, czarnuchowate, 1, 0
+109275, egiptolożka, 1, 0
+393518, omarlicowate, 1, 0
+677275, cukrzany, 3, 0
+626, błagalny, 1, 0
+393848, modliszkowate, 1, 0
+677321, niebieskawobiały, 1, 0
+711, chętka, 2, 0
+751, chrześniaczka, 1, 0
+773, chłopisko, 1, 0
+864, córa, 1, 0
+877, cudzy, 1, 0
+966, człek, 1, 0
+987, damski, 1, 0
+1204, doniosłość, 1, 0
+393420, wachlarzykowate, 2, 0
+656614, biały człowiek, 2, 0
+656636, zawał blady, 1, 0
+394596, stormbergia, 1, 0
+394597, agilizaur, 1, 0
+656814, przeciwodblaskowy, 1, 0
+656818, górny, 7, 0
+109513, eksperymentalistka, 1, 0
+1735, feralny, 1, 0
+1874, gazowy, 1, 0
+657292, ekstrawertywny, 2, 0
+657307, dusza towarzystwa, 1, 0
+1974, gospocha, 1, 0
+2006, grecki, 1, 0
+109561, ekstrawertyczka, 1, 0
+109568, hazardzistka, 2, 0
+109571, żonglerka, 2, 0
+379782, widzący, 1, 0
+657444, towarowy, 2, 0
+657516, wibroakustyk, 1, 0
+657528, czarcie nasienie, 2, 0
+2345, jeden, 1, 0
+2378, jegomość, 1, 0
+395608, miodownicowate, 1, 0
+395631, szarańczowate, 1, 0
+657858, Czukczyjka, 1, 0
+395797, sowice, 1, 0
+395808, puchówki, 1, 0
+395809, płomykówki, 1, 0
+658075, Kuszytka, 1, 0
+658077, Malgaszka, 1, 0
+658082, Masajka, 1, 0
+396082, pałątkowate, 1, 0
+658246, owoc morza, 1, 0
+396145, agnosfityz, 1, 0
+396146, alwalkeria, 1, 0
+396150, celuroid, 1, 0
+396157, dandakozaur, 1, 0
+396160, dryptozauroid, 1, 0
+396215, mamutaki, 2, 0
+3006, kulturowy, 1, 0
+3033, kusy, 2, 0
+658425, człeczy, 1, 0
+396312, szewczyk, 1, 0
+517, braciszek, 1, 0
+699569, konwulsyjny, 3, 0
+676517, globowy, 2, 0
+396392, inozaur, 1, 0
+396393, jawerlandia, 1, 0
+396397, kelmajizaur, 1, 0
+396399, kwilmezaur, 1, 0
+396402, merozaur, 1, 0
+396404, ornitomimoid, 1, 0
+396405, prodeinodon, 1, 0
+396410, sinozaur, 1, 0
+396413, syczuanozaur, 1, 0
+396416, tawa, 1, 0
+396523, parejazaury, 1, 0
+699617, jaskrawordzawy, 1, 0
+3450, miejscowy, 1, 0
+3578, monarchini, 1, 0
+658966, Olęder, 1, 0
+397172, deprywacja snu, 1, 0
+659367, nawozowy, 2, 0
+397321, krecik, 1, 0
+44376, Wietnamka, 1, 0
+4131, nienasycony, 1, 0
+397366, plezjozaury, 1, 0
+4173, niepełny, 1, 0
+4182, niepokaźny, 1, 0
+397403, elasmozaury, 1, 0
+397407, romaleozaury, 1, 0
+397408, pliozaury, 1, 0
+4202, nieprawdopodobny, 1, 0
+4329, nieumocowany, 1, 0
+4334, nieuporządkowany, 1, 0
+397617, perłoródkowate, 1, 0
+659804, gorączka, 4, 0
+397695, amtozaur, 1, 0
+397696, eokursor, 1, 0
+397700, żyworodkowate, 1, 0
+397808, krążałkowate, 1, 0
+397868, alokodon, 1, 0
+397874, kraspedodon, 1, 0
+397879, lielynazaura, 1, 0
+397886, pisanozaur, 1, 0
+397887, serendipaceratops, 1, 0
+397888, tawejrozaur, 1, 0
+397889, trimukrodon, 1, 0
+397891, siaozaur, 1, 0
+397894, lesotozaur, 1, 0
+660042, zapaśny, 1, 0
+660051, zapaśny, 5, 0
+677996, niepowściągniony, 1, 0
+678001, przygruntowy, 1, 0
+397997, ornitocheiroidy, 1, 0
+660149, cichy, 11, 0
+398011, azdarchy, 1, 0
+398030, przymus drożny, 1, 0
+109274, Egeria, 1, 0
+678019, jednowiekowy, 1, 0
+660296, ospałość, 6, 0
+398155, protorozaury, 1, 0
+398308, silezaurydy, 1, 0
+5247, ostatni, 1, 0
+678084, wolnodostępny, 2, 0
+660637, diagnosta laboratoryjny, 1, 0
+394097, kobylica przyleśna, 1, 0
+398516, mąż, 3, 0
+660733, nabłonkowaty, 1, 0
+660734, miedziane czoło, 1, 0
+398618, escherichia, 1, 0
+5403, paranoja, 2, 0
+634431, Jan Kazimierz, 1, 0
+660867, oślica Balaama, 1, 0
+398809, szarada, 3, 0
+91842, siata, 1, 0
+661051, nieśpieszny, 2, 0
+661056, zboczeniec, 3, 0
+661119, John Dewey, 1, 0
+5798, podręczny, 1, 0
+661275, zamężny, 1, 0
+661371, Pyrkon, 1, 0
+661377, Nowe Horyzonty, 1, 0
+661383, Opole, 2, 0
+661407, groomer, 1, 0
+661510, ośle uszy, 1, 0
+6157, poszczególny, 1, 0
+661524, Syzyf, 1, 0
+6168, posłanka, 1, 0
+661536, rzeczoznawca majątkowy, 1, 0
+678252, serpentynitowy, 2, 0
+656412, gruby, 10, 0
+372433, ochrypły, 2, 0
+661944, intertekstualność pozorna, 1, 0
+661949, ironia tragiczna, 1, 0
+6717, przejściowy, 1, 0
+1127, dodatkowy, 1, 0
+662172, struktura dramatyczna, 1, 0
+662182, warstwowy układ dzieła literackiego, 1, 0
+394377, tasznikowate, 1, 0
+7014, przykrótki, 1, 0
+7144, psychologiczny, 1, 0
+7161, pulchny, 1, 0
+7482, rozciągły, 1, 0
+109363, egzystencjalistka, 1, 0
+372638, stoczek, 1, 0
+662976, stygon, 1, 0
+662977, stygofauna, 1, 0
+663012, Sierpień, 2, 0
+700371, ponadczasowy, 2, 0
+372695, wielostronny, 3, 0
+663312, zakupoholik, 1, 0
+109382, ekscentryczka, 1, 0
+663459, cykl biologiczny, 1, 0
+663593, pozamuzyczność, 1, 0
+663696, autochtoniczny, 3, 0
+663734, bezogoniasty, 1, 0
+663838, dominanta septymowa, 1, 0
+663865, jeden czort, 1, 0
+678632, sierota zupełny, 1, 0
+664049, August III Sas, 1, 0
+1470, dziad, 5, 0
+664207, anaforyczność, 1, 0
+664212, apelatywność, 1, 0
+664345, prekognitywny, 1, 0
+678710, symulator lotu, 1, 0
+140187, nastąpienie, 2, 0
+676807, bebopowy, 4, 0
+664599, Herakles, 1, 0
+664600, ośmnasty, 1, 0
+664602, hetman nakaźny, 1, 0
+664604, ataman nakaźny, 1, 0
+664608, ośmnasty, 3, 0
+635087, mozartowski, 2, 0
+23419, niedźwiedź brunatny, 1, 0
+664871, Henryk IV, 1, 0
+664872, Henryk IV Salicki, 1, 0
+664991, trzeźwość, 4, 0
+676822, skaza wysiękowa, 1, 0
+665054, subsoniczny, 1, 0
+665055, poddźwiękowy, 1, 0
+665073, gra nieskończona, 1, 0
+665167, zdrobniały, 1, 0
+9935, wirtualny, 1, 0
+665301, predyspozycyjność, 2, 0
+665371, elficki, 2, 0
+665503, transpozycyjność, 2, 0
+1699, faktyczny, 1, 0
+665597, jednościowy, 1, 0
+10240, wydarzenie, 1, 0
+665620, ryzyko zawodowe, 1, 0
+665629, łosiowy, 2, 0
+665886, wewnątrztekstowy, 2, 0
+678969, bezwzględny, 5, 0
+111031, parlamentarzystka, 1, 0
+10873, żaden, 1, 0
+666344, kuc, 2, 0
+666345, motosport, 1, 0
+666400, łuczny, 3, 0
+666435, ekscentryczny, 3, 0
+679084, uzualny, 1, 0
+666741, zakręcony, 5, 0
+11419, zbytni, 1, 0
+11506, żeński, 1, 0
+373293, konwencjonalistka, 1, 0
+666931, małpa człekokształtna, 2, 0
+666940, kiszka faszynowa, 1, 0
+667054, kalif prawowierny, 1, 0
+667056, kalif sprawiedliwy, 1, 0
+11697, znajoma, 1, 0
+667168, Otton III, 1, 0
+667207, Jezusek, 1, 0
+679181, ogólnojęzykowy, 1, 0
+667236, bitwa pod Piławcami, 1, 0
+667256, małowierny, 1, 0
+667267, mostowniczy, 1, 0
+143003, serduszko, 2, 0
+143004, serduszko, 5, 0
+667296, bariatra, 1, 0
+657353, zapotecki, 1, 0
+667436, Tantal, 3, 0
+667452, formularzowość, 2, 0
+143208, awantura, 3, 0
+667539, sumik, 2, 0
+667542, spiżarny, 1, 0
+143302, szczebel, 3, 0
+143306, Saruman, 1, 0
+667606, rzeźba wysokogórska, 1, 0
+667607, rzeźba alpejska, 1, 0
+667626, ryzyko finansowe, 1, 0
+143365, próg, 2, 0
+667664, mandarynkowy, 4, 0
+635569, przystrój, 2, 0
+667720, rozrosły, 1, 0
+667723, rozrosły, 2, 0
+667731, rozrosły, 3, 0
+667755, skarłowaciały, 1, 0
+667801, równia pochyła, 2, 0
+667829, netowy, 1, 0
+667866, podupcony, 2, 0
+667938, komisarz ludowy, 1, 0
+12644, stopień, 9, 0
+373481, akcydensistka, 1, 0
+143881, mrówkowate, 1, 0
+698750, twistowy, 2, 0
+668227, groteska, 4, 0
+668234, oczewisty, 1, 0
+668237, surrealizm, 2, 0
+676930, bystrolotny, 4, 0
+668262, katolicki, 2, 0
+668298, ryzyko operacyjne, 1, 0
+668305, ciemnoskóry, 1, 0
+668364, kawaler mieczowy, 1, 0
+668387, parkour, 1, 0
+144197, naukowy, 2, 0
+144220, owładnięty, 1, 0
+144222, diatoniczny, 1, 0
+144244, stabilny, 2, 0
+657558, wewnątrzjądrowy, 1, 0
+144276, cienki, 5, 0
+144400, analogowy, 1, 0
+105198, kaloryfer, 2, 0
+642035, parch, 3, 0
+144672, nerwowy, 5, 0
+679472, sceptycki, 2, 0
+144747, nieograniczony, 4, 0
+679490, sukienkowy, 4, 0
+144801, pobytowy, 1, 0
+144804, pływacki, 1, 0
+669098, lega apostolski, 1, 0
+144828, naziemny, 1, 0
+2296, istota, 1, 0
+144884, soczysty, 4, 0
+669214, mały przedsiębiorca, 1, 0
+669220, mikroprzedsiębiorca, 1, 0
+628580, stocze, 1, 0
+669386, twitterowa rewolucja, 1, 0
+669413, kurier podhalański, 1, 0
+145126, ekstremistyczny, 1, 0
+669435, porządek architektoniczny, 1, 0
+145149, lewacki, 1, 0
+669455, średni przedsiębiorca, 1, 0
+145193, targowy, 2, 0
+145208, błotnisty, 2, 0
+669529, 24-godzinny, 1, 0
+145271, nieokreślony, 2, 0
+679580, wyobraźniowy, 2, 0
+145322, bilansowy, 1, 0
+669687, ramka odczytu, 1, 0
+669702, odwodnienie izotoniczne, 1, 0
+679599, przerozmaity, 1, 0
+679612, preliminaryjny, 1, 0
+657776, wielokanałowy, 1, 0
+669861, oktawa wielkanocna, 1, 0
+670067, owoczesny, 1, 0
+670069, tamtoczesny, 1, 0
+395672, długoskrzydlakowe, 1, 0
+145880, pomiarowy, 1, 0
+145881, pomiarowy, 2, 0
+670246, dziwy, 1, 0
+679690, nieubłagany, 3, 0
+679691, nieubłagalny, 2, 0
+670288, rewolucja agrarna, 1, 0
+146048, grzejny, 1, 0
+670424, krótkobieżny, 1, 0
+670460, pozaakademicki, 1, 0
+146261, płacz, 2, 0
+146262, łzy, 1, 0
+146295, wyżynny, 2, 0
+670650, rybi pęcherz, 1, 0
+670653, układ lombardzki, 1, 0
+670753, akademiczny, 1, 0
+2592, kobiecy, 1, 0
+671225, północny, 6, 0
+671562, półgoły, 2, 0
+671647, wyziębły, 1, 0
+671671, posiady góralskie, 1, 0
+671702, obosieczność, 2, 0
+671736, pozycja testowa, 1, 0
+671740, bławy, 1, 0
+671756, płeć nadobna, 2, 0
+679944, wielosezonowy, 1, 0
+658106, przeźroczy, 1, 0
+679954, wypisany na czole, 1, 0
+16512, emerytka, 1, 0
+16629, niekontrowersyjny, 1, 0
+396003, ważkowate, 1, 0
+16724, nieobiektywny, 1, 0
+672101, wojskowy, 5, 0
+672104, pozawojskowy, 2, 0
+672119, konserwator zabytków, 1, 0
+16772, przewidywalny, 1, 0
+672196, bariera jądrowa, 1, 0
+16865, człowiek charakteryzowany pod względem wieku, 1, 0
+16873, nazwa człowieka uwzględniająca jego cechy, 1, 0
+16882, człowiek posiadający jakieś nadprzyrodzone zdolności, 1, 0
+672305, reaktor prędki, 1, 0
+672315, chłopek roztropek, 1, 0
+17007, ryba drapieżna, 1, 0
+672440, beczka śmiechu, 2, 0
+672469, mołojec, 4, 0
+672600, współśrodkowy, 1, 0
+17278, zajęty, 1, 0
+672673, przykuchenny, 1, 0
+680098, polifoniczny, 5, 0
+658254, jawny, 3, 0
+680104, polifoniczny, 6, 0
+17584, sąsiadka, 1, 0
+672981, rabin reformowany, 1, 0
+663520, trzeciorzędność, 2, 0
+672994, suchawy, 5, 0
+396162, embazaur, 1, 0
+680153, siedmiobarwny, 1, 0
+680161, dziewięciokolorowy, 1, 0
+680163, ośmiokolorowy, 1, 0
+673140, kastanietowy, 2, 0
+673190, rewia mody, 2, 0
+17852, ekspres, 3, 0
+673278, wewnątrzmaciczny, 1, 0
+702038, rozlewny, 4, 0
+673364, odjemny, 1, 0
+18008, spodziewany, 1, 0
+673376, infradźwiękowy, 2, 0
+673415, onanistyczny, 3, 0
+18133, blank, 2, 0
+673508, rezonans stochastyczny, 1, 0
+673653, zdarzenie prawne, 1, 0
+673656, środek odwoławczy, 1, 0
+673708, dalmacki, 1, 0
+673726, kreozotowy, 2, 0
+18497, południowy, 2, 0
+673892, alokacja pamięci, 1, 0
+673960, freestyle, 2, 0
+673969, freestyle, 5, 0
+673979, rajd obserwowany, 1, 0
+673980, trial, 1, 0
+674017, hiacyntowy, 2, 0
+674087, pszczoła matka, 1, 0
+674132, rajd przygodowy, 1, 0
+674153, dwadzieścia jeden, 1, 0
+674156, perskie oczko, 2, 0
+674158, karciane domino, 1, 0
+674161, tysiąc, 4, 0
+18817, wyabstrahowany, 1, 0
+674204, powstanie styczniowe, 1, 0
+18865, kompromisowy, 1, 0
+674245, siła nośna, 1, 0
+674248, siła aerodynamiczna, 1, 0
+674383, krasnoludzki, 1, 0
+674388, karuzelowy, 2, 0
+674398, profesjonalny, 4, 0
+19059, niedozwolony, 1, 0
+19065, drobny, 3, 0
+396396, kapitalzaur, 1, 0
+680386, srebrnoróżowy, 1, 0
+658541, łupieżny, 1, 0
+674492, dytyrambiczny, 3, 0
+19212, nieowłosiony, 1, 0
+19216, ogołocony, 1, 0
+674585, kaduczny, 2, 0
+19290, nieistniejący, 1, 0
+19304, jasny, 3, 0
+19309, jawny, 2, 0
+674772, prominencki, 5, 0
+680447, dysplastyczny, 4, 0
+19495, bąk, 4, 0
+674856, radioorientacja sportowa, 1, 0
+674875, partyturowy, 2, 0
+674895, menuetowy, 3, 0
+674896, polonezowy, 2, 0
+674955, makrogospodarczy, 1, 0
+674994, trzydaniowy, 1, 0
+674995, czterodaniowy, 1, 0
+675000, ultrakonserwatywny, 3, 0
+675008, uroczny, 1, 0
+675036, pomarańczowobrązowy, 1, 0
+675037, pozasystemowy, 1, 0
+675053, międzyrzędowy, 1, 0
+675055, niecofniony, 2, 0
+680488, półzwarty, 1, 0
+19700, dziad, 2, 0
+675092, niedościgniony, 3, 0
+19733, ego, 1, 0
+680992, keksowy, 2, 0
+658656, osesek, 2, 0
+675165, reakcja pogańska, 1, 0
+675183, fanaberyjny, 1, 0
+675200, barszczowy, 2, 0
+680515, szafowy, 1, 0
+675249, haft łańcuszkowy, 1, 0
+675253, snutka golińska, 1, 0
+675267, kabina, 6, 0
+675310, młotkowy, 1, 0
+675312, młotkowy, 2, 0
+376013, dwuosobowy, 2, 0
+675375, młotkowy, 6, 0
+675380, gzyms kordonowy, 1, 0
+650982, wersowy, 1, 0
+680562, białoramienny, 1, 0
+675523, samozaciskowy, 1, 0
+104009, felczerka, 1, 0
+675526, makabra, 2, 0
+675593, penalny, 1, 0
+675658, mysioszary, 1, 0
+680591, żakietowy, 2, 0
+675680, różnofarbny, 1, 0
+675684, mózg emocjonalny, 1, 0
+675686, zawał serca, 1, 0
+675691, owoc miękki, 1, 0
+20338, nieskończony, 3, 0
+675748, żółtawobiały, 1, 0
+20418, nieznaczny, 1, 0
+20426, niezrozumiały, 2, 0
+675789, wiedźmowy, 2, 0
+675805, fagotowy, 2, 0
+675863, zmowa milczenia, 2, 0
+675921, perfekcjonistyczny, 3, 0
+675980, powszedny, 1, 0
+20657, osobowy, 2, 0
+676019, draczny, 1, 0
+676029, farmakopealny, 1, 0
+676062, Priam, 1, 0
+676063, Priamowy, 2, 0
+676091, technicystyczny, 1, 0
+676096, technicystyczny, 2, 0
+676105, wrośnięty, 2, 0
+676125, bursztynowożółty, 1, 0
+676127, epicedialny, 2, 0
+680674, jakowy, 1, 0
+676186, widmo, 3, 0
+20833, pośredni, 2, 0
+393501, mączniki, 1, 0
+20855, poufny, 2, 0
+676236, spazmatyczny, 1, 0
+676250, bojowniczy, 1, 0
+676260, laserunkowy, 2, 0
+676272, demoniczny, 7, 0
+676286, kaparowy, 3, 0
+676301, siwoszary, 1, 0
+676302, szarosiwy, 1, 0
+676358, trendowy, 1, 0
+676370, tyflopsycholog, 1, 0
+676380, samowładczy, 1, 0
+676390, reakcja sprawcza, 1, 0
+676489, sataniczny, 4, 0
+676501, ujemny, 6, 0
+658893, cłowy, 1, 0
+676592, sygnalny, 1, 0
+676629, dupa blada, 1, 0
+676631, dupa zbita, 1, 0
+676635, stara dupa, 1, 0
+676717, sierota naturalna, 1, 0
+676732, ostrygowy, 3, 0
+397884, pejszanzaur, 1, 0
+21441, świadomość, 2, 0
+676802, bebopowy, 3, 0
+676879, konsulent, 2, 0
+676892, bystrolotny, 1, 0
+676896, pitny, 2, 0
+676920, łososioworóżowy, 1, 0
+676927, bystrolotny, 3, 0
+676945, freejazzowy, 1, 0
+677002, ziemiopodobny, 1, 0
+374979, wrotkarka, 1, 0
+677049, homiletyczny, 2, 0
+677060, tarcie osierdziowe, 1, 0
+677130, wczesnozimowy, 1, 0
+677133, automorficzny, 1, 0
+21776, wieczny, 2, 0
+677140, wilgny, 4, 0
+21835, wspólny, 3, 0
+7062521, odmianka, 3, 0
+21854, wyczulony, 2, 0
+677270, bezprzestrzenny, 1, 0
+677324, niebieskawoszary, 1, 0
+677325, niebieskawopopielaty, 1, 0
+677326, srebrzystobłękitny, 1, 0
+677327, żółtozłoty, 1, 0
+677336, objaw zasłonowy, 1, 0
+677338, ostry brzuch, 1, 0
+677350, triada Charcota, 1, 0
+3666, młodzieniaszek, 1, 0
+677412, dawniejszy, 1, 0
+632998, ciotczysko, 1, 0
+677421, imbirowy, 3, 0
+677462, pleśniowy, 3, 0
+22115, zgodny, 3, 0
+677614, smagłolicy, 1, 0
+677616, pigmentowany, 1, 0
+677618, pigmentowany, 2, 0
+637229, pajączek, 2, 0
+677726, casting, 2, 0
+677728, przewodowy, 4, 0
+677738, rozlazły, 6, 0
+677754, pięcioraki, 1, 0
+22419, samczy, 1, 0
+397919, ramforynchy, 2, 0
+677838, towarzysz pancerny, 1, 0
+677845, marglowy, 1, 0
+677851, wulkan energii, 1, 0
+677943, donacja, 2, 0
+677949, złocistoróżowy, 1, 0
+677950, złotoróżowy, 1, 0
+677952, złotomiedziany, 1, 0
+678000, nieścigniony, 2, 0
+678010, szaroliliowy, 1, 0
+22663, wspólny, 2, 0
+678120, czyściutki, 5, 0
+678121, czyściuteńki, 7, 0
+678167, rubieżny, 1, 0
+678235, patronat, 3, 0
+678238, funkowy, 2, 0
+678243, pozazakładowy, 3, 0
+678246, pozazakładowy, 4, 0
+678277, papuzi, 2, 0
+678281, papuzi, 3, 0
+678284, papuzi, 4, 0
+678291, soczewicowaty, 2, 0
+678295, szybki Bill, 1, 0
+23006, społeczny, 3, 0
+678382, rhythmandbluesowy, 2, 0
+678429, hezychastyczny, 2, 0
+23097, szeroki, 4, 0
+637374, priorytet, 3, 0
+681065, zodiakalny, 2, 0
+678532, mrocznawy, 1, 0
+678545, namiastkowy, 1, 0
+678564, krew, 4, 0
+678572, różnolity, 1, 0
+678579, nieustępliwy, 2, 0
+678619, brunatnorudy, 1, 0
+678634, jałmużniczy, 1, 0
+678699, oczko w głowie, 1, 0
+678704, zawrót głowy, 1, 0
+678712, buduarowy, 2, 0
+678715, buduarowy, 3, 0
+678731, domorosły, 2, 0
+678736, domorosły, 3, 0
+678748, domorosły, 5, 0
+678774, alkowiany, 1, 0
+678779, brązalowy, 1, 0
+23426, niepogoda, 2, 0
+678809, chory na głowę, 2, 0
+678815, pełen, 10, 0
+678843, krzywiczny, 3, 0
+659276, wewnątrzpochodny, 1, 0
+678858, lapisowy, 3, 0
+678859, nastopny, 1, 0
+678860, totalny, 3, 0
+678861, macoszy, 1, 0
+678865, skończony, 4, 0
+371768, bezklasowy, 1, 0
+678907, szaroczerwony, 1, 0
+678908, wielorybi, 1, 0
+678916, antologiczny, 2, 0
+678935, transnarodowy, 1, 0
+678967, sekularny, 1, 0
+681143, przykatedralny, 1, 0
+678999, świąd pływaków, 1, 0
+679077, piaskowożółty, 1, 0
+679090, zupełny, 3, 0
+679101, wszechwiedny, 1, 0
+679129, pełniutki, 4, 0
+679134, pełniutki, 7, 0
+679160, przedjesienny, 2, 0
+679182, ogólnojęzykowy, 2, 0
+637486, Maxwell, 1, 0
+679202, beznapędowy, 2, 0
+679204, ćmy, 1, 0
+679215, inicjatywny, 1, 0
+679216, inicjatywny, 2, 0
+679257, koniczynowy, 5, 0
+679269, nosaty, 2, 0
+679293, krytykancki, 2, 0
+679311, marzeniowy, 1, 0
+679316, pawiowy, 2, 0
+679319, podświetlny, 1, 0
+679324, świątyniowy, 1, 0
+679360, szarofiołkowy, 1, 0
+24017, bohaterka, 1, 0
+7060055, słuchowy, 2, 0
+24076, dziedziczka, 2, 0
+24079, dziewucha, 1, 0
+679473, rzut oka, 1, 0
+679495, sukienkowy, 7, 0
+24171, człowiek charakteryzowany ze względu na miejsce pobytu, 1, 0
+679534, znikliwy, 1, 0
+679562, start zatrzymany, 1, 0
+24213, pasterz, 2, 0
+679589, poniektóry, 1, 0
+679694, antykwowy, 3, 0
+24354, znachor, 1, 0
+679730, niezbłagany, 3, 0
+679752, rodny, 3, 0
+679775, transpolarny, 1, 0
+679788, zielonozłoty, 1, 0
+679806, gołąbkowy, 4, 0
+679808, gołąbkowy, 6, 0
+679811, gołębiowy, 2, 0
+679815, haptyczny, 1, 0
+679835, choroba Pageta, 1, 0
+679923, teatrzyk cieni, 1, 0
+679925, przeddziejowy, 1, 0
+679935, klasztorna cisza, 1, 0
+393625, kotbelka, 1, 0
+679937, płaszczkowaty, 1, 0
+679968, anglic, 1, 0
+681308, fibrowy, 1, 0
+679978, autoerotyczny, 1, 0
+4105, niekompletny, 1, 0
+679997, przedporanny, 1, 0
+680008, wić roślinna, 1, 0
+680022, torbiel galaretowata, 1, 0
+680053, ośmiogłosowy, 3, 0
+680058, andezytowy, 1, 0
+677323, niebieskawofioletowy, 1, 0
+24706, sport zimowy, 1, 0
+680068, kawiarniany, 2, 0
+680080, dziecko specjalnej troski, 2, 0
+680089, jednogłosowy, 4, 0
+680113, rozbłyskowy, 2, 0
+24773, kwiaciarka, 1, 0
+680143, paletowy, 3, 0
+680147, panturecki, 2, 0
+680148, ćwierćwiekowy, 1, 0
+680154, siedmiokolorowy, 1, 0
+680155, ćwierćwiekowy, 2, 0
+680156, sześciokolorowy, 1, 0
+680158, sześciobarwny, 1, 0
+680159, pięciokolorowy, 1, 0
+680160, pięciobarwny, 1, 0
+680162, dziewięciobarwny, 1, 0
+680164, ośmiobarwny, 1, 0
+375509, Norwid, 1, 0
+680208, formułkowy, 1, 0
+680209, dosercowy, 1, 0
+680211, domózgowy, 1, 0
+680216, porankowy, 2, 0
+680230, balsamowy, 3, 0
+680256, limonowy, 1, 0
+680257, limetkowy, 1, 0
+24947, goryl, 2, 0
+680314, fiordowaty, 1, 0
+680331, komarzy, 2, 0
+680343, jaskiniowy, 3, 0
+680355, fajowy, 1, 0
+680387, różowosrebrny, 1, 0
+680396, srebrnozielony, 1, 0
+642418, święty Ambroży, 1, 0
+680398, srebrnoczerwony, 1, 0
+680400, srebrnopomarańczowy, 1, 0
+680401, pomarańczowosrebrny, 1, 0
+680402, srebrnożółty, 1, 0
+680403, żółtosrebrny, 1, 0
+680404, srebrnobłękitny, 1, 0
+680408, złotosrebrny, 1, 0
+25051, objaw chorobowy, 1, 0
+680413, pomroczny, 1, 0
+680429, pawiooki, 1, 0
+680435, warstwowanie, 2, 0
+680474, acetonowy, 1, 0
+25225, juniorka, 1, 0
+680608, miligramowy, 4, 0
+25251, księgarz, 2, 0
+25281, młodziczka, 1, 0
+680678, modrozielony, 1, 0
+25322, przedstawicielka, 1, 0
+25327, radca prawny, 1, 0
+25339, robotnik przymusowy, 1, 0
+680701, alizarynowy, 1, 0
+680711, dolina niesamowitości, 1, 0
+680716, paliowy, 1, 0
+25422, żeglarz, 1, 0
+680855, cyklopi, 2, 0
+680856, cyklopi, 3, 0
+680964, anagogiczny, 1, 0
+680972, babkowy, 4, 0
+680973, antydiuretyczny, 1, 0
+680974, lubczykowy, 1, 0
+680983, czerwonoczarny, 1, 0
+681030, bisowy, 2, 0
+633711, antyamerykański, 1, 0
+681079, wschodniogrenlandzki, 1, 0
+681094, miastecki, 1, 0
+681096, polanicki, 1, 0
+681112, oparszywiały, 1, 0
+681119, optyczny, 2, 0
+681126, generyczny, 4, 0
+681162, stugębny, 2, 0
+681164, konfiturowy, 3, 0
+637818, krajanka, 4, 0
+681220, żółtobury, 1, 0
+681221, burożółty, 1, 0
+681222, zielonobury, 1, 0
+681224, czerwonobury, 1, 0
+681225, buroczerwony, 1, 0
+681226, buroniebieski, 1, 0
+681227, niebieskobury, 1, 0
+681229, brązowobury, 1, 0
+681230, buropomarańczowy, 1, 0
+681231, pomarańczowobury, 1, 0
+681232, capi, 1, 0
+681234, capi, 3, 0
+681260, parcjalny, 1, 0
+659677, Jan Paweł II, 1, 0
+659678, Karol Józef Wojtyła, 1, 0
+681284, findesieclowy, 2, 0
+681292, impetyczny, 3, 0
+681293, bajroniczny, 2, 0
+681303, przekąskowy, 2, 0
+25948, wahadłowiec, 1, 0
+681332, zaskórny, 2, 0
+681367, kurczakowy, 1, 0
+681392, majtkowy, 1, 0
+681412, pozaprofesjonalny, 1, 0
+681418, cegiełkowy, 2, 0
+681460, wicynalny, 2, 0
+681499, rejowy, 3, 0
+4365, niewygasły, 1, 0
+7060409, Wszechmocny, 1, 0
+48059, judaistka, 1, 0
+681576, anemonowy, 2, 0
+26235, zawodzenie, 6, 0
+26238, łkanie, 3, 0
+681611, ciemnopąsowy, 1, 0
+681683, naprzemianstronny, 1, 0
+681684, kwasotwórczy, 1, 0
+681705, purpurowobrunatny, 1, 0
+681598, bezreligijny, 1, 0
+681724, hamletyczny, 3, 0
+4398, niezatarty, 1, 0
+681798, niebny, 3, 0
+681813, powrotny, 4, 0
+681814, przedtytułowy, 1, 0
+681824, zakrystyjny, 2, 0
+681836, retoryczność, 2, 0
+681838, retoryczność, 3, 0
+681883, bezprzerwowy, 1, 0
+681937, jadeitowy, 2, 0
+681949, liliowobiały, 1, 0
+681951, lilowy, 1, 0
+681970, wahabicki, 2, 0
+681971, wahhabicki, 2, 0
+681983, solipsystyczny, 1, 0
+681984, kryjomy, 2, 0
+682047, ciemnolazurowy, 1, 0
+682048, artrockowy, 1, 0
+682050, artrockowy, 2, 0
+7060497, deskorolkowiec, 1, 0
+26739, gra sportowa, 1, 0
+26772, seniorka, 1, 0
+716673, wyścigi konne, 1, 0
+682204, oczojebkowy, 1, 0
+682209, kwaterunkowy, 2, 0
+616145, wardęga, 3, 0
+682273, substantywny, 1, 0
+682281, wycwaniony, 1, 0
+682284, gorącożółty, 1, 0
+7060533, ptaszątko, 1, 0
+7060541, królewiczątko, 2, 0
+27002, podwieczorek, 1, 0
+682430, ultraradykalny, 1, 0
+682452, chlorosrebrowy, 1, 0
+397732, fitozaury, 1, 0
+682473, tufowy, 1, 0
+682484, rudozielony, 1, 0
+682485, rudobeżowy, 1, 0
+682486, rudoczarny, 1, 0
+682504, oliwkowożółty, 1, 0
+682505, oliwkowobiały, 1, 0
+682506, oliwkowobordowy, 1, 0
+682538, ociekły, 1, 0
+682541, pisklęcy, 1, 0
+682543, wielolistny, 1, 0
+682545, pisklęcy, 3, 0
+682556, afiszowy, 2, 0
+375905, podkorowy, 2, 0
+27225, episkopat, 1, 0
+682591, ciężki, 17, 0
+27275, zbrojenie, 5, 0
+682694, mimośrodkowy, 3, 0
+682697, pozazarodkowy, 1, 0
+682698, protoplanetarny, 1, 0
+682704, spowolniały, 2, 0
+682716, źrzały, 1, 0
+682736, kościany, 2, 0
+682742, kościany, 3, 0
+27388, ogrodniczka, 1, 0
+682766, mlecznożółty, 1, 0
+682818, wskaźnik uwarunkowania, 1, 0
+682819, żyletkowy, 3, 0
+682887, różowoszary, 1, 0
+682888, różowobrązowy, 1, 0
+682892, różowopomarańczowy, 1, 0
+682893, różowozielony, 1, 0
+682894, jasnokawowy, 1, 0
+682921, kieliszkowy, 2, 0
+682945, parówkowy, 2, 0
+682957, jednopokoleniowy, 2, 0
+682960, jednopokoleniowy, 3, 0
+682962, poniewolny, 3, 0
+682967, jednopokoleniowy, 5, 0
+682989, pługowy, 1, 0
+683018, leopard, 6, 0
+683024, muskatowy, 4, 0
+683078, pozaosiowość, 1, 0
+611956, Henri de Saint-Simon, 1, 0
+683122, perpendykularny, 1, 0
+683177, bizancki, 1, 0
+683205, piegaty, 1, 0
+7060685, szlachciątko, 1, 0
+683290, przyrównikowy, 2, 0
+397871, hejszanzaur, 1, 0
+683295, riffowy, 1, 0
+683297, niebieściuchny, 1, 0
+683342, narodowokatolicki, 2, 0
+397880, otnielozaur, 1, 0
+683355, pokemonowy, 3, 0
+683356, pokemonowy, 4, 0
+683357, Pokémon, 3, 0
+683359, pokemonowy, 5, 0
+683363, przyokopowy, 1, 0
+681874, submikroskopowy, 1, 0
+683394, cęgowy, 1, 0
+683396, cyrklowy, 2, 0
+92070, kółeczko, 2, 0
+28142, robaczek, 1, 0
+683526, bioekologiczny, 1, 0
+683531, hibernowy, 2, 0
+683535, konoidalny, 1, 0
+683541, kroplowy, 2, 0
+683544, bezdecyzyjny, 2, 0
+683554, dystyngwowany, 2, 0
+683570, latowy, 1, 0
+683584, niskotonowy, 1, 0
+683588, wróżbny, 1, 0
+397925, skafognaty, 1, 0
+683625, przygruby, 2, 0
+683629, szarłatny, 1, 0
+683639, estragonowy, 1, 0
+683670, prawicowonacjonalistyczny, 1, 0
+683694, podatność skrętna, 1, 0
+660087, Australijka, 2, 0
+683732, aprobacja, 2, 0
+683742, magnezytowy, 1, 0
+683746, podpuchły, 1, 0
+683749, racemiczny, 1, 0
+683829, wiek biologiczny, 1, 0
+683830, wiek chłopięcy, 1, 0
+683831, wiek dorosły, 1, 0
+683832, wiek metrykalny, 1, 0
+683833, wiek prokreacyjny, 1, 0
+683834, czas męski, 1, 0
+683837, wiek niemobilny, 1, 0
+683838, wiek poborowy, 1, 0
+683873, naciowy, 1, 0
+683880, szpaczy, 2, 0
+683885, matusiny, 1, 0
+683895, obcokrajowy, 4, 0
+683918, szczypiorkowy, 4, 0
+683944, przydworny, 1, 0
+683947, przygardłowy, 1, 0
+683959, kangurowy, 1, 0
+683968, półetatowy, 2, 0
+683970, paluszkowy, 3, 0
+683975, chojracki, 1, 0
+683987, ścierniskowy, 1, 0
+684017, czerwonopurpurowy, 1, 0
+5320, ożenek, 1, 0
+28704, krzyżówka, 2, 0
+684065, chromowy, 3, 0
+684120, żółtoblady, 1, 0
+684136, ptysiowy, 2, 0
+684138, wnętrzny, 1, 0
+684142, wnętrzny, 3, 0
+684201, słabiuchny, 10, 0
+684203, centryfugalny, 2, 0
+684206, decentralistyczny, 2, 0
+684213, krasy, 1, 0
+684214, zarówny, 1, 0
+684219, krasy, 3, 0
+684242, elanowy, 1, 0
+28889, farsa, 2, 0
+684255, kłodowy, 1, 0
+28897, groteska, 2, 0
+684266, suwnicowy, 1, 0
+684295, serdelowy, 1, 0
+684302, meandryczny, 3, 0
+684304, mimowiedny, 1, 0
+703877, dziewczęcy, 5, 0
+684323, przedrenesansowy, 1, 0
+684332, stokrotkowy, 3, 0
+684334, ultraczerwony, 1, 0
+684354, bilinearny, 1, 0
+684406, etnocentryczny, 1, 0
+684418, kołysankowy, 2, 0
+29125, duszyczka, 2, 0
+684533, przystawny, 1, 0
+684577, spichrzeniowy, 1, 0
+684582, strączkowaty, 2, 0
+398090, tapeżary, 1, 0
+638390, smoczek, 5, 0
+684624, asocjatywny, 1, 0
+684640, asocjatywny, 5, 0
+684644, czyściusieńki, 3, 0
+684647, bezpamiętny, 1, 0
+684663, rdzawopomarańczowy, 1, 0
+684664, rdzawoszary, 1, 0
+684666, piaskowobrązowy, 1, 0
+682096, skamandrycki, 2, 0
+684751, czyściuchny, 8, 0
+684755, czyściuchny, 12, 0
+684756, czyściuchny, 13, 0
+684786, brunatnordzawy, 1, 0
+682110, adeninowy, 2, 0
+684792, czwórkowy, 1, 0
+684803, smołowiec, 1, 0
+684811, kilkustrzałowy, 1, 0
+684814, kalkowy, 3, 0
+684841, słodziak, 1, 0
+684855, słupkowy, 2, 0
+684871, ziemistoblady, 2, 0
+684890, lemoniadowy, 3, 0
+684908, oczojebny, 3, 0
+684913, pozafrontowy, 2, 0
+684927, krzyżówkowy, 2, 0
+684930, rumianolicy, 1, 0
+684966, kameowy, 2, 0
+684975, łechtliwy, 1, 0
+684976, łechczywy, 1, 0
+680185, prześwięty, 1, 0
+685011, groszkowozielony, 1, 0
+685012, tkaninowy, 3, 0
+685013, zielonogroszkowy, 1, 0
+685014, groszkowozielony, 2, 0
+685016, zielonogroszkowy, 2, 0
+29672, abstrakcja, 2, 0
+685075, interkalarny, 1, 0
+29729, podwalina, 2, 0
+685111, keczupowy, 3, 0
+685112, jeżowaty, 1, 0
+685120, żydowski, 3, 0
+685155, wieśny, 1, 0
+685156, wieśny, 2, 0
+685206, kibucowy, 2, 0
+685211, rzemieślny, 2, 0
+685221, pełnostandardowy, 1, 0
+685231, drobnoburżuazyjny, 2, 0
+685323, zagrypiony, 1, 0
+685345, późnozimowy, 1, 0
+685399, popielatobiały, 1, 0
+685470, białobrązowy, 1, 0
+685504, senioracki, 2, 0
+685505, heteromorficzny, 2, 0
+685507, tajniacki, 1, 0
+616694, rocaille, 1, 0
+685538, mieczolistny, 1, 0
+616707, schizoidalność, 1, 0
+685597, gminowładny, 1, 0
+685610, stalowosrebrny, 1, 0
+685611, srebrnostalowy, 1, 0
+677508, szkarłatnoczerwony, 1, 0
+715978, jawajski, 3, 0
+685653, złotolicy, 1, 0
+685654, złotolicy, 2, 0
+685660, asambl, 1, 0
+685664, grzecznościowy, 2, 0
+398268, zygoten, 1, 0
+685704, klient, 5, 0
+685764, pełniuteńki, 4, 0
+7061111, turkuć, 1, 0
+376448, haczykowaty, 1, 0
+685859, zbłękitniały, 1, 0
+685869, izostrukturalny, 1, 0
+685900, sztyftowy, 4, 0
+30590, przewód sądowy, 1, 0
+685970, błękitnozłoty, 1, 0
+685971, błękitnoczarny, 1, 0
+685972, błękitnofioletowy, 1, 0
+685973, błękitnoliliowy, 1, 0
+685974, błękitnoróżowy, 1, 0
+686016, turnusowy, 2, 0
+686019, marmurowobiały, 1, 0
+686022, wystany, 2, 0
+686031, borowikowaty, 1, 0
+686034, beżowobrązowy, 1, 0
+686035, beżowobiały, 1, 0
+686037, beżowobrunatny, 1, 0
+686038, beżowołososiowy, 1, 0
+686039, beżowoszary, 1, 0
+686091, jazz-rockowy, 2, 0
+686095, jednoramienny, 1, 0
+686096, hydropneumatyczny, 1, 0
+686111, lirny, 2, 0
+686249, ambasador nadzwyczajny i pełnomocny, 1, 0
+30909, syrenka, 1, 0
+686272, oriniacki, 1, 0
+682358, piórowy, 2, 0
+686281, ultraczerwony, 3, 0
+686287, posłuchanie, 5, 0
+686312, autostradowy, 2, 0
+682366, zroślak, 4, 0
+682368, zroślak, 5, 0
+30985, szwagierek, 1, 0
+686378, chyżonogi, 1, 0
+31036, islamista, 1, 0
+686398, kurkowaty, 1, 0
+686408, hortensjowy, 3, 0
+31074, wariatka, 2, 0
+686463, katorżniczka, 1, 0
+686478, docześny, 1, 0
+686485, lukowy, 1, 0
+686491, dokumentny, 1, 0
+686494, dokumentny, 2, 0
+686509, lekki, 14, 0
+686528, powrózkowaty, 1, 0
+686549, nadobłoczny, 1, 0
+686583, fartuszkowy, 2, 0
+686594, monetowy, 1, 0
+686597, cudzoziemczy, 1, 0
+31283, stateczek, 1, 0
+686646, morwowaty, 2, 0
+686652, motylowy, 1, 0
+686659, motyli, 3, 0
+686663, drewny, 2, 0
+686667, mrówkowaty, 1, 0
+686675, fontannowy, 2, 0
+686698, Formuła 1, 1, 0
+686699, F1, 1, 0
+686712, dzięciołowaty, 1, 0
+686730, jednotematyczny, 1, 0
+686739, nadstawny, 1, 0
+686772, leciutki, 12, 0
+686781, format, 5, 0
+686785, leszczynowaty, 1, 0
+686799, formułowy, 2, 0
+686834, woda po kisielu, 2, 0
+686855, nosorożcowaty, 2, 0
+686871, kamykowy, 1, 0
+686882, samoswój, 1, 0
+686935, bezprzestanny, 1, 0
+686958, lśniącoczarny, 1, 0
+31603, niedźwiadek, 1, 0
+686966, bezzwiązkowy, 2, 0
+686973, bezzwiązkowy, 5, 0
+31639, raczek, 1, 0
+31643, siostrzyczka, 1, 0
+31661, telefonistka, 1, 0
+31690, znachorka, 1, 0
+31695, zwierzątko, 1, 0
+687061, skansenowy, 2, 0
+687068, skansenowy, 3, 0
+687073, okupny, 2, 0
+687076, omanowy, 2, 0
+687077, dług tlenowy, 1, 0
+687090, furgonowy, 1, 0
+687103, orkanowy, 2, 0
+687123, oromy, 1, 0
+687126, ołówkowy, 4, 0
+687172, performatywny, 1, 0
+687194, czerwonkowy, 2, 0
+687201, czerwonosiny, 1, 0
+687267, ochrowożółty, 1, 0
+687277, oksymoroniczny, 2, 0
+687284, oldskulowy, 2, 0
+31929, dziennikarka, 1, 0
+31938, asystentka, 1, 0
+682529, dyspozytywny, 1, 0
+687311, naszyjnikowy, 2, 0
+687328, perlak, 1, 0
+687329, guz perlisty, 1, 0
+687336, perzowy, 1, 0
+31992, polonistka, 1, 0
+687430, więźniowy, 1, 0
+673204, kamieniczny, 2, 0
+687501, wózkowy, 1, 0
+687539, Midas, 1, 0
+687540, midasowy, 3, 0
+687558, miniowy, 2, 0
+638881, postępowanie karne, 1, 0
+687565, lombardowy, 2, 0
+687608, wybiegowy, 3, 0
+687650, stabilny, 4, 0
+687669, konceptowy, 2, 0
+687678, konceptualistyczny, 4, 0
+398607, enterobakterie, 1, 0
+687764, hałdowy, 3, 0
+687810, fasolowaty, 3, 0
+687813, rozlewność, 2, 0
+687850, pałąkowy, 1, 0
+687853, Bismarck, 1, 0
+687854, Otto von Bismarck, 1, 0
+687881, zielonkawobrunatny, 1, 0
+687910, sztabkowy, 1, 0
+687930, tabakowy, 1, 0
+687940, korowodowy, 2, 0
+627831, wyrwiząb, 1, 0
+688054, sykliwy, 1, 0
+688058, wraźliwy, 1, 0
+688077, pierwszoroczny, 3, 0
+688081, pierwszoroczny, 4, 0
+688082, pijaczy, 1, 0
+688091, dżetowy, 1, 0
+7061503, gratisik, 1, 0
+688125, żółtooliwkowy, 1, 0
+688139, bogoburczy, 2, 0
+688157, arsenałowy, 6, 0
+688195, łuszczkowy, 1, 0
+688227, bigbeatowy, 2, 0
+32869, przebudzenie, 2, 0
+688310, iluzjonistyczny, 4, 0
+32962, wywijas, 1, 0
+688324, miesięczny, 7, 0
+682701, spowolniały, 1, 0
+688337, purymowy, 1, 0
+32978, żonglerka, 3, 0
+688342, pustelny, 3, 0
+688388, tarczowy, 3, 0
+617176, jarzynka, 1, 0
+33047, patronka, 2, 0
+688409, taczkowy, 1, 0
+7061552, trafunek, 1, 0
+688427, tatusiny, 1, 0
+376450, kartoflowaty, 1, 0
+688443, turniejowy, 4, 0
+639029, Orfeusz, 1, 0
+688455, teleturniejowy, 2, 0
+33097, teatrzyk, 2, 0
+633958, upłazek, 1, 0
+33169, odsłona, 1, 0
+33176, perypetia, 2, 0
+655784, kurwia zupa, 1, 0
+33278, język nandoriński, 1, 0
+33297, zły duch, 2, 0
+366839, czerwona kartka, 3, 0
+367735, piezoelektryczny, 1, 0
+33506, kamień nazębny, 1, 0
+376968, nieodrodny, 1, 0
+33764, wiek balzakowski, 1, 0
+33942, chłopiec kredensowy, 1, 0
+682883, homeryczny, 2, 0
+34117, człowiek ze względu na rasę, 1, 0
+661052, niespieszny, 2, 0
+359037, miliarderka, 1, 0
+7061782, przewodniczka, 2, 0
+34478, prezenter, 1, 0
+34659, silnik jądrowy, 1, 0
+639300, macierz, 3, 0
+34754, biały dzień, 2, 0
+34868, samolot pościgowy, 1, 0
+34869, pościgowiec, 1, 0
+27658, eminencja, 1, 0
+34911, lotny finisz, 1, 0
+690303, ponownie, 1, 0
+34986, szlem, 1, 0
+34988, mały szlem, 1, 0
+35001, gra komputerowa, 1, 0
+35039, człowiek należący do określonej subkultury, 1, 0
+377217, laboratoryjny, 3, 0
+35207, szlemik, 1, 0
+677677, meander, 2, 0
+35403, lesba, 1, 0
+661308, Brutal, 2, 0
+679353, negatywistyczny, 1, 0
+35873, eseistka, 1, 0
+35909, historyczka, 1, 0
+35973, piasek moczowy, 1, 0
+36082, tresura, 1, 0
+36120, psycholożka, 1, 0
+661387, FAMA, 2, 0
+36278, romansopisarz, 1, 0
+36331, podręcznikowy, 1, 0
+36332, teocentryczny, 1, 0
+93450, święta, 1, 0
+36528, komediant, 1, 0
+36529, oldboj, 2, 0
+36560, niedźwiedziątko, 1, 0
+36605, zapowiadacz, 1, 0
+6107, pośredni, 1, 0
+49803, okresowość, 1, 0
+639652, skurczony, 1, 0
+36967, powieściopisarka, 1, 0
+37002, producentka, 2, 0
+37004, publicystka, 1, 0
+37023, scenarzystka, 1, 0
+37082, współwłaścicielka, 1, 0
+7062224, winność, 1, 0
+37107, obraz, 10, 0
+37517, kretynka, 2, 0
+639777, nacechowany, 1, 0
+37664, fryzjerka, 1, 0
+37671, restauratorka, 1, 0
+37678, telegrafistka, 1, 0
+37682, teletypistka, 1, 0
+37694, hotelarka, 1, 0
+37723, tasiemiec uzbrojony, 1, 0
+37754, maszoperia, 1, 0
+37759, fotoreporterka, 1, 0
+37763, zielarka, 1, 0
+37765, bioenergoterapeutka, 1, 0
+693165, akcyjnie, 1, 0
+38026, pieśniarka, 2, 0
+38056, kino, 3, 0
+639868, powaga, 3, 0
+38125, zabawa dziecięca, 1, 0
+38146, zmarźluch, 1, 0
+683585, służbisty, 1, 0
+38432, śmierdziel, 2, 0
+38513, ssak morski, 1, 0
+38643, laborantka, 2, 0
+38644, laborantka, 1, 0
+38649, milionerka, 1, 0
+38692, kontenans, 1, 0
+38697, rezon, 1, 0
+38827, wampirzyca, 2, 0
+38829, pudelek, 1, 0
+38836, kanapowiec, 1, 0
+38878, psisko, 1, 0
+38880, sobaka, 1, 0
+39263, topielica, 2, 0
+683761, zwierzchny, 1, 0
+39363, panterka, 2, 0
+7062607, półnagi, 3, 0
+694776, autonomicznie, 2, 0
+661932, fazowy układ dzieła literackiego, 1, 0
+39511, akcept, 2, 0
+683874, nadwiślany, 2, 0
+642920, niewolski, 1, 0
+40170, partyzantka, 2, 0
+640975, św. Maria Magdalena, 1, 0
+683922, żarki, 1, 0
+356257, większościowy, 1, 0
+40781, gra drużynowa, 1, 0
+104147, rozkolcowate, 1, 0
+684025, widełkowaty, 1, 0
+684029, świętny, 2, 0
+363619, trzeciaczek, 1, 0
+684045, gambit skoczkowy, 1, 0
+41115, awanturnica, 2, 0
+673506, przedniojęzykowy, 1, 0
+50549, filigran, 1, 0
+356389, faszystka, 1, 0
+684083, prosięcy, 3, 0
+356411, lotniczka, 1, 0
+356412, lotniczka, 2, 0
+705940, nieczysty, 5, 0
+705945, nieczysty, 9, 0
+356421, melancholiczka, 2, 0
+705952, nieczysty, 14, 0
+705953, nieczysty, 15, 0
+359272, bezapelacyjny, 1, 0
+673522, dziura, 7, 0
+684149, kryptokomunistyczny, 1, 0
+684151, legislatywny, 2, 0
+7063002, liliowaty, 2, 0
+684200, centryfugalny, 1, 0
+684208, chrypły, 1, 0
+684211, chrypły, 2, 0
+697457, biało, 6, 0
+677905, pindaryczny, 1, 0
+42194, klincz, 1, 0
+42224, cudzoziemka, 1, 0
+42317, wojenka, 1, 0
+42350, doktorek, 1, 0
+42353, olbrzymka, 1, 0
+110531, stonkowate, 1, 0
+42675, stulatka, 1, 0
+42692, stworzenie oceniane negatywnie, 1, 0
+356651, fabrykantka, 1, 0
+356653, gawędziarka, 2, 0
+42951, masażystka, 1, 0
+42958, sierotka, 1, 0
+42959, współlokatorka, 1, 0
+42960, sublokatorka, 2, 0
+684366, kaczeńcowy, 1, 0
+634287, hetmanka, 1, 0
+43096, chłopina, 1, 0
+7063232, nieosobowy, 3, 0
+43218, ewolucja narciarska, 1, 0
+43278, książątko, 1, 0
+684428, subkulturowy, 2, 0
+43368, oficjał, 3, 0
+43392, starościna, 2, 0
+698754, twistowy, 5, 0
+43463, obywatelka, 1, 0
+43489, swastyka, 2, 0
+686678, muchowaty, 1, 0
+684642, czyściusieńki, 1, 0
+43662, gościniec, 2, 0
+43692, Japonka, 3, 0
+640798, św. Hubert, 1, 0
+43746, bierwiono, 1, 0
+677958, złotokrwisty, 1, 0
+43801, żuwaczka, 1, 0
+677959, złocistokrwisty, 1, 0
+699170, rzemieślniczy, 6, 0
+43883, florecistka, 1, 0
+43884, szpadzistka, 1, 0
+43885, szablistka, 1, 0
+43886, ogarek, 3, 0
+43892, sport ekstremalny, 1, 0
+43913, delegatka, 1, 0
+43941, tyczka, 5, 0
+43956, imiennik, 1, 0
+43973, kurierka, 1, 0
+684542, kątowaty, 1, 0
+44097, Chinka, 1, 0
+44259, świerszczyk, 2, 0
+44334, Polka, 2, 0
+44347, Żydówka, 1, 0
+699716, żółtordzawy, 1, 0
+640913, stopowy, 3, 0
+44395, Buszmenka, 1, 0
+44398, Afrykanerka, 2, 0
+44429, Aborygenka, 1, 0
+44599, zieleniarka, 1, 0
+44621, tkaczka, 1, 0
+44628, tytuł szlachecki lub arystokratyczny, 1, 0
+44632, belkowanie, 2, 0
+44633, żebrowanie, 2, 0
+44663, cesarzowa, 2, 0
+44665, caryca, 1, 0
+44678, regentka, 1, 0
+700053, bezprocentowy, 3, 0
+677989, inszy, 4, 0
+684656, prostowłosy, 2, 0
+684659, rdzawożółty, 1, 0
+684660, rdzawocynamonowy, 1, 0
+677990, spirytualny, 2, 0
+684661, rdzawoczarny, 1, 0
+684662, rdzawooliwkowy, 1, 0
+684665, piaskowoszary, 1, 0
+700143, fioletowopurpurowy, 1, 0
+700169, szlachecko urodzony, 1, 0
+44889, Kupidyn, 1, 0
+44890, Kupido, 1, 0
+700303, frontowy, 6, 0
+700304, brązowokasztanowy, 1, 0
+700323, brązowopomarańczowy, 1, 0
+45028, marzycielka, 1, 0
+700485, praktyczny, 6, 0
+45168, tercjarka, 1, 0
+662934, taran, 3, 0
+378957, pamiątkowość, 1, 0
+700928, biała, 3, 0
+700934, biały, 13, 0
+700939, biały, 16, 0
+45644, pchełka, 2, 0
+45649, pchełka ziemna, 1, 0
+701033, niezły, 12, 0
+701098, cykliczny, 4, 0
+701111, bliski, 13, 0
+701112, bliski, 14, 0
+701138, konfidencjonalny, 3, 0
+45893, samczyk, 1, 0
+684874, dwukierunkowy, 5, 0
+701437, niedosiężny, 3, 0
+701473, nieudany, 3, 0
+701485, odległy, 9, 0
+701505, odległy, 11, 0
+701514, niedaleki, 4, 0
+701517, niedaleki, 7, 0
+701518, niedaleki, 8, 0
+701519, niedaleki, 9, 0
+701520, niedaleki, 10, 0
+46181, beleczka, 1, 0
+684905, oczojebny, 1, 0
+701609, wodzowski, 2, 0
+684945, leśny, 5, 0
+46609, stołeczność, 1, 0
+684977, ptaszy, 1, 0
+702034, rozwlekły, 4, 0
+702177, krótki, 7, 0
+619473, rumień wędrujący, 1, 0
+46929, solenizantka, 1, 0
+702393, niedługi, 8, 0
+706894, czarniuśki, 2, 0
+47117, ganc pomada, 1, 0
+47118, ganc egal, 1, 0
+47119, wszystko jedno, 1, 0
+47120, hamernik, 1, 0
+641379, Johann Rudolf Glauber, 1, 0
+685072, jehowicki, 2, 0
+678074, półprzemysłowy, 3, 0
+357407, fotoamatorka, 1, 0
+47466, patrycjuszka, 1, 0
+47467, patrycjuszka, 2, 0
+47480, proletariuszka, 1, 0
+703024, fałdzisty, 3, 0
+663313, zakupoholiczka, 1, 0
+47772, amatorka, 2, 0
+47811, eremita, 1, 0
+379356, makabryczność, 2, 0
+703284, zimny, 9, 0
+685203, pozateatralny, 2, 0
+48055, intelektualistka, 1, 0
+48072, korespondentka, 1, 0
+48103, matematyczka, 1, 0
+48119, operatorka, 3, 0
+48121, operatorka, 2, 0
+48136, pilotka, 2, 0
+48149, profesjonalistka, 2, 0
+48150, radiowiec, 1, 0
+703560, płytki, 6, 0
+48205, awiator, 1, 0
+48226, cherubinek, 2, 0
+703630, szczęk oręża, 1, 0
+48341, kolacyjka, 1, 0
+371046, odpłatny, 1, 0
+48354, Mulatka, 1, 0
+48384, prezencik, 1, 0
+48413, szatynka, 1, 0
+48418, trzpiotka, 1, 0
+48426, wujo, 1, 0
+48428, wuja, 1, 0
+656291, absolutny, 5, 0
+48457, łasiczka, 1, 0
+48493, ciuciubabka, 1, 0
+703921, punktowy, 6, 0
+663458, rytm biologiczny, 1, 0
+48632, ciągoty, 2, 0
+48753, pedantyczny, 1, 0
+48905, konferansjerka, 1, 0
+638849, całodobowy, 1, 0
+48979, kuracjuszka, 1, 0
+704393, nieoryginalny, 3, 0
+704414, wrażliwy, 8, 0
+704418, esencjonalny, 2, 0
+357702, poganiaczka, 1, 0
+49116, guzek, 3, 0
+704491, nienowy, 2, 0
+704494, nienowy, 4, 0
+49196, prolog, 3, 0
+49199, prorokini, 1, 0
+704564, walterscottowski, 1, 0
+36555, niedźwiedzisko, 1, 0
+704705, wieśniacki, 2, 0
+704713, literalny, 2, 0
+49475, wstrzemięźliwość, 1, 0
+49477, asceza, 1, 0
+49478, post, 1, 0
+357776, pracownik rolny, 1, 0
+641774, Zygmunt I Stary, 1, 0
+49603, wenta, 2, 0
+674208, sport balonowy, 1, 0
+685490, miękkolistny, 1, 0
+49740, pędrak, 2, 0
+705158, łagodny, 12, 0
+705159, łagodny, 13, 0
+705160, łagodny, 14, 0
+705163, łagodny, 17, 0
+49806, periodyczność, 1, 0
+685523, konglomeratowy, 4, 0
+685527, niskotopliwy, 1, 0
+705317, skarbek, 3, 0
+705325, dalekowzroczny, 4, 0
+705339, pożądliwy, 4, 0
+705361, pewien, 4, 0
+705468, malusi, 5, 0
+705494, maluczki, 5, 0
+685569, świstaczy, 2, 0
+50211, malunek, 3, 0
+50214, Izraelitka, 1, 0
+50226, prążek, 1, 0
+705595, antyzapalny, 1, 0
+705667, współrzędny, 2, 0
+50453, higienistka, 1, 0
+705876, nadziemski, 2, 0
+50537, arabeska, 1, 0
+50613, położnik, 1, 0
+705990, ustępliwy, 3, 0
+706031, nieetatowy, 2, 0
+50716, mistyczka, 1, 0
+706163, nieostry, 4, 0
+706200, nieostry, 11, 0
+706201, nieostry, 12, 0
+706203, nieostry, 14, 0
+390136, lamplugzaura, 1, 0
+706305, niepodobny, 2, 0
+50984, nadproże, 1, 0
+51365, rybojaszczury, 1, 0
+706884, apostolski, 3, 0
+358122, literaturoznawczyni, 1, 0
+707050, niefizyczny, 3, 0
+707082, nieodgadnięty, 4, 0
+51865, kocisko, 1, 0
+707243, nieklasyczny, 3, 0
+358209, speakerka, 2, 0
+52251, kocina, 1, 0
+52253, kocurek, 1, 0
+52297, latopis, 2, 0
+52298, latopisarz, 1, 0
+685926, krótkolistny, 1, 0
+707700, niziuśki, 6, 0
+52408, żeniaczka, 1, 0
+52459, krzyżowiec, 1, 0
+707820, operatywny, 3, 0
+707823, nietradycyjny, 1, 0
+52487, bratanka, 1, 0
+620420, królik, 6, 0
+708001, statyczny, 3, 0
+52652, prosiaczek, 2, 0
+52717, dreszczyk, 1, 0
+52829, biesiadka, 1, 0
+708243, pamiętliwy, 2, 0
+52893, pośredniczka, 2, 0
+358349, kontrahentka, 1, 0
+52948, szafarka, 1, 0
+52958, wspólniczka, 2, 0
+53010, bryndza, 2, 0
+53146, oberżystka, 1, 0
+53172, Apollo, 2, 0
+53173, Apollon, 1, 0
+53178, Boreasz, 1, 0
+53180, Elektra, 1, 0
+53182, Ereb, 1, 0
+53251, trawers, 5, 0
+708629, niebolszewicki, 1, 0
+708633, niebolszewicki, 3, 0
+686092, jazz-rockowy, 3, 0
+708754, nieobojętny, 4, 0
+686107, kuszetkowy, 1, 0
+53599, konsyliarz, 1, 0
+53600, lokatorka, 1, 0
+53631, cerkiewka, 1, 0
+53761, akant, 1, 0
+19249, górny, 4, 0
+53826, Indonezyjka, 1, 0
+709207, poboczny, 3, 0
+630286, źrebiątko, 1, 0
+709281, wodnisty, 7, 0
+53944, Malezyjka, 1, 0
+709347, brudny, 9, 0
+709348, brudny, 10, 0
+54009, Bozia, 3, 0
+709371, nierównoległy, 2, 0
+7065050, kasiasty, 1, 0
+54086, rzeźniczka, 2, 0
+54172, wiercipięta, 1, 0
+54176, znajomek, 1, 0
+358555, plantatorka, 1, 0
+54187, umrzyk, 1, 0
+9039, tradycjonalistyczny, 1, 0
+620715, wyręb, 1, 0
+709658, koncepcyjny, 3, 0
+54307, krowiarka, 1, 0
+642567, Tuwim, 1, 0
+642569, Julian Tuwim, 1, 0
+709693, niepowszechny, 4, 0
+54511, weselisko, 1, 0
+709891, diagonalny, 2, 0
+140172, starcie się, 1, 0
+54626, swojski, 1, 0
+54672, papierkomania, 1, 0
+54681, aberracja chromatyczna, 1, 0
+54708, dawczyni, 2, 0
+710099, bezpodręcznikowy, 1, 0
+710136, niezamierzony, 1, 0
+710169, powolny, 4, 0
+54833, cecha człowieka, 1, 0
+710203, żółwi, 2, 0
+55167, siostrzyca, 1, 0
+55183, wadera, 1, 0
+686413, katorżny, 1, 0
+664568, calutki, 6, 0
+55311, magister, 2, 0
+55312, pigularz, 1, 0
+55313, aptekarka, 1, 0
+686429, izochroniczny, 1, 0
+55349, gzymsik, 1, 0
+55366, listonoszka, 1, 0
+55369, milicjantka, 1, 0
+55371, nabab, 2, 0
+55374, starszy sztygar, 1, 0
+55399, cerowaczka, 1, 0
+710849, czynny, 8, 0
+710850, czynny, 9, 0
+710854, czynny, 13, 0
+55536, Mahomet, 1, 0
+55581, sześciolatka, 1, 0
+55936, dramatopisarka, 1, 0
+55938, felietonistka, 1, 0
+55944, montażystka, 1, 0
+55946, nowelistka, 1, 0
+55955, strukturalistka, 1, 0
+55956, strukturalistka, 2, 0
+55961, stylistka, 2, 0
+711327, demka, 1, 0
+55975, włókniarka, 1, 0
+55981, zwiastunka, 2, 0
+56020, ośmiolatka, 1, 0
+56025, jagiełka, 1, 0
+711409, południowy, 5, 0
+358887, hebraistka, 1, 0
+56278, Średni Kołowy Transporter Opancerzony, 1, 0
+56353, jurorka, 1, 0
+56379, promotorka, 1, 0
+56380, prokuratorka, 1, 0
+56387, zakładniczka, 1, 0
+56396, siedmiolatka, 1, 0
+56398, dwulatka, 1, 0
+56400, trzylatka, 1, 0
+56402, czterolatka, 1, 0
+56404, pięciolatka, 2, 0
+56406, dziewięciolatka, 1, 0
+56407, dziesięciolatka, 1, 0
+56415, jedenastolatka, 1, 0
+56417, dwunastolatka, 1, 0
+56418, siostrunia, 1, 0
+56445, parzenica, 1, 0
+711887, język chiński, 1, 0
+711997, warsiawski, 2, 0
+56644, senatorka, 1, 0
+56672, baloniarka, 1, 0
+712063, niepolski, 5, 0
+358981, szowinistka, 2, 0
+358998, esperantystka, 1, 0
+358999, esperantystka, 2, 0
+56912, maniaczka, 1, 0
+56924, panisko, 1, 0
+712291, maszynista kolejowy, 1, 0
+712351, programista komputerowy, 1, 0
+359025, koziarka, 2, 0
+686714, muszelkowy, 3, 0
+656578, białoruskojęzyczny, 2, 0
+712437, podkomorzy koronny, 1, 0
+57088, czub, 4, 0
+57169, sterniczka, 2, 0
+686735, nadczuły, 2, 0
+57281, kasjerka, 1, 0
+712729, ssak naczelny, 1, 0
+57414, Myrra, 1, 0
+57469, bibka, 1, 0
+57484, imprezka, 1, 0
+57521, anglistka, 1, 0
+57527, farmaceutka, 1, 0
+57542, sport motorowodny, 1, 0
+712925, bieg płotkarski, 1, 0
+712926, obcowanie płciowe, 1, 0
+713037, gaz łzawiący, 1, 0
+57678, brataniec, 1, 0
+57695, półuśmieszek, 1, 0
+57716, swar, 1, 0
+713116, madziarski, 3, 0
+713138, kantoński, 1, 0
+713141, italiański, 1, 0
+713168, helleński, 4, 0
+686854, nosorożcowaty, 1, 0
+713324, gaskończyk, 2, 0
+686904, fotelowy, 2, 0
+686907, fowistyczny, 2, 0
+58335, lemurkowate, 1, 0
+58336, lemurowate, 1, 0
+58337, indrisowate, 1, 0
+359250, minimalistka, 1, 0
+58354, lemurki, 1, 0
+359251, minimalistka, 2, 0
+359253, multimiliarderka, 1, 0
+359255, ósmoklasistka, 1, 0
+58403, chomik europejski, 1, 0
+713778, olimpiada przedmiotowa, 1, 0
+678631, sierota naturalny, 1, 0
+58436, wielkoszczur, 1, 0
+58447, własność komunikatu, wypowiedzi, 1, 0
+58466, naoczny, 1, 0
+686952, lirowy, 2, 0
+621419, minka, 1, 0
+58528, schizoid, 1, 0
+58529, charakter schizoidalny, 1, 0
+58576, podsypka, 1, 0
+58594, delfinowate, 1, 0
+58595, delfiny oceaniczne, 1, 0
+58596, wieloryby gładkoskóre, 1, 0
+58599, fałdowce, 1, 0
+58602, wieloryby właściwe, 1, 0
+714073, jankeski, 3, 0
+714074, jankeski, 4, 0
+58807, Palestynka, 1, 0
+58855, żuczek, 1, 0
+58884, ruleta, 1, 0
+58903, ślepak, 3, 0
+714299, biegła sądowa, 1, 0
+58954, przybitka, 3, 0
+714332, kawaleryjska fantazja, 1, 0
+621510, samka, 1, 0
+714420, akrobatyka sportowa, 1, 0
+714674, narciarstwo wysokogórskie, 1, 0
+714743, odmiana uprawna, 1, 0
+687111, rozmowy w Magdalence, 1, 0
+678480, bebechowy, 1, 0
+714828, weteran wojenny, 1, 0
+59496, medyczka, 1, 0
+715037, kobiecy, 8, 0
+59684, prymariusz, 1, 0
+59703, wytwornisia, 1, 0
+59712, agnozja słuchowa, 1, 0
+59713, agnozja czuciowa, 1, 0
+59721, aleksja bez agrafii, 1, 0
+59729, białkomocz patologiczny, 1, 0
+59732, dysfagia przełykowa, 1, 0
+59941, pobudzenie seksualne, 1, 0
+59978, przepuklina pachwinowa, 1, 0
+60023, weteranka, 1, 0
+60031, narkomanka, 1, 0
+715420, sybirski, 2, 0
+60065, włókniak miękki, 1, 0
+621689, wajdelotka, 1, 0
+60163, artysta ze względu na styl lub epokę, 1, 0
+60192, dietetyczka, 1, 0
+60214, germanistka, 2, 0
+60229, interpretatorka, 2, 0
+60245, balustradka, 1, 0
+60310, sekserka, 1, 0
+715675, man, 2, 0
+60405, wierszopis, 2, 0
+60424, brunecik, 1, 0
+60428, kuzyneczka, 1, 0
+60429, Metyska, 1, 0
+394819, bahariazaur, 1, 0
+60447, denatka, 2, 0
+60453, idealistka, 2, 0
+60465, romantyczka, 2, 0
+60466, romantyczka, 1, 0
+621748, wiścik, 1, 0
+687297, nastawnicza, 1, 0
+715980, oskarżycielka posiłkowa, 1, 0
+687318, marcypanowy, 2, 0
+687321, nauszny, 2, 0
+687325, nauszny, 3, 0
+60918, pszczółka, 2, 0
+716295, Eskimosek, 2, 0
+60943, cecha istnienia, 1, 0
+716405, klingoński, 1, 0
+61046, niebytność, 1, 0
+61092, pierwotność, 1, 0
+61123, słyszalność, 1, 0
+61192, makrobentos, 1, 0
+665562, gubernator generalny, 1, 0
+61254, kioskarka, 1, 0
+110393, epizodzik, 2, 0
+716669, wyścig konny, 1, 0
+716676, udar mózgowy, 1, 0
+61324, konduktorka, 1, 0
+716724, tryb nieprocesowy, 1, 0
+61462, człowiek ukarany, 1, 0
+680397, zielonosrebrny, 1, 0
+61468, Amor, 1, 0
+61494, inwalidka, 1, 0
+61712, kajtek, 1, 0
+381656, Leśmian, 1, 0
+61820, człowiek z wadą wzroku, 1, 0
+61828, skarbniczka, 1, 0
+621974, ja, 2, 0
+61844, eskulap, 1, 0
+62154, imigrantka, 1, 0
+717579, teuton, 3, 0
+62224, mleczarka, 1, 0
+62246, doktorka, 2, 0
+643894, sytuacja bramkowa, 1, 0
+62278, skrzatek, 1, 0
+717664, berneńczyk, 2, 0
+62329, palaczka, 1, 0
+62434, samobójczyni, 1, 0
+62453, wilczysko, 2, 0
+62454, wilczysko, 1, 0
+62487, umarlak, 1, 0
+62489, truposzczak, 1, 0
+62491, sztywny, 1, 0
+630574, koroneczka, 2, 0
+62669, podciąg, 2, 0
+62815, krzykacz miejski, 1, 0
+62964, brytan, 2, 0
+62990, kronikarka, 1, 0
+62991, kronikarka, 2, 0
+63013, humanistka, 2, 0
+63015, humanistka, 1, 0
+63058, ścierwojad, 1, 0
+700423, Adam Słodowy, 2, 0
+718492, Boy, 3, 0
+718573, Anglosaska, 2, 0
+674241, turbulentny, 2, 0
+63229, żeniec, 1, 0
+718619, cywil, 2, 0
+718722, akcja, 6, 0
+63418, rewolucjonistka, 1, 0
+687779, zapisowy, 1, 0
+63524, żagnica arktyczna, 1, 0
+718912, Marsjanka, 1, 0
+63554, furtianka, 1, 0
+63584, obserwatorka, 2, 0
+63632, kobieta postrzegana w kontekście seksualnym, 1, 0
+63719, komediopisarka, 1, 0
+360147, niebaczny, 3, 0
+622292, wielbłądziątko, 1, 0
+63808, synalek, 1, 0
+622317, kościół farny, 1, 0
+63896, bordo, 1, 0
+719453, naczyniak jamisty, 1, 0
+64150, lwisko, 1, 0
+64179, metalik, 1, 0
+64212, siwawy, 2, 0
+64233, górniczka, 1, 0
+360241, lwi, 2, 0
+360252, pomniejszy, 3, 0
+719729, po homerycku, 1, 0
+360255, wiekuisty, 2, 0
+64383, diafonia, 1, 0
+719755, undead, 1, 0
+622405, suwaczek, 1, 0
+64424, bitewka, 1, 0
+719796, ghoul, 1, 0
+64469, najmitka, 1, 0
+719839, cinerea, 1, 0
+709799, digitalny, 2, 0
+64620, kiciarz, 1, 0
+64623, konkursik, 1, 0
+54467, prefabrykat, 1, 0
+64678, docentka, 1, 0
+64812, reporterzyna, 1, 0
+622479, zachowawca, 1, 0
+666181, ruletka, 2, 0
+64978, cecha ruchu, 1, 0
+65019, festiwalik, 1, 0
+65021, gadułka, 1, 0
+65058, bocianiątko, 1, 0
+65101, drobnomieszczanka, 2, 0
+65142, nitrobakteria, 1, 0
+65155, koadiutorka, 1, 0
+65195, mieszkaniec domu, 1, 0
+65325, filmowość, 1, 0
+688113, adrenokortykotropowy, 1, 0
+688145, Rajd Arsenał, 1, 0
+688151, Arsenał, 3, 0
+65763, krwiodawczyni, 1, 0
+65768, kilimiarka, 1, 0
+65908, szturmowiec, 2, 0
+674334, brązowooliwkowy, 1, 0
+66032, liszka, 3, 0
+66033, liszka, 2, 0
+66036, gąsieniczka, 1, 0
+685665, homodontyczny, 1, 0
+66078, gwiazdarz, 1, 0
+66090, komarzysko, 1, 0
+66656, piromanka, 1, 0
+688322, miesięczny, 5, 0
+66712, kokainistka, 1, 0
+66715, poecina, 1, 0
+66760, konferencyjka, 1, 0
+66829, kawoszka, 1, 0
+66830, piwoszka, 1, 0
+66988, kuczer, 1, 0
+688371, refrenowy, 3, 0
+67380, drobiarka, 1, 0
+622902, bookmaker, 1, 0
+67500, jeżatka, 1, 0
+644774, drugi plan, 1, 0
+102639, martenzyt, 1, 0
+360816, niemowlątko, 1, 0
+67754, kawalerska fantazja, 1, 0
+67755, ułańska fantazja, 1, 0
+360827, kaszelek, 1, 0
+666673, gambit wołżański, 1, 0
+67885, dwór, 2, 0
+67894, wciornastek zachodni, 1, 0
+67895, wciornastek szklarniowiec, 1, 0
+67896, wciornastek tytoniowiec, 1, 0
+360849, chrząszczyk, 1, 0
+623023, majaczenie alkoholowe, 1, 0
+68177, loteria fantowa, 1, 0
+68224, rewia mody, 1, 0
+678776, pełen, 7, 0
+68624, botaniczka, 1, 0
+68726, traktorzystka, 1, 0
+98841, akcjonariuszka, 1, 0
+98845, aktualistka, 1, 0
+68849, analfabetka, 1, 0
+68859, debilka, 2, 0
+98869, anestezjolożka, 1, 0
+68949, rolniczka, 1, 0
+68950, rolniczka, 2, 0
+623164, prażnik, 1, 0
+98880, antropolożka, 1, 0
+661340, Woodstock, 1, 0
+98882, antykwariuszka, 1, 0
+98886, Arabka, 2, 0
+69033, entliczek, 1, 0
+98887, arabistka, 1, 0
+98891, architektka wnętrz, 1, 0
+69105, pentliczek, 1, 0
+69160, posiłek regeneracyjny, 1, 0
+69250, krawężnik, 1, 0
+69251, stójkowy, 1, 0
+69266, weredyczka, 1, 0
+69275, pocztylion, 2, 0
+69279, parobczak, 1, 0
+69322, połowica, 1, 0
+69426, czeski film, 1, 0
+69455, kundelek, 1, 0
+69492, magazynierka, 1, 0
+69513, historia, 3, 0
+69514, wypadek, 3, 0
+69515, zdarzenie, 2, 0
+69583, przedstawicielka handlowa, 1, 0
+69750, węgar, 1, 0
+69760, programistka, 1, 0
+69979, lekomanka, 1, 0
+99049, artystka, 3, 0
+70101, lojalistka, 1, 0
+70102, lojalistka, 2, 0
+70103, emisariuszka, 1, 0
+99083, astrolożka, 1, 0
+361240, ulotkarz, 1, 0
+70305, fagas, 2, 0
+70317, asfalt sztuczny, 1, 0
+70445, król zwierząt, 1, 0
+70446, władca pustyni, 1, 0
+99125, autokratka, 2, 0
+70482, odpowiedniczka, 1, 0
+70485, państwowiec, 1, 0
+70486, papieżyca, 1, 0
+70531, ostatnie podrygi, 2, 0
+70535, perfekcjonistka, 1, 0
+645272, niesłowiański, 1, 0
+70707, pokusa, 1, 0
+70708, żądza, 1, 0
+70710, pożądanie, 4, 0
+70719, pałuba, 3, 0
+70720, strach na wróble, 1, 0
+70951, koleżanka po piórze, 1, 0
+70997, towarzyszka niedoli, 1, 0
+71110, idiotka, 2, 0
+71111, przygłupek, 1, 0
+2374, jedynaczka, 1, 0
+7064173, poncki, 1, 0
+670151, lacki, 1, 0
+7064181, prorocki, 2, 0
+667311, parapsychiczny, 1, 0
+623647, parapetówa, 1, 0
+362733, mątewka, 1, 0
+676104, wrosły, 2, 0
+364664, spekulatywny, 1, 0
+623745, niszczycielskość, 1, 0
+99480, bakteriolożka, 1, 0
+383540, chomik tybetański, 1, 0
+383541, chomik mongolski, 1, 0
+99570, reportażystka, 1, 0
+361718, rasistowski, 1, 0
+99576, iberystka, 1, 0
+99593, bizantynistka, 1, 0
+674578, gładkowłosy, 1, 0
+55931, animatorka, 3, 0
+667687, nienormalny, 5, 0
+99743, birofilistka, 1, 0
+674608, emaliowy, 4, 0
+667771, skarlały, 1, 0
+74639, Pan, 9, 0
+74689, gra zespołowa, 1, 0
+74695, piłka halowa, 1, 0
+74698, kosz, 8, 0
+667833, rypnięty, 1, 0
+143564, płomyczek, 3, 0
+667857, jebnięty, 2, 0
+667877, pierdolnięty, 2, 0
+667878, pierdolnięty, 3, 0
+362754, zawalik, 1, 0
+362079, węgarek, 1, 0
+99977, anastomoza patologiczna, 1, 0
+100016, świniarka, 2, 0
+100019, hodowczyni, 1, 0
+674662, pastiszowy, 2, 0
+100033, indywidualistka, 1, 0
+677003, ziemiopodobny, 2, 0
+143824, pakowaczka, 2, 0
+674685, prominent, 3, 0
+624437, króciak, 3, 0
+687781, śmigusowy, 2, 0
+12786, właściwość zdarzenia, sytuacji, 1, 0
+100180, rusałkowate, 1, 0
+362328, impresyjka, 1, 0
+624491, królisko, 2, 0
+362349, prowizyjka, 1, 0
+668187, boyfriend, 1, 0
+362356, wypadeczek, 3, 0
+34713, dwubój, 1, 0
+704183, niewłaściwy, 3, 0
+362501, pacholątko, 1, 0
+362510, rewolucyjka, 1, 0
+100412, frukt, 1, 0
+78310, księgowa, 1, 0
+100434, kompleksja, 2, 0
+674744, reakcja alarmowa, 1, 0
+362590, przygódka, 1, 0
+668477, speedrower, 1, 0
+668482, fornalka, 4, 0
+144261, nieprzerwany, 1, 0
+362751, szlemiczek, 1, 0
+79385, subiektywny, 1, 0
+362760, łamigłóweczka, 1, 0
+668595, heroiczny, 2, 0
+100622, brzuchomówczyni, 1, 0
+362797, procesik, 3, 0
+362829, kaprysik, 1, 0
+386741, ptasznik śnieżny, 1, 0
+144419, ojcowie, 1, 0
+668708, króciusieńki, 1, 0
+646881, pierwszoplanowość, 2, 0
+668731, żebraczy, 6, 0
+712441, łaciński, 5, 0
+646924, Stendhal, 1, 0
+384795, płaszczki właściwe, 1, 0
+646951, niezapalny, 1, 0
+100824, wiwerowate, 1, 0
+635542, kostniak kostnawy, 1, 0
+625135, wrzodzik, 1, 0
+657370, quebecki, 2, 0
+100862, konserwatystka, 2, 0
+668904, germinalny, 2, 0
+712608, rycerz maltański, 1, 0
+363084, wujeneczka, 1, 0
+384975, czepiaki, 1, 0
+670498, antyinflacyjny, 1, 0
+385028, kondorowate, 1, 0
+385032, trębacze, 1, 0
+606461, wojna stuletnia, 1, 0
+606468, bakterie azotowe, 1, 0
+606469, bakterie diazotroficzne, 1, 0
+16869, człowiek charakteryzowany w odniesieniu do jego stanu majątkowego, 1, 0
+669089, blok ścienny, 1, 0
+647251, pozagospodarczy, 1, 0
+647252, pozaprodukcyjny, 1, 0
+674887, śniadawy, 1, 0
+385147, małpeczki, 1, 0
+683623, pozawydziałowy, 1, 0
+607256, podgrzybek wielobarwny odmiana brzoskwiniowa, 1, 0
+607325, hajdamaczyzna, 1, 0
+363373, świetliczek, 2, 0
+639993, złamany, 3, 0
+29361, szloch, 1, 0
+669263, upust, 4, 0
+608052, blanka, 1, 0
+101362, euroentuzjazm, 1, 0
+625654, triada Currarino, 1, 0
+647507, Machiavelli, 1, 0
+669401, licencja otwarta, 1, 0
+669411, kurier tatrzański, 1, 0
+608762, choroba nowotworowa, 1, 0
+608764, opryszczka pospolita, 1, 0
+608766, opryszczka wargowa, 1, 0
+608868, nimfa grzybienianka, 1, 0
+363622, warchlaczek, 2, 0
+84612, hospitantka, 1, 0
+363628, dzieciaczyna, 1, 0
+363632, krewniaczek, 1, 0
+713164, helleński, 2, 0
+363649, ogrodniczek, 1, 0
+84793, habilitantka, 1, 0
+622587, skrable, 1, 0
+363685, pożarzysko, 3, 0
+363701, człowieczysko, 1, 0
+363702, człowieczysko, 2, 0
+609389, forma morfologiczna, 1, 0
+363722, murarzyna, 1, 0
+674982, unia hipostatyczna, 1, 0
+373839, sorabistka, 1, 0
+679686, czołg lekki, 1, 0
+363831, brytanisko, 1, 0
+363832, brytanisko, 2, 0
+669704, odwodnienie hipertoniczne, 1, 0
+395673, długoskrzydlakowate, 1, 0
+679380, całożyciowy, 2, 0
+679382, całożyciowy, 3, 0
+669792, pestkowy, 1, 0
+686737, jednotonny, 2, 0
+633429, ekspulsja, 2, 0
+86930, kwaśny, 2, 0
+611436, rusofilizm, 2, 0
+611437, rusofilstwo, 2, 0
+648068, standartowy, 2, 0
+669924, sąd szczegółowy, 2, 0
+677951, złocistomiedziany, 1, 0
+679419, ledowy, 1, 0
+611958, Saint-Simon, 1, 0
+364175, kotulek, 2, 0
+103311, kolporterka, 1, 0
+364216, nagi poker, 1, 0
+364226, łóżkowy, 1, 0
+88270, śmieszny, 2, 0
+612748, zachowanie ludyczne, 1, 0
+626424, ojcaszek, 1, 0
+626425, ojcaszek, 2, 0
+364292, patencik, 3, 0
+688184, pochodowy, 4, 0
+145864, pilot, 4, 0
+364351, zimnisko, 2, 0
+613291, szczupakowate, 1, 0
+677962, złotoperłowy, 1, 0
+682327, Perkun, 1, 0
+613436, mozazaury, 1, 0
+677963, złocistoperłowy, 1, 0
+395778, ptak wymarły, 1, 0
+102268, jamniczek, 1, 0
+58601, wale gładkoskóre, 1, 0
+104471, śledzik, 1, 0
+102308, operator wagonowy, 1, 0
+626603, latopisiec, 2, 0
+679491, perskie oko, 5, 0
+679492, sukienkowy, 5, 0
+626659, łoszę, 2, 0
+679714, tradycjonalny, 1, 0
+395803, sowy, 2, 0
+614461, sześcioszparowate, 1, 0
+670399, niepamięć wsteczna, 1, 0
+670403, niepamięć następcza, 1, 0
+614554, wieńce, 1, 0
+688239, zwrotnicowy, 1, 0
+364596, mnożyciel, 2, 0
+626749, wejściowy, 2, 0
+626809, plebejka, 1, 0
+670506, ostroga piętowa, 1, 0
+102533, orzeźwienie, 3, 0
+692360, anemicznie, 2, 0
+615477, rozpornica, 1, 0
+670560, kucany, 1, 0
+626875, super nowy, 1, 0
+99059, asekurantka, 2, 0
+615584, armagedon, 1, 0
+18939, dwudziestoczterogodzinny, 1, 0
+615756, rybaczki, 2, 0
+615757, łowce, 1, 0
+683911, szczypiorkowy, 1, 0
+353646, kuriozalny, 1, 0
+670618, otwarty, 15, 0
+626930, ogonowy, 1, 0
+102672, owocek, 1, 0
+353896, niewyżyty, 2, 0
+627003, vintage, 1, 0
+354285, komediantka, 2, 0
+386739, ptasznik wiosłonogi, 1, 0
+648887, pozarodzinny, 1, 0
+354662, niedorozwinięty, 1, 0
+627123, harmoniczny, 1, 0
+354906, intymny, 3, 0
+354909, niepostrzegalny, 1, 0
+354910, niepochwytny, 1, 0
+354923, precedensowy, 1, 0
+354940, nierozróżnialny, 2, 0
+354967, ponadziemski, 1, 0
+354968, pozaświatowy, 1, 0
+688321, złotawożółty, 1, 0
+355179, nieodczuwalny, 1, 0
+355209, niemetaliczny, 1, 0
+617426, żonisko, 1, 0
+355416, babcia cioteczna, 1, 0
+627231, Byron, 1, 0
+93449, błogosławiona, 1, 0
+679613, preliminaryjny, 2, 0
+103500, protestacja, 1, 0
+355786, psychoanalityczny, 1, 0
+617988, żywotopis, 1, 0
+104499, oczysko, 1, 0
+355909, pozaekonomiczny, 1, 0
+355935, pełnopłatny, 1, 0
+649148, Voltaire, 1, 0
+649149, Wolter, 1, 0
+103030, okulistka, 1, 0
+679630, makiawelistyczny, 2, 0
+356161, równoleżnikowy, 2, 0
+679634, manuałowy, 1, 0
+618402, brodawka młodocianych, 1, 0
+618403, brodawka przejściowa, 1, 0
+356310, kastowy, 1, 0
+356312, guślarka, 1, 0
+618457, szyszka, 3, 0
+356315, intendentka, 1, 0
+356324, kopistka, 2, 0
+356331, mecenaska, 1, 0
+356368, osiemdziesięciolatka, 1, 0
+356370, przybyszka, 1, 0
+356374, sołtyska, 1, 0
+356379, szybowniczka, 1, 0
+356380, szyfrantka, 1, 0
+356387, nazistka, 1, 0
+356398, informatyczka, 1, 0
+356399, kapitalistka, 1, 0
+356413, załogantka, 1, 0
+94274, Gandalf, 1, 0
+356419, mediewistka, 1, 0
+356427, parodystka, 2, 0
+356429, pozytywistka, 1, 0
+356447, windziarka, 1, 0
+356448, przewoźniczka, 1, 0
+618601, seder, 1, 0
+356470, ławniczka, 1, 0
+356472, epileptyczka, 1, 0
+356476, spirytualistka, 1, 0
+356477, fizykoterapeutka, 1, 0
+356482, internistka, 1, 0
+356496, kolonistka, 1, 0
+356507, letniczka, 1, 0
+356510, lodziarka, 1, 0
+356514, migrantka, 1, 0
+356515, morfinistka, 1, 0
+356517, nihilistka, 1, 0
+356526, nonkonformistka, 1, 0
+356567, pamięciowy, 1, 0
+356595, sierpowaty, 1, 0
+356637, sklerotyczka, 1, 0
+356642, trzecioklasistka, 1, 0
+356646, włościanka, 1, 0
+389069, protele, 1, 0
+356655, hellenistka, 1, 0
+356668, orientalistka, 1, 0
+356673, paralityczka, 1, 0
+356674, piątoklasistka, 1, 0
+356675, pierwszoklasistka, 1, 0
+356679, pracoholiczka, 1, 0
+356686, racjonalistka, 2, 0
+356688, socjopatka, 1, 0
+356764, zatoczkowate, 1, 0
+356767, ślimak morski, 1, 0
+356784, sześćdziesięciolatka, 1, 0
+356788, współproducentka, 1, 0
+356803, sinusoidalny, 1, 0
+618990, Elmo, 1, 0
+356880, grubawy, 2, 0
+356890, krępy, 1, 0
+356931, diecezjalny, 1, 0
+356932, episkopalny, 1, 0
+357011, intuicjonistka, 1, 0
+357012, jenerałowa, 1, 0
+357014, kodyfikatorka, 1, 0
+357015, normalizatorka, 1, 0
+357017, korsarka, 2, 0
+357022, modernistka, 1, 0
+357028, probabilistka, 2, 0
+619285, ziarniniak naczyniowy, 1, 0
+619343, nowotwór złośliwy skóry, 1, 0
+357248, ruszt, 2, 0
+357251, rygiel, 2, 0
+357281, spawaczka, 1, 0
+357285, układaczka, 2, 0
+357341, niewidoma, 1, 0
+357345, poddana, 1, 0
+357371, synoptyczka, 1, 0
+357373, meteorolożka, 1, 0
+357374, geografka, 1, 0
+357384, zegarmistrzyni, 1, 0
+357385, zgrywuska, 1, 0
+357402, epigraficzka, 1, 0
+357405, finansistka, 1, 0
+357406, finansistka, 2, 0
+357416, konceptualistka, 1, 0
+357422, moralistka, 1, 0
+357442, wędkarka, 1, 0
+357515, obrończy, 1, 0
+357534, bolszewicki, 3, 0
+103287, chronograf, 4, 0
+619726, impas, 2, 0
+619755, podłucze, 1, 0
+619761, łęk przyporowy, 1, 0
+619766, belka tęczowa, 1, 0
+357687, introligatorka, 1, 0
+357693, nacjonalistka, 1, 0
+357709, protagonistka, 1, 0
+357715, radna, 1, 0
+679683, czołg saperski, 1, 0
+357722, współobywatelka, 1, 0
+357725, współrodaczka, 1, 0
+357754, psychotyczka, 1, 0
+619900, szelmutka, 1, 0
+357773, etnografka, 1, 0
+357819, ogólnikowy, 1, 0
+620036, transwestytka, 1, 0
+357955, myśliwiec przechwytujący, 1, 0
+357971, zgrubny, 1, 0
+358008, fatalistka, 2, 0
+620178, karczma piwna, 1, 0
+679695, antykwowy, 4, 0
+358102, flegmatyczka, 1, 0
+358103, flegmatyczka, 2, 0
+387366, lejkowcowate, 1, 0
+358119, kunktatorka, 1, 0
+358130, biskupka, 1, 0
+358131, patriarchini, 1, 0
+620276, słowiarz, 1, 0
+358156, utylitarystka, 1, 0
+358157, utylitarystka, 2, 0
+358203, łakomczucha, 1, 0
+358208, speakerka, 1, 0
+358213, seminarzystka, 1, 0
+620358, trzpiotek, 1, 0
+358215, lektorka, 4, 0
+358228, kubistka, 1, 0
+649534, Eskimoska, 2, 0
+358269, porządkowy, 3, 0
+649150, François-Marie Arouet, 1, 0
+365557, zawodnik sportowy ze względu na wiek, 1, 0
+358357, gastarbeiterka, 1, 0
+358359, katatoniczka, 1, 0
+358365, librecistka, 1, 0
+358366, nestorianka, 1, 0
+358500, przysłowiowy, 1, 0
+358537, wózkarka, 1, 0
+685867, fraczkowy, 2, 0
+358548, naturalistka, 1, 0
+358552, neurasteniczka, 1, 0
+620698, żonusia, 1, 0
+358564, zawiadowczyni, 1, 0
+620728, ogrodowizna, 1, 0
+358623, filatelistka, 1, 0
+358625, fizjoterapeutka, 1, 0
+358627, humorystka, 1, 0
+358663, indianistka, 1, 0
+358669, kombatantka, 1, 0
+358679, lakierniczka, 1, 0
+358682, luzaczka, 2, 0
+358686, masonka, 1, 0
+358690, neofaszystka, 2, 0
+679717, trójzaborowy, 1, 0
+358750, transparentny, 2, 0
+358755, szkicowy, 2, 0
+358758, rudymentarny, 2, 0
+358759, szczątkowy, 1, 0
+358792, zaświatowy, 1, 0
+358827, rutenistka, 1, 0
+358846, introwertyczka, 1, 0
+358849, kantyniarka, 1, 0
+358852, metodyczka, 1, 0
+358853, moderatorka, 1, 0
+358877, eurosceptyczka, 1, 0
+358878, farmerka, 1, 0
+358879, fiksatka, 1, 0
+358880, gazeciarka, 1, 0
+358883, glosatorka, 1, 0
+358884, glosatorka, 2, 0
+358885, gołębiarka, 1, 0
+358886, gramatyczka, 1, 0
+358894, kontrrewolucjonistka, 1, 0
+358900, pomocowy, 1, 0
+688452, turniejowy, 9, 0
+358962, nieścisły, 2, 0
+358968, poligamistka, 1, 0
+358973, żniwiarka, 2, 0
+358985, uniwersalistka, 1, 0
+358996, darwinistka, 1, 0
+358997, elektromonterka, 1, 0
+359006, instygatorka, 1, 0
+359007, iranistka, 1, 0
+359009, kolaborantka, 1, 0
+359032, maksymalistka, 1, 0
+359033, maksymalistka, 2, 0
+359038, multimilionerka, 1, 0
+359045, protetyczka, 1, 0
+359055, sentymentalistka, 1, 0
+359057, sentymentalistka, 2, 0
+359058, syndykalistka, 1, 0
+359059, szaradzistka, 1, 0
+359067, winiarka, 2, 0
+359075, druciarka, 1, 0
+359077, falangistka, 1, 0
+359080, fonetyczka, 1, 0
+359088, kokilarka, 1, 0
+359093, mandatariuszka, 1, 0
+365696, tameczny, 1, 0
+359231, półanalfabetka, 2, 0
+359233, siedemdziesięciolatka, 1, 0
+359234, sygnatariuszka, 1, 0
+359238, wyborczyni, 1, 0
+359243, hungarystka, 1, 0
+359247, katastrofistka, 2, 0
+621401, fest, 1, 0
+103618, czyścioszek, 1, 0
+359298, nieprzepisowy, 1, 0
+359323, inwestorka, 1, 0
+359324, japonistka, 1, 0
+359348, nieznajoma, 1, 0
+621506, robal, 1, 0
+359365, retuszerka, 2, 0
+359366, graficzka, 2, 0
+359387, familiantka, 1, 0
+359389, gorzelniczka, 1, 0
+359404, rebeliantka, 1, 0
+359459, cudotwórczy, 1, 0
+359468, nadludzki, 2, 0
+365749, niewymienialny, 1, 0
+359488, ponadludzki, 2, 0
+359501, uzdrowicielski, 1, 0
+649749, cytoplazmatyczny, 1, 0
+359598, wygasły, 2, 0
+621850, antecesor, 1, 0
+621856, kampanula, 1, 0
+359758, papuga, 3, 0
+359784, ruski, 1, 0
+103655, kameralistka, 1, 0
+621973, przedświadomość, 1, 0
+359830, gwiaździsty, 2, 0
+359831, gwieździsty, 2, 0
+359837, muszlowy, 1, 0
+359838, muszlowy, 2, 0
+359860, koniugacyjny, 1, 0
+365509, nawróciciel, 1, 0
+622016, sieroteńka, 1, 0
+359886, ultymatywny, 1, 0
+382971, południce, 1, 0
+360164, pejoratywny, 2, 0
+622316, tum, 1, 0
+360228, naramiennica srebrnica, 1, 0
+622378, sunia, 1, 0
+622380, antemion, 1, 0
+622385, socjuszka, 1, 0
+103732, kafar, 2, 0
+360251, pomniejszy, 2, 0
+360284, niterka, 1, 0
+622530, sprawdzian, 2, 0
+622558, raczyna, 1, 0
+360468, baroniątko, 1, 0
+103769, szóstoklasistka, 1, 0
+360519, nieostateczny, 1, 0
+622710, wiercipiętka, 1, 0
+360585, szynkareczka, 1, 0
+360590, zrostek, 2, 0
+360597, charciczka, 1, 0
+360631, balecik, 2, 0
+622778, sprycik, 1, 0
+360656, staruszeczka, 1, 0
+360660, rusałeczka, 1, 0
+360661, rusałeczka, 2, 0
+360683, młodzianek, 1, 0
+622830, powoźnik, 1, 0
+622842, praktykarz, 1, 0
+360722, koncercik, 1, 0
+360738, pinczerek, 1, 0
+360758, balik, 1, 0
+360759, balik, 2, 0
+360794, lisiczka, 1, 0
+360812, pelotka, 1, 0
+622974, hacele, 1, 0
+360834, gaździnka, 1, 0
+360846, bóstewko, 1, 0
+16453, cecha otoczenia, 1, 0
+360865, lisek, 1, 0
+671814, gardlany, 3, 0
+16455, nosiciel cechy, 1, 0
+360911, przemówka, 2, 0
+360918, bulweczka, 1, 0
+98784, najazd, 3, 0
+360948, brydżyk, 1, 0
+98805, alergiczka, 1, 0
+98813, abstrakcjonistka, 1, 0
+98820, adoratorka, 1, 0
+360965, podareczek, 1, 0
+98823, aeronautka, 1, 0
+98826, aforystka, 1, 0
+98827, Afroamerykanka, 1, 0
+98828, afrykanistka, 1, 0
+360978, podaruneczek, 1, 0
+98836, agronomka, 1, 0
+98837, agrotechniczka, 1, 0
+98838, agrochemiczka, 1, 0
+98848, akwanautka, 1, 0
+98850, akwarystka, 1, 0
+98854, albinoska, 1, 0
+98859, ambasadorka, 2, 0
+98861, amerykanistka, 1, 0
+98863, analityczka, 1, 0
+98864, analityczka, 2, 0
+98865, anarchistka, 1, 0
+98868, anemiczka, 1, 0
+98875, annalistka, 1, 0
+98876, anorektyczka, 1, 0
+98890, archeolożka, 1, 0
+98892, archiwistka, 2, 0
+623193, hełm wielki, 1, 0
+623198, hełm kirasjerski, 1, 0
+361060, pochodzik, 1, 0
+361064, pożarek, 1, 0
+361065, pożarek, 2, 0
+361066, pożarek, 3, 0
+361077, tendencyjka, 3, 0
+361078, wzroczek, 1, 0
+103871, macher, 2, 0
+361102, koncesyjka, 1, 0
+361160, bankiecik, 1, 0
+361172, hafcik, 1, 0
+361174, jasełeczka, 1, 0
+99039, arianka, 1, 0
+99041, armatorka, 1, 0
+99046, artretyczka, 1, 0
+99051, arytmetyczka, 1, 0
+99072, aspirantka, 2, 0
+99078, astmatyczka, 1, 0
+99080, astrofizyczka, 1, 0
+99086, astronomka, 1, 0
+99087, astygmatyczka, 1, 0
+99088, asyriolożka, 1, 0
+99094, atomistka, 1, 0
+99104, audytorka, 2, 0
+99118, autobiografka, 1, 0
+623496, ministerka, 1, 0
+103916, drukarz, 2, 0
+99214, komentatorka, 1, 0
+99215, pacyfistka, 1, 0
+99218, memuarysta, 1, 0
+99224, wspominkarka, 1, 0
+99255, ambicyjka, 2, 0
+99289, gilosz, 2, 0
+623584, mizerka, 1, 0
+623586, źródlarkowate, 1, 0
+99346, sport elektroniczny, 1, 0
+99382, spirytystka, 1, 0
+623681, dupeczka, 2, 0
+99404, Bachus, 1, 0
+623694, mlecznica, 1, 0
+623695, samica mleczna, 1, 0
+671929, Galen, 1, 0
+623731, parobeczek, 1, 0
+361589, pozaparlamentarny, 1, 0
+623761, pasjonistka, 1, 0
+99476, bajkopisarka, 1, 0
+99520, banderówka, 1, 0
+623828, mołodyca, 1, 0
+623834, monogamistka, 1, 0
+99568, monologistka, 2, 0
+99571, neofilolożka, 1, 0
+99572, romanistka, 4, 0
+99577, italianistka, 1, 0
+650112, pospólny, 1, 0
+103988, liderka, 2, 0
+99669, beduinka, 2, 0
+99671, Beduinka, 1, 0
+99679, beletryzatorka, 1, 0
+99701, bibliografka, 1, 0
+99706, bibliotekoznawczyni, 1, 0
+99707, biblistka, 1, 0
+99724, bigamistka, 1, 0
+99728, biochemiczka, 1, 0
+99729, biofizyczka, 1, 0
+99731, biografka, 1, 0
+99737, biometeorolożka, 1, 0
+99739, biorczyni, 1, 0
+99741, biotechnolożka, 1, 0
+99742, birofilka, 1, 0
+361901, śluzowa, 1, 0
+624095, murłat, 1, 0
+624098, murłata, 1, 0
+624099, namurnica, 1, 0
+99834, gmachówka drzewożerna, 1, 0
+624160, zięciaszek, 1, 0
+362056, frontonik, 1, 0
+362087, dyscyplinka, 3, 0
+624240, poważność, 2, 0
+362101, kłobuczek, 2, 0
+362112, pensjonareczka, 1, 0
+104045, bogatkowate, 1, 0
+362134, biedroneczka, 1, 0
+362158, młyneczek, 2, 0
+100028, eskapistka, 1, 0
+100035, indywidualistka, 2, 0
+100047, synowica, 1, 0
+100058, bohemistka, 1, 0
+16677, państwo, 2, 0
+624368, pandrak, 1, 0
+624369, morowiec, 1, 0
+362250, szwagiereczka, 1, 0
+624397, kreweta, 1, 0
+362268, gondolka, 2, 0
+100130, ryjkowcowate, 1, 0
+362293, podmuszek, 3, 0
+365590, szybki, 4, 0
+100198, wolnościowiec, 1, 0
+624516, cenestezja, 1, 0
+100323, przekopnica australijska, 1, 0
+100325, nieborak, 2, 0
+362482, kombinacyjka, 2, 0
+100343, szczypawka, 2, 0
+100345, szczypawica, 1, 0
+100346, szczypawka, 1, 0
+624659, penitencjarystka, 1, 0
+624662, pensjonara, 1, 0
+362523, ażurek, 2, 0
+104115, szrotówek kasztanowcowiaczek, 1, 0
+624706, perełkowanie, 1, 0
+362593, pustułeczka, 1, 0
+624776, prominencja, 1, 0
+624777, krucyfer, 2, 0
+624781, krupiarka, 1, 0
+100509, schizofreniczka, 1, 0
+624801, promionek, 2, 0
+624849, kapłon, 3, 0
+624860, prościuch, 2, 0
+362755, zawalik, 2, 0
+100612, branżystka, 1, 0
+100627, bukinistka, 1, 0
+100633, bulimiczka, 1, 0
+100634, bułgarystka, 1, 0
+624951, piszczel szpotawa, 1, 0
+362808, siurpryzka, 1, 0
+362833, naturka, 1, 0
+100695, solipsystka, 1, 0
+362840, preferansik, 1, 0
+100718, osadniczka, 1, 0
+100727, techniczka, 1, 0
+100738, wyzwoliny, 1, 0
+100782, poczciarz, 1, 0
+100887, karciara, 1, 0
+363059, hełmik, 2, 0
+100938, celtolożka, 1, 0
+625231, centralne, 2, 0
+363097, czwartaczek, 2, 0
+363119, przedszkolaczek, 1, 0
+100990, cerowaczka, 2, 0
+363137, amancik, 1, 0
+672201, grupowe uderzenie jądrowe, 1, 0
+101062, charakteropatka, 1, 0
+101111, bajtel, 1, 0
+363320, foksterierek, 1, 0
+658048, ciemnosiwy, 4, 0
+363378, chrześniaczek, 1, 0
+16874, człowiek charakteryzowany ze względu na kwalifikacje, 1, 0
+363439, pierwszaczek, 1, 0
+363463, wyżełek, 1, 0
+363468, żonula, 1, 0
+101334, syfilityczka, 1, 0
+363479, hajduczek, 2, 0
+363490, pędraczek, 1, 0
+363491, pędraczek, 2, 0
+101349, chora, 1, 0
+101351, chora psychicznie, 1, 0
+363503, znamionko, 2, 0
+101360, chroniczka, 1, 0
+363506, łoszaczek, 1, 0
+101364, astragal, 1, 0
+101365, esownica, 1, 0
+101374, chudopachołek, 2, 0
+363604, komediancik, 1, 0
+363621, warchlaczek, 1, 0
+101508, eurorealistka, 1, 0
+363667, człeczysko, 1, 0
+363683, pożarzysko, 1, 0
+363684, pożarzysko, 2, 0
+101559, prasowaczka, 1, 0
+672290, wojna jądrowa, 1, 0
+363726, sztuczyna, 1, 0
+363749, jarmarczysko, 1, 0
+363772, doktorzyna, 2, 0
+363829, weteranisko, 1, 0
+101720, niepodległościowiec, 1, 0
+363871, felczerzyna, 1, 0
+101746, cybernetyczka, 1, 0
+363919, profesorzyna, 1, 0
+101779, cyganolożka, 1, 0
+363936, katarzysko, 2, 0
+363957, wariacisko, 2, 0
+363962, aptekarzyna, 1, 0
+626108, pies, 5, 0
+363979, hajduczysko, 2, 0
+101858, ekonomistka, 1, 0
+364009, siniaczek, 1, 0
+364052, trylma, 1, 0
+364054, gra słowna, 1, 0
+364066, korespondent wojenny, 1, 0
+364070, komentator sportowy, 1, 0
+675532, czarna dziura, 2, 0
+364151, lacrosse, 1, 0
+684263, pierogowy, 2, 0
+104392, doktorantka, 1, 0
+626430, ojczyc, 2, 0
+102143, koleżanka po fachu, 1, 0
+626433, ojczysko, 1, 0
+364290, patencik, 1, 0
+626456, kłańce, 1, 0
+102261, leopard, 5, 0
+102276, dróżniczka, 1, 0
+102280, dyżurna ruchu, 1, 0
+626583, ochotka, 3, 0
+102312, kolejarka, 1, 0
+366578, introspektywny, 1, 0
+364470, priorytetowość, 1, 0
+626746, wejściowy, 1, 0
+626775, krajobrazowy, 2, 0
+102532, ochłoda, 1, 0
+102550, elfka, 1, 0
+102578, szamanka, 1, 0
+626936, sport drużynowy, 1, 0
+364809, śledziciel, 2, 0
+626979, nadkonduktor, 1, 0
+102846, niedźwiedziowate, 1, 0
+102917, czwartoklasistka, 1, 0
+365082, nijaki, 2, 0
+627232, George Gordon Byron, 1, 0
+627233, Jerzy Byron, 1, 0
+365135, pełny, 7, 0
+103007, mopsik, 1, 0
+365166, majster, 5, 0
+365176, przygodny, 2, 0
+628848, heroinistka, 1, 0
+103095, sześciopak, 2, 0
+365293, bazarowy, 1, 0
+627620, spółziomek, 1, 0
+365520, osądziciel, 1, 0
+365547, jazda konna, 1, 0
+103479, karakon, 1, 0
+103485, oryl, 1, 0
+365657, rdzenny, 1, 0
+365690, rodowity, 1, 0
+627865, wyderka, 2, 0
+103585, Dionizos, 1, 0
+103594, Neptun, 1, 0
+365750, niewymienny, 1, 0
+103643, ryzykantka, 1, 0
+365796, akcydentalny, 1, 0
+103692, varsavianistka, 1, 0
+17285, niewyrazisty, 1, 0
+365861, ludź, 1, 0
+103730, kafir, 3, 0
+104681, guścik, 1, 0
+365982, gra podwórkowa, 1, 0
+628149, matunia, 1, 0
+103873, notariuszka, 1, 0
+628217, wydmikufel, 1, 0
+103949, chiromantka, 1, 0
+366101, mały, 10, 0
+103959, chirolożka, 1, 0
+719243, prędki, 7, 0
+103980, współwięźniarka, 1, 0
+103998, terapeutka, 1, 0
+104012, kreślarka, 1, 0
+628355, wodniczek, 1, 0
+366222, przedśmiertelny, 1, 0
+629017, ostojnica, 1, 0
+366245, pstrokaty, 2, 0
+104148, rozkolce, 1, 0
+104178, impresjonistka, 1, 0
+104185, rusycystka, 1, 0
+104210, komisantka, 1, 0
+366420, siódmoklasistka, 1, 0
+628584, głodomorek, 1, 0
+104776, mróweczka, 2, 0
+104379, mini turniej, 1, 0
+366547, analityczny, 3, 0
+104406, wykładowczyni, 1, 0
+628707, bajka, 5, 0
+104444, oczep, 1, 0
+628780, niedźwiedzię, 1, 0
+366646, roiciel, 1, 0
+628858, przykładzik, 1, 0
+104574, kabarecik, 1, 0
+366723, przedstawiciel klasy społecznej, 1, 0
+366840, nie, 1, 0
+104713, obiadokolacja, 1, 0
+629041, żegnalny, 1, 0
+104769, protoplastka, 1, 0
+629063, owadek, 1, 0
+104896, czaban, 1, 0
+104960, kraker, 1, 0
+104964, dadaistka, 1, 0
+104965, daltonistka, 1, 0
+367120, dziecko ze względu na wiek, 1, 0
+104983, egzemplifikacyjny, 1, 0
+105034, degustatorka, 1, 0
+105035, deistka, 1, 0
+105036, dekabrystka, 1, 0
+105038, dekadentka, 1, 0
+105057, demonolożka, 1, 0
+105068, dendrolożka, 1, 0
+105091, dermatolożka, 1, 0
+105099, detalistka, 1, 0
+105103, deterministka, 1, 0
+105111, dezynfektorka, 1, 0
+105130, diabetolożka, 1, 0
+105134, dialektolożka, 1, 0
+105159, kózkowate, 1, 0
+629452, indagator, 1, 0
+105252, krawędź, 4, 0
+104924, smyk, 1, 0
+629547, połownik, 3, 0
+629615, Interwizja, 3, 0
+367490, ogrzewnik, 2, 0
+105428, grzebaczowate, 1, 0
+105460, pilarzowate, 1, 0
+105562, domowniczka, 1, 0
+367709, fotoelektryczny, 1, 0
+367726, ołowiowy, 1, 0
+105584, dozymetrystka, 1, 0
+105623, ślimakowate, 1, 0
+105687, akupunkturzystka, 1, 0
+367860, nierównoległy, 1, 0
+105724, zazdrośnica, 1, 0
+367900, Fredro, 1, 0
+105794, paranoiczka, 2, 0
+105869, latencja, 1, 0
+368049, wysokokaloryczny, 1, 0
+105959, niełazowate, 1, 0
+105961, workowce drapieżne, 1, 0
+368112, motorowy, 1, 0
+105978, rekinkowate, 1, 0
+106017, rehabilitantka, 1, 0
+630314, znaczność, 1, 0
+106031, stygmatyczka, 1, 0
+368328, Ezop, 1, 0
+106265, człowiek pekiński, 1, 0
+630609, Rajd Barbórka, 1, 0
+368486, konsekutywny, 1, 0
+106352, drugoklasistka, 1, 0
+106355, duch, 3, 0
+106383, drugorzędność, 1, 0
+42825, człowiek pozbawiony wolności, 1, 0
+630753, bibliopola, 1, 0
+630759, aposterioryczny, 2, 0
+630779, północny, 3, 0
+632037, karcięta, 1, 0
+105137, didżejka, 1, 0
+106568, kolarstwo górskie, 1, 0
+630892, szewczyna, 1, 0
+368753, sierpowy, 2, 0
+106626, dydaktyczka, 1, 0
+106648, dyslektyczka, 1, 0
+106652, dystrybutorka, 1, 0
+630972, delirka, 1, 0
+630977, demonka, 1, 0
+368847, konspiracyjny, 2, 0
+106739, nabob, 1, 0
+368897, niegospodarczy, 2, 0
+368950, obrona rosyjska, 1, 0
+368957, obrona sycylijska, 1, 0
+632049, Gombrowicz, 3, 0
+106957, pozwoleństwo, 1, 0
+106962, wykwintnisia, 1, 0
+106968, królewiątko, 2, 0
+631269, Christian Andreas Doppler, 1, 0
+369130, Demokryt, 1, 0
+369131, Diogenes, 1, 0
+369132, Zenon z Elei, 1, 0
+106992, konserwatorka, 1, 0
+107116, dziewczyneczka, 1, 0
+107130, źrebaczek, 1, 0
+631425, deziluzja, 2, 0
+369287, historyk ze względu na epokę zainteresowania, 1, 0
+369291, naukowiec ze względu na metodę badawczą, którą się posługuje, 1, 0
+631446, Dante, 1, 0
+631447, Dante Alighieri, 1, 0
+631475, rudnik, 1, 0
+631513, synowiec, 1, 0
+631525, wiercioch, 1, 0
+631546, domownica, 1, 0
+107288, poseł-sprawozdawca, 1, 0
+631659, krenel, 1, 0
+631840, choróbka, 2, 0
+629611, inkwizytorka, 1, 0
+651466, niemieszkaniowy, 1, 0
+107730, neokonserwatysta, 1, 0
+369906, strateg, 2, 0
+369911, Mortal Kombat, 1, 0
+369915, WoW, 2, 0
+369916, World of Warcraft, 1, 0
+369919, GTA, 1, 0
+369925, Tetris, 1, 0
+107798, ciary, 1, 0
+107856, akademiczka, 2, 0
+107876, starszyzna, 2, 0
+370046, Janosik, 1, 0
+632228, marucha, 1, 0
+108012, kosmitka, 1, 0
+108095, wertep, 1, 0
+632416, gaiczek, 1, 0
+632508, eksdywizja, 1, 0
+632548, człeczek, 1, 0
+367587, bębnowy, 1, 0
+632751, Grzegorz I Wielki, 1, 0
+103996, hipoterapeutka, 1, 0
+651601, kasztelan krzesłowy, 1, 0
+632863, gruzobeton, 1, 0
+108600, człowieczyna, 1, 0
+632899, bruk, 2, 0
+632914, Dawid, 1, 0
+632920, Achilles, 1, 0
+370796, nietoperzy, 1, 0
+108737, sokoły, 1, 0
+108738, kustoszka, 1, 0
+108744, nekromantka, 1, 0
+633041, prawdziwy, 9, 0
+370899, kujny, 1, 0
+633056, okrzos, 2, 0
+370920, zredukowany, 1, 0
+633077, Karol Albert, 1, 0
+108794, fakcik, 1, 0
+3623, możnowładca, 1, 0
+371018, gotka, 1, 0
+633192, bilard petersburski, 1, 0
+673519, przykusy, 1, 0
+108973, negocjatorka, 1, 0
+633265, cwajnos, 1, 0
+18169, słabieńki, 1, 0
+109084, bezpancerzowce, 1, 0
+367710, fotowoltaiczny, 1, 0
+633404, czarnobrewka, 1, 0
+371268, skórny, 1, 0
+109230, działkowiczka, 1, 0
+109244, dziewiarka, 2, 0
+109267, edytorka, 2, 0
+109371, ekolożka, 2, 0
+109377, ekranizatorka, 1, 0
+371560, biskup pomocniczy, 1, 0
+371576, sprawicielka, 1, 0
+371590, piłka palantowa, 1, 0
+109456, gwarectwo, 1, 0
+109515, eksperymentatorka, 1, 0
+109518, czucie opaczne, 1, 0
+109531, eksploratorka, 1, 0
+109555, eksporterka, 1, 0
+109566, ekumenistka, 1, 0
+117126, dawanie ujścia, 1, 0
+109595, modnisia, 1, 0
+109611, ślimaczek, 3, 0
+109619, lalka, 3, 0
+673643, pozaetyczny, 2, 0
+371873, zaskok, 1, 0
+371883, poślubiny, 1, 0
+109883, konspiratorka, 1, 0
+109891, rekonwalescentka, 1, 0
+372078, nadzwyczajny, 2, 0
+109935, ochroniarka, 1, 0
+109951, lawinka, 1, 0
+109971, psotnica, 1, 0
+109982, seansik, 1, 0
+110051, hipochondryczka, 1, 0
+634342, Iulus, 1, 0
+110105, podkurek, 2, 0
+110106, podkurek, 1, 0
+110160, teatr muzyczny, 4, 0
+389743, krabik amerykański, 1, 0
+110238, porcelanki, 1, 0
+110255, grawerka, 4, 0
+634565, Michnik, 1, 0
+634566, Adam Michnik, 1, 0
+110328, rundka, 2, 0
+110331, sensacyjka, 1, 0
+372494, słabiutki, 1, 0
+634651, Laplace, 1, 0
+634653, Pierre Simon de Laplace, 1, 0
+634668, nieboski, 1, 0
+367922, mitologiczny, 1, 0
+372529, klockowaty, 1, 0
+372533, niemieszkalny, 1, 0
+110419, kleptomanka, 1, 0
+110421, neurotyczka, 1, 0
+372601, lustrzany, 3, 0
+110461, wnusia, 1, 0
+634769, ruada, 1, 0
+634789, rumieńczyk, 1, 0
+110535, Waruna, 1, 0
+634850, ryjec, 2, 0
+629223, prowincjałka, 1, 0
+634910, szwab, 3, 0
+619081, systol, 1, 0
+110685, własność działania matematycznego, 1, 0
+105832, telepatka, 1, 0
+110788, inżynierek, 1, 0
+110800, psychopatka, 2, 0
+372962, kraśny, 1, 0
+373048, zwolennik poglądu ekonomicznego, 1, 0
+111025, konsultantka, 1, 0
+373205, żeberko, 4, 0
+373218, filomatka, 1, 0
+111077, Augiasz, 1, 0
+684566, recitalowy, 2, 0
+111157, familiant, 1, 0
+111166, kociaczek, 1, 0
+373372, balladysta, 1, 0
+635530, martwica serowata, 1, 0
+373395, kartownik, 1, 0
+635544, guz mieszany, 1, 0
+373421, człowiek, którego cechuje określona postawa, 1, 0
+649655, wielkorosyjski, 2, 0
+373452, dywizjonistka, 1, 0
+373490, swobodny, 11, 0
+635676, siła, 9, 0
+635682, wpływowość, 2, 0
+673945, białośnieżny, 1, 0
+373664, picownik, 1, 0
+676366, czerwonofioletowy, 1, 0
+373699, dywaniarka, 1, 0
+373702, ergonomistka, 1, 0
+636025, swobodność, 1, 0
+373924, zimny, 7, 0
+373975, najemny, 2, 0
+374023, gobeliniarka, 1, 0
+636188, Wimbledon, 2, 0
+374055, Aleksander Fredro, 1, 0
+374190, typ atletyczny, 1, 0
+374203, nabłonkowy, 2, 0
+374273, możebny, 2, 0
+374302, dysertantka, 1, 0
+374369, zbieżny, 2, 0
+636538, Wielki Szlem, 6, 0
+684612, zbrunatniały, 1, 0
+398366, ichtiozaury, 1, 0
+374874, makroekonomiczny, 1, 0
+374928, parapecik, 1, 0
+674162, sześćdziesiąt sześć, 1, 0
+374973, awaryjny, 1, 0
+375035, fioletowawy, 1, 0
+375108, niedzisiejszy, 3, 0
+637487, James Clerk Maxwell, 1, 0
+637488, Faraday, 1, 0
+637489, Michael Faraday, 1, 0
+637707, Quendë, 1, 0
+7060238, podhalańczyk, 2, 0
+637728, rozruch, 2, 0
+637735, siatkówka plażowa, 1, 0
+375634, jednoklasowy, 1, 0
+7060376, upośledzony, 1, 0
+7060380, erpeg, 1, 0
+7060381, erpeg, 2, 0
+375724, nieeuropejski, 1, 0
+7060408, Wszechmogący, 1, 0
+7060412, przysięgły, 1, 0
+7060419, siła, 11, 0
+637907, junak, 4, 0
+7060458, klubowiczka, 2, 0
+7060519, symptomat, 1, 0
+7060540, królewiczątko, 1, 0
+375904, podkorowy, 1, 0
+7060582, kreciątko, 1, 0
+638155, hekatomba, 5, 0
+106363, dusza, 2, 0
+7060720, labradorka, 1, 0
+7060759, namiestniczka, 1, 0
+7060776, skrzacik, 1, 0
+7060833, smerfetka, 1, 0
+376176, spodni, 1, 0
+638406, bezbolesność, 3, 0
+638484, bździągwa, 2, 0
+7061064, trek, 1, 0
+7061072, urodzinki, 1, 0
+7061076, urodzinki, 2, 0
+7061079, wampirek, 1, 0
+376417, niekatolicki, 1, 0
+7061116, widliszek, 1, 0
+7061120, kapustnik, 1, 0
+7061174, gnojownik, 2, 0
+376505, wieczysty, 2, 0
+674429, rękodajny, 1, 0
+638723, amba, 3, 0
+376584, polerowniczka, 1, 0
+19074, duży, 6, 0
+638749, totalitarysta, 1, 0
+638755, reputacja, 2, 0
+376625, familijny, 1, 0
+376653, programowy, 4, 0
+638850, całodobowy, 2, 0
+7061385, golfik, 2, 0
+674468, niezapominajkowy, 2, 0
+638938, Apollin, 1, 0
+638939, Boreas, 1, 0
+638940, Elektra, 2, 0
+680319, hipopotami, 2, 0
+376820, drobnoszlachecki, 3, 0
+376880, tekstualny, 1, 0
+376883, procesisko, 1, 0
+7061563, anarch, 1, 0
+376918, nawozowy, 1, 0
+376919, nieodnawialny, 1, 0
+7061622, numeryczny, 4, 0
+7061638, kontakcik, 1, 0
+7061650, kurierek, 2, 0
+376989, odkryty, 1, 0
+377032, uszkodzony, 1, 0
+7061781, przewodnica, 1, 0
+7061783, przyjezdna, 1, 0
+639263, zbiórka, 3, 0
+639276, apel, 5, 0
+7061809, pazik, 1, 0
+106549, dziennikarka śledcza, 1, 0
+7061828, ziarnica, 1, 0
+639305, parafialny, 4, 0
+7061863, logopedka, 1, 0
+377231, organoleptyczny, 1, 0
+639397, Jałta, 2, 0
+7061926, tarocistka, 1, 0
+7061948, nadświadomość, 1, 0
+387913, trzpiennikowate, 1, 0
+674557, wydarzeniowy, 3, 0
+7062012, chomiczek, 1, 0
+7062021, antyfutbol, 1, 0
+674561, błyskotny, 2, 0
+7062025, delfinek, 1, 0
+377357, psychiatryczny, 1, 0
+7062046, handball, 1, 0
+680340, piaskowy dziadek, 2, 0
+106607, duszyczka, 1, 0
+7062229, meeting, 1, 0
+7062230, meeting, 2, 0
+377617, nawrotny, 1, 0
+639771, stonkowaty, 1, 0
+649795, nienowotworowy, 1, 0
+7062333, finisaż, 1, 0
+7062494, niemowlaczek, 1, 0
+7062499, szatanistyczny, 1, 0
+7062518, ośmiorniczka, 1, 0
+7062574, detaliczny, 4, 0
+377933, Azjatka, 2, 0
+7062622, heliakalny, 1, 0
+377982, destrukcyjność, 1, 0
+378006, wyrosły, 1, 0
+7062680, okcydentalny, 2, 0
+378009, wyrośnięty, 2, 0
+7062685, ponadnaturalny, 1, 0
+378020, mężateczka, 1, 0
+7062712, przywitalny, 1, 0
+7062715, referencjalny, 2, 0
+378077, symboliczny, 3, 0
+7062804, transporterek, 2, 0
+640295, drożny, 4, 0
+378156, konflikt zbrojny, 1, 0
+7062976, luźny, 9, 0
+674726, żółtoskóry, 1, 0
+378453, kameralny, 2, 0
+640608, humanistka, 3, 0
+7063186, nieczynny, 4, 0
+378528, sportowość, 1, 0
+378541, pierwszorzędność, 2, 0
+640799, Hubert z Liège, 1, 0
+378659, niepełny, 4, 0
+378673, nieprzypadkowy, 2, 0
+378766, sprytność, 1, 0
+378833, newralgiczność, 1, 0
+7063585, czarnawy, 2, 0
+7063657, wrzosowaty, 2, 0
+641224, Marcel Proust, 1, 0
+641225, Proust, 1, 0
+379083, n-ty, 1, 0
+379108, zorganizowany, 3, 0
+379200, pasywny, 3, 0
+680399, czerwonosrebrny, 1, 0
+379269, republikanka, 3, 0
+641471, Lem, 1, 0
+641472, Stanisław Lem, 1, 0
+641485, pejsaty, 2, 0
+379375, przyzwoitość, 2, 0
+379376, dostateczność, 1, 0
+680405, błękitnosrebrny, 1, 0
+680407, srebrnozłoty, 1, 0
+674914, tymiankowy, 2, 0
+379531, zbrojny, 2, 0
+641777, Zygmunt III Waza, 1, 0
+641781, Tadeusz Boy-Żeleński, 1, 0
+641782, Boy-Żeleński, 1, 0
+379692, farmazon, 3, 0
+379693, farmazon, 4, 0
+106974, rymopis, 2, 0
+641853, pigmejski, 2, 0
+631268, Doppler, 1, 0
+641882, Artur, 1, 0
+641892, Schiller, 1, 0
+641893, Johann Christoph Friedrich von Schiller, 1, 0
+641894, Johann Christoph Friedrich Schiller, 1, 0
+641895, Friedrich Schiller, 1, 0
+379767, siła spokoju, 1, 0
+641926, Spencer, 2, 0
+641928, Herbert Spencer, 1, 0
+641979, Strindberg, 1, 0
+641980, August Strindberg, 1, 0
+379911, Herkules, 2, 0
+379919, fizyczka, 2, 0
+379926, pionierka, 6, 0
+379929, pociot, 1, 0
+379932, realistka, 2, 0
+379946, lotny, 3, 0
+379966, polonistka, 2, 0
+380012, patronka, 3, 0
+380013, rzeczniczka, 2, 0
+7064694, kaptur, 4, 0
+380079, kuratorka, 4, 0
+675022, Janus, 1, 0
+642289, szkolny, 5, 0
+380169, lodowaty, 3, 0
+380173, Cyprian Kamil Norwid, 1, 0
+380174, chłodny, 7, 0
+642372, Brecht, 1, 0
+642373, Bertolt Brecht, 1, 0
+675057, opatrzny, 1, 0
+380344, wolniuśki, 1, 0
+7065032, biuściasty, 1, 0
+380362, prędki, 4, 0
+380436, św. Augustyn, 1, 0
+380437, Augustyn, 1, 0
+380438, Augustyn z Hippony, 1, 0
+380440, Awerroes, 1, 0
+380443, św. Franciszek, 1, 0
+380444, Franciszek, 1, 0
+380445, św. Franciszek z Asyżu, 1, 0
+380448, Konfucjusz, 1, 0
+718769, nabłoniak wapniejący Mahlerba, 1, 0
+675080, kontrkulturowy, 2, 0
+680445, dysplastyczny, 3, 0
+380640, skromność, 2, 0
+675119, reakcja sprawcza, 2, 0
+675156, pamięciowy, 2, 0
+380948, zasadzka, 3, 0
+643300, Papuaska, 1, 0
+7065833, subkomórkowy, 1, 0
+643378, tokijka, 1, 0
+643379, Jemenka, 1, 0
+643403, Hesperos, 1, 0
+718914, Wenusjanka, 1, 0
+658086, Sundajka, 1, 0
+718917, wenusjanka, 3, 0
+643492, Rej, 1, 0
+643493, Mikołaj Rej, 1, 0
+643523, Fryderyk II Wielki, 1, 0
+680473, przestawialny, 1, 0
+19893, jeden, 4, 0
+643681, atak szczytowy, 1, 0
+643684, Kampania Wrześniowa, 1, 0
+643730, Walter Scott, 1, 0
+381641, Miłosz, 1, 0
+381642, Czesław Miłosz, 1, 0
+381653, Białoszewski, 1, 0
+381654, Miron Białoszewski, 1, 0
+381655, Bolesław Leśmian, 1, 0
+381657, Stanisław Barańczak, 1, 0
+381658, Barańczak, 1, 0
+381659, Zbigniew Herbert, 1, 0
+381660, Herbert, 1, 0
+381661, Adam Zagajewski, 1, 0
+381662, Zagajewski, 1, 0
+643831, święty Jerzy, 1, 0
+628107, betaproteobakterie, 1, 0
+643978, Koreanka, 1, 0
+643999, Erazm z Rotterdamu, 1, 0
+644092, kitajski, 2, 0
+644121, język dungański, 1, 0
+644321, Jugurta, 1, 0
+644463, dzieciński, 1, 0
+644468, dzieciński, 2, 0
+392444, tekodontozaur, 1, 0
+644533, bamberka, 1, 0
+382425, ptasznik tygrysi, 1, 0
+104393, dyplomatka, 4, 0
+382552, bento, 1, 0
+628137, napoleonizm, 2, 0
+644769, pierwszy plan, 1, 0
+644780, trzeci plan, 1, 0
+644781, dalszy plan, 1, 0
+382642, motylek, 3, 0
+675465, siła jonowa, 1, 0
+644958, Herakliusz, 1, 0
+382821, bielinkowate, 1, 0
+644982, niejapoński, 1, 0
+391502, mrówkolew pospolity, 1, 0
+382949, powszelatkowate, 1, 0
+645109, Monteskiusz, 1, 0
+382972, południcowate, 1, 0
+382974, perłowce, 1, 0
+382976, karłątkowate, 1, 0
+382977, warcabnikowate, 1, 0
+645192, wewnątrzcząsteczkowy, 1, 0
+645193, intramolekularny, 1, 0
+383096, barczatka osinówka, 1, 0
+383100, barczatka puchowica, 1, 0
+383113, barczatka rymikola, 1, 0
+383114, barczatka kataks, 1, 0
+383128, barczatka dębówka, 1, 0
+383137, barczatka malinówka, 1, 0
+383143, barczatka osiczanka, 1, 0
+645291, sytuacja patowa, 1, 0
+653685, nowa miotła, 1, 0
+383169, barczatka frankońska, 1, 0
+383172, barczatka miesięcznica, 1, 0
+645421, egzekucja komornicza, 1, 0
+645478, Azteczka, 1, 0
+645480, Inkaska, 1, 0
+383381, trepang, 2, 0
+366294, uczeń określonej klasy, 1, 0
+366295, igrzyska olimpijskie, 1, 0
+383533, chomik koreański, 1, 0
+383543, chomik syryjski, 1, 0
+383545, chomik rumuński, 1, 0
+680543, uniformistyczny, 3, 0
+383552, chomik bałkański, 1, 0
+383553, chomik stepowy, 1, 0
+383554, chomik długoogonowy, 2, 0
+383555, chomik Eversmanna, 1, 0
+383556, chomik dżungarski, 1, 0
+383560, chomik Roborowskiego, 1, 0
+121555, służenie, 1, 0
+719311, ścigły, 3, 0
+645887, Różewicz, 1, 0
+645888, Tadeusz Różewicz, 1, 0
+719340, szybkościowy, 11, 0
+646080, półboski, 1, 0
+371793, sejmik przedsejmowy, 1, 0
+646140, ekspres, 7, 0
+653830, instrumentalny, 4, 0
+653838, erotoman teoretyk, 1, 0
+646233, fluktuacyjny, 2, 0
+719378, fosylny, 1, 0
+675699, szarosrebrny, 1, 0
+384216, długoszparowate, 1, 0
+384228, lamnowate, 1, 0
+384295, szynszyla górska, 1, 0
+646474, demiurgiczny, 2, 0
+632038, karciochy, 1, 0
+632040, Gombrowicz, 1, 0
+632041, Witold Gombrowicz, 1, 0
+384376, mantowate, 1, 0
+719430, rak kolczystokomórkowy, 1, 0
+646603, endogenny, 1, 0
+658107, przezroczy, 1, 0
+646643, kilkotysięczny, 1, 0
+646674, kilkotysięczny, 2, 0
+646697, stwórczy, 2, 0
+646724, Tuareg, 1, 0
+384628, św. Tomasz z Akwinu, 1, 0
+384629, Tomasz, 1, 0
+384630, Tomasz z Akwinu, 1, 0
+384652, mustelowate, 1, 0
+384663, młotowate, 1, 0
+646822, Stańczyk, 1, 0
+684946, leśny, 6, 0
+384712, lemury, 1, 0
+646898, wewnątrzustrojowy, 2, 0
+646925, Marie-Henri Beyle, 1, 0
+384793, rajowate, 1, 0
+384794, płaszczkowate, 1, 0
+646940, Beyle, 1, 0
+391818, skałoszczur skalny, 1, 0
+647003, nieitalski, 1, 0
+647172, pierwszy plan, 2, 0
+647173, drugi plan, 2, 0
+647175, trzeci plan, 2, 0
+647197, dwuśrubowy, 1, 0
+385095, gerezy, 1, 0
+385146, saki, 1, 0
+719551, chłopiec z lasu, 1, 0
+647369, Pascal, 2, 0
+647370, Blaise Pascal, 1, 0
+385230, wilki workowate, 1, 0
+647508, Niccolo Machiavelli, 1, 0
+647549, pozafiskalny, 2, 0
+366360, wiecznotrwały, 1, 0
+680606, całopalny, 4, 0
+647751, parafiański, 1, 0
+647857, płeć piękna, 1, 0
+385798, bieługi, 1, 0
+108007, gęsiarka, 1, 0
+648058, czarny, 11, 0
+648208, Iwaszkiewicz, 1, 0
+648209, Jarosław Iwaszkiewicz, 1, 0
+386073, miesierkowate, 1, 0
+648260, niełączny, 1, 0
+370749, haft krzyżykowy, 1, 0
+632351, chłopowina, 1, 0
+648433, tyci, 2, 0
+648539, nieczłonkowski, 1, 0
+386446, miesiarkowate, 1, 0
+648674, podniebieski, 1, 0
+396636, okrytoskrzelne, 1, 0
+386714, ptasznik zwyczajny, 1, 0
+386719, ptasznik wenezuelski, 1, 0
+386720, ptasznik zdobiony, 1, 0
+386742, ptasznik żebrowaty, 1, 0
+386779, ptasznik zielono-niebieski, 1, 0
+108899, chimerowate, 1, 0
+648947, Andersen, 1, 0
+648949, Hans Christian Andersen, 1, 0
+386840, ukośnikowate, 1, 0
+641378, Glauber, 1, 0
+703515, równoległy, 4, 0
+387082, osnuwikowate, 1, 0
+104546, florystka, 2, 0
+649300, niepowszechny, 2, 0
+387226, darownikowate, 1, 0
+649428, gadzinowy, 1, 0
+649459, przedaryjski, 1, 0
+387324, gmachówka koniczek, 1, 0
+649585, język katoński, 1, 0
+387444, wścieklice, 1, 0
+387492, faraonka, 1, 0
+20893, położenie, 8, 0
+387607, galasówkowate, 1, 0
+387669, trzmiel czarnopaskowany, 1, 0
+649958, Ikar, 1, 0
+650196, wewnątrzkomórkowy, 1, 0
+650241, niebudowlany, 2, 0
+650243, niemunicypalny, 1, 0
+126015, wypowiadanie się, 2, 0
+676376, tyflopedagog, 1, 0
+650456, wewnątrzotrzewnowy, 1, 0
+650469, ornament kandelabrowy, 1, 0
+388346, kaniuki, 1, 0
+388350, harpie, 1, 0
+388353, jastrzębie, 1, 0
+388499, delfiny słodkowodne, 1, 0
+388504, narwalowate, 1, 0
+388556, kaszalotowate, 1, 0
+650764, olszowy, 2, 0
+632750, Grzegorz I, 1, 0
+650851, jasnawy, 3, 0
+388793, szopowate, 1, 0
+651030, Manuel I Szczęśliwy, 1, 0
+108507, terrier, 1, 0
+21126, rozdział, 5, 0
+651119, byczy, 3, 0
+651173, supertani, 1, 0
+651261, szatani, 1, 0
+389417, jerowate, 1, 0
+632887, Adam, 2, 0
+651624, niekryminalny, 1, 0
+676619, gorsetowy, 1, 0
+389737, raczyniec jadalny, 1, 0
+389739, krab brzegowy, 1, 0
+389762, krab skrzypek, 1, 0
+389779, tułacz hawajski, 1, 0
+389784, krab śnieżny, 1, 0
+651949, lekki, 9, 0
+389853, pustelnik brunatny, 1, 0
+390004, blikanazaur, 1, 0
+652176, wewnątrzosiedlowy, 1, 0
+719247, spryciula, 2, 0
+652334, Burka, 2, 0
+652342, Zuluska, 1, 0
+652345, Apaczka, 1, 0
+652349, Czejenka, 1, 0
+652361, Czirokezka, 1, 0
+652362, Huronka, 1, 0
+652363, Irokezka, 1, 0
+652366, Komanczka, 1, 0
+652368, Mohikanka, 1, 0
+652371, Siuksyjka, 1, 0
+388347, orłosępy, 1, 0
+370898, kowalny, 1, 0
+388348, gadożery, 1, 0
+652555, Jukagirka, 1, 0
+128276, wdarcie się, 6, 0
+388351, orły, 1, 0
+86931, kwasowy, 1, 0
+388354, myszołowy, 1, 0
+390667, krowa, 6, 0
+652842, niefilmowy, 1, 0
+652965, alkaloidowy, 1, 0
+65141, nitrozobakteria, 1, 0
+392831, kriolofozaur, 1, 0
+370991, naziol, 1, 0
+653168, psychoedukacyjny, 1, 0
+653275, Kreolka, 1, 0
+371045, nienależny, 1, 0
+653437, Śpiąca Królewna, 2, 0
+391297, łasice właściwe, 1, 0
+653542, skrawy, 1, 0
+653611, zimna ryba, 1, 0
+391501, mrówkolew wydmowy, 1, 0
+391503, mrówkolew drzewny, 1, 0
+391504, mrówkolew południowy, 1, 0
+653657, Aryjka, 2, 0
+653669, nieneutralny, 1, 0
+653677, chodząca powaga, 1, 0
+676938, amebowy, 2, 0
+391688, paka górska, 1, 0
+391689, paka, 4, 0
+391690, nadrzewnik szary, 1, 0
+391697, pierzekowate, 1, 0
+391700, bagiennikowate, 1, 0
+391724, chruścikowate, 1, 0
+371148, parowy, 2, 0
+677007, bladofiołkowy, 1, 0
+392188, mały gończy anglo-francuski, 1, 0
+654378, chytry lis, 1, 0
+654410, niezbrodzony, 1, 0
+654428, albańskojęzyczny, 2, 0
+392368, gryfon Korthalsa, 1, 0
+392369, wyżeł włoski szorstkowłosy, 1, 0
+392370, czeski fousek, 1, 0
+392433, azylozaur, 1, 0
+654587, gorzkawy, 3, 0
+392449, riochazaur, 1, 0
+654667, brat mniejszy, 2, 0
+654752, ideoplastyka, 1, 0
+371278, weneryczny, 1, 0
+109152, mrówa, 2, 0
+371309, pierwszy, 5, 0
+654993, subtraktywny, 1, 0
+392865, berberozaur, 1, 0
+655319, chodząca reklama, 1, 0
+393028, reliktowce, 1, 0
+655241, wewnątrznaczyniowy, 1, 0
+655246, wewnątrznaczyniowy, 4, 0
+655248, śródnaczyniowy, 1, 0
+655249, śródnaczyniowy, 2, 0
+422, biegły, 2, 1
+655936, rudonośny, 1, 1
+892, czar, 1, 1
+658379, półtechniczny, 1, 1
+658931, międzyreligijny, 2, 1
+659344, śpiżowy, 2, 1
+659523, finezyjność, 4, 1
+660046, zapaśny, 2, 1
+660049, zapaśny, 3, 1
+660050, zapaśny, 4, 1
+677997, wolnodostępny, 1, 1
+5853, poetyczny, 1, 1
+661443, freegański, 1, 1
+6131, postępowy, 1, 1
+6776, przemyślany, 1, 1
+662334, pracoholiczka, 2, 1
+372611, pełnowymiarowy, 3, 1
+662808, aliant zachodni, 1, 1
+8405, staranny, 1, 1
+9485, urok, 1, 1
+664861, Grzegorz VII, 1, 1
+9562, ustronny, 1, 1
+664990, trzeźwość, 3, 1
+110957, manewrowość, 1, 1
+665900, zamkniętość w sobie, 1, 1
+10924, zagwarantowany, 1, 1
+666398, dramatyzm, 3, 1
+666689, fotorealizm, 1, 1
+143129, skłonność, 1, 1
+12511, ochota, 1, 1
+668225, groteska, 3, 1
+144235, dietetyczny, 1, 1
+144688, znudzony, 2, 1
+144977, ucywilizowany, 1, 1
+679548, mocny, 20, 1
+679558, mocny, 21, 1
+635898, Sykstus IV, 1, 1
+670829, zdrów, 1, 1
+659559, imprezowość, 1, 1
+659562, rozrywkowość, 2, 1
+371960, głupkowaty, 5, 1
+671380, noosfera, 1, 1
+16732, nieodporny, 1, 1
+672097, nowoczesny, 3, 1
+672461, rozbujały, 2, 1
+17287, niewyłączny, 1, 1
+702040, rozlewny, 6, 1
+673358, nałożny, 1, 1
+674099, chędogi, 3, 1
+18870, zagrożony, 1, 1
+680453, balsamowy, 4, 1
+19518, bohater, 2, 1
+680489, ucho igielne, 3, 1
+675220, żywe sreberko, 1, 1
+675229, rozszerzalny, 1, 1
+675230, rozszerzalny, 2, 1
+675796, żyzność gleby, 1, 1
+675976, najpierwszy, 2, 1
+676079, samobytny, 1, 1
+20817, popularny, 3, 1
+676208, autologiczny, 1, 1
+676363, trendowy, 4, 1
+676507, plusowy, 5, 1
+21359, sprzyjający, 2, 1
+21466, swobodny, 4, 1
+677538, cichusieńki, 6, 1
+22203, żywy, 8, 1
+677657, zdarzony, 1, 1
+22444, mocny, 9, 1
+677811, ubóstwiany, 1, 1
+22625, zadłużony, 1, 1
+22651, stary, 3, 1
+678104, czyściuteńki, 3, 1
+678114, czyściuteńki, 5, 1
+678123, czyściuteńki, 8, 1
+678148, żywy, 13, 1
+678282, szybka randka, 1, 1
+678764, metastabilny, 1, 1
+7062576, detaliczność, 2, 1
+679037, drobnostkowy, 3, 1
+679041, drobnostkowy, 4, 1
+679126, błonnikowy, 1, 1
+24015, bohaterka, 3, 1
+679677, silny, 14, 1
+24364, łobuz, 1, 1
+679748, rodny, 1, 1
+680215, lekkonogi, 1, 1
+680322, impaktowy, 2, 1
+680406, powołany, 1, 1
+680589, demonstratywny, 3, 1
+680601, lamelowy, 1, 1
+680656, głębinny, 3, 1
+680867, niezgorszy, 2, 1
+681015, ozdrowiały, 1, 1
+681036, bisowy, 3, 1
+681121, optyczny, 3, 1
+681581, budowalny, 1, 1
+681670, konsensusowy, 1, 1
+681682, niskowydajny, 2, 1
+681686, niskowydajny, 3, 1
+681791, średniozaawansowany, 3, 1
+681987, mnożny, 1, 1
+682994, skompleksowany, 1, 1
+682997, wyznaczalny, 1, 1
+683057, miodonośny, 1, 1
+683266, rozmachany, 2, 1
+683282, porcjowy, 3, 1
+683286, lornetkowy, 2, 1
+683299, odliczalny, 1, 1
+683550, adaptowalny, 1, 1
+683648, antyromantyczny, 4, 1
+683668, piktorialny, 3, 1
+683735, filosemicki, 2, 1
+683736, filosemicki, 3, 1
+683929, foremny, 2, 1
+684020, fanfarowy, 2, 1
+28784, magia, 1, 1
+684179, aspiracyjny, 6, 1
+684202, ityfalliczny, 2, 1
+684314, przesmaczny, 1, 1
+684325, renesans, 2, 1
+684359, cichuśki, 1, 1
+684540, pokorniutki, 2, 1
+684750, czyściuchny, 7, 1
+684754, czyściuchny, 11, 1
+684768, cygańskie dziecko, 1, 1
+684793, czwórkowy, 2, 1
+684884, wyżeracz, 1, 1
+684972, rozmówny, 2, 1
+684997, multiwitaminowy, 1, 1
+685184, łatwostrawny, 2, 1
+685233, naruszalny, 1, 1
+685238, arcypożyteczny, 1, 1
+685344, przewyborny, 3, 1
+685491, ponadpokoleniowy, 1, 1
+686010, bezstratny, 1, 1
+686042, aprobatywny, 1, 1
+686170, całuśny, 1, 1
+686236, befsztykowy, 3, 1
+686384, kulturny, 1, 1
+686566, probiotyczny, 1, 1
+686748, lekkostopy, 1, 1
+686763, leciuchny, 4, 1
+686764, lekkuchny, 5, 1
+686765, lekuchny, 7, 1
+686766, formatowy, 3, 1
+686994, bawny, 1, 1
+687271, fajniutki, 1, 1
+687273, fajniutki, 2, 1
+687409, hecny, 3, 1
+687562, heurystyczny, 2, 1
+687619, wyprowadzalny, 1, 1
+687625, zdarny, 1, 1
+687651, stabilny, 5, 1
+687668, konceptowy, 1, 1
+687684, zdrowiuteńki, 2, 1
+687777, zapiecowy, 2, 1
+687778, zgrywny, 2, 1
+687839, paszny, 1, 1
+688046, arcywspaniały, 4, 1
+688429, tatusiowy, 2, 1
+617641, ananas, 3, 1
+692243, dobrotliwie, 2, 1
+37433, urwis, 1, 1
+37608, ancymon, 1, 1
+705941, nieczysty, 6, 1
+705942, nieczysty, 7, 1
+705944, nieczysty, 8, 1
+705947, nieczysty, 10, 1
+705949, nieczysty, 12, 1
+42232, inteligencik, 1, 1
+42519, skrytość, 1, 1
+684362, cichuśki, 2, 1
+673571, trefny, 4, 1
+698686, wyżyty, 2, 1
+378661, niepopularny, 3, 1
+699468, kumplowski, 3, 1
+45186, akuratność, 1, 1
+45542, dual, 1, 1
+45580, konfrater, 1, 1
+45581, komiliton, 1, 1
+701389, antyhumanitarny, 2, 1
+706781, czyściutki, 8, 1
+701770, promienisty, 5, 1
+702020, nieefektywny, 1, 1
+706892, czarniuteńki, 1, 1
+702757, niepohamowanie, 1, 1
+47761, wianuszek, 2, 1
+48081, radioamator, 1, 1
+703512, superszybki, 2, 1
+703563, pobieżny, 2, 1
+8051, skuteczny, 2, 1
+48372, panieneczka, 1, 1
+48396, rodziciel, 1, 1
+656303, superkomfortowy, 2, 1
+704441, ciepluchny, 4, 1
+705360, pewien, 3, 1
+50272, patriotka, 1, 1
+50738, samarytanka, 1, 1
+706891, czarniuśki, 1, 1
+51964, łapserdak, 1, 1
+685937, jedynkowy, 3, 1
+52887, pocieszycielka, 1, 1
+708750, nieneutralny, 2, 1
+53720, przesłona, 3, 1
+686171, całuśny, 2, 1
+709349, brudny, 11, 1
+54024, ciepełko, 2, 1
+358603, niedotykalny, 2, 1
+710167, powolny, 2, 1
+686385, kulturny, 2, 1
+55162, rycerzyk, 1, 1
+682713, autentystyczny, 1, 1
+710862, przygłupi, 8, 1
+711043, jednobarwny, 2, 1
+711069, nieczytelny, 3, 1
+55934, bojowniczka, 1, 1
+711609, niski, 12, 1
+56390, bestyjka, 1, 1
+56442, pancerz, 4, 1
+56443, skorupa, 3, 1
+56550, panieństwo, 1, 1
+381647, Juliusz Słowacki, 1, 1
+713908, cichuśki, 3, 1
+713909, cichuśki, 4, 1
+713910, cichuśki, 5, 1
+713911, cichuśki, 6, 1
+714012, karta wizytowa, 2, 1
+686999, arcydowcipny, 2, 1
+687116, gagowy, 1, 1
+32006, samochodziarz, 1, 1
+381649, Krasiński, 1, 1
+709375, niesprawny, 5, 1
+62198, huncwot, 1, 1
+719355, prędziutki, 6, 1
+719527, czerep, 7, 1
+64201, bieluchny, 1, 1
+64202, bialuchny, 1, 1
+719974, problemowy, 3, 1
+688034, arcysmaczny, 1, 1
+688431, tatusiny, 2, 1
+68996, porządeczek, 1, 1
+364572, niechrześcijański, 1, 1
+69718, szare komórki, 1, 1
+69757, filantropka, 1, 1
+710718, chudziusi, 3, 1
+70257, św. Mikołaj, 1, 1
+70704, apetyt, 3, 1
+710974, mięciuteńki, 2, 1
+2465, karny, 1, 1
+102859, gagatek, 1, 1
+74647, papa, 2, 1
+628116, adresowalny, 1, 1
+362591, przygódka, 2, 1
+81239, dostępny, 2, 1
+144673, niecierpliwy, 2, 1
+11473, zdrowy, 1, 1
+363407, wnuczuś, 1, 1
+83906, bicie w przelocie, 2, 1
+670499, wąskobiodry, 1, 1
+353955, luzacki, 2, 1
+354428, na wysokim poziomie, 1, 1
+354429, na najwyższym poziomie, 1, 1
+354748, głupi, 9, 1
+354772, debilny, 2, 1
+356002, nieromantyczny, 2, 1
+356481, inteligentka, 1, 1
+356484, junaczka, 1, 1
+357578, dbały, 2, 1
+357741, kompanka, 1, 1
+357815, oblatany, 2, 1
+357834, perspektywiczny, 3, 1
+357856, prestiżowy, 1, 1
+357880, rutynowany, 1, 1
+357887, sterowny, 1, 1
+357897, udatny, 1, 1
+358604, niedysponowany, 1, 1
+358653, zbawienny, 1, 1
+358987, uniwersalistka, 2, 1
+671679, postęp naukowy, 1, 1
+705950, nieczysty, 13, 1
+682386, prosocjalistyczny, 1, 1
+360700, dzieciąteczko, 1, 1
+360879, rozumek, 2, 1
+360882, wianeczek, 2, 1
+98857, altruistka, 1, 1
+623414, papeczka, 1, 1
+361682, długoletni, 2, 1
+361692, aktywistyczny, 1, 1
+362064, potrzebka, 1, 1
+362140, dzieweńka, 1, 1
+362379, efekcik, 3, 1
+362803, przylepeczka, 2, 1
+362821, apetycik, 2, 1
+100937, celebrytka, 1, 1
+366379, zbawczy, 1, 1
+363663, babulina, 1, 1
+101728, okcydentalizm, 2, 1
+626582, ochotka, 2, 1
+102858, półdiablę, 1, 1
+102863, urwipołeć, 1, 1
+365414, fertyczny, 2, 1
+672761, kauczukodajny, 2, 1
+629085, nierozwiązalny, 4, 1
+366947, koicielka, 1, 1
+366845, ukoicielka, 1, 1
+105025, techniczny, 2, 1
+629475, inteligenciak, 1, 1
+629523, Grzegorz XIII, 1, 1
+629758, obsługiwalny, 1, 1
+368721, chłonny, 2, 1
+106642, dyplomatka, 3, 1
+369045, szachy korespondencyjne, 1, 1
+367379, koguci, 2, 1
+374565, niezabawny, 1, 1
+371418, hartowny, 3, 1
+371701, pokrzepicielka, 1, 1
+371729, nieusuwalny, 2, 1
+371954, głupawy, 4, 1
+371966, głupowaty, 5, 1
+110193, kanciasty, 3, 1
+372376, gromowy, 1, 1
+110303, furteczka, 2, 1
+373299, liberalistka, 2, 1
+373461, przyjaźny, 2, 1
+373560, niepełnowartościowy, 1, 1
+373571, niesamodzielny, 5, 1
+374284, niecelowy, 2, 1
+374287, niedelikatny, 4, 1
+374352, niepraktyczny, 2, 1
+375102, luźny, 5, 1
+375376, tępy, 6, 1
+375505, Mickiewicz, 1, 1
+375921, nieprzymuszony, 1, 1
+376022, nieprzytulny, 1, 1
+630652, kamratka, 1, 1
+7060777, skrzacik, 2, 1
+7061055, partykularność, 1, 1
+638763, taki, który można robić, zrobić / taki, dla którego możliwe jest, by coś się z tym stało, 1, 1
+376684, oportunistyczny, 2, 1
+7061482, promienny, 7, 1
+7061959, chłodny, 10, 1
+377766, ocalały, 1, 1
+377768, opatrznościowy, 1, 1
+719638, śpiewający, 3, 1
+7062974, luźność, 4, 1
+378327, bezcenność, 2, 1
+378448, jaśniutki, 3, 1
+7063183, nieczynny, 3, 1
+378569, niekonkretny, 3, 1
+7063349, bialuśki, 1, 1
+106816, idolka, 1, 1
+640958, Leon XIII, 1, 1
+641307, prowokujący, 1, 1
+379624, wątlutki, 3, 1
+642051, nowinkarski, 1, 1
+380171, Adam Mickiewicz, 1, 1
+7065527, koherencyjny, 1, 1
+381648, Słowacki, 1, 1
+381650, Zygmunt Krasiński, 1, 1
+644145, niepartnerski, 1, 1
+645356, krotofilny, 1, 1
+676172, nawiedzany, 1, 1
+719274, ultraszybki, 3, 1
+357584, ergonomiczny, 1, 1
+646263, bąbelek, 3, 1
+687786, odleżały, 1, 1
+647456, niestronniczy, 1, 1
+647696, wysokorozwinięty, 1, 1
+648067, standartowy, 1, 1
+378810, zamkniętość, 2, 1
+371047, odpłatny, 2, 1
+656864, głębsze uczucie, 1, 10
+658112, ekskluzywny, 3, 10
+685343, przewyborny, 2, 10
+659122, dzieło sztuki, 2, 10
+4299, nieszlachetny, 1, 10
+676650, twarda sztuka, 1, 10
+677972, oscarowy, 2, 10
+660066, polotny, 1, 10
+678344, twardy kark, 2, 10
+6993, przyjacielski, 1, 10
+662821, bezpieczeństwo osobiste, 1, 10
+662823, bezpieczeństwo zbiorowe, 1, 10
+662824, bezpieczeństwo żywnościowe, 1, 10
+662827, bezpieczeństwo społeczne, 1, 10
+662829, bezpieczeństwo fizyczne, 1, 10
+663010, bezpieczeństwo informatyczne, 1, 10
+663019, bezpieczeństwo biologiczne, 1, 10
+663023, bezpieczeństwo bierne, 1, 10
+9328, ukochany, 1, 10
+9364, ulubiony, 1, 10
+665390, geniusz uniwersalny, 1, 10
+666054, ejdetyczność, 1, 10
+666473, prekursorski, 2, 10
+667271, nauczny, 1, 10
+143324, sława, 1, 10
+657409, szał dupy, 1, 10
+144797, medalowy, 2, 10
+144798, na medal, 1, 10
+144808, poczesny, 1, 10
+146277, śliczny, 2, 10
+146300, śliczniutki, 2, 10
+658104, reprezentacyjny, 8, 10
+16868, człowiek oceniany pozytywnie, 1, 10
+672572, lukrecja, 4, 10
+672648, expresowy, 2, 10
+672980, prezencyjny, 1, 10
+631230, wścieklizna macicy, 1, 10
+674083, miód, 4, 10
+674172, ochędożny, 2, 10
+18918, boski, 2, 10
+18975, esencjonalny, 1, 10
+674894, menuetowy, 2, 10
+674971, prometeuszowy, 2, 10
+674987, radośny, 1, 10
+674990, radośny, 4, 10
+675011, uroczny, 2, 10
+675567, kompetencyjny, 4, 10
+675688, gołębie serce, 1, 10
+675939, zbytkowy, 1, 10
+20805, pomyślny, 2, 10
+676184, okazowy, 1, 10
+676219, obiekt westchnień, 1, 10
+676258, krezusowy, 2, 10
+676384, samowładczy, 3, 10
+676934, miodny, 3, 10
+677000, wysokomleczny, 1, 10
+637276, elokucja, 1, 10
+678108, czyściuteńki, 4, 10
+678110, czyściutki, 3, 10
+22860, poufały, 1, 10
+678310, dźwiękliwy, 1, 10
+23152, wartościowy, 2, 10
+678574, nieustępliwy, 1, 10
+678586, brat krwi, 1, 10
+678725, olej w głowie, 1, 10
+678726, olej do głowy, 1, 10
+678728, marzenie ściętej głowy, 1, 10
+678730, głowa na karku, 1, 10
+23466, otwarcie, 3, 10
+678932, łeb na karku, 1, 10
+679266, etosowy, 3, 10
+679619, spory, 4, 10
+680655, głębinny, 2, 10
+681543, udzielny, 2, 10
+681669, czarny pas, 3, 10
+681718, żabotowy, 2, 10
+681722, żabotowy, 3, 10
+4403, niezawodny, 1, 10
+703520, superszybki, 3, 10
+682275, substantywność, 1, 10
+26917, miska, 2, 10
+682428, przenajdroższy, 1, 10
+682770, biofilia, 1, 10
+683180, bizancki, 2, 10
+683365, ropotwórczy, 2, 10
+683542, podufały, 1, 10
+683543, podufały, 2, 10
+683551, dystyngwowany, 1, 10
+684186, aspiracyjny, 7, 10
+28848, żarliwość, 1, 10
+684216, krasy, 2, 10
+684592, wabny, 1, 10
+29354, śmieszek, 1, 10
+684747, czyściuchny, 6, 10
+684752, czyściuchny, 9, 10
+685209, żurnalowy, 1, 10
+685212, żurnalowy, 2, 10
+685342, przewyborny, 1, 10
+704049, nieświadomy, 3, 10
+685657, budowny, 1, 10
+685671, smakowny, 2, 10
+685697, wysokopłatny, 1, 10
+685698, wysokopłatny, 2, 10
+685863, lukullusowy, 1, 10
+686058, regalistyczny, 2, 10
+686077, żywny, 2, 10
+686508, miodousty, 1, 10
+686690, muminkowy, 2, 10
+686829, wujek, 4, 10
+686976, bezzwiązkowy, 6, 10
+687498, wodospadowy, 2, 10
+398243, dana, 1, 10
+687556, mileńki, 2, 10
+704423, esencjalny, 3, 10
+682579, rozmachany, 1, 10
+687824, miłośny, 2, 10
+32642, prestiż, 1, 10
+688036, arcysmaczny, 2, 10
+688038, arcymiły, 2, 10
+688432, telegeniczny, 1, 10
+688433, fotogeniczny, 2, 10
+688434, telegeniczny, 2, 10
+377141, cny, 1, 10
+35863, byczysko, 1, 10
+7062066, majsterklepka, 2, 10
+110325, przyjemnostka, 1, 10
+661041, żyła, 6, 10
+640288, awaryjny, 2, 10
+705948, nieczysty, 11, 10
+7062942, uniwersalność, 2, 10
+42477, lubość, 1, 10
+699140, fortunny, 3, 10
+677971, oskarowy, 2, 10
+699791, niesolidny, 3, 10
+699972, fortunny, 5, 10
+699984, fortunny, 6, 10
+662819, bezpieczeństwo publiczne, 1, 10
+45040, optymistka, 1, 10
+684831, słodki, 8, 10
+663017, bezpieczeństwo osobowe, 1, 10
+45961, człowiek określany pieszczotliwie, 1, 10
+619365, zapalność, 2, 10
+684968, fajerwerkowy, 1, 10
+684971, fajerwerkowy, 3, 10
+702107, smętny, 7, 10
+702131, niewesoły, 4, 10
+379177, oświeconość, 1, 10
+702541, lotny, 7, 10
+686828, ciocia, 2, 10
+48054, intelektualistka, 2, 10
+48171, znawczyni, 1, 10
+704333, nieprawdziwy, 6, 10
+704420, esencjonalny, 4, 10
+8177, spec, 1, 10
+704569, wyborny, 5, 10
+704571, wyborny, 6, 10
+49461, szwung, 1, 10
+706245, nerwy jak postronki, 1, 10
+706429, nieskalany, 4, 10
+706431, nieskazitelny, 3, 10
+708964, niefajny, 3, 10
+709339, cudny, 5, 10
+709346, cudny, 6, 10
+54227, człowiek określany familiarnie, 1, 10
+54368, bojowość, 2, 10
+54630, uduchowienie, 2, 10
+54691, admiracja, 1, 10
+710173, powolny, 6, 10
+55389, prymuska, 1, 10
+711394, ostatni, 9, 10
+56932, przystojniaczek, 1, 10
+686700, muminkowaty, 1, 10
+665361, flagowy, 2, 10
+687320, marcypanowy, 3, 10
+61028, ferwor, 1, 10
+61070, dobrostan, 1, 10
+62009, delikatesowy, 1, 10
+718953, wysokich lotów, 1, 10
+719239, bystrzacha, 1, 10
+719819, niecelny, 2, 10
+720064, superowy, 1, 10
+720118, superowy, 4, 10
+65489, wirtuozerstwo, 1, 10
+65760, pienia, 1, 10
+67484, cudotwórczyni, 1, 10
+360847, bóstewko, 2, 10
+68631, chłopski rozum, 1, 10
+69280, błysk w oku, 1, 10
+69713, strzelistość, 2, 10
+69756, ekspertka, 1, 10
+70094, zamek na lodzie, 1, 10
+711340, wolniutki, 5, 10
+624449, profeska, 1, 10
+668157, pozakonkursowy, 3, 10
+362539, komforcik, 2, 10
+78419, umiłowany, 1, 10
+668568, zarąbisty, 1, 10
+668720, szczyry, 1, 10
+101080, cherubinek, 1, 10
+144810, bohaterski, 2, 10
+683666, piktorialny, 2, 10
+611972, luby, 1, 10
+611976, luba, 1, 10
+89819, kobieta oceniana pozytywnie, 1, 10
+655143, esencjalny, 2, 10
+662826, bezpieczeństwo prawne, 1, 10
+353691, hoży, 1, 10
+353723, prześliczny, 1, 10
+353854, misterny, 2, 10
+353988, niepoczciwy, 2, 10
+354118, powabny, 1, 10
+354581, zajebisty, 1, 10
+355407, pamiątkowy, 1, 10
+356011, niezrażony, 1, 10
+356786, wirtuozka, 1, 10
+357210, przedni, 2, 10
+627532, afekcja, 2, 10
+357505, dobrosąsiedzki, 1, 10
+357688, koneserka, 1, 10
+679682, bezpieczeństwo czynne, 1, 10
+359076, estetka, 1, 10
+621963, Towiański, 1, 10
+621964, Andrzej Towiański, 1, 10
+360035, eutroficzny, 1, 10
+360424, partnerka, 4, 10
+360537, salomonowy, 1, 10
+360555, aniołeczek, 2, 10
+622909, pacjencja, 1, 10
+360878, rozumek, 1, 10
+99048, artystka, 2, 10
+99225, poliglotka, 1, 10
+361539, niefachowy, 2, 10
+624641, łepak, 1, 10
+362538, komforcik, 1, 10
+101987, dosyt, 1, 10
+364260, dogodnostka, 1, 10
+366143, niezmordowany, 1, 10
+628524, amikus, 1, 10
+104856, huraoptymizm, 1, 10
+104857, hurraoptymizm, 1, 10
+104904, galant, 1, 10
+105680, usilność, 1, 10
+630703, damusia, 1, 10
+632456, geniuszek, 1, 10
+632736, gołębiczka, 2, 10
+371808, chrobry, 1, 10
+634008, wierny, 6, 10
+373115, familiarny, 1, 10
+1613, eksponowany, 1, 10
+373393, humanitarystka, 1, 10
+374326, niehonorowy, 2, 10
+374574, dyplomowany, 1, 10
+375091, honorny, 1, 10
+375677, kochanek, 3, 10
+674315, rajcowny, 1, 10
+376680, niesportowy, 1, 10
+378189, drugorzędny, 2, 10
+378207, graniczny, 3, 10
+674720, świerszczowy, 2, 10
+378388, gęściutki, 3, 10
+378614, urodność, 1, 10
+366142, nieznużony, 1, 10
+674953, litosny, 1, 10
+380316, milutki, 3, 10
+380317, milusi, 3, 10
+380320, miluśki, 1, 10
+380321, miluśki, 2, 10
+380322, miluśki, 3, 10
+642942, cesarski, 3, 10
+642991, pobratyniec, 1, 10
+7065709, innowatorski, 2, 10
+646619, zajefajny, 1, 10
+719878, petarda, 4, 10
+370487, alfa i omega, 1, 10
+651900, litośny, 1, 10
+21269, skończony, 2, 10
+658165, sentymentalny, 5, 10

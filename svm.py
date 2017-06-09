@@ -1,7 +1,6 @@
 from sklearn import svm
 import numpy
-import thread
-from threading import Thread
+
 import time
 
 class SVM(object):
@@ -17,8 +16,8 @@ class SVM(object):
 
     def __init__(self,propagator):
         kernel='linear'
-        if propagator.kernel in self.kernels:
-            kernel=propagator.kernel
+        if propagator.KERNEL in self.kernels:
+            kernel=propagator.KERNEL
         self.kernel=kernel
         self.svc = svm.SVC(kernel=self.kernel, C=1.0)
         self.propagator=propagator
@@ -31,7 +30,7 @@ class SVM(object):
         self.X_train = list()
         self.Y_train = list()
 
-        ttt=time.time()
+
         if True:
             keys=self.graph.list_of_polar.keys()
             k1=list()
@@ -44,25 +43,15 @@ class SVM(object):
             for i in range(len(keys)/3*2,len(keys)):
                 k3.append(keys[i])
 
-            ret1=list()
-            ret2 = list()
-            ret3 = list()
-
             t1 = ThreadWithReturnValue(target=self.create_vectors, args=(k1,))
             t2 = ThreadWithReturnValue(target=self.create_vectors, args=(k2,))
             t3 = ThreadWithReturnValue(target=self.create_vectors, args=(k3,))
-            #thread.start_new_thread(self.create_vectors, ())
-            #thread.start_new_thread(self.create_vectors, (k2,ret2))
-            #thread.start_new_thread(self.create_vectors, (k2,ret3))
             t1.start()
             t2.start()
             t3.start()
-
-
             ret1=t1.join()
             ret2=t2.join()
             ret3=t3.join()
-            #print 'r1 ',ret1
 
             for tup in ret1:
                 vec,label=tup
@@ -76,19 +65,6 @@ class SVM(object):
                 vec,label=tup
                 self.X_train.append(vec)
                 self.Y_train.append(label)
-
-
-        if False:
-            for pol in self.graph.list_of_polar.keys():
-
-                vec, label = self.propagator.get_vector(self.graph.lu_nodes[pol])
-                if vec is None:
-                    continue
-                vec = numpy.asarray(vec)
-
-                self.X_train.append(vec)
-                self.Y_train.append(label)
-
         self.svc.fit(self.X_train,self.Y_train)
 
 

@@ -124,4 +124,4 @@ class Finder(object):
                 frequency_dic[distances[key]] += 1
             else:
                 frequency_dic[distances[key]] = 1
-        return distances,polarized_nodes#polarized
+        return distances,polarized_nodes

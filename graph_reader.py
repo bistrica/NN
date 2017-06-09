@@ -61,7 +61,7 @@ class GraphReader(object):
             t=time.time()
             self.get_data_from_db(host, user, passw, db_name, all_rels, full_lu_graph)
             t = time.time() - t
-            print 'Time0 ', t
+
             t = time.time()
 
             self.host = host
@@ -75,16 +75,16 @@ class GraphReader(object):
 
 
         t=time.time()-t
-        print 'Time1 ',t
+
         t = time.time()
 
         self.create_map_lu_node()
         t = time.time() - t
-        print 'Time2 ', t
+
         t = time.time()
         self.create_lu_polar_list()
         t = time.time() - t
-        print 'Time3 ', t
+
 
 
     def get_all_relations(self):
@@ -107,7 +107,6 @@ class GraphReader(object):
 
             cur.execute("SELECT l.ID from lexicalunit l where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l.comment like '%+ m' or l.comment like '%+ s' or l.comment like '%+ m %' or l.comment like '%+ s %')")
 
-                #"SELECT l.ID from lexicalunit l join lexicalunit l2 on l.lemma=l2.lemma where (l.comment like '%- m' or l.comment like '%- s' or l.comment like '%- m %' or l.comment like '%- s %') and  (l2.comment like '%+ m' or l2.comment like '%+ s' or l2.comment like '%+ m %' or l2.comment like '%+ s %')")
 
             for row in cur.fetchall():
                 self.not_disamb_list.append(row[0])
@@ -142,7 +141,6 @@ class GraphReader(object):
             for row in cur.fetchall():
                 self.amb_list.append(row[0])
 
-            #print '> ',len(self.amb_list),' ',len(self.negative_list),' ',len(self.positive_list)
 
             cur.execute("SELECT LEX_ID, SYN_ID FROM unitandsynset")
 
@@ -167,8 +165,7 @@ class GraphReader(object):
 
         cur.execute("SELECT ID FROM relationtype")
 
-        #for row in cur.fetchall():
-        #    self.all_lu_relations.add(row[0])
+
 
         if all_rels:
             self.added_relations=list(self.all_synset_relations)
@@ -177,14 +174,12 @@ class GraphReader(object):
         db.close()
 
     def save_polarity_to_db(self, update_dic):
-        db = MySQLdb.connect(host=self.host,  # "localhost",    # your host, usually localhost
-                             user=self.user,  # "root",         # your username
-                             passwd=self.passw,  # "toor",  # your password
-                             db=self.db_name)  # "wordTEST")        # name of the data base
+        db = MySQLdb.connect(host=self.host,
+                             user=self.user,
+                             passwd=self.passw,
+                             db=self.db_name)
 
         cur = db.cursor()
-        # is_graph_full=False
-
 
         for k in update_dic.keys():
             cur.execute("UPDATE lexicalunit SET comment=CONCAT(comment, '"+str(update_dic[k])+"') WHERE id="+str(k))
@@ -230,13 +225,12 @@ class GraphReader(object):
     def create_lu_polar_list(self):
 
         for n in self.lu_graph.all_nodes():
-            if hasattr(n.lu, 'polarity') and n.lu.polarity!=None:
-                print 'po ',n.lu.lu_id,' - ',n.lu.polarity
+            if hasattr(n.lu, 'polarity') and n.lu.polarity is not None:
+
                 self.list_of_polar[n.lu.lu_id] = n.lu.polarity
                 continue
             if True:
                 idL = n.lu.lu_id
-
 
                 if idL in self.not_disamb_list:
 
@@ -279,21 +273,21 @@ class GraphReader(object):
 
 
                 if not self.list_of_polar.has_key(lu.lu_id):
-                    idL = lu.lu_id
+                    id_lu = lu.lu_id
 
-                    if idL in self.not_disamb_list:
+                    if id_lu in self.not_disamb_list:
                         local_polar.append(0)
                         continue
-                    if idL in self.positive_list:
+                    if id_lu in self.positive_list:
                         local_polar.append(1)
                         self.list_of_polar[lu.lu_id] = 1
-                    elif idL in self.negative_list_strong:
+                    elif id_lu in self.negative_list_strong:
                         local_polar.append(-10)
                         self.list_of_polar[lu.lu_id] = -10
-                    elif idL in self.positive_list_strong:
+                    elif id_lu in self.positive_list_strong:
                         local_polar.append(10)
                         self.list_of_polar[lu.lu_id] = 10
-                    elif idL in self.negative_list:
+                    elif id_lu in self.negative_list:
                         local_polar.append(-1)
                         self.list_of_polar[lu.lu_id] = -1
 
@@ -311,15 +305,6 @@ class GraphReader(object):
                     positive = True
                 if val == 0:
                     count += 1
-
-
-        # if count<0.1*len(local_polar):
-        #   polarity=sum(local_polar)
-        #  if  polarity < 0:
-        #      polarity=-1
-        #  elif polarity > 0:
-        #      polarity=1
-        #  synsets_polar[n]=polarity
 
         if positive != negative and count <= percent * len(local_polar):
             polarity = sum(local_polar)
@@ -361,7 +346,7 @@ class GraphReader(object):
 
 
     def append_synonymy_edges(self):
-        new_edges = list()
+
         a=0
         edges=set()
         for node in self.lu_graph.all_nodes():
@@ -385,4 +370,10 @@ class GraphReader(object):
         for edge in edges:
             self.lu_graph.add_edge(self.lu_nodes[edge[0]], self.lu_nodes[edge[1]], [['rel_id', -8]], True)
 
+
+    def get_node_by_id(self,item):
+        for n in self.lu_graph.all_nodes():
+            if n.lu.lu_id==item:
+                return n
+        return None
 

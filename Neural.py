@@ -21,22 +21,7 @@ class Neural(object):
         self.propagator=propagator
         self.hidden_layers=tuple(hidden_layers)
 
-
-    #def create_mlp(self):
-    #    mlp=self.build_mlp()
-    #    print 'kel ',len(self.X_train),len(self.Y_train)
-    #    mlp.fit(self.X_train,self.Y_train,200)
-    #    preds = mlp.predict(self.X_test)
-    #    cm = confusion_matrix(self.Y_test, preds)
-    #    plt.matshow(cm)
-    #    plt.title('Confusion matrix')
-    #    plt.colorbar()
-    #    plt.ylabel('True label')
-    #    plt.xlabel('Predicted label')
-    #    plt.show()
-
-    def create_neural(self):#,attributes, labels, data, data_labels):
-        #print 'lenn ',len(self.X_train), len(self.Y_train), len(self.X_test), len(self.Y_test)
+    def create_neural(self):
         self.clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
                             hidden_layer_sizes=self.hidden_layers, random_state=1)#5,2
 
@@ -50,9 +35,9 @@ class Neural(object):
 
             if self.clf.predict(self.X_test[i]) == self.Y_test[i]:
                 ccc += 1
-        print 'res: ', ccc, '/', len(self.Y_test)
+
         self.res = self.res + ', res: ' + str(ccc) + '/' + str(len(self.Y_test))
-        #x=9/0
+
 
     def create_data(self,percent,pos=None):
         X_train = list()
@@ -70,14 +55,14 @@ class Neural(object):
             Y_train.append(label)
         X = [X_train[:int(percent * len(X_train))], X_train[int(percent * len(X_train)):]]
         Y = [Y_train[:int(percent * len(Y_train))], Y_train[int(percent * len(Y_train)):]]
-        print '.',len(X[0]),len(X[1])
+
         print len(Y[0]), len(Y[1])
         self.X_train=X[0]
         self.Y_train=Y[0]
         self.X_test=X[1]
         self.Y_test=Y[1]
 
-        return self.X_train, self.X_test, self.Y_train, self.Y_test# X[0],X[1],Y[0],Y[1]
+        return self.X_train, self.X_test, self.Y_train, self.Y_test
 
     def set_data(self,data_tuple):
         X=data_tuple[0]
@@ -93,12 +78,12 @@ class Neural(object):
     def create_data_lists(self,poss):
 
         data_lists=[None,None,None,None]
-        print 'poss ',poss
+
         for p in poss:
             data_lists[int(p)-1]=(list(),list())
 
 
-        c=time.time()
+
         for pol in self.graph.list_of_polar.keys():
             tt = time.time()
             pos =self.graph.lu_nodes[pol].lu.pos
@@ -116,20 +101,8 @@ class Neural(object):
 
             data_lists[pos - 1][0].append(vec)
             data_lists[pos - 1][1].append(label)
-        c = time.time()-c
-        print 'Time CDL FOR ',c
 
-
-        #X = [X_train[:int(percent * len(X_train))], X_train[int(percent * len(X_train)):]]
-        #Y = [Y_train[:int(percent * len(Y_train))], Y_train[int(percent * len(Y_train)):]]
-        #print '.',len(X[0]),len(X[1])
-        #print len(Y[0]), len(Y[1])
-        #self.X_train=X[0]
-        #self.Y_train=Y[0]
-        #self.X_test=X[1]
-        #self.Y_test=Y[1]
-
-        return data_lists #self.X_train, self.X_test, self.Y_train, self.Y_test# X[0],X[1],Y[0],Y[1]
+        return data_lists
 
     def append_training_item(self,item,label):
         self.X_train.append(item)
@@ -142,6 +115,7 @@ class Neural(object):
             for item in data:
                 result.append(self.clf.predict(data))
         else:
+
             result=self.clf.predict(data)
         return result
 

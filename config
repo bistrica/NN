@@ -1,0 +1,206 @@
+############################################################################################################################################
+######################################################### PARAMETERS ####################################################################### 
+############################################################################################################################################
+
+
+# choose type of propagation when graph is being merged
+# types:
+# NEURAL
+# NEURAL_MULTIPLE (for chosen part of speeches (look at: CHOSEN_POS) create individual neural net)
+# MANUAL
+# BAYES
+# SVM
+# KNN (k nearest neighbours)
+# ENSEMBLE (ensemble of classifiers: SVM, neural network & multiple neural networks)
+# empty if graph is only being merged
+
+PROPAGATION_TYPE:ENSEMBLE
+
+
+#synset relations which are appended to lexical units' graph
+#- list or 'all' for appending all relations
+# best choice is appending all relation to graph; a subset of relations for propgation can be chosen later in MANUAL_RELATION_TYPES
+#e.g. RELS_TO_APPEND:[10,11,12]
+#e.g. RELS_TO_APPEND:all
+
+
+RELS_TO_APPEND:all
+
+# for any type, choose relation types to consider by propagation algorithm
+# relations' ids for propagation (both lexical and synset's relations)
+# e.g. MANUAL_RELATION_TYPES:[10,11,254]
+# e.g. MANUAL_RELATION_TYPES:all for all possible relations in graph (weights should be empty then, default same for each relation or trained by neural network)
+
+MANUAL_RELATION_TYPES:all
+#[-8,11,10,106,107,20,64, 21, 22, 23,24,65,25, 26, 27, 28,29, 53, 10053,  55, 10055, 56, 10056, 57,10057, 13, 10013, 101, 102,104, 10101, 10102, 10104,  30,10030, 60, 10060]
+
+# for TYPE:MANUAL
+# manual relations' weights (if necessary)
+# e.g. [1,1,5]
+
+#11:0.7   10:1.6   106:0.7   107:1.6   20:0.6 64:0.6 21:0.6 22:0.6 23:0.6 24:0.6   65:0.6 25:0.6 26:0.6 27:0.6 28:0.6 29:0.6   53:1.6 10053:0.7   #55:1.6 10055:0.7 56:1.6 10056:0.7 57:1.6 10057:0.7   #13:0.4 10013:0.4   101:0.4 102:0.4 104:0.4 10101:0.4 10102:0.4 10104:0.4   30:1.538462 #10030:1.538462   60:2.73224 10060:2.73224
+
+MANUAL_RELATION_WIGHTS:
+#[0.7, 1.6, 0.7, 1.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 1.6, 0.7, 1.6, 0.7, 1.6, 0.7, 1.6, 0.7, 0.4, 0.4, 0.4,0.4,0.4 ,0.4 ,0.4,0.4 ,1.538462,1.538462,2.73224,2.73224] 
+
+# minimal percent of neighbours with known polarity to predict new unit's polarity (used for any propagation type)
+# type PERCENT:0.5 instead of 50%
+# PERCENT:0 when only 1 neighbour with known polarity is sufficient
+
+PERCENT:0.74
+
+
+
+
+# depth of propagation -> depth = 1 means polarity is being propagated only for neigbours of lexical units with known polarity; depth = 2 - to neighbours and their neighbours etc.
+
+DEPTH:1
+
+# depth of training chosen model (classifier or neural net) - it is trained on lexical units with known polarity (TRAINING DEPTH=0) and additionally on its own predictions (TRAINING_DEPTH=1: predictions of unknown neigbours of known units, TRAINING_DEPTH=2: predictions of neighbours of neigbours etc.)
+
+TRAINING_DEPTH:0
+
+# for any type choose if data should be normalized (if so, a vector data describing item will be summed to 1)
+# choosen NORMALIZATION:1 for normalization, NORMALIZATION:0 for no normalization 
+
+NORMALIZATION:1 
+
+############################################################################################################################################
+######################################################### NEURAL NET ####################################################################### 
+############################################################################################################################################
+
+
+# params for neural net changing
+# for TYPE:NEURAL 
+# choose number of hidden layers and number of their unit
+# e.g. two layers, 5 and 3 units: LAYERS_UNITS:[5,3]
+
+LAYERS_UNITS:[50,30,20,10]
+
+#
+#[200,100,50,25]
+#[212,106,212,53,27]
+#[256,64,128,32,64,16]
+
+
+# params for neural net changing
+# for TYPE:NEURAL_MULTIPLE
+# choose number of hidden layers and number of their unit
+# e.g. two layers, 5 and 3 units: LAYERS_UNITS_NM:[5,3]
+
+LAYERS_UNITS_NM:[50,30,20,10]
+
+# for multiple neural networks (TYPE:NEURAL_MULTIPLE): choose parts of speech (for each one indivual network will be created)
+
+CHOSEN_POS:[2,4]
+
+############################################################################################################################################
+######################################################### SVM # ############################################################################ 
+############################################################################################################################################
+
+
+#for TYPE:SVM choose kernel: linear,sigmoid,rbf,poly (if empty, default is SVM_KERNEL:linear)
+
+SVM_KERNEL:
+
+############################################################################################################################################
+######################################################### KNN ############################################################################## 
+############################################################################################################################################
+
+#for TYPE:KNN choose number of neightbours (if empty, default is 5)
+#e.g. KNN_NEIGHBOURS_NUMBER:5
+
+KNN_NEIGHBOURS_NUMBER:
+
+#for TYPE:KNN choose algorithm to compute nearest neighbours: auto, ball_tree, kd_tree, brute (if empty, default is KNN_ALGORITHM:auto)
+
+KNN_ALGORITHM:
+
+#for TYPE:KNN choose weight function: uniform or distance (if empty, default is KNN_WEIGHTS:uniform)
+# weight function used in prediction. Possible values:
+# uniform : uniform weights. All points in each neighborhood are weighted equally.
+# distance : weight points by the inverse of their distance. in this case, closer neighbors of a query point will have a greater influence than neighbors which are further away.
+
+KNN_WEIGHTS:
+
+############################################################################################################################################
+######################################################### PATHS ############################################################################ 
+############################################################################################################################################
+
+#path to lexical units' graph (single or just merged with another merged graph in this code (look at MERGED_PATH variable))
+#e.g. LU_PATH:/home/aleksandradolega/OUTPUT_GRAPHS_lu.xml.gz
+
+
+LU_PATH:/home/aleksandradolega/save_graph_all_amb.xml
+
+#path to merged graph (synsets and lexical units' graph merged by PLWNBuilder; doesn't contain all lexical units; doesn't contain all relations and synonymy relation)
+#e.g. MERGED_PATH:/home/aleksandradolega/merged_graph.xml.gz
+
+MERGED_PATH:
+
+#path for saving merged graph
+#if empty, the graph won't be saved and used in the future (not efficent)
+#e.g. SAVE_MERGED_GRAPH_PATH:/home/folder/lu_graph.xml
+
+SAVE_MERGED_GRAPH_PATH:
+
+#path for saving graph after propagation (empty lexical unit's sentiment will be set with propagated one)
+
+SAVE_MODIFIED_MERGED_GRAPH_PATH:
+#/home/aleksandradolega/MODIFIED_GRAPH.xml
+
+# path for saved neural network model (TYPE:NEURAL and TYPE:NEURAL_MULTIPLE)
+
+NEURAL_NETWORK_MODEL_PATH:
+
+# path for saving neural network model (TYPE:NEURAL and TYPE:NEURAL_MULTIPLE)
+
+SAVE_NEURAL_NETWORK_MODEL_PATH:/home/aleksandradolega/neural_[32,16,8]_30_path.xml
+
+
+
+
+# path for file with newly propagated (or only classified) data
+
+FILE_LEX_UNITS_WITH_NEW_POLARITY:/home/aleksandradolega/PODSUMA/ENSEMBLE_75_[50,30,20,10]_depth_1.txt
+#ENSEMBLE_MULTI_[50,30,20,10]_50per_norm_allrels_sortedByVal_DEPTH_2_3
+ENSEMBLE_PATH:
+#/home/aleksandradolega/ensemble_90_diff_neural_arch.pkl
+#/home/aleksandradolega/ensemble.xml
+
+SAVE_ENSEMBLE_PATH:/home/aleksandradolega/ensemble_75_[50,30,20,10].pkl
+
+
+SVM_MODEL_PATH:
+#/home/aleksandradolega/Save_SVM_MODEL.pkl
+
+SAVE_SVM_MODEL_PATH:/home/aleksandradolega/svm_model_32_30.xml
+#
+
+SAVE_TO_DATABASE:0
+
+
+CLASSIFY_DATA:
+#[15,30,12168]
+############################################################################################################################################
+################################################# DATABASE DATA ############################################################################
+############################################################################################################################################
+#database host
+#e.g. HOST:localhost
+
+HOST:localhost
+
+#database user
+#e.g. USER:root
+
+USER:root
+
+#database password
+#e.g. PASS:toor
+
+PASS:toor
+
+#database name
+#e.g. DB_NAME:wordnet
+
+DB_NAME:wordTEST
