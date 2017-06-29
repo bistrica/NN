@@ -1,5 +1,6 @@
 # NN
 
+<b>Uwaga: należy do klasy LexicalUnit w PLWNGraphBuilder/vertices/lexical_unit.py dodać pole self.polarity.</b>
 
 Należy rozpocząć od pliku parser i na samym dole pliku wprowadzić ścieżkę do pliku config.txt zgodnym z przykładowym configiem.
 
