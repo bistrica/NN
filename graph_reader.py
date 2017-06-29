@@ -5,6 +5,7 @@ import time
 
 
 class GraphReader(object):
+    fakefield=True
     finder = Finder()
     lu_synset_dic = dict()
     synsets = list()
