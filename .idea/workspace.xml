@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="613d9eec-c761-417b-bd23-f68ce6c73745" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_reader.py" afterPath="$PROJECT_DIR$/graph_reader.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propagator.py" afterPath="$PROJECT_DIR$/propagator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +27,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="graph_reader.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph_reader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_reader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="159">
+              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <marker date="1498728017438" expanded="true" signature="2853:3100" ph="SELECT l.ID lexicalunit" />
@@ -95,11 +95,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="propagator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="propagator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/propagator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="192" column="43" lean-forward="false" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
+            <state relative-caret-position="177">
+              <caret line="620" column="51" lean-forward="false" selection-start-line="620" selection-start-column="51" selection-end-line="620" selection-end-column="51" />
               <folding>
                 <element signature="e#1#26#0" expanded="true" />
               </folding>
@@ -130,8 +130,8 @@
       <file leaf-file-name="svm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/svm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1278">
-              <caret line="74" column="12" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
+            <state relative-caret-position="186">
+              <caret line="58" column="40" lean-forward="true" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -150,8 +150,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>create_neighbourhood</find>
-      <find>data_dic</find>
       <find>'chosen</find>
       <find>self.data_dic</find>
       <find>list_of_polar</find>
@@ -180,6 +178,8 @@
       <find>POLARITY</find>
       <find>ATTR</find>
       <find>full_lu_graph</find>
+      <find>only</find>
+      <find>'only</find>
     </findStrings>
     <replaceStrings>
       <replace>time.time()</replace>
@@ -206,8 +206,8 @@
         <option value="$PROJECT_DIR$/knn.py" />
         <option value="$PROJECT_DIR$/parser.py" />
         <option value="$PROJECT_DIR$/svm.py" />
-        <option value="$PROJECT_DIR$/propagator.py" />
         <option value="$PROJECT_DIR$/graph_reader.py" />
+        <option value="$PROJECT_DIR$/propagator.py" />
       </list>
     </option>
   </component>
@@ -1116,16 +1116,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/svm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="74" column="12" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/PLWNGraphBuilder-0.1.0-py2.7.egg/PLWNGraphBuilder/vertices/lexical_unit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1134,20 +1124,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/propagator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="192" column="43" lean-forward="false" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
-          <folding>
-            <element signature="e#1#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/graph_reader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="159">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <marker date="1498728017438" expanded="true" signature="2853:3100" ph="SELECT l.ID lexicalunit" />
@@ -1162,6 +1142,26 @@
             <marker date="1498728017438" expanded="true" signature="5426:5472" ph="UPDATE lexic... " />
             <marker date="1498728017438" expanded="true" signature="5426:5473" ph="UPDATE lexic... " />
             <marker date="1498728017438" expanded="true" signature="5426:5508" ph="UPDATE lexic... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/svm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="58" column="40" lean-forward="true" selection-start-line="58" selection-start-column="40" selection-end-line="58" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/propagator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="620" column="51" lean-forward="false" selection-start-line="620" selection-start-column="51" selection-end-line="620" selection-end-column="51" />
+          <folding>
+            <element signature="e#1#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

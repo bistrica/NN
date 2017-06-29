@@ -248,7 +248,7 @@ class Propagator(object):
                 for item in self.only_classify_list:
                     res=self.evaluate_node_percent(self.GRAPH.get_node_by_id(item))
                     only_classify[item]=res
-                print 'ONLY ',only_classify
+                print 'ONLY CLASSIFIED DATA ',only_classify #wszystkie klasyfikowane dane w tylko CLASSIFY_DATA
             else:
                 self.propagate_manual()
 
