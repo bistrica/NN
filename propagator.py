@@ -105,20 +105,20 @@ class Propagator(object):
 
     def create_ensemble(self):
         if self.ensemble_path is None:
-            pr1 = Propagator(type=Propagator.SVM, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar), graph=self.GRAPH,
+            pr1 = Propagator(type=Propagator.SVM, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar), graph=self.GRAPH,#self.GRAPH,
                              depth=self.DEPTH,
                              normalization=self.NORMALIZATION,
                              training_depth=self.TRAINING_DEPTH,
                              percent=self.PERCENT, rel_ids=self.REL_IDS,
                              kernel=self.KERNEL,only_classify_list=self.only_classify_list)
             pr2 = Propagator(type=Propagator.NEURAL_MULTIPLE, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar),
-                             graph=self.GRAPH,
+                             graph=self.GRAPH,  #
                              depth=self.DEPTH, normalization=self.NORMALIZATION,
                              training_depth=self.TRAINING_DEPTH,
                              percent=self.PERCENT, rel_ids=self.REL_IDS, neural_layers=self.LAYERS_UNITS_NM,
 
                              chosen_pos=self.CHOSEN_POS,only_classify_list=self.only_classify_list)
-            pr3 = Propagator(type=Propagator.NEURAL, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar), graph=self.GRAPH,
+            pr3 = Propagator(type=Propagator.NEURAL, known_data_dic=copy.deepcopy(self.GRAPH.list_of_polar), graph=self.GRAPH,#
                              depth=self.DEPTH,
                              training_depth=self.TRAINING_DEPTH, normalization=self.NORMALIZATION,
                              percent=self.PERCENT, rel_ids=self.REL_IDS, neural_layers=self.LAYERS_UNITS,only_classify_list=self.only_classify_list
@@ -146,6 +146,9 @@ class Propagator(object):
 
     def create_multithread_ensemble(self,pr,pr2,pr3):
 
+        print '===>>> ', pr.data_dic == pr2.data_dic, len(pr.data_dic.keys()), len(pr2.data_dic.keys()), len(
+            pr3.data_dic.keys())
+
         try:
             t1=Thread(target=pr.propagate)
             t2=Thread(target=pr2.propagate)
@@ -163,12 +166,16 @@ class Propagator(object):
             pr2.propagate()
             pr3.propagate()
 
-        pr.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
+
+        self.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
+
+
+
 
 
     def create_neighbourhood(self, depth,polarized=None):
         finder = Finder()
-        freq_map,polarized_items = finder.find_nearest_simple(self.GRAPH.lu_graph, self.GRAPH.list_of_polar, depth=depth,
+        freq_map,polarized_items = finder.find_nearest_simple(self.GRAPH.lu_graph, self.GRAPH.list_of_polar, depth=depth, #todo dla ensemble self.GRAPH.list_of_polar na data_dic?
                                               relations=self.get_relations(),polarized=polarized)
         return freq_map,polarized_items
 
@@ -177,6 +184,8 @@ class Propagator(object):
         for k in data1.keys():
 
             if k in data2.keys() and k in data3.keys():
+
+
                 val1 = data1[k]
                 val2 = data2[k]
                 val3 = data3[k]
@@ -223,6 +232,7 @@ class Propagator(object):
 
     def propagate(self):
         old_keys = copy.deepcopy(self.GRAPH.list_of_polar)
+        print 'OLD KEYS ',len(old_keys)
         only_classify=dict()
 
         if self.only_classify_list is not None:
@@ -296,7 +306,7 @@ class Propagator(object):
                 self.PERCENT = 0
                 for item in self.only_classify_list:
                     res = None
-                    vec, label = self.get_vector(self.GRAPH.lu_nodes[node.lu.lu_id])
+                    vec, label = self.get_vector(self.GRAPH.lu_nodes[item])#node.lu.lu_id])
                     if vec is not None:
                         vec = numpy.asarray(vec)
                         res = classifier.predict(vec)
@@ -322,6 +332,9 @@ class Propagator(object):
             vals[1] = prefix+'##ASENTI: {sp}'
             vals[0]=prefix+'##ASENTI: {a}'
             file = open(self.NEW_LU_DATA_PATH, 'wr+')
+            for k in self.data_dic.keys():
+                if len(str(self.data_dic[k]))<=2:
+                    self.data_dic[k]='['+str(self.data_dic[k])+']'
 
             self.data_dic=OrderedDict(sorted(self.data_dic.items(), key=lambda t: t[1]))
             keys = self.data_dic.keys()
@@ -348,7 +361,7 @@ class Propagator(object):
 
 
     def propagate_classifier(self,classifier):
-
+        print 'creating...'
         if (self.TYPE==Propagator.SVM):
             if self.SVM_MODEL is None:
                 classifier.create_model()
@@ -361,7 +374,9 @@ class Propagator(object):
         depth = 1
 
         polarized=None
+        print 'created'
         while counter > 0:
+            print 'svm',len(self.data_dic.keys())
 
             counter -= 1
             training_counter -= 1
@@ -374,6 +389,9 @@ class Propagator(object):
                     continue
                 vec = numpy.asarray(vec)
                 res = classifier.predict(vec)
+                #if (self.TYPE==Propagator.SVM):
+                #    proba=classifier.predict_proba(vec)
+                #    print 'proba ',proba
 
                 self.GRAPH.list_of_polar[node.lu.lu_id] = res
                 node.lu.polarity = res
@@ -435,6 +453,7 @@ class Propagator(object):
 
         polarized = None
         while counter > 0:
+            print 'neura', len(self.data_dic.keys())
 
             counter -= 1
             training_counter -= 1
@@ -468,7 +487,7 @@ class Propagator(object):
         counter = self.DEPTH
         depth = 1
         any_net=None
-
+        print 'CHOSEN ',self.CHOSEN_POS
         if self.NETWORK is None:
             self.NETWORK = list()
             if self.CHOSEN_POS is None:
@@ -500,6 +519,7 @@ class Propagator(object):
 
         polarized=list()
         while counter > 0:
+            print 'multi ', len(self.data_dic.keys())
 
             counter -= 1
             training_counter -= 1
@@ -529,6 +549,8 @@ class Propagator(object):
                 node.lu.polarity = res
 
                 self.data_dic[node.lu.lu_id] = res
+                if node.lu.pos==1 or node.lu.pos==3:
+                    print ':::: ',node.lu.lu_id, node.lu.pos
 
             #print 'data dic' ,self.data_dic
 

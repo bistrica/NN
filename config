@@ -14,7 +14,7 @@
 # ENSEMBLE (ensemble of classifiers: SVM, neural network & multiple neural networks)
 # empty if graph is only being merged
 
-PROPAGATION_TYPE:ENSEMBLE
+PROPAGATION_TYPE:SVM
 
 
 #synset relations which are appended to lexical units' graph
@@ -47,7 +47,8 @@ MANUAL_RELATION_WIGHTS:
 # type PERCENT:0.5 instead of 50%
 # PERCENT:0 when only 1 neighbour with known polarity is sufficient
 
-PERCENT:0.74
+PERCENT:0
+#.49
 
 
 
@@ -88,7 +89,7 @@ LAYERS_UNITS:[50,30,20,10]
 # choose number of hidden layers and number of their unit
 # e.g. two layers, 5 and 3 units: LAYERS_UNITS_NM:[5,3]
 
-LAYERS_UNITS_NM:[50,30,20,10]
+LAYERS_UNITS_NM:[32,16,8]
 
 # for multiple neural networks (TYPE:NEURAL_MULTIPLE): choose parts of speech (for each one indivual network will be created)
 
@@ -102,7 +103,6 @@ CHOSEN_POS:[2,4]
 #for TYPE:SVM choose kernel: linear,sigmoid,rbf,poly (if empty, default is SVM_KERNEL:linear)
 
 SVM_KERNEL:
-
 ############################################################################################################################################
 ######################################################### KNN ############################################################################## 
 ############################################################################################################################################
@@ -146,7 +146,7 @@ SAVE_MERGED_GRAPH_PATH:
 
 #path for saving graph after propagation (empty lexical unit's sentiment will be set with propagated one)
 
-SAVE_MODIFIED_MERGED_GRAPH_PATH:
+SAVE_MODIFIED_MERGED_GRAPH_PATH:/home/aleksandradolega/MODIFIED_GRAPH_E.xml
 #/home/aleksandradolega/MODIFIED_GRAPH.xml
 
 # path for saved neural network model (TYPE:NEURAL and TYPE:NEURAL_MULTIPLE)
@@ -162,13 +162,14 @@ SAVE_NEURAL_NETWORK_MODEL_PATH:/home/aleksandradolega/neural_[32,16,8]_30_path.x
 
 # path for file with newly propagated (or only classified) data
 
-FILE_LEX_UNITS_WITH_NEW_POLARITY:/home/aleksandradolega/PODSUMA/ENSEMBLE_75_[50,30,20,10]_depth_1.txt
+FILE_LEX_UNITS_WITH_NEW_POLARITY:/home/aleksandradolega/SS.txt
+#PODSUMA/ensemble_[50,30,20,10]_[32,16,8]_50_depth_1.txt
 #ENSEMBLE_MULTI_[50,30,20,10]_50per_norm_allrels_sortedByVal_DEPTH_2_3
 ENSEMBLE_PATH:
 #/home/aleksandradolega/ensemble_90_diff_neural_arch.pkl
 #/home/aleksandradolega/ensemble.xml
 
-SAVE_ENSEMBLE_PATH:/home/aleksandradolega/ensemble_75_[50,30,20,10].pkl
+SAVE_ENSEMBLE_PATH:/home/aleksandradolega/Ensemble_50_[50,30,20,10][32,16,8].pkl
 
 
 SVM_MODEL_PATH:
@@ -180,7 +181,7 @@ SAVE_SVM_MODEL_PATH:/home/aleksandradolega/svm_model_32_30.xml
 SAVE_TO_DATABASE:0
 
 
-CLASSIFY_DATA:
+CLASSIFY_DATA:[366,412,354118]
 #[15,30,12168]
 ############################################################################################################################################
 ################################################# DATABASE DATA ############################################################################

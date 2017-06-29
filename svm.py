@@ -29,10 +29,11 @@ class SVM(object):
     def create_model(self):
         self.X_train = list()
         self.Y_train = list()
+        t=time.time()
+        keys = self.graph.list_of_polar.keys()
 
+        if False:
 
-        if True:
-            keys=self.graph.list_of_polar.keys()
             k1=list()
             k2=list()
             k3=list()
@@ -65,6 +66,15 @@ class SVM(object):
                 vec,label=tup
                 self.X_train.append(vec)
                 self.Y_train.append(label)
+        if True:
+            ret1=self.create_vectors(keys)
+            for tup in ret1:
+                vec, label = tup
+                self.X_train.append(vec)
+                self.Y_train.append(label)
+            t = time.time()-t
+        print 't ',t
+        print 'fit...'
         self.svc.fit(self.X_train,self.Y_train)
 
 
@@ -86,6 +96,9 @@ class SVM(object):
 
     def predict(self,item):
         return self.svc.predict(item)
+
+    def predict_proba(self,item):
+        return self.svc.predict_proba(item)
 
     def append_training_item(self,vec,label):
         self.X_train.append(vec)
