@@ -75,6 +75,7 @@ class Finder(object):
         polarized_nodes=list()
 
         if polarized is None or len(polarized)==0:
+            print 'polarized',polarized
 
             for node in lu_graph.all_nodes():
                 if node.lu.lu_id in list_of_polar:

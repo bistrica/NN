@@ -150,6 +150,7 @@ class Propagator(object):
             pr3.data_dic.keys())
 
         try:
+            #x=9/0
             t1=Thread(target=pr.propagate)
             t2=Thread(target=pr2.propagate)
             t3 = Thread(target=pr3.propagate)
@@ -165,9 +166,23 @@ class Propagator(object):
             pr.propagate()
             pr2.propagate()
             pr3.propagate()
+        #print '>',pr.data_dic
+        #print '>>', pr2.data_dic
+        #print '>>>', pr3.data_dic
+
+        self.data_dic = self.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
+        for k in self.data_dic.keys():
+            print '>',self.data_dic[k]
+            if not isinstance(self.data_dic[k],int):
+                self.data_dic[k]=self.data_dic[k][0]
+            if not isinstance(self.data_dic[k],int):
+                self.data_dic[k]=self.data_dic[k][0]
+            self.GRAPH.lu_nodes[k].lu.polarity=self.data_dic[k]
+
+        for k in self.GRAPH.lu_nodes.keys():
+            print '>> ',self.GRAPH.lu_nodes[k].lu.polarity
 
 
-        self.get_common_result(pr.data_dic, pr2.data_dic, pr3.data_dic)
 
 
 
@@ -227,7 +242,7 @@ class Propagator(object):
                             new_dic[k] = 1
                     else:
                         new_dic[k] = 0
-        self.data_dic=new_dic
+
         return new_dic
 
     def propagate(self):
