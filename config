@@ -14,7 +14,7 @@
 # ENSEMBLE (ensemble of classifiers: SVM, neural network & multiple neural networks)
 # empty if graph is only being merged
 
-PROPAGATION_TYPE:SVM
+PROPAGATION_TYPE:ENSEMBLE
 
 
 #synset relations which are appended to lexical units' graph
@@ -38,7 +38,6 @@ MANUAL_RELATION_TYPES:all
 # manual relations' weights (if necessary)
 # e.g. [1,1,5]
 
-#11:0.7   10:1.6   106:0.7   107:1.6   20:0.6 64:0.6 21:0.6 22:0.6 23:0.6 24:0.6   65:0.6 25:0.6 26:0.6 27:0.6 28:0.6 29:0.6   53:1.6 10053:0.7   #55:1.6 10055:0.7 56:1.6 10056:0.7 57:1.6 10057:0.7   #13:0.4 10013:0.4   101:0.4 102:0.4 104:0.4 10101:0.4 10102:0.4 10104:0.4   30:1.538462 #10030:1.538462   60:2.73224 10060:2.73224
 
 MANUAL_RELATION_WIGHTS:
 #[0.7, 1.6, 0.7, 1.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 0.6, 1.6, 0.7, 1.6, 0.7, 1.6, 0.7, 1.6, 0.7, 0.4, 0.4, 0.4,0.4,0.4 ,0.4 ,0.4,0.4 ,1.538462,1.538462,2.73224,2.73224] 
@@ -48,7 +47,6 @@ MANUAL_RELATION_WIGHTS:
 # PERCENT:0 when only 1 neighbour with known polarity is sufficient
 
 PERCENT:0
-#.49
 
 
 
@@ -78,10 +76,6 @@ NORMALIZATION:1
 
 LAYERS_UNITS:[50,30,20,10]
 
-#
-#[200,100,50,25]
-#[212,106,212,53,27]
-#[256,64,128,32,64,16]
 
 
 # params for neural net changing
@@ -89,7 +83,8 @@ LAYERS_UNITS:[50,30,20,10]
 # choose number of hidden layers and number of their unit
 # e.g. two layers, 5 and 3 units: LAYERS_UNITS_NM:[5,3]
 
-LAYERS_UNITS_NM:[32,16,8]
+LAYERS_UNITS_NM:[30,20,10]
+
 
 # for multiple neural networks (TYPE:NEURAL_MULTIPLE): choose parts of speech (for each one indivual network will be created)
 
@@ -103,6 +98,7 @@ CHOSEN_POS:[2,4]
 #for TYPE:SVM choose kernel: linear,sigmoid,rbf,poly (if empty, default is SVM_KERNEL:linear)
 
 SVM_KERNEL:
+
 ############################################################################################################################################
 ######################################################### KNN ############################################################################## 
 ############################################################################################################################################
@@ -133,8 +129,10 @@ KNN_WEIGHTS:
 
 LU_PATH:/home/aleksandradolega/save_graph_all_amb.xml
 
+
 #path to merged graph (synsets and lexical units' graph merged by PLWNBuilder; doesn't contain all lexical units; doesn't contain all relations and synonymy relation)
 #e.g. MERGED_PATH:/home/aleksandradolega/merged_graph.xml.gz
+# Remember: using only one graph after merging, use variable LU_PATH.
 
 MERGED_PATH:
 
@@ -146,8 +144,8 @@ SAVE_MERGED_GRAPH_PATH:
 
 #path for saving graph after propagation (empty lexical unit's sentiment will be set with propagated one)
 
-SAVE_MODIFIED_MERGED_GRAPH_PATH:/home/aleksandradolega/MODIFIED_GRAPH_E.xml
-#/home/aleksandradolega/MODIFIED_GRAPH.xml
+SAVE_MODIFIED_MERGED_GRAPH_PATH:/home/aleksandradolega/ola_do4bb2.xml
+
 
 # path for saved neural network model (TYPE:NEURAL and TYPE:NEURAL_MULTIPLE)
 
@@ -158,31 +156,35 @@ NEURAL_NETWORK_MODEL_PATH:
 SAVE_NEURAL_NETWORK_MODEL_PATH:/home/aleksandradolega/neural_[32,16,8]_30_path.xml
 
 
-
-
 # path for file with newly propagated (or only classified) data
 
-FILE_LEX_UNITS_WITH_NEW_POLARITY:/home/aleksandradolega/SS.txt
-#PODSUMA/ensemble_[50,30,20,10]_[32,16,8]_50_depth_1.txt
-#ENSEMBLE_MULTI_[50,30,20,10]_50per_norm_allrels_sortedByVal_DEPTH_2_3
+FILE_LEX_UNITS_WITH_NEW_POLARITY:/home/aleksandradolega/PODSUMA/ENSEMBLE_75_n_[20_10]_nm_[20,10]_depth_1c.txt
+
+# path for saved ensemble .pkl file (TYPE:ENSEMBLE)
+
 ENSEMBLE_PATH:
-#/home/aleksandradolega/ensemble_90_diff_neural_arch.pkl
-#/home/aleksandradolega/ensemble.xml
+ 
+# path for saving ensemble (TYPE:ENSEMBLE)
 
-SAVE_ENSEMBLE_PATH:/home/aleksandradolega/Ensemble_50_[50,30,20,10][32,16,8].pkl
+SAVE_ENSEMBLE_PATH:/home/aleksandradolega/ensemble_75_n_[50,30,20,10]_nm_[50,30,20,10].pkl
 
+#path for saved svm model (.pkl) (TYPE:SVM)
 
 SVM_MODEL_PATH:
-#/home/aleksandradolega/Save_SVM_MODEL.pkl
+
+# path for saving svm model  (TYPE:SVM)
 
 SAVE_SVM_MODEL_PATH:/home/aleksandradolega/svm_model_32_30.xml
-#
+
+# check if lexical units' polarities should be saved to database in comment with 'ASENTI' tag (SAVE_TO_DATABASE:1 means saving, SAVE_TO_DATABASE:0 means not saving)
 
 SAVE_TO_DATABASE:0
 
+# use variable CLASSIFY_DATA only to make classification of chosen lexical units without propagation
+# e.g. CLASSIFY_DATA:[366,412,354118]
 
-CLASSIFY_DATA:[366,412,354118]
-#[15,30,12168]
+CLASSIFY_DATA:
+
 ############################################################################################################################################
 ################################################# DATABASE DATA ############################################################################
 ############################################################################################################################################
