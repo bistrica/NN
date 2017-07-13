@@ -27,6 +27,7 @@ By połączyć grafy, należy ponadto:
 3. Wprowadzić id relacji, które chcemy uwzględnić w nowym grafie (lista idków lub wartość 'all' dla zmiennej RELS_TO_APPEND). Ponadto dodane będą relacje synonimii o wartości -8.
 4. Można wprowadzić wartość dla zmiennej SAVE_MERGED_GRAPH_PATH, aby zapisać połączony graf wynikowy.
 5. Zmienne HOST, DB_NAME, USER, PASS muszą być uzupełnione.
+====
 
 
 2. Propagacja 
